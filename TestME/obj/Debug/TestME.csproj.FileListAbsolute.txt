@@ -1,1 +1,13 @@
 C:\Users\Hli4S\Documents\Visual Studio 2015\Projects\TestMeApp\TestME\bin\Debug\TestME.exe.config
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\bin\Debug\TestME.exe.config
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\bin\Debug\TestME.exe
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\bin\Debug\TestME.pdb
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\bin\Debug\MySql.Data.dll
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\obj\Debug\TestME.csprojResolveAssemblyReference.cache
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\obj\Debug\TestME.Form1.resources
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\obj\Debug\TestME.Properties.Resources.resources
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\obj\Debug\TestME.csproj.GenerateResource.Cache
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\obj\Debug\TestME.exe
+C:\Users\Evi\Documents\GitHub\TestMeApp\TestME\obj\Debug\TestME.pdb
