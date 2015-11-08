@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TestME
 {
-    class User
+    public class User
     {
         int _id;
         string _user;
