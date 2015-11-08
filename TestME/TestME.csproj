@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Answer.cs" />
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\User.cs" />
