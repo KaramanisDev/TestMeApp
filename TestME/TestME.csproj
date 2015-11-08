@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DB.cs" />
+    <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Design\CustomTheme.cs" />
     <Compile Include="Form1.cs">
