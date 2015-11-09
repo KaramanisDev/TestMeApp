@@ -25,5 +25,11 @@ namespace TestME
         {
             Environment.Exit(0);
         }
+
+        private void frmUser_Load(object sender, EventArgs e)
+        {
+            tabUser.SelectTab(1);
+        }
+
     }
 }

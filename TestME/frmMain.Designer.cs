@@ -34,12 +34,13 @@
             this.tabMain = new XylosTabControl();
             this.tabdashboard = new System.Windows.Forms.TabPage();
             this.tablogin = new System.Windows.Forms.TabPage();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.bonfireLabel1 = new BonfireLabel();
             this.ntfBox1 = new NotificationBox();
             this.txtPassword = new XylosTextBox();
             this.txtUser = new XylosTextBox();
             this.btnLogin = new BonfireButton();
-            this.lbl2 = new BonfireLabel();
-            this.lbl1 = new BonfireLabel();
             this.tabregister = new System.Windows.Forms.TabPage();
             this.btnRegister = new BonfireButton();
             this.ntfBox2 = new NotificationBox();
@@ -65,13 +66,13 @@
             this.lbltitle = new BonfireLabel();
             this.tabinfo = new System.Windows.Forms.TabPage();
             this.tababout = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Label2 = new BonfireLabel();
-            this.Label1 = new BonfireLabel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.frmSkin.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tablogin.SuspendLayout();
@@ -143,12 +144,13 @@
             // tablogin
             // 
             this.tablogin.BackColor = System.Drawing.Color.White;
+            this.tablogin.Controls.Add(this.lblUser);
+            this.tablogin.Controls.Add(this.lblPassword);
+            this.tablogin.Controls.Add(this.bonfireLabel1);
             this.tablogin.Controls.Add(this.ntfBox1);
             this.tablogin.Controls.Add(this.txtPassword);
             this.tablogin.Controls.Add(this.txtUser);
             this.tablogin.Controls.Add(this.btnLogin);
-            this.tablogin.Controls.Add(this.lbl2);
-            this.tablogin.Controls.Add(this.lbl1);
             this.tablogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tablogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
             this.tablogin.ImageIndex = 2;
@@ -158,6 +160,39 @@
             this.tablogin.Size = new System.Drawing.Size(409, 290);
             this.tablogin.TabIndex = 0;
             this.tablogin.Text = "Login";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUser.Location = new System.Drawing.Point(51, 71);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(71, 18);
+            this.lblUser.TabIndex = 8;
+            this.lblUser.Text = "Username:";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.lblPassword.Location = new System.Drawing.Point(54, 121);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(66, 18);
+            this.lblPassword.TabIndex = 7;
+            this.lblPassword.Text = "Password:";
+            // 
+            // bonfireLabel1
+            // 
+            this.bonfireLabel1.AutoSize = true;
+            this.bonfireLabel1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.bonfireLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
+            this.bonfireLabel1.Location = new System.Drawing.Point(174, 15);
+            this.bonfireLabel1.Name = "bonfireLabel1";
+            this.bonfireLabel1.Size = new System.Drawing.Size(90, 22);
+            this.bonfireLabel1.TabIndex = 6;
+            this.bonfireLabel1.Text = "Welcome !";
             // 
             // ntfBox1
             // 
@@ -169,7 +204,7 @@
             this.ntfBox1.Name = "ntfBox1";
             this.ntfBox1.NotificationType = NotificationBox.Type.Error;
             this.ntfBox1.RoundCorners = true;
-            this.ntfBox1.ShowCloseButton = false;
+            this.ntfBox1.ShowCloseButton = true;
             this.ntfBox1.Size = new System.Drawing.Size(274, 40);
             this.ntfBox1.TabIndex = 5;
             this.ntfBox1.Text = "Username or Password were incorrect!";
@@ -219,28 +254,6 @@
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log In";
             // 
-            // lbl2
-            // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl2.Location = new System.Drawing.Point(50, 122);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(66, 18);
-            this.lbl2.TabIndex = 1;
-            this.lbl2.Text = "Password:";
-            // 
-            // lbl1
-            // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl1.Location = new System.Drawing.Point(49, 71);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(71, 18);
-            this.lbl1.TabIndex = 0;
-            this.lbl1.Text = "Username:";
-            // 
             // tabregister
             // 
             this.tabregister.BackColor = System.Drawing.Color.White;
@@ -288,7 +301,7 @@
             this.ntfBox2.Name = "ntfBox2";
             this.ntfBox2.NotificationType = NotificationBox.Type.Warning;
             this.ntfBox2.RoundCorners = true;
-            this.ntfBox2.ShowCloseButton = false;
+            this.ntfBox2.ShowCloseButton = true;
             this.ntfBox2.Size = new System.Drawing.Size(304, 40);
             this.ntfBox2.TabIndex = 8;
             this.ntfBox2.Text = "All fields are necessary";
@@ -432,10 +445,10 @@
             this.ntfBox3.Name = "ntfBox3";
             this.ntfBox3.NotificationType = NotificationBox.Type.Error;
             this.ntfBox3.RoundCorners = true;
-            this.ntfBox3.ShowCloseButton = false;
+            this.ntfBox3.ShowCloseButton = true;
             this.ntfBox3.Size = new System.Drawing.Size(209, 40);
             this.ntfBox3.TabIndex = 10;
-            this.ntfBox3.Text = "notificationBox1";
+            this.ntfBox3.Text = "Connection Failed";
             this.ntfBox3.Visible = false;
             // 
             // txttable
@@ -583,10 +596,10 @@
             // tababout
             // 
             this.tababout.BackColor = System.Drawing.Color.White;
+            this.tababout.Controls.Add(this.label1);
             this.tababout.Controls.Add(this.pictureBox1);
             this.tababout.Controls.Add(this.linkLabel1);
             this.tababout.Controls.Add(this.Label2);
-            this.tababout.Controls.Add(this.Label1);
             this.tababout.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tababout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
             this.tababout.ImageIndex = 0;
@@ -596,6 +609,17 @@
             this.tababout.Size = new System.Drawing.Size(409, 290);
             this.tababout.TabIndex = 3;
             this.tababout.Text = "About";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(154, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Test ME Application";
             // 
             // pictureBox1
             // 
@@ -633,16 +657,14 @@
             this.Label2.Text = resources.GetString("Label2.Text");
             this.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Label1
+            // imageList1
             // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Label1.ForeColor = System.Drawing.Color.DimGray;
-            this.Label1.Location = new System.Drawing.Point(145, 32);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(151, 22);
-            this.Label1.TabIndex = 0;
-            this.Label1.Text = "TestME Application";
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "about-16.png");
+            this.imageList1.Images.SetKeyName(1, "add-user-16.png");
+            this.imageList1.Images.SetKeyName(2, "key-16.png");
+            this.imageList1.Images.SetKeyName(3, "services-16.png");
             // 
             // btnMin
             // 
@@ -676,15 +698,6 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "about-16.png");
-            this.imageList1.Images.SetKeyName(1, "add-user-16.png");
-            this.imageList1.Images.SetKeyName(2, "key-16.png");
-            this.imageList1.Images.SetKeyName(3, "services-16.png");
             // 
             // frmMain
             // 
@@ -730,8 +743,6 @@
         private XylosTextBox txtPassword;
         private XylosTextBox txtUser;
         private BonfireButton btnLogin;
-        private BonfireLabel lbl2;
-        private BonfireLabel lbl1;
         private BonfireButton btnRegister;
         private NotificationBox ntfBox2;
         private XylosTextBox txtrepeatpass;
@@ -744,7 +755,6 @@
         private BonfireLabel lblusername;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private BonfireLabel Label2;
-        private BonfireLabel Label1;
         private System.Windows.Forms.TabPage tabsettings;
         private NotificationBox ntfBox3;
         private XylosTextBox txttable;
@@ -759,6 +769,10 @@
         private BonfireLabel lbltitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ImageList imageList1;
+        private BonfireLabel bonfireLabel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblPassword;
     }
 }
 

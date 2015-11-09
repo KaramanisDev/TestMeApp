@@ -385,7 +385,8 @@ public class CustomButton : ThemedControl
     }
 }
 public class CustomSwitch : ThemedControl {
-    public bool isOn = false;
+    [Category("Theme Settings")]
+    public bool isOn { get; set; }
     protected override void OnMouseUp(MouseEventArgs e)
     {
         base.OnMouseUp(e);
@@ -394,6 +395,7 @@ public class CustomSwitch : ThemedControl {
     public CustomSwitch() : base(){
         Size = new Size(50, 20);
         BackColor = Color.WhiteSmoke;
+        isOn = false;
     }
     protected override void OnPaint(PaintEventArgs e)
     {
