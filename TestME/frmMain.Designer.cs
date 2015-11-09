@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.frmSkin = new CustomForm();
             this.tabMain = new XylosTabControl();
@@ -50,13 +51,6 @@
             this.lblpass = new BonfireLabel();
             this.lblemail = new BonfireLabel();
             this.lblusername = new BonfireLabel();
-            this.tabinfo = new System.Windows.Forms.TabPage();
-            this.tababout = new System.Windows.Forms.TabPage();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.Label2 = new BonfireLabel();
-            this.Label1 = new BonfireLabel();
-            this.btnMin = new CustomButton();
-            this.btnClose = new CustomButton();
             this.tabsettings = new System.Windows.Forms.TabPage();
             this.ntfBox3 = new NotificationBox();
             this.txttable = new XylosTextBox();
@@ -69,13 +63,22 @@
             this.lbluname = new BonfireLabel();
             this.lblhost = new BonfireLabel();
             this.lbltitle = new BonfireLabel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tabinfo = new System.Windows.Forms.TabPage();
+            this.tababout = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Label2 = new BonfireLabel();
+            this.Label1 = new BonfireLabel();
+            this.btnMin = new CustomButton();
+            this.btnClose = new CustomButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.frmSkin.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tablogin.SuspendLayout();
             this.tabregister.SuspendLayout();
-            this.tababout.SuspendLayout();
             this.tabsettings.SuspendLayout();
+            this.tababout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // frmSkin
@@ -114,6 +117,7 @@
             this.tabMain.Controls.Add(this.tababout);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.FirstHeaderBorder = false;
+            this.tabMain.ImageList = this.imageList1;
             this.tabMain.ItemSize = new System.Drawing.Size(40, 180);
             this.tabMain.Location = new System.Drawing.Point(13, 38);
             this.tabMain.Multiline = true;
@@ -138,7 +142,7 @@
             // 
             // tablogin
             // 
-            this.tablogin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tablogin.BackColor = System.Drawing.Color.White;
             this.tablogin.Controls.Add(this.ntfBox1);
             this.tablogin.Controls.Add(this.txtPassword);
             this.tablogin.Controls.Add(this.txtUser);
@@ -147,6 +151,7 @@
             this.tablogin.Controls.Add(this.lbl1);
             this.tablogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tablogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tablogin.ImageIndex = 2;
             this.tablogin.Location = new System.Drawing.Point(184, 4);
             this.tablogin.Name = "tablogin";
             this.tablogin.Padding = new System.Windows.Forms.Padding(3);
@@ -238,7 +243,7 @@
             // 
             // tabregister
             // 
-            this.tabregister.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabregister.BackColor = System.Drawing.Color.White;
             this.tabregister.Controls.Add(this.btnRegister);
             this.tabregister.Controls.Add(this.ntfBox2);
             this.tabregister.Controls.Add(this.txtrepeatpass);
@@ -251,6 +256,7 @@
             this.tabregister.Controls.Add(this.lblusername);
             this.tabregister.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tabregister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tabregister.ImageIndex = 1;
             this.tabregister.Location = new System.Drawing.Point(184, 4);
             this.tabregister.Name = "tabregister";
             this.tabregister.Padding = new System.Windows.Forms.Padding(3);
@@ -392,108 +398,9 @@
             this.lblusername.TabIndex = 0;
             this.lblusername.Text = "Username: *";
             // 
-            // tabinfo
-            // 
-            this.tabinfo.BackColor = System.Drawing.Color.White;
-            this.tabinfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tabinfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.tabinfo.Location = new System.Drawing.Point(184, 4);
-            this.tabinfo.Name = "tabinfo";
-            this.tabinfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabinfo.Size = new System.Drawing.Size(409, 290);
-            this.tabinfo.TabIndex = 2;
-            this.tabinfo.Tag = "Info";
-            this.tabinfo.Text = "Information";
-            // 
-            // tababout
-            // 
-            this.tababout.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tababout.Controls.Add(this.label3);
-            this.tababout.Controls.Add(this.linkLabel1);
-            this.tababout.Controls.Add(this.Label2);
-            this.tababout.Controls.Add(this.Label1);
-            this.tababout.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tababout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.tababout.Location = new System.Drawing.Point(184, 4);
-            this.tababout.Name = "tababout";
-            this.tababout.Padding = new System.Windows.Forms.Padding(3);
-            this.tababout.Size = new System.Drawing.Size(409, 290);
-            this.tababout.TabIndex = 3;
-            this.tababout.Text = "About";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(146, 140);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(230, 18);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://github.com/Hli4S/TestMeApp";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Label2.ForeColor = System.Drawing.Color.DimGray;
-            this.Label2.Location = new System.Drawing.Point(6, 85);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(397, 162);
-            this.Label2.TabIndex = 1;
-            this.Label2.Text = resources.GetString("Label2.Text");
-            this.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Label1.ForeColor = System.Drawing.Color.DimGray;
-            this.Label1.Location = new System.Drawing.Point(145, 32);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(151, 22);
-            this.Label1.TabIndex = 0;
-            this.Label1.Text = "TestME Application";
-            // 
-            // btnMin
-            // 
-            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
-            this.btnMin.DrawSeparator = false;
-            this.btnMin.Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.btnMin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMin.Location = new System.Drawing.Point(547, 4);
-            this.btnMin.MinimumSize = new System.Drawing.Size(20, 20);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.OverlayCol = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnMin.Size = new System.Drawing.Size(30, 26);
-            this.btnMin.TabIndex = 1;
-            this.btnMin.Text = "0";
-            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
-            this.btnClose.DrawSeparator = false;
-            this.btnClose.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClose.Location = new System.Drawing.Point(583, 4);
-            this.btnClose.MinimumSize = new System.Drawing.Size(20, 20);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.OverlayCol = System.Drawing.Color.Maroon;
-            this.btnClose.Size = new System.Drawing.Size(30, 26);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "X";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // tabsettings
             // 
-            this.tabsettings.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabsettings.BackColor = System.Drawing.Color.White;
             this.tabsettings.Controls.Add(this.ntfBox3);
             this.tabsettings.Controls.Add(this.txttable);
             this.tabsettings.Controls.Add(this.txtpasswd);
@@ -507,6 +414,7 @@
             this.tabsettings.Controls.Add(this.lbltitle);
             this.tabsettings.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tabsettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tabsettings.ImageIndex = 3;
             this.tabsettings.Location = new System.Drawing.Point(184, 4);
             this.tabsettings.Name = "tabsettings";
             this.tabsettings.Padding = new System.Windows.Forms.Padding(3);
@@ -659,17 +567,124 @@
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Database Connection";
             // 
-            // label3
+            // tabinfo
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Image = global::TestME.Properties.Resources.document;
-            this.label3.Location = new System.Drawing.Point(87, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 45);
-            this.label3.TabIndex = 3;
-            this.label3.Text = ".              \r\n.\r\n.";
+            this.tabinfo.BackColor = System.Drawing.Color.White;
+            this.tabinfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tabinfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tabinfo.Location = new System.Drawing.Point(184, 4);
+            this.tabinfo.Name = "tabinfo";
+            this.tabinfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabinfo.Size = new System.Drawing.Size(409, 290);
+            this.tabinfo.TabIndex = 2;
+            this.tabinfo.Tag = "Info";
+            this.tabinfo.Text = "Information";
+            // 
+            // tababout
+            // 
+            this.tababout.BackColor = System.Drawing.Color.White;
+            this.tababout.Controls.Add(this.pictureBox1);
+            this.tababout.Controls.Add(this.linkLabel1);
+            this.tababout.Controls.Add(this.Label2);
+            this.tababout.Controls.Add(this.Label1);
+            this.tababout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tababout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tababout.ImageIndex = 0;
+            this.tababout.Location = new System.Drawing.Point(184, 4);
+            this.tababout.Name = "tababout";
+            this.tababout.Padding = new System.Windows.Forms.Padding(3);
+            this.tababout.Size = new System.Drawing.Size(409, 290);
+            this.tababout.TabIndex = 3;
+            this.tababout.Text = "About";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(100, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
+            this.linkLabel1.Location = new System.Drawing.Point(146, 140);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(230, 18);
+            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://github.com/Hli4S/TestMeApp";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // Label2
+            // 
+            this.Label2.AutoSize = true;
+            this.Label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Label2.ForeColor = System.Drawing.Color.DimGray;
+            this.Label2.Location = new System.Drawing.Point(6, 85);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(397, 162);
+            this.Label2.TabIndex = 1;
+            this.Label2.Text = resources.GetString("Label2.Text");
+            this.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Label1
+            // 
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Label1.ForeColor = System.Drawing.Color.DimGray;
+            this.Label1.Location = new System.Drawing.Point(145, 32);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(151, 22);
+            this.Label1.TabIndex = 0;
+            this.Label1.Text = "TestME Application";
+            // 
+            // btnMin
+            // 
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
+            this.btnMin.DrawSeparator = false;
+            this.btnMin.Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.btnMin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMin.Location = new System.Drawing.Point(547, 4);
+            this.btnMin.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.OverlayCol = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnMin.Size = new System.Drawing.Size(30, 26);
+            this.btnMin.TabIndex = 1;
+            this.btnMin.Text = "0";
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
+            this.btnClose.DrawSeparator = false;
+            this.btnClose.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClose.Location = new System.Drawing.Point(583, 4);
+            this.btnClose.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.OverlayCol = System.Drawing.Color.Maroon;
+            this.btnClose.Size = new System.Drawing.Size(30, 26);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "X";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "about-16.png");
+            this.imageList1.Images.SetKeyName(1, "add-user-16.png");
+            this.imageList1.Images.SetKeyName(2, "key-16.png");
+            this.imageList1.Images.SetKeyName(3, "services-16.png");
             // 
             // frmMain
             // 
@@ -691,10 +706,11 @@
             this.tablogin.PerformLayout();
             this.tabregister.ResumeLayout(false);
             this.tabregister.PerformLayout();
-            this.tababout.ResumeLayout(false);
-            this.tababout.PerformLayout();
             this.tabsettings.ResumeLayout(false);
             this.tabsettings.PerformLayout();
+            this.tababout.ResumeLayout(false);
+            this.tababout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -726,7 +742,6 @@
         private BonfireLabel lblpass;
         private BonfireLabel lblemail;
         private BonfireLabel lblusername;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private BonfireLabel Label2;
         private BonfireLabel Label1;
@@ -742,6 +757,8 @@
         private BonfireLabel lbluname;
         private BonfireLabel lblhost;
         private BonfireLabel lbltitle;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
