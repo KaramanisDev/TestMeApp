@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdit));
             this.customForm1 = new CustomForm();
-            this.btnAddAnswer = new BonfireButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSaveChanges = new BonfireButton();
             this.listAnswers = new System.Windows.Forms.ListView();
             this.txtAddQ = new System.Windows.Forms.TextBox();
             this.txtAddTags = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.customForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.customForm1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.customForm1.BorderSize = 10;
             this.customForm1.Controls.Add(this.label2);
-            this.customForm1.Controls.Add(this.btnAddAnswer);
+            this.customForm1.Controls.Add(this.btnSaveChanges);
             this.customForm1.Controls.Add(this.listAnswers);
             this.customForm1.Controls.Add(this.txtAddQ);
             this.customForm1.Controls.Add(this.txtAddTags);
@@ -84,19 +84,31 @@
             this.customForm1.TopSize = 35;
             this.customForm1.TopSpace = 0;
             // 
-            // btnAddAnswer
+            // label2
             // 
-            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddAnswer.Image = null;
-            this.btnAddAnswer.Location = new System.Drawing.Point(467, 289);
-            this.btnAddAnswer.Name = "btnAddAnswer";
-            this.btnAddAnswer.RoundedCorners = true;
-            this.btnAddAnswer.Size = new System.Drawing.Size(100, 26);
-            this.btnAddAnswer.TabIndex = 45;
-            this.btnAddAnswer.Text = "Save Changes";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(289, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 22);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Edit Content";
+            // 
+            // btnSaveChanges
+            // 
+            this.btnSaveChanges.BackColor = System.Drawing.Color.Teal;
+            this.btnSaveChanges.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveChanges.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSaveChanges.Image = null;
+            this.btnSaveChanges.Location = new System.Drawing.Point(467, 289);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.RoundedCorners = true;
+            this.btnSaveChanges.Size = new System.Drawing.Size(123, 35);
+            this.btnSaveChanges.TabIndex = 45;
+            this.btnSaveChanges.Text = "Save Changes";
             // 
             // listAnswers
             // 
@@ -239,6 +251,7 @@
             this.btnMin.Size = new System.Drawing.Size(30, 26);
             this.btnMin.TabIndex = 34;
             this.btnMin.Text = "0";
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
             // btnClose
             // 
@@ -254,17 +267,7 @@
             this.btnClose.Size = new System.Drawing.Size(30, 26);
             this.btnClose.TabIndex = 33;
             this.btnClose.Text = "X";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(289, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 22);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Edit Panel";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmEdit
             // 
@@ -289,7 +292,7 @@
         #endregion
 
         private CustomForm customForm1;
-        private BonfireButton btnAddAnswer;
+        private BonfireButton btnSaveChanges;
         private System.Windows.Forms.ListView listAnswers;
         private System.Windows.Forms.TextBox txtAddQ;
         private System.Windows.Forms.TextBox txtAddTags;

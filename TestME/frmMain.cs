@@ -16,9 +16,9 @@ namespace TestME
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnMin_Click(object sender, EventArgs e)
         {
-            tabMain.SelectTab(1);
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -26,19 +26,10 @@ namespace TestME
             Environment.Exit(0);
         }
 
-        private void btnMin_Click(object sender, EventArgs e)
+        private void frmUser_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            tabUser.SelectTab(1);
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start(linkLabel1.Text);
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            new frmUser().Show();
-        }
     }
 }

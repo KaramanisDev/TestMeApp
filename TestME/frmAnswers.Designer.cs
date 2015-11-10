@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnswers));
             this.frmskin = new CustomForm();
-            this.btnMin = new CustomButton();
-            this.btnClose = new CustomButton();
+            this.lblDifficultylvl = new System.Windows.Forms.Label();
             this.listAnswers = new System.Windows.Forms.ListView();
             this.txtAddQ = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblDifficultylvl = new System.Windows.Forms.Label();
+            this.btnMin = new CustomButton();
+            this.btnClose = new CustomButton();
             this.frmskin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,36 +71,16 @@
             this.frmskin.TopSize = 35;
             this.frmskin.TopSpace = 0;
             // 
-            // btnMin
+            // lblDifficultylvl
             // 
-            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
-            this.btnMin.DrawSeparator = false;
-            this.btnMin.Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.btnMin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMin.Location = new System.Drawing.Point(494, 4);
-            this.btnMin.MinimumSize = new System.Drawing.Size(20, 20);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.OverlayCol = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnMin.Size = new System.Drawing.Size(30, 26);
-            this.btnMin.TabIndex = 5;
-            this.btnMin.Text = "0";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
-            this.btnClose.DrawSeparator = false;
-            this.btnClose.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClose.Location = new System.Drawing.Point(530, 4);
-            this.btnClose.MinimumSize = new System.Drawing.Size(20, 20);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.OverlayCol = System.Drawing.Color.Maroon;
-            this.btnClose.Size = new System.Drawing.Size(30, 26);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "X";
+            this.lblDifficultylvl.AutoSize = true;
+            this.lblDifficultylvl.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.lblDifficultylvl.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDifficultylvl.Location = new System.Drawing.Point(446, 140);
+            this.lblDifficultylvl.Name = "lblDifficultylvl";
+            this.lblDifficultylvl.Size = new System.Drawing.Size(18, 20);
+            this.lblDifficultylvl.TabIndex = 34;
+            this.lblDifficultylvl.Text = "1";
             // 
             // listAnswers
             // 
@@ -156,16 +136,38 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "Difficulty Level:";
             // 
-            // lblDifficultylvl
+            // btnMin
             // 
-            this.lblDifficultylvl.AutoSize = true;
-            this.lblDifficultylvl.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDifficultylvl.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDifficultylvl.Location = new System.Drawing.Point(446, 141);
-            this.lblDifficultylvl.Name = "lblDifficultylvl";
-            this.lblDifficultylvl.Size = new System.Drawing.Size(16, 18);
-            this.lblDifficultylvl.TabIndex = 34;
-            this.lblDifficultylvl.Text = "1";
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
+            this.btnMin.DrawSeparator = false;
+            this.btnMin.Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.btnMin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMin.Location = new System.Drawing.Point(496, 4);
+            this.btnMin.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.OverlayCol = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnMin.Size = new System.Drawing.Size(30, 26);
+            this.btnMin.TabIndex = 5;
+            this.btnMin.Text = "0";
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
+            this.btnClose.DrawSeparator = false;
+            this.btnClose.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClose.Location = new System.Drawing.Point(532, 4);
+            this.btnClose.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.OverlayCol = System.Drawing.Color.Maroon;
+            this.btnClose.Size = new System.Drawing.Size(30, 26);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "X";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmAnswers
             // 
