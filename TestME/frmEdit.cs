@@ -23,7 +23,7 @@ namespace TestME
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
     }
 }

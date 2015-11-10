@@ -38,6 +38,7 @@ namespace TestME
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            this.Hide();
             new frmMain().Show();
         }
     }
