@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace TestME
 {
-    class DB
+    public class DB
     {
         private MySqlConnection connect;
         private MySqlCommand command;
@@ -18,6 +18,7 @@ namespace TestME
         private int affected_rows;
         private string squery;
         private List<string> parameters;
+        private bool bDebug;
 
         public DB(string host, string user, string pass, string dbname)
         {
@@ -25,6 +26,17 @@ namespace TestME
             Connect();
             Table = Table = new DataTable();
             parameters = new List<string>();
+        }
+
+        public bool Connected()
+        {
+            return bConnected;
+        }
+
+        public bool Debug
+        {
+            get { return bDebug; }
+            set { bDebug = value; }
         }
 
         private void Connect()
@@ -39,7 +51,10 @@ namespace TestME
             catch (MySqlException ex)
             {
                 string exception = "Exception : " + ex.Message.ToString() + " / " + squery;
-                MessageBox.Show(exception, "Uncaught MYSQL Exception");
+                if (bDebug)
+                {
+                    MessageBox.Show(exception, "Uncaught MYSQL Exception");
+                }
             }
         }
 
@@ -129,8 +144,10 @@ namespace TestME
             catch (MySqlException my)
             {
                 string exception = "Exception : " + my.Message.ToString() + "\n\r SQL Query : \n\r" + squery;
-
-                MessageBox.Show(exception, "Uncaught MYSQL Exception");
+                if (bDebug)
+                {
+                    MessageBox.Show(exception, "Uncaught MYSQL Exception");
+                }
             }
 
             return dt;
@@ -148,8 +165,10 @@ namespace TestME
             catch (MySqlException my)
             {
                 string exception = "Exception : " + my.Message.ToString() + "\n\r SQL Query : \n\r" + squery;
-
-                MessageBox.Show(exception, "Uncaught MYSQL Exception");
+                if (bDebug)
+                {
+                    MessageBox.Show(exception, "Uncaught MYSQL Exception");
+                }
             }
 
             return affected;

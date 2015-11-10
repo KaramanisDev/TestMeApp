@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TestME.Classes
 {
-    class Question
+    public class Question
     {
         private string _question;
         private List<Answer> _anwsers;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TestME.Classes
 {
-    class Answer
+    public class Answer
     {
         private string _text;
         private bool _correct;
