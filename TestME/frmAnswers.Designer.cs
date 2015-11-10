@@ -180,7 +180,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(305, 150);
             this.Name = "frmAnswers";
-            this.Text = "frmAnswers";
+            this.Text = "TestMe";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.frmAnswers_Load);
             this.frmskin.ResumeLayout(false);

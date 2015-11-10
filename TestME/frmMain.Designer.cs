@@ -40,7 +40,6 @@
             this.tabAddQ = new System.Windows.Forms.TabPage();
             this.ntfAdd = new NotificationBox();
             this.switchCorrectAnswer = new CustomSwitch();
-            this.btnAddAnswer = new BonfireButton();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtAnswer = new System.Windows.Forms.TextBox();
@@ -53,8 +52,6 @@
             this.switchPrivate = new CustomSwitch();
             this.difficultyLvl = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnReset = new BonfireButton();
-            this.btnAdd = new BonfireButton();
             this.label10 = new System.Windows.Forms.Label();
             this.tabfind = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,19 +60,14 @@
             this.switchAllTags = new CustomSwitch();
             this.dgvFoundQ = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnSearch = new BonfireButton();
             this.switchFindAll = new CustomSwitch();
             this.numericMax = new System.Windows.Forms.NumericUpDown();
             this.numericMin = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnClear = new BonfireButton();
-            this.btnMakeTest = new BonfireButton();
             this.label5 = new System.Windows.Forms.Label();
             this.finaltest = new System.Windows.Forms.TabPage();
             this.tabtest = new System.Windows.Forms.TabPage();
             this.dgvMyTest = new System.Windows.Forms.DataGridView();
-            this.btnSave = new BonfireButton();
-            this.btnPrint = new BonfireButton();
             this.label4 = new System.Windows.Forms.Label();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.txtTestTitle = new XylosTextBox();
@@ -86,6 +78,14 @@
             this.btnClose = new CustomButton();
             this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
             this.ntfTest = new NotificationBox();
+            this.btnAddAnswer = new BonfireButton();
+            this.btnReset = new BonfireButton();
+            this.btnAdd = new BonfireButton();
+            this.btnSearch = new BonfireButton();
+            this.btnClear = new BonfireButton();
+            this.btnMakeTest = new BonfireButton();
+            this.btnSave = new BonfireButton();
+            this.btnPrint = new BonfireButton();
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
@@ -269,21 +269,6 @@
             this.switchCorrectAnswer.TabIndex = 33;
             this.toolTipUser.SetToolTip(this.switchCorrectAnswer, "Enable it if your \r\nanswer is correct.");
             // 
-            // btnAddAnswer
-            // 
-            this.btnAddAnswer.BackColor = System.Drawing.Color.Chocolate;
-            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddAnswer.Image = null;
-            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
-            this.btnAddAnswer.Name = "btnAddAnswer";
-            this.btnAddAnswer.RoundedCorners = true;
-            this.btnAddAnswer.Size = new System.Drawing.Size(122, 35);
-            this.btnAddAnswer.TabIndex = 32;
-            this.btnAddAnswer.Text = "Add Answer";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -438,36 +423,6 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Difficulty Level:";
             // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnReset.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReset.Image = null;
-            this.btnReset.Location = new System.Drawing.Point(157, 324);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.RoundedCorners = true;
-            this.btnReset.Size = new System.Drawing.Size(79, 35);
-            this.btnReset.TabIndex = 18;
-            this.btnReset.Text = "Reset";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAdd.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.Image = null;
-            this.btnAdd.Location = new System.Drawing.Point(22, 324);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.RoundedCorners = true;
-            this.btnAdd.Size = new System.Drawing.Size(116, 35);
-            this.btnAdd.TabIndex = 17;
-            this.btnAdd.Text = "Add Question";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -488,14 +443,14 @@
             this.tabfind.Controls.Add(this.switchAllTags);
             this.tabfind.Controls.Add(this.dgvFoundQ);
             this.tabfind.Controls.Add(this.label7);
-            this.tabfind.Controls.Add(this.btnSearch);
             this.tabfind.Controls.Add(this.switchFindAll);
             this.tabfind.Controls.Add(this.numericMax);
             this.tabfind.Controls.Add(this.numericMin);
             this.tabfind.Controls.Add(this.label6);
+            this.tabfind.Controls.Add(this.label5);
+            this.tabfind.Controls.Add(this.btnSearch);
             this.tabfind.Controls.Add(this.btnClear);
             this.tabfind.Controls.Add(this.btnMakeTest);
-            this.tabfind.Controls.Add(this.label5);
             this.tabfind.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tabfind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
             this.tabfind.ImageIndex = 3;
@@ -577,21 +532,6 @@
             this.label7.Text = "From All Users:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Teal;
-            this.btnSearch.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.Image = null;
-            this.btnSearch.Location = new System.Drawing.Point(487, 107);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.RoundedCorners = true;
-            this.btnSearch.Size = new System.Drawing.Size(87, 35);
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "Search";
-            // 
             // switchFindAll
             // 
             this.switchFindAll.BackColor = System.Drawing.Color.White;
@@ -670,36 +610,6 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Difficulty Level:        From                 To";
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnClear.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClear.Image = null;
-            this.btnClear.Location = new System.Drawing.Point(487, 351);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.RoundedCorners = true;
-            this.btnClear.Size = new System.Drawing.Size(87, 35);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear";
-            // 
-            // btnMakeTest
-            // 
-            this.btnMakeTest.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnMakeTest.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnMakeTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMakeTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMakeTest.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMakeTest.Image = null;
-            this.btnMakeTest.Location = new System.Drawing.Point(346, 351);
-            this.btnMakeTest.Name = "btnMakeTest";
-            this.btnMakeTest.RoundedCorners = true;
-            this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
-            this.btnMakeTest.TabIndex = 7;
-            this.btnMakeTest.Text = "Add To Test";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -728,13 +638,13 @@
             this.tabtest.BackColor = System.Drawing.Color.White;
             this.tabtest.Controls.Add(this.ntfTest);
             this.tabtest.Controls.Add(this.dgvMyTest);
-            this.tabtest.Controls.Add(this.btnSave);
-            this.tabtest.Controls.Add(this.btnPrint);
             this.tabtest.Controls.Add(this.label4);
             this.tabtest.Controls.Add(this.datePicker);
             this.tabtest.Controls.Add(this.txtTestTitle);
             this.tabtest.Controls.Add(this.label3);
             this.tabtest.Controls.Add(this.label1);
+            this.tabtest.Controls.Add(this.btnSave);
+            this.tabtest.Controls.Add(this.btnPrint);
             this.tabtest.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tabtest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
             this.tabtest.ImageIndex = 0;
@@ -755,37 +665,6 @@
             this.dgvMyTest.Size = new System.Drawing.Size(538, 220);
             this.dgvMyTest.TabIndex = 7;
             this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Image = null;
-            this.btnSave.Location = new System.Drawing.Point(503, 349);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.RoundedCorners = true;
-            this.btnSave.Size = new System.Drawing.Size(74, 35);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.Teal;
-            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrint.Image = null;
-            this.btnPrint.Location = new System.Drawing.Point(390, 349);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.RoundedCorners = true;
-            this.btnPrint.Size = new System.Drawing.Size(81, 35);
-            this.btnPrint.TabIndex = 5;
-            this.btnPrint.Text = "Print";
             // 
             // label4
             // 
@@ -917,6 +796,127 @@
             this.ntfTest.Text = "Empty Test";
             this.ntfTest.Visible = false;
             // 
+            // btnAddAnswer
+            // 
+            this.btnAddAnswer.BackColor = System.Drawing.Color.Chocolate;
+            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddAnswer.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
+            this.btnAddAnswer.Name = "btnAddAnswer";
+            this.btnAddAnswer.RoundedCorners = true;
+            this.btnAddAnswer.Size = new System.Drawing.Size(122, 35);
+            this.btnAddAnswer.TabIndex = 32;
+            this.btnAddAnswer.Text = "Add Answer";
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnReset.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReset.Image = global::TestME.Properties.Resources.undo_5_24;
+            this.btnReset.Location = new System.Drawing.Point(159, 324);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.RoundedCorners = true;
+            this.btnReset.Size = new System.Drawing.Size(79, 35);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reset";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAdd.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnAdd.Location = new System.Drawing.Point(22, 324);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RoundedCorners = true;
+            this.btnAdd.Size = new System.Drawing.Size(129, 35);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Add Question";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Teal;
+            this.btnSearch.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.Image = global::TestME.Properties.Resources.search_24;
+            this.btnSearch.Location = new System.Drawing.Point(487, 107);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.RoundedCorners = true;
+            this.btnSearch.Size = new System.Drawing.Size(87, 35);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnClear.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.Image = global::TestME.Properties.Resources.delete_24;
+            this.btnClear.Location = new System.Drawing.Point(487, 351);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.RoundedCorners = true;
+            this.btnClear.Size = new System.Drawing.Size(87, 35);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            // 
+            // btnMakeTest
+            // 
+            this.btnMakeTest.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnMakeTest.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnMakeTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMakeTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeTest.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMakeTest.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnMakeTest.Location = new System.Drawing.Point(346, 351);
+            this.btnMakeTest.Name = "btnMakeTest";
+            this.btnMakeTest.RoundedCorners = true;
+            this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
+            this.btnMakeTest.TabIndex = 7;
+            this.btnMakeTest.Text = "Add To Test";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnSave.Location = new System.Drawing.Point(503, 349);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.RoundedCorners = true;
+            this.btnSave.Size = new System.Drawing.Size(74, 35);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Teal;
+            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
+            this.btnPrint.Location = new System.Drawing.Point(390, 349);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.RoundedCorners = true;
+            this.btnPrint.Size = new System.Drawing.Size(81, 35);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "Print";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -928,7 +928,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(305, 150);
             this.Name = "frmMain";
-            this.Text = "frmUser";
+            this.Text = "TestMe";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.frmskin.ResumeLayout(false);

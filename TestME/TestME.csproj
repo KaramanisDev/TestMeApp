@@ -129,6 +129,36 @@
   <ItemGroup>
     <None Include="Resources\document1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-as-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-5-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo-5-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-configuration-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-4-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-28-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-5-24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

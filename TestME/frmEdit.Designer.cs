@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdit));
             this.customForm1 = new CustomForm();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSaveChanges = new BonfireButton();
             this.listAnswers = new System.Windows.Forms.ListView();
             this.txtAddQ = new System.Windows.Forms.TextBox();
             this.txtAddTags = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.btnSaveChanges = new BonfireButton();
             this.customForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
             this.SuspendLayout();
@@ -94,21 +94,6 @@
             this.label2.Size = new System.Drawing.Size(103, 22);
             this.label2.TabIndex = 46;
             this.label2.Text = "Edit Content";
-            // 
-            // btnSaveChanges
-            // 
-            this.btnSaveChanges.BackColor = System.Drawing.Color.Teal;
-            this.btnSaveChanges.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveChanges.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveChanges.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSaveChanges.Image = null;
-            this.btnSaveChanges.Location = new System.Drawing.Point(467, 289);
-            this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.RoundedCorners = true;
-            this.btnSaveChanges.Size = new System.Drawing.Size(123, 35);
-            this.btnSaveChanges.TabIndex = 45;
-            this.btnSaveChanges.Text = "Save Changes";
             // 
             // listAnswers
             // 
@@ -178,7 +163,7 @@
             // 
             // switchPrivate
             // 
-            this.switchPrivate.BackColor = System.Drawing.Color.White;
+            this.switchPrivate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.switchPrivate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.switchPrivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
             this.switchPrivate.isOn = false;
@@ -269,6 +254,21 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnSaveChanges
+            // 
+            this.btnSaveChanges.BackColor = System.Drawing.Color.Teal;
+            this.btnSaveChanges.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveChanges.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSaveChanges.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnSaveChanges.Location = new System.Drawing.Point(467, 289);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.RoundedCorners = true;
+            this.btnSaveChanges.Size = new System.Drawing.Size(123, 35);
+            this.btnSaveChanges.TabIndex = 45;
+            this.btnSaveChanges.Text = "Save Changes";
+            // 
             // frmEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,7 +280,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(305, 150);
             this.Name = "frmEdit";
-            this.Text = "frmEdit";
+            this.Text = "TestMe";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.customForm1.ResumeLayout(false);
             this.customForm1.PerformLayout();
