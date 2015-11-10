@@ -37,6 +37,14 @@
             this.dgvMyQ = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.tabAddQ = new System.Windows.Forms.TabPage();
+            this.ntfAdd = new NotificationBox();
+            this.switchCorrectAnswer = new CustomSwitch();
+            this.btnAddAnswer = new BonfireButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtAnswer = new System.Windows.Forms.TextBox();
+            this.listAnswers = new System.Windows.Forms.ListView();
+            this.txtAddQ = new System.Windows.Forms.TextBox();
             this.txtAddTags = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -48,6 +56,7 @@
             this.btnAdd = new BonfireButton();
             this.label10 = new System.Windows.Forms.Label();
             this.tabfind = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
             this.txtTags = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.switchAllTags = new CustomSwitch();
@@ -61,7 +70,9 @@
             this.btnClear = new BonfireButton();
             this.btnMakeTest = new BonfireButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.finaltest = new System.Windows.Forms.TabPage();
             this.tabtest = new System.Windows.Forms.TabPage();
+            this.dgvMyTest = new System.Windows.Forms.DataGridView();
             this.btnSave = new BonfireButton();
             this.btnPrint = new BonfireButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,18 +80,10 @@
             this.txtTestTitle = new XylosTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.txtAddQ = new System.Windows.Forms.TextBox();
-            this.listAnswers = new System.Windows.Forms.ListView();
-            this.txtAnswer = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnAddAnswer = new BonfireButton();
-            this.switchCorrectAnswer = new CustomSwitch();
-            this.ntfAdd = new NotificationBox();
-            this.finaltest = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
@@ -92,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).BeginInit();
             this.tabtest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).BeginInit();
             this.SuspendLayout();
             // 
             // frmskin
@@ -170,10 +174,12 @@
             // 
             // dgvMyQ
             // 
+            this.dgvMyQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvMyQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMyQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMyQ.Location = new System.Drawing.Point(59, 90);
+            this.dgvMyQ.Location = new System.Drawing.Point(59, 74);
             this.dgvMyQ.Name = "dgvMyQ";
-            this.dgvMyQ.Size = new System.Drawing.Size(499, 256);
+            this.dgvMyQ.Size = new System.Drawing.Size(499, 272);
             this.dgvMyQ.TabIndex = 2;
             // 
             // label2
@@ -218,6 +224,105 @@
             this.tabAddQ.TabIndex = 1;
             this.tabAddQ.Text = "Add Question";
             // 
+            // ntfAdd
+            // 
+            this.ntfAdd.BorderCurve = 15;
+            this.ntfAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ntfAdd.ForeColor = System.Drawing.Color.DimGray;
+            this.ntfAdd.Image = null;
+            this.ntfAdd.Location = new System.Drawing.Point(273, 324);
+            this.ntfAdd.MinimumSize = new System.Drawing.Size(100, 40);
+            this.ntfAdd.Name = "ntfAdd";
+            this.ntfAdd.NotificationType = NotificationBox.Type.Notice;
+            this.ntfAdd.RoundCorners = true;
+            this.ntfAdd.ShowCloseButton = true;
+            this.ntfAdd.Size = new System.Drawing.Size(325, 40);
+            this.ntfAdd.TabIndex = 34;
+            this.ntfAdd.Text = "Add up to 5 answers";
+            // 
+            // switchCorrectAnswer
+            // 
+            this.switchCorrectAnswer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.switchCorrectAnswer.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.switchCorrectAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
+            this.switchCorrectAnswer.isOn = true;
+            this.switchCorrectAnswer.Location = new System.Drawing.Point(553, 233);
+            this.switchCorrectAnswer.MinimumSize = new System.Drawing.Size(20, 20);
+            this.switchCorrectAnswer.Name = "switchCorrectAnswer";
+            this.switchCorrectAnswer.Size = new System.Drawing.Size(45, 20);
+            this.switchCorrectAnswer.TabIndex = 33;
+            this.toolTipUser.SetToolTip(this.switchCorrectAnswer, "Enable it if your \r\nanswer is correct.");
+            // 
+            // btnAddAnswer
+            // 
+            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddAnswer.Image = null;
+            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
+            this.btnAddAnswer.Name = "btnAddAnswer";
+            this.btnAddAnswer.RoundedCorners = true;
+            this.btnAddAnswer.Size = new System.Drawing.Size(93, 26);
+            this.btnAddAnswer.TabIndex = 32;
+            this.btnAddAnswer.Text = "Add Answer";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.DimGray;
+            this.label15.Location = new System.Drawing.Point(398, 230);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 18);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Correct:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DimGray;
+            this.label14.Location = new System.Drawing.Point(395, 166);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 18);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Write Answer:";
+            // 
+            // txtAnswer
+            // 
+            this.txtAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAnswer.Location = new System.Drawing.Point(398, 184);
+            this.txtAnswer.Multiline = true;
+            this.txtAnswer.Name = "txtAnswer";
+            this.txtAnswer.Size = new System.Drawing.Size(200, 40);
+            this.txtAnswer.TabIndex = 29;
+            // 
+            // listAnswers
+            // 
+            this.listAnswers.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listAnswers.ForeColor = System.Drawing.Color.DimGray;
+            this.listAnswers.Location = new System.Drawing.Point(22, 166);
+            this.listAnswers.Name = "listAnswers";
+            this.listAnswers.Size = new System.Drawing.Size(358, 119);
+            this.listAnswers.TabIndex = 28;
+            this.toolTipUser.SetToolTip(this.listAnswers, "See the list of phrases that will \r\nregister as possible answers\r\nfor the questio" +
+        "n above.");
+            this.listAnswers.UseCompatibleStateImageBehavior = false;
+            // 
+            // txtAddQ
+            // 
+            this.txtAddQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddQ.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAddQ.Location = new System.Drawing.Point(22, 53);
+            this.txtAddQ.Multiline = true;
+            this.txtAddQ.Name = "txtAddQ";
+            this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAddQ.Size = new System.Drawing.Size(358, 61);
+            this.txtAddQ.TabIndex = 27;
+            this.toolTipUser.SetToolTip(this.txtAddQ, "Write your question.");
+            // 
             // txtAddTags
             // 
             this.txtAddTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,6 +333,7 @@
             this.txtAddTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAddTags.Size = new System.Drawing.Size(200, 61);
             this.txtAddTags.TabIndex = 26;
+            this.toolTipUser.SetToolTip(this.txtAddTags, "Give tags to your question to \r\nmake it easier for searching.");
             // 
             // label12
             // 
@@ -236,9 +342,9 @@
             this.label12.ForeColor = System.Drawing.Color.DimGray;
             this.label12.Location = new System.Drawing.Point(19, 32);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 18);
+            this.label12.Size = new System.Drawing.Size(101, 18);
             this.label12.TabIndex = 24;
-            this.label12.Text = "Question:";
+            this.label12.Text = "Write Question:";
             // 
             // label11
             // 
@@ -247,9 +353,9 @@
             this.label11.ForeColor = System.Drawing.Color.DimGray;
             this.label11.Location = new System.Drawing.Point(19, 143);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 18);
+            this.label11.Size = new System.Drawing.Size(81, 18);
             this.label11.TabIndex = 23;
-            this.label11.Text = "Answers:";
+            this.label11.Text = "Answer List:";
             // 
             // label8
             // 
@@ -274,7 +380,7 @@
             this.switchPrivate.Name = "switchPrivate";
             this.switchPrivate.Size = new System.Drawing.Size(50, 20);
             this.switchPrivate.TabIndex = 21;
-            this.switchPrivate.Text = "customSwitch1";
+            this.toolTipUser.SetToolTip(this.switchPrivate, "Enable it to prevent other\r\nusers to use your question.");
             // 
             // difficultyLvl
             // 
@@ -296,6 +402,7 @@
             this.difficultyLvl.Size = new System.Drawing.Size(38, 23);
             this.difficultyLvl.TabIndex = 20;
             this.difficultyLvl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTipUser.SetToolTip(this.difficultyLvl, "Choose a difficulty level\r\n(from easy 1 to very difficult 5).");
             this.difficultyLvl.Value = new decimal(new int[] {
             1,
             0,
@@ -355,6 +462,7 @@
             // tabfind
             // 
             this.tabfind.BackColor = System.Drawing.Color.White;
+            this.tabfind.Controls.Add(this.label16);
             this.tabfind.Controls.Add(this.txtTags);
             this.tabfind.Controls.Add(this.label13);
             this.tabfind.Controls.Add(this.switchAllTags);
@@ -378,11 +486,23 @@
             this.tabfind.TabIndex = 2;
             this.tabfind.Text = "Find Question";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.DimGray;
+            this.label16.Location = new System.Drawing.Point(47, 137);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(48, 18);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "Result:";
+            // 
             // txtTags
             // 
             this.txtTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTags.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTags.Location = new System.Drawing.Point(93, 26);
+            this.txtTags.Location = new System.Drawing.Point(93, 24);
             this.txtTags.Multiline = true;
             this.txtTags.Name = "txtTags";
             this.txtTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -412,15 +532,18 @@
             this.switchAllTags.Name = "switchAllTags";
             this.switchAllTags.Size = new System.Drawing.Size(50, 20);
             this.switchAllTags.TabIndex = 16;
-            this.switchAllTags.Text = "customSwitch1";
+            this.toolTipUser.SetToolTip(this.switchAllTags, "Enable it to find a question\r\nthat has all the given tags.");
             // 
             // dgvFoundQ
             // 
+            this.dgvFoundQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvFoundQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFoundQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoundQ.Location = new System.Drawing.Point(49, 153);
+            this.dgvFoundQ.Location = new System.Drawing.Point(49, 155);
             this.dgvFoundQ.Name = "dgvFoundQ";
             this.dgvFoundQ.Size = new System.Drawing.Size(523, 185);
             this.dgvFoundQ.TabIndex = 15;
+            this.toolTipUser.SetToolTip(this.dgvFoundQ, "List of questions that\r\nmatch with the search.");
             // 
             // label7
             // 
@@ -441,7 +564,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSearch.Image = null;
-            this.btnSearch.Location = new System.Drawing.Point(509, 115);
+            this.btnSearch.Location = new System.Drawing.Point(509, 107);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RoundedCorners = true;
             this.btnSearch.Size = new System.Drawing.Size(65, 26);
@@ -459,14 +582,14 @@
             this.switchFindAll.Name = "switchFindAll";
             this.switchFindAll.Size = new System.Drawing.Size(50, 20);
             this.switchFindAll.TabIndex = 12;
-            this.switchFindAll.Text = "customSwitch1";
+            this.toolTipUser.SetToolTip(this.switchFindAll, "Enable it to find questions\r\nregistered from all users.");
             // 
             // numericMax
             // 
             this.numericMax.BackColor = System.Drawing.Color.WhiteSmoke;
             this.numericMax.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericMax.ForeColor = System.Drawing.Color.DimGray;
-            this.numericMax.Location = new System.Drawing.Point(294, 115);
+            this.numericMax.Location = new System.Drawing.Point(296, 103);
             this.numericMax.Maximum = new decimal(new int[] {
             5,
             0,
@@ -481,6 +604,7 @@
             this.numericMax.Size = new System.Drawing.Size(38, 23);
             this.numericMax.TabIndex = 11;
             this.numericMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTipUser.SetToolTip(this.numericMax, "Difficult Question");
             this.numericMax.Value = new decimal(new int[] {
             1,
             0,
@@ -492,7 +616,7 @@
             this.numericMin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.numericMin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericMin.ForeColor = System.Drawing.Color.DimGray;
-            this.numericMin.Location = new System.Drawing.Point(213, 115);
+            this.numericMin.Location = new System.Drawing.Point(213, 103);
             this.numericMin.Maximum = new decimal(new int[] {
             5,
             0,
@@ -507,6 +631,7 @@
             this.numericMin.Size = new System.Drawing.Size(38, 23);
             this.numericMin.TabIndex = 10;
             this.numericMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTipUser.SetToolTip(this.numericMin, "Easy Question");
             this.numericMin.Value = new decimal(new int[] {
             1,
             0,
@@ -518,7 +643,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(48, 117);
+            this.label6.Location = new System.Drawing.Point(50, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(244, 18);
             this.label6.TabIndex = 9;
@@ -563,9 +688,22 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Tags:";
             // 
+            // finaltest
+            // 
+            this.finaltest.BackColor = System.Drawing.Color.White;
+            this.finaltest.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.finaltest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.finaltest.Location = new System.Drawing.Point(184, 4);
+            this.finaltest.Name = "finaltest";
+            this.finaltest.Size = new System.Drawing.Size(619, 402);
+            this.finaltest.TabIndex = 5;
+            this.finaltest.Tag = "Final Test";
+            this.finaltest.Text = "Final Test";
+            // 
             // tabtest
             // 
             this.tabtest.BackColor = System.Drawing.Color.White;
+            this.tabtest.Controls.Add(this.dgvMyTest);
             this.tabtest.Controls.Add(this.btnSave);
             this.tabtest.Controls.Add(this.btnPrint);
             this.tabtest.Controls.Add(this.label4);
@@ -583,6 +721,17 @@
             this.tabtest.TabIndex = 3;
             this.tabtest.Text = "My Test";
             // 
+            // dgvMyTest
+            // 
+            this.dgvMyTest.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvMyTest.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvMyTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMyTest.Location = new System.Drawing.Point(39, 122);
+            this.dgvMyTest.Name = "dgvMyTest";
+            this.dgvMyTest.Size = new System.Drawing.Size(538, 220);
+            this.dgvMyTest.TabIndex = 7;
+            this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
+            // 
             // btnSave
             // 
             this.btnSave.ButtonStyle = BonfireButton.Style.Dark;
@@ -596,6 +745,7 @@
             this.btnSave.Size = new System.Drawing.Size(65, 26);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
+            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
             // 
             // btnPrint
             // 
@@ -633,6 +783,7 @@
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(128, 23);
             this.datePicker.TabIndex = 3;
+            this.toolTipUser.SetToolTip(this.datePicker, "Date that the Test will take place.");
             // 
             // txtTestTitle
             // 
@@ -647,6 +798,7 @@
             this.txtTestTitle.Size = new System.Drawing.Size(318, 29);
             this.txtTestTitle.TabIndex = 2;
             this.txtTestTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.toolTipUser.SetToolTip(this.txtTestTitle, "Write the title of the final Test.");
             this.txtTestTitle.UseSystemPasswordChar = false;
             // 
             // label3
@@ -670,6 +822,15 @@
             this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Your Test";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "edit-property-16.png");
+            this.imageList1.Images.SetKeyName(1, "home-16.png");
+            this.imageList1.Images.SetKeyName(2, "plus-5-16.png");
+            this.imageList1.Images.SetKeyName(3, "search-3-16.png");
             // 
             // btnMin
             // 
@@ -704,122 +865,11 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtAddQ
+            // toolTipUser
             // 
-            this.txtAddQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddQ.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAddQ.Location = new System.Drawing.Point(22, 53);
-            this.txtAddQ.Multiline = true;
-            this.txtAddQ.Name = "txtAddQ";
-            this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAddQ.Size = new System.Drawing.Size(358, 61);
-            this.txtAddQ.TabIndex = 27;
-            // 
-            // listAnswers
-            // 
-            this.listAnswers.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listAnswers.ForeColor = System.Drawing.Color.DimGray;
-            this.listAnswers.Location = new System.Drawing.Point(22, 166);
-            this.listAnswers.Name = "listAnswers";
-            this.listAnswers.Size = new System.Drawing.Size(358, 119);
-            this.listAnswers.TabIndex = 28;
-            this.listAnswers.UseCompatibleStateImageBehavior = false;
-            // 
-            // txtAnswer
-            // 
-            this.txtAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAnswer.Location = new System.Drawing.Point(398, 184);
-            this.txtAnswer.Multiline = true;
-            this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.Size = new System.Drawing.Size(200, 40);
-            this.txtAnswer.TabIndex = 29;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(395, 166);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 18);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Write Answer:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(398, 230);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 18);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Correct:";
-            // 
-            // btnAddAnswer
-            // 
-            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddAnswer.Image = null;
-            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
-            this.btnAddAnswer.Name = "btnAddAnswer";
-            this.btnAddAnswer.RoundedCorners = true;
-            this.btnAddAnswer.Size = new System.Drawing.Size(93, 26);
-            this.btnAddAnswer.TabIndex = 32;
-            this.btnAddAnswer.Text = "Add Answer";
-            // 
-            // switchCorrectAnswer
-            // 
-            this.switchCorrectAnswer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.switchCorrectAnswer.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.switchCorrectAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
-            this.switchCorrectAnswer.isOn = true;
-            this.switchCorrectAnswer.Location = new System.Drawing.Point(553, 230);
-            this.switchCorrectAnswer.MinimumSize = new System.Drawing.Size(20, 20);
-            this.switchCorrectAnswer.Name = "switchCorrectAnswer";
-            this.switchCorrectAnswer.Size = new System.Drawing.Size(45, 20);
-            this.switchCorrectAnswer.TabIndex = 33;
-            this.switchCorrectAnswer.Text = "customSwitch1";
-            // 
-            // ntfAdd
-            // 
-            this.ntfAdd.BorderCurve = 15;
-            this.ntfAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ntfAdd.ForeColor = System.Drawing.Color.DimGray;
-            this.ntfAdd.Image = null;
-            this.ntfAdd.Location = new System.Drawing.Point(273, 324);
-            this.ntfAdd.MinimumSize = new System.Drawing.Size(100, 40);
-            this.ntfAdd.Name = "ntfAdd";
-            this.ntfAdd.NotificationType = NotificationBox.Type.Notice;
-            this.ntfAdd.RoundCorners = true;
-            this.ntfAdd.ShowCloseButton = true;
-            this.ntfAdd.Size = new System.Drawing.Size(325, 40);
-            this.ntfAdd.TabIndex = 34;
-            this.ntfAdd.Text = "Add up to 5 answers";
-            // 
-            // finaltest
-            // 
-            this.finaltest.BackColor = System.Drawing.Color.White;
-            this.finaltest.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.finaltest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.finaltest.Location = new System.Drawing.Point(184, 4);
-            this.finaltest.Name = "finaltest";
-            this.finaltest.Size = new System.Drawing.Size(619, 402);
-            this.finaltest.TabIndex = 5;
-            this.finaltest.Tag = "Final Test";
-            this.finaltest.Text = "Final Test";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "edit-property-16.png");
-            this.imageList1.Images.SetKeyName(1, "home-16.png");
-            this.imageList1.Images.SetKeyName(2, "plus-5-16.png");
-            this.imageList1.Images.SetKeyName(3, "search-3-16.png");
+            this.toolTipUser.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolTipUser.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.toolTipUser.IsBalloon = true;
             // 
             // frmUser
             // 
@@ -850,6 +900,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).EndInit();
             this.tabtest.ResumeLayout(false);
             this.tabtest.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -907,5 +958,8 @@
         private System.Windows.Forms.ListView listAnswers;
         private System.Windows.Forms.TabPage finaltest;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolTip toolTipUser;
+        private System.Windows.Forms.DataGridView dgvMyTest;
+        private System.Windows.Forms.Label label16;
     }
 }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.frmSkin = new CustomForm();
             this.tabMain = new XylosTabControl();
             this.tabdashboard = new System.Windows.Forms.TabPage();
@@ -70,7 +71,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Label2 = new BonfireLabel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
             this.frmSkin.SuspendLayout();
@@ -81,6 +81,15 @@
             this.tababout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "about-16.png");
+            this.imageList1.Images.SetKeyName(1, "add-user-16.png");
+            this.imageList1.Images.SetKeyName(2, "key-16.png");
+            this.imageList1.Images.SetKeyName(3, "services-16.png");
             // 
             // frmSkin
             // 
@@ -253,6 +262,7 @@
             this.btnLogin.Size = new System.Drawing.Size(65, 26);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log In";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // tabregister
             // 
@@ -656,15 +666,6 @@
             this.Label2.TabIndex = 1;
             this.Label2.Text = resources.GetString("Label2.Text");
             this.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "about-16.png");
-            this.imageList1.Images.SetKeyName(1, "add-user-16.png");
-            this.imageList1.Images.SetKeyName(2, "key-16.png");
-            this.imageList1.Images.SetKeyName(3, "services-16.png");
             // 
             // btnMin
             // 

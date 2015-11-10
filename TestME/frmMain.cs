@@ -35,5 +35,10 @@ namespace TestME
         {
             System.Diagnostics.Process.Start(linkLabel1.Text);
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            new frmUser().Show();
+        }
     }
 }
