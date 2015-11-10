@@ -239,6 +239,7 @@
             this.ntfAdd.Size = new System.Drawing.Size(325, 40);
             this.ntfAdd.TabIndex = 34;
             this.ntfAdd.Text = "Add up to 5 answers";
+            this.ntfAdd.Visible = false;
             // 
             // switchCorrectAnswer
             // 

@@ -1,0 +1,307 @@
+﻿namespace TestME
+{
+    partial class frmEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdit));
+            this.customForm1 = new CustomForm();
+            this.btnAddAnswer = new BonfireButton();
+            this.listAnswers = new System.Windows.Forms.ListView();
+            this.txtAddQ = new System.Windows.Forms.TextBox();
+            this.txtAddTags = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.switchPrivate = new CustomSwitch();
+            this.difficultyLvl = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnMin = new CustomButton();
+            this.btnClose = new CustomButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.customForm1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // customForm1
+            // 
+            this.customForm1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.customForm1.BorderSize = 10;
+            this.customForm1.Controls.Add(this.label2);
+            this.customForm1.Controls.Add(this.btnAddAnswer);
+            this.customForm1.Controls.Add(this.listAnswers);
+            this.customForm1.Controls.Add(this.txtAddQ);
+            this.customForm1.Controls.Add(this.txtAddTags);
+            this.customForm1.Controls.Add(this.label12);
+            this.customForm1.Controls.Add(this.label11);
+            this.customForm1.Controls.Add(this.label8);
+            this.customForm1.Controls.Add(this.switchPrivate);
+            this.customForm1.Controls.Add(this.difficultyLvl);
+            this.customForm1.Controls.Add(this.label9);
+            this.customForm1.Controls.Add(this.label10);
+            this.customForm1.Controls.Add(this.btnMin);
+            this.customForm1.Controls.Add(this.btnClose);
+            this.customForm1.Darker = false;
+            this.customForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customForm1.InsideBorderSize = 3;
+            this.customForm1.Location = new System.Drawing.Point(0, 0);
+            this.customForm1.MinimumSize = new System.Drawing.Size(305, 150);
+            this.customForm1.Name = "customForm1";
+            this.customForm1.Padding = new System.Windows.Forms.Padding(13, 38, 13, 13);
+            this.customForm1.Sizable = false;
+            this.customForm1.Size = new System.Drawing.Size(664, 372);
+            this.customForm1.TabIndex = 0;
+            this.customForm1.Text = "TestME";
+            this.customForm1.TitleAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customForm1.TitleColor = System.Drawing.Color.WhiteSmoke;
+            this.customForm1.TitleFont = new System.Drawing.Font("Harrington", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customForm1.TitleYOffset = 0;
+            this.customForm1.TopSize = 35;
+            this.customForm1.TopSpace = 0;
+            // 
+            // btnAddAnswer
+            // 
+            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddAnswer.Image = null;
+            this.btnAddAnswer.Location = new System.Drawing.Point(467, 289);
+            this.btnAddAnswer.Name = "btnAddAnswer";
+            this.btnAddAnswer.RoundedCorners = true;
+            this.btnAddAnswer.Size = new System.Drawing.Size(100, 26);
+            this.btnAddAnswer.TabIndex = 45;
+            this.btnAddAnswer.Text = "Save Changes";
+            // 
+            // listAnswers
+            // 
+            this.listAnswers.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listAnswers.ForeColor = System.Drawing.Color.DimGray;
+            this.listAnswers.Location = new System.Drawing.Point(46, 196);
+            this.listAnswers.Name = "listAnswers";
+            this.listAnswers.Size = new System.Drawing.Size(358, 119);
+            this.listAnswers.TabIndex = 44;
+            this.listAnswers.UseCompatibleStateImageBehavior = false;
+            // 
+            // txtAddQ
+            // 
+            this.txtAddQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddQ.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAddQ.Location = new System.Drawing.Point(46, 101);
+            this.txtAddQ.Multiline = true;
+            this.txtAddQ.Name = "txtAddQ";
+            this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAddQ.Size = new System.Drawing.Size(358, 61);
+            this.txtAddQ.TabIndex = 43;
+            // 
+            // txtAddTags
+            // 
+            this.txtAddTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddTags.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAddTags.Location = new System.Drawing.Point(422, 101);
+            this.txtAddTags.Multiline = true;
+            this.txtAddTags.Name = "txtAddTags";
+            this.txtAddTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAddTags.Size = new System.Drawing.Size(200, 61);
+            this.txtAddTags.TabIndex = 42;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(46, 84);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 18);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Question:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(46, 177);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 18);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Answers:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(464, 238);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 18);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Private:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // switchPrivate
+            // 
+            this.switchPrivate.BackColor = System.Drawing.Color.White;
+            this.switchPrivate.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.switchPrivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
+            this.switchPrivate.isOn = false;
+            this.switchPrivate.Location = new System.Drawing.Point(518, 234);
+            this.switchPrivate.MinimumSize = new System.Drawing.Size(20, 20);
+            this.switchPrivate.Name = "switchPrivate";
+            this.switchPrivate.Size = new System.Drawing.Size(50, 20);
+            this.switchPrivate.TabIndex = 38;
+            // 
+            // difficultyLvl
+            // 
+            this.difficultyLvl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.difficultyLvl.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.difficultyLvl.ForeColor = System.Drawing.Color.DimGray;
+            this.difficultyLvl.Location = new System.Drawing.Point(568, 193);
+            this.difficultyLvl.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.difficultyLvl.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.difficultyLvl.Name = "difficultyLvl";
+            this.difficultyLvl.Size = new System.Drawing.Size(38, 23);
+            this.difficultyLvl.TabIndex = 37;
+            this.difficultyLvl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.difficultyLvl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(464, 196);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 18);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Difficulty Level:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(424, 84);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 18);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Tags:";
+            // 
+            // btnMin
+            // 
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
+            this.btnMin.DrawSeparator = false;
+            this.btnMin.Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.btnMin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMin.Location = new System.Drawing.Point(587, 4);
+            this.btnMin.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.OverlayCol = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnMin.Size = new System.Drawing.Size(30, 26);
+            this.btnMin.TabIndex = 34;
+            this.btnMin.Text = "0";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
+            this.btnClose.DrawSeparator = false;
+            this.btnClose.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClose.Location = new System.Drawing.Point(623, 4);
+            this.btnClose.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.OverlayCol = System.Drawing.Color.Maroon;
+            this.btnClose.Size = new System.Drawing.Size(30, 26);
+            this.btnClose.TabIndex = 33;
+            this.btnClose.Text = "X";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(289, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 22);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Edit Panel";
+            // 
+            // frmEdit
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(664, 372);
+            this.Controls.Add(this.customForm1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(305, 150);
+            this.Name = "frmEdit";
+            this.Text = "frmEdit";
+            this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.customForm1.ResumeLayout(false);
+            this.customForm1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private CustomForm customForm1;
+        private BonfireButton btnAddAnswer;
+        private System.Windows.Forms.ListView listAnswers;
+        private System.Windows.Forms.TextBox txtAddQ;
+        private System.Windows.Forms.TextBox txtAddTags;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
+        private CustomSwitch switchPrivate;
+        private System.Windows.Forms.NumericUpDown difficultyLvl;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private CustomButton btnMin;
+        private CustomButton btnClose;
+        private System.Windows.Forms.Label label2;
+    }
+}

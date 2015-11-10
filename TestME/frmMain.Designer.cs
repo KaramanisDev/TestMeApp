@@ -37,7 +37,6 @@
             this.tablogin = new System.Windows.Forms.TabPage();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.bonfireLabel1 = new BonfireLabel();
             this.ntfBox1 = new NotificationBox();
             this.txtPassword = new XylosTextBox();
             this.txtUser = new XylosTextBox();
@@ -73,6 +72,7 @@
             this.Label2 = new BonfireLabel();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.frmSkin.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tablogin.SuspendLayout();
@@ -153,9 +153,9 @@
             // tablogin
             // 
             this.tablogin.BackColor = System.Drawing.Color.White;
+            this.tablogin.Controls.Add(this.label3);
             this.tablogin.Controls.Add(this.lblUser);
             this.tablogin.Controls.Add(this.lblPassword);
-            this.tablogin.Controls.Add(this.bonfireLabel1);
             this.tablogin.Controls.Add(this.ntfBox1);
             this.tablogin.Controls.Add(this.txtPassword);
             this.tablogin.Controls.Add(this.txtUser);
@@ -191,17 +191,6 @@
             this.lblPassword.Size = new System.Drawing.Size(66, 18);
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "Password:";
-            // 
-            // bonfireLabel1
-            // 
-            this.bonfireLabel1.AutoSize = true;
-            this.bonfireLabel1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.bonfireLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
-            this.bonfireLabel1.Location = new System.Drawing.Point(174, 15);
-            this.bonfireLabel1.Name = "bonfireLabel1";
-            this.bonfireLabel1.Size = new System.Drawing.Size(90, 22);
-            this.bonfireLabel1.TabIndex = 6;
-            this.bonfireLabel1.Text = "Welcome !";
             // 
             // ntfBox1
             // 
@@ -700,6 +689,17 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(168, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 22);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Welcome !";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,10 +770,10 @@
         private BonfireLabel lbltitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ImageList imageList1;
-        private BonfireLabel bonfireLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label label3;
     }
 }
 

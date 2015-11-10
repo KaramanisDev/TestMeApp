@@ -66,6 +66,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\XylosTheme.cs" />
+    <Compile Include="frmAnswers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnswers.Designer.cs">
+      <DependentUpon>frmAnswers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit.Designer.cs">
+      <DependentUpon>frmEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAnswers.resx">
+      <DependentUpon>frmAnswers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit.resx">
+      <DependentUpon>frmEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
