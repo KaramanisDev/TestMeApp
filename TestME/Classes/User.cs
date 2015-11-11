@@ -12,7 +12,7 @@ namespace TestME
         string _pass;
         string _email;
 
-        User(int i,string u,string p,string e)
+        public User(int i,string u,string p,string e)
         {
             this._id = i;
             this._user = u;

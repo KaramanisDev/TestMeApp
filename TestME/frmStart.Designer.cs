@@ -41,7 +41,9 @@
             this.ntfBox1 = new NotificationBox();
             this.txtPassword = new XylosTextBox();
             this.txtUser = new XylosTextBox();
+            this.btnLogin = new BonfireButton();
             this.tabregister = new System.Windows.Forms.TabPage();
+            this.btnRegister = new BonfireButton();
             this.ntfBox2 = new NotificationBox();
             this.txtrepeatpass = new XylosTextBox();
             this.txtpass = new XylosTextBox();
@@ -52,6 +54,7 @@
             this.lblemail = new BonfireLabel();
             this.lblusername = new BonfireLabel();
             this.tabsettings = new System.Windows.Forms.TabPage();
+            this.checkBoxRemember = new XylosCheckBox();
             this.ntfBox3 = new NotificationBox();
             this.txtDatabase = new XylosTextBox();
             this.txtpasswd = new XylosTextBox();
@@ -62,18 +65,15 @@
             this.lbluname = new BonfireLabel();
             this.lblhost = new BonfireLabel();
             this.lbltitle = new BonfireLabel();
+            this.btnconnect = new BonfireButton();
             this.tabinfo = new System.Windows.Forms.TabPage();
             this.tababout = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Label2 = new BonfireLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.checkBoxRemember = new XylosCheckBox();
-            this.btnLogin = new BonfireButton();
-            this.btnRegister = new BonfireButton();
-            this.btnconnect = new BonfireButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.frmSkin.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tablogin.SuspendLayout();
@@ -250,6 +250,22 @@
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUser.UseSystemPasswordChar = false;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Teal;
+            this.btnLogin.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogin.Image = global::TestME.Properties.Resources.arrow_28_24;
+            this.btnLogin.Location = new System.Drawing.Point(247, 174);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.RoundedCorners = true;
+            this.btnLogin.Size = new System.Drawing.Size(79, 35);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "Log In";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // tabregister
             // 
             this.tabregister.BackColor = System.Drawing.Color.White;
@@ -272,6 +288,20 @@
             this.tabregister.Size = new System.Drawing.Size(409, 290);
             this.tabregister.TabIndex = 1;
             this.tabregister.Text = "Register";
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Image = global::TestME.Properties.Resources.edit_5_24;
+            this.btnRegister.Location = new System.Drawing.Point(263, 190);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.RoundedCorners = true;
+            this.btnRegister.Size = new System.Drawing.Size(97, 35);
+            this.btnRegister.TabIndex = 9;
+            this.btnRegister.Text = "Register";
             // 
             // ntfBox2
             // 
@@ -418,18 +448,31 @@
             this.tabsettings.TabIndex = 5;
             this.tabsettings.Text = "Settings";
             // 
+            // checkBoxRemember
+            // 
+            this.checkBoxRemember.Checked = false;
+            this.checkBoxRemember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxRemember.EnabledCalc = true;
+            this.checkBoxRemember.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxRemember.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBoxRemember.Location = new System.Drawing.Point(149, 197);
+            this.checkBoxRemember.Name = "checkBoxRemember";
+            this.checkBoxRemember.Size = new System.Drawing.Size(113, 18);
+            this.checkBoxRemember.TabIndex = 12;
+            this.checkBoxRemember.Text = "Remember Me";
+            // 
             // ntfBox3
             // 
             this.ntfBox3.BorderCurve = 15;
             this.ntfBox3.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ntfBox3.Image = null;
-            this.ntfBox3.Location = new System.Drawing.Point(57, 225);
+            this.ntfBox3.Location = new System.Drawing.Point(36, 230);
             this.ntfBox3.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfBox3.Name = "ntfBox3";
             this.ntfBox3.NotificationType = NotificationBox.Type.Error;
             this.ntfBox3.RoundCorners = true;
             this.ntfBox3.ShowCloseButton = true;
-            this.ntfBox3.Size = new System.Drawing.Size(183, 40);
+            this.ntfBox3.Size = new System.Drawing.Size(226, 40);
             this.ntfBox3.TabIndex = 10;
             this.ntfBox3.Text = "Connection Successful";
             this.ntfBox3.Visible = false;
@@ -549,6 +592,22 @@
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Database Connection";
             // 
+            // btnconnect
+            // 
+            this.btnconnect.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnconnect.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnconnect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnconnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconnect.ForeColor = System.Drawing.Color.White;
+            this.btnconnect.Image = global::TestME.Properties.Resources.data_configuration_24;
+            this.btnconnect.Location = new System.Drawing.Point(278, 230);
+            this.btnconnect.Name = "btnconnect";
+            this.btnconnect.RoundedCorners = true;
+            this.btnconnect.Size = new System.Drawing.Size(90, 35);
+            this.btnconnect.TabIndex = 5;
+            this.btnconnect.Text = "Connect";
+            this.btnconnect.Click += new System.EventHandler(this.btnconnect_Click);
+            // 
             // tabinfo
             // 
             this.tabinfo.BackColor = System.Drawing.Color.White;
@@ -616,6 +675,16 @@
             this.Label2.Text = resources.GetString("Label2.Text");
             this.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(100, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnMin
             // 
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -649,74 +718,6 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // checkBoxRemember
-            // 
-            this.checkBoxRemember.Checked = false;
-            this.checkBoxRemember.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxRemember.EnabledCalc = true;
-            this.checkBoxRemember.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxRemember.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxRemember.Location = new System.Drawing.Point(149, 197);
-            this.checkBoxRemember.Name = "checkBoxRemember";
-            this.checkBoxRemember.Size = new System.Drawing.Size(113, 18);
-            this.checkBoxRemember.TabIndex = 12;
-            this.checkBoxRemember.Text = "Remember Me";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.Teal;
-            this.btnLogin.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.Image = global::TestME.Properties.Resources.arrow_28_24;
-            this.btnLogin.Location = new System.Drawing.Point(247, 174);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.RoundedCorners = true;
-            this.btnLogin.Size = new System.Drawing.Size(79, 35);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Log In";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Image = global::TestME.Properties.Resources.edit_5_24;
-            this.btnRegister.Location = new System.Drawing.Point(263, 190);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.RoundedCorners = true;
-            this.btnRegister.Size = new System.Drawing.Size(97, 35);
-            this.btnRegister.TabIndex = 9;
-            this.btnRegister.Text = "Register";
-            // 
-            // btnconnect
-            // 
-            this.btnconnect.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnconnect.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnconnect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnconnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnconnect.ForeColor = System.Drawing.Color.White;
-            this.btnconnect.Image = global::TestME.Properties.Resources.data_configuration_24;
-            this.btnconnect.Location = new System.Drawing.Point(278, 230);
-            this.btnconnect.Name = "btnconnect";
-            this.btnconnect.RoundedCorners = true;
-            this.btnconnect.Size = new System.Drawing.Size(90, 35);
-            this.btnconnect.TabIndex = 5;
-            this.btnconnect.Text = "Connect";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(100, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,7 +729,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(305, 150);
             this.Name = "frmStart";
-            this.Text = "TestMe";
+            this.Text = "TestME";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.frmSkin.ResumeLayout(false);

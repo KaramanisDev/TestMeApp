@@ -38,8 +38,29 @@ namespace TestME
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //Test Logged User
+            Globals.logUser = new User(1, "demo", "demo", "demo@email.com");
+
+
+
             this.Hide();
             new frmMain().Show();
+        }
+
+        private void btnconnect_Click(object sender, EventArgs e)
+        {
+            Utilities.runInThread(() => {
+                Globals.db = new DB(txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
+                if (Globals.db.Connected())
+                {
+                    Utilities.notifyThem(ntfBox3, "Successfully Connected !", NotificationBox.Type.Success);
+
+                }
+                else
+                {
+                    Utilities.notifyThem(ntfBox3, "Could not Connect to the Database.", NotificationBox.Type.Error);
+                }
+            }).Start();
         }
     }
 }

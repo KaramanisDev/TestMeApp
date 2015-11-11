@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 #region NotificationBox
 
-class NotificationBox : Control
+public class NotificationBox : Control
 {
 
     #region Variables
@@ -127,7 +127,8 @@ class NotificationBox : Control
         {
             if (IsOverClose)
             {
-                Dispose();
+                IsOverClose = false;
+                Hide();
             }
         }
     }

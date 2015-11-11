@@ -58,6 +58,7 @@
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Question.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Utilities.cs" />
     <Compile Include="CustomControls\BonfireTheme.cs" />
     <Compile Include="CustomControls\CustomTheme.cs">
       <SubType>Component</SubType>
@@ -151,13 +152,25 @@
     <None Include="Resources\data-configuration-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow-4-24.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\arrow-28-24.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit-5-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

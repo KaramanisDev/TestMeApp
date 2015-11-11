@@ -18,14 +18,21 @@ namespace TestME
         private int affected_rows;
         private string squery;
         private List<string> parameters;
-        private bool bDebug;
+        private bool bDebug = false;
+
+        public DB(){}
 
         public DB(string host, string user, string pass, string dbname)
         {
-            connectiondetails = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};", host, user, pass, dbname).ToString();
+            setConnection(host, user, pass, dbname);
             Connect();
             Table = Table = new DataTable();
             parameters = new List<string>();
+        }
+
+        public void setConnection(string host, string user, string pass, string dbname)
+        {
+            connectiondetails = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};", host, user, pass, dbname).ToString();
         }
 
         public bool Connected()
