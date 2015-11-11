@@ -62,6 +62,7 @@
     <Compile Include="Classes\Question.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utilities.cs" />
+    <Compile Include="Classes\Validation.cs" />
     <Compile Include="CustomControls\BonfireTheme.cs" />
     <Compile Include="CustomControls\CustomTheme.cs">
       <SubType>Component</SubType>

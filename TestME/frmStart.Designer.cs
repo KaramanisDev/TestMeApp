@@ -302,6 +302,7 @@
             this.btnRegister.Size = new System.Drawing.Size(97, 35);
             this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Register";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // ntfBox2
             // 

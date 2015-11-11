@@ -18,7 +18,7 @@ namespace TestME
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tabMain.SelectTab(1);
+           tabMain.SelectTab(1);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -61,6 +61,44 @@ namespace TestME
                     Utilities.notifyThem(ntfBox3, "Could not Connect to the Database.", NotificationBox.Type.Error);
                 }
             }).Start();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Globals.db.Debug = true;
+            if (Globals.db.Connected())
+            {
+                if (txtusername.Text == "" || txtpass.Text == "" || txtrepeatpass.Text == "" || txtemail.Text == "")
+                {
+                    Utilities.notifyThem(ntfBox2, "All fields are necessary.", NotificationBox.Type.Warning);
+                }else if (txtpass.Text != txtrepeatpass.Text)
+                {
+                    Utilities.notifyThem(ntfBox2, "Passwords don't match.", NotificationBox.Type.Warning);
+                }else if (!Validation.IsValidEmail(txtemail.Text))
+                {
+                    Utilities.notifyThem(ntfBox2, "Email in not valid.", NotificationBox.Type.Warning);
+                }else
+                {
+                    Utilities.runInThread(() =>
+                    {
+                        
+                        Globals.db.bind(new string[] { "usern", txtusername.Text, "pass1", txtpass.Text , "email1", txtemail.Text });
+                        
+                        int qreg = Globals.db.nQuery("INSERT INTO users (user, pass, email) VALUES (@usern, @pass1, @email1)");
+                        
+                        if (qreg>0)
+                        {
+                            Utilities.notifyThem(ntfBox2, "Successfully Register.", NotificationBox.Type.Success);
+                        }
+
+                    }).Start();
+                }
+
+            }
+            else
+            {
+                Utilities.notifyThem(ntfBox2, "Not connected to DB!", NotificationBox.Type.Warning);
+            }
         }
     }
 }
