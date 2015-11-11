@@ -29,6 +29,7 @@ namespace TestME
         private void frmUser_Load(object sender, EventArgs e)
         {
             tabUser.SelectTab(1);
+            autocompleteMenu1.Items = Globals.colTags.ToArray();
         }
 
     }
