@@ -8,7 +8,7 @@ namespace TestME
     public static class Globals
     {
         private static DB _db;
-        private static List<string> _tags;
+        private static List<string> _tags = new List<string>();
         private static User _user;
 
         public static DB db

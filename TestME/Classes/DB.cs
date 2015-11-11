@@ -46,7 +46,7 @@ namespace TestME
             set { bDebug = value; }
         }
 
-        private void Connect()
+        public void Connect()
         {
             try
             {
