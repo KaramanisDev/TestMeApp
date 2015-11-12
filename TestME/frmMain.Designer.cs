@@ -87,6 +87,7 @@
             this.btnClose = new CustomButton();
             this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
+            this.lblRegQ = new System.Windows.Forms.Label();
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
@@ -163,6 +164,7 @@
             // tabquestions
             // 
             this.tabquestions.BackColor = System.Drawing.Color.White;
+            this.tabquestions.Controls.Add(this.lblRegQ);
             this.tabquestions.Controls.Add(this.lblUserMessage);
             this.tabquestions.Controls.Add(this.dgvMyQ);
             this.tabquestions.Controls.Add(this.label2);
@@ -934,6 +936,15 @@
             this.autocompleteMenu1.MinFragmentLength = 1;
             this.autocompleteMenu1.TargetControlWrapper = null;
             // 
+            // lblRegQ
+            // 
+            this.lblRegQ.AutoSize = true;
+            this.lblRegQ.Location = new System.Drawing.Point(214, 159);
+            this.lblRegQ.Name = "lblRegQ";
+            this.lblRegQ.Size = new System.Drawing.Size(210, 15);
+            this.lblRegQ.TabIndex = 4;
+            this.lblRegQ.Text = "You don\'t have any registed Questions";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -945,7 +956,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(305, 150);
             this.Name = "frmMain";
-            this.Text = "TestMe";
+            this.Text = "TestME";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.frmskin.ResumeLayout(false);
@@ -1027,5 +1038,6 @@
         private System.Windows.Forms.Label lblUserMessage;
         private NotificationBox ntfTest;
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
+        private System.Windows.Forms.Label lblRegQ;
     }
 }

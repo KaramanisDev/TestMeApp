@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace TestME
@@ -26,10 +27,22 @@ namespace TestME
             Environment.Exit(0);
         }
 
+
         private void frmUser_Load(object sender, EventArgs e)
         {
+            lblUserMessage.Text += Globals.logUser.user + " !";
             tabUser.SelectTab(1);
             autocompleteMenu1.Items = Globals.colTags.ToArray();
+
+            Utilities.runInThread(() =>
+            {
+                DataTable dt = Utilities.AsyncDB().query("SELECT * FROM questions WHERE uid=1");
+                dgvMyQ.Invoke((MethodInvoker)(() =>
+                {
+                    dgvMyQ.DataSource = dt;
+                }));
+                
+            }).Start(); ;
         }
 
     }

@@ -83,6 +83,12 @@ namespace TestME
             return details;
         }
 
+        public static DB AsyncDB(bool DebugMe = false)
+        {
+            DB tempDB = new DB(Globals.ConnectionStr());
+            tempDB.Debug = DebugMe;
+            return tempDB;
+        }
 
     } //end of class Utilities
 }

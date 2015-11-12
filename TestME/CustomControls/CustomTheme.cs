@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Globalization;
-using Utilitys;
+using CustomThemeUtils;
 
 #region "Base Classes"
 public class ThemedControl : Control
@@ -439,7 +439,7 @@ public class CustomSwitch : ThemedControl {
 #endregion
 
 #region "Theme Utility Stuff"
-namespace Utilitys
+namespace CustomThemeUtils
 {
     public class Palette
     {

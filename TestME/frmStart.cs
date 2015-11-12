@@ -44,9 +44,27 @@ namespace TestME
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //Test Logged User
-            Globals.logUser = new User(1, "demo", "demo", "demo@email.com");
+            Globals.logUser = new User(1, "demo", "fe01ce2a7fbac8fafaed7c982a04e229", "demo@email.com");
 
+            Utilities.runInThread(() => {
+                
+                if (Globals.Connected)
+                {
+                    //Load Tags
+                    Globals.colTags = Utilities.AsyncDB().column("SELECT DISTINCT nametag FROM tags");
 
+                    //Add also some extra Tags in case db is empty
+                    Globals.colTags.Add("TestTag");
+                    Globals.colTags.Add("DemoTag");
+                    Globals.colTags.Add("UserTag");
+                    Globals.colTags.Add("SomeTag");
+                    Globals.colTags.Add("SomeTag");
+                }
+                else
+                {
+                    Utilities.notifyThem(ntfBox1, "Not connected to DB!", NotificationBox.Type.Warning);
+                }
+            }).Start();
 
             this.Hide();
             new frmMain().Show();
@@ -55,8 +73,12 @@ namespace TestME
         private void btnconnect_Click(object sender, EventArgs e)
         {
             Utilities.runInThread(() => {
-                Globals.db = new DB(txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
-                if (Globals.db.Connected())
+                Globals.ConnectionStr(txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
+                if (Utilities.AsyncDB().Connected())
+                {
+                    Globals.Connected = true;                   
+                }
+                if (Globals.Connected)
                 {
                     if (checkBoxRemember.Checked)
                     {
@@ -74,8 +96,7 @@ namespace TestME
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Globals.db.Debug = true;
-            if (Globals.db.Connected())
+            if (Globals.Connected)
             {
                 if (txtusername.Text == "" || txtpass.Text == "" || txtrepeatpass.Text == "" || txtemail.Text == "")
                 {
@@ -90,10 +111,10 @@ namespace TestME
                 {
                     Utilities.runInThread(() =>
                     {
+                        DB tDB = Utilities.AsyncDB();
+                        tDB.bind(new string[] { "usern", txtusername.Text, "pass1", txtpass.Text , "email1", txtemail.Text });
                         
-                        Globals.db.bind(new string[] { "usern", txtusername.Text, "pass1", txtpass.Text , "email1", txtemail.Text });
-                        
-                        int qreg = Globals.db.nQuery("INSERT INTO users (user, pass, email) VALUES (@usern, @pass1, @email1)");
+                        int qreg = tDB.nQuery("INSERT INTO users (user, pass, email) VALUES (@usern, @pass1, @email1)");
                         
                         if (qreg>0)
                         {

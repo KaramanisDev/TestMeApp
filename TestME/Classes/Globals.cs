@@ -8,17 +8,21 @@ namespace TestME
 {
     public static class Globals
     {
-        private static DB _db = new DB();
+        private static string _connectionstr;
         private static List<string> _tags = new List<string>();
         private static User _user;
         private static bool _Connected = false;
         private static EventWaitHandle _waitHandle = new AutoResetEvent(false);
         private static string _filesPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-        public static DB db
+        public static string ConnectionStr()
         {
-            get { return _db; }
-            set { _db = value; }
+            return _connectionstr;
+        }
+
+        public static void ConnectionStr(string host, string user, string pass, string dbname)
+        {
+            _connectionstr = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};", host, user, pass, dbname).ToString();
         }
 
         public static List<string> colTags
@@ -45,5 +49,9 @@ namespace TestME
             set { _filesPath = value; }
         }
 
+        public static EventWaitHandle waitHandle
+        {
+            get { return _waitHandle; }
+        }
     }
 }

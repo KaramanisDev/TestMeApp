@@ -22,9 +22,9 @@ namespace TestME
 
         public DB(){}
 
-        public DB(string host, string user, string pass, string dbname)
+        public DB(string connectionString)
         {
-            setConnection(host, user, pass, dbname);
+            this.connectiondetails = connectionString;
             Connect();
             Table = Table = new DataTable();
             parameters = new List<string>();
@@ -109,6 +109,9 @@ namespace TestME
 
                 // Clear thee parameters, 
                 this.parameters.Clear();
+
+                //Close Connection After query
+                this.CloseConn();
             }
         }
 
@@ -228,13 +231,13 @@ namespace TestME
             return row;
         }
 
-        public List<string> column(string query, string[] bindings = null)
+        public List<string> column(string query, string[] bindings = null,int colN = 0)
         {
             Init(query, bindings);
 
             List<string> column = new List<string>();
 
-            for (int i = 0; i++ < Table.Rows.Count; column.Add(Table.Rows[i - 1][0].ToString())) ;
+            for (int i = 0; i++ < Table.Rows.Count; column.Add(Table.Rows[i - 1][colN].ToString())) ;
 
             return column;
         }
