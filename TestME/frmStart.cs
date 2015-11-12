@@ -76,7 +76,7 @@ namespace TestME
                     Utilities.notifyThem(ntfBox2, "Passwords don't match.", NotificationBox.Type.Warning);
                 }else if (!Validation.IsValidEmail(txtemail.Text))
                 {
-                    Utilities.notifyThem(ntfBox2, "Email in not valid.", NotificationBox.Type.Warning);
+                    Utilities.notifyThem(ntfBox2, "Email is not valid.", NotificationBox.Type.Warning);
                 }else
                 {
                     Utilities.runInThread(() =>
@@ -88,7 +88,7 @@ namespace TestME
                         
                         if (qreg>0)
                         {
-                            Utilities.notifyThem(ntfBox2, "Successfully Register.", NotificationBox.Type.Success);
+                            Utilities.notifyThem(ntfBox2, "Successfull Registration.", NotificationBox.Type.Success);
                         }
 
                     }).Start();

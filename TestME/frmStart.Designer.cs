@@ -655,7 +655,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(146, 140);
+            this.linkLabel1.Location = new System.Drawing.Point(149, 140);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(230, 18);
             this.linkLabel1.TabIndex = 2;
@@ -669,9 +669,9 @@
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Label2.ForeColor = System.Drawing.Color.DimGray;
-            this.Label2.Location = new System.Drawing.Point(6, 85);
+            this.Label2.Location = new System.Drawing.Point(26, 86);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(397, 162);
+            this.Label2.Size = new System.Drawing.Size(368, 162);
             this.Label2.TabIndex = 1;
             this.Label2.Text = resources.GetString("Label2.Text");
             this.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
