@@ -15,6 +15,10 @@ namespace TestME
         private static EventWaitHandle _waitHandle = new AutoResetEvent(false);
         private static string _filesPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
+        public static frmStart formStart = new frmStart();
+        public static frmMain formMain = new frmMain();
+
+
         public static string ConnectionStr()
         {
             return _connectionstr;

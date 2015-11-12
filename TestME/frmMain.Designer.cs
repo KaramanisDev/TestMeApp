@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.frmskin = new CustomForm();
             this.tabUser = new XylosTabControl();
             this.userpanel = new System.Windows.Forms.TabPage();
             this.tabquestions = new System.Windows.Forms.TabPage();
+            this.lblRegQ = new System.Windows.Forms.Label();
             this.lblUserMessage = new System.Windows.Forms.Label();
             this.dgvMyQ = new System.Windows.Forms.DataGridView();
+            this.selectq = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.tabAddQ = new System.Windows.Forms.TabPage();
             this.ntfAdd = new NotificationBox();
@@ -87,7 +90,10 @@
             this.btnClose = new CustomButton();
             this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
-            this.lblRegQ = new System.Windows.Forms.Label();
+            this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
@@ -100,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).BeginInit();
             this.tabtest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).BeginInit();
+            this.rcmMyQ.SuspendLayout();
             this.SuspendLayout();
             // 
             // frmskin
@@ -178,6 +185,15 @@
             this.tabquestions.TabIndex = 0;
             this.tabquestions.Text = "My Questions";
             // 
+            // lblRegQ
+            // 
+            this.lblRegQ.AutoSize = true;
+            this.lblRegQ.Location = new System.Drawing.Point(214, 159);
+            this.lblRegQ.Name = "lblRegQ";
+            this.lblRegQ.Size = new System.Drawing.Size(210, 15);
+            this.lblRegQ.TabIndex = 4;
+            this.lblRegQ.Text = "You don\'t have any registed Questions";
+            // 
             // lblUserMessage
             // 
             this.lblUserMessage.AutoSize = true;
@@ -191,14 +207,37 @@
             // 
             // dgvMyQ
             // 
+            this.dgvMyQ.AllowUserToAddRows = false;
+            this.dgvMyQ.AllowUserToDeleteRows = false;
+            this.dgvMyQ.AllowUserToResizeColumns = false;
+            this.dgvMyQ.AllowUserToResizeRows = false;
             this.dgvMyQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMyQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMyQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMyQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.selectq});
             this.dgvMyQ.Location = new System.Drawing.Point(59, 74);
+            this.dgvMyQ.MultiSelect = false;
             this.dgvMyQ.Name = "dgvMyQ";
-            this.dgvMyQ.Size = new System.Drawing.Size(499, 272);
+            this.dgvMyQ.RowHeadersVisible = false;
+            this.dgvMyQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMyQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvMyQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMyQ.ShowCellErrors = false;
+            this.dgvMyQ.ShowEditingIcon = false;
+            this.dgvMyQ.ShowRowErrors = false;
+            this.dgvMyQ.Size = new System.Drawing.Size(500, 272);
             this.dgvMyQ.TabIndex = 2;
             this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context");
+            // 
+            // selectq
+            // 
+            this.selectq.HeaderText = "Select";
+            this.selectq.Name = "selectq";
+            this.selectq.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.selectq.Width = 50;
             // 
             // label2
             // 
@@ -936,14 +975,32 @@
             this.autocompleteMenu1.MinFragmentLength = 1;
             this.autocompleteMenu1.TargetControlWrapper = null;
             // 
-            // lblRegQ
+            // rcmMyQ
             // 
-            this.lblRegQ.AutoSize = true;
-            this.lblRegQ.Location = new System.Drawing.Point(214, 159);
-            this.lblRegQ.Name = "lblRegQ";
-            this.lblRegQ.Size = new System.Drawing.Size(210, 15);
-            this.lblRegQ.TabIndex = 4;
-            this.lblRegQ.Text = "You don\'t have any registed Questions";
+            this.rcmMyQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.rcmMyQ.Name = "rcmMyQ";
+            this.rcmMyQ.Size = new System.Drawing.Size(153, 92);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // frmMain
             // 
@@ -975,6 +1032,7 @@
             this.tabtest.ResumeLayout(false);
             this.tabtest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).EndInit();
+            this.rcmMyQ.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1039,5 +1097,10 @@
         private NotificationBox ntfTest;
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
         private System.Windows.Forms.Label lblRegQ;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn selectq;
+        private System.Windows.Forms.ContextMenuStrip rcmMyQ;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

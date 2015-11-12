@@ -150,6 +150,10 @@ namespace TestME
             {
                 reader = command.ExecuteReader();
                 dt.Load(reader);
+                for(int i =0;i < dt.Columns.Count; i++)
+                {
+                    dt.Columns[i].ReadOnly = true;
+                }
             }
             catch (MySqlException my)
             {

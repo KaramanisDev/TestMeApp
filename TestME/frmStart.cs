@@ -15,6 +15,7 @@ namespace TestME
         public frmStart()
         {
             InitializeComponent();
+            Globals.formStart = this;
         }
 
         private void frmStart_Load(object sender, EventArgs e)
@@ -70,10 +71,10 @@ namespace TestME
                     Globals.colTags.Add("SomeTag");
                     Globals.colTags.Add("SomeTag");
 
-                    cFRM.Invoke((MethodInvoker)(() =>
+                    Globals.formStart.Invoke((MethodInvoker)(() =>
                     {
-                        cFRM.Hide();
-                        new frmMain().Show();
+                        Globals.formStart.Hide();
+                        Globals.formMain.Show();
                     }));
 
                 }).Start();
