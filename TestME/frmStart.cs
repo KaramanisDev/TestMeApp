@@ -20,11 +20,19 @@ namespace TestME
         private void frmStart_Load(object sender, EventArgs e)
         {
             tabMain.SelectTab(1);
-            string[] fill=Utilities.loadSettings("StoredSettings",4);
-            txthost.Text = fill[0];
-            txtuname.Text = fill[1];
-            txtpasswd.Text = fill[2];
-            txtDatabase.Text = fill[3];
+            string[] fill=Utilities.loadSettings("StoredSettings",6);
+            if (fill[0] == "True") { 
+                txthost.Text = fill[2];
+                txtuname.Text = fill[3];
+                txtpasswd.Text = fill[4];
+                txtDatabase.Text = fill[5];
+                checkBoxRemember.Checked = true;
+            }
+            if (fill[1] == "True")
+            {
+                checkBoxAutoConnect.Checked = true;
+                this.btnconnect_Click(this, new EventArgs());
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -88,10 +96,19 @@ namespace TestME
                 {
                     if (checkBoxRemember.Checked)
                     {
-                        Utilities.saveSettings("StoredSettings", txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
+                        Utilities.saveSettings("StoredSettings", checkBoxRemember.Checked.ToString(), checkBoxAutoConnect.Checked.ToString(), txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
                     }
+                    else
+                    {
+                        if (System.IO.File.Exists(Globals.FilesPath + "\\TestME\\StoredSettings"))
+                        {
+                            System.IO.File.Delete(Globals.FilesPath + "\\TestME\\StoredSettings");
+                        }
+                    }
+                    btnconnect.Invoke((MethodInvoker)(() => {
+                        btnconnect.Text = "Reconnect";
+                    }));
                     Utilities.notifyThem(ntfBox3, "Successfully Connected !", NotificationBox.Type.Success);
-
                 }
                 else
                 {

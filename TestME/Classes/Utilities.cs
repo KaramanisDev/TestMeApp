@@ -72,11 +72,11 @@ namespace TestME
             {
                 using (StreamReader file = new StreamReader(Globals.FilesPath + "\\TestME\\" + filename))
                 {
-                    // Read the stream to a string, and write the string to the console.
-                    for (int i=0; i<details.Length; i++)
-                    {
-                        details[i]=file.ReadLine();
-                    }
+                        // Read the stream to a string.
+                        for (int i=0; i<details.Length; i++)
+                        {
+                            details[i]=file.ReadLine();
+                        }
                     
                 }
             }

@@ -54,6 +54,7 @@
             this.lblemail = new BonfireLabel();
             this.lblusername = new BonfireLabel();
             this.tabsettings = new System.Windows.Forms.TabPage();
+            this.checkBoxAutoConnect = new XylosCheckBox();
             this.checkBoxRemember = new XylosCheckBox();
             this.ntfBox3 = new NotificationBox();
             this.txtDatabase = new XylosTextBox();
@@ -427,6 +428,7 @@
             // tabsettings
             // 
             this.tabsettings.BackColor = System.Drawing.Color.White;
+            this.tabsettings.Controls.Add(this.checkBoxAutoConnect);
             this.tabsettings.Controls.Add(this.checkBoxRemember);
             this.tabsettings.Controls.Add(this.ntfBox3);
             this.tabsettings.Controls.Add(this.txtDatabase);
@@ -448,6 +450,19 @@
             this.tabsettings.Size = new System.Drawing.Size(409, 290);
             this.tabsettings.TabIndex = 5;
             this.tabsettings.Text = "Settings";
+            // 
+            // checkBoxAutoConnect
+            // 
+            this.checkBoxAutoConnect.Checked = false;
+            this.checkBoxAutoConnect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxAutoConnect.EnabledCalc = true;
+            this.checkBoxAutoConnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAutoConnect.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBoxAutoConnect.Location = new System.Drawing.Point(268, 197);
+            this.checkBoxAutoConnect.Name = "checkBoxAutoConnect";
+            this.checkBoxAutoConnect.Size = new System.Drawing.Size(112, 18);
+            this.checkBoxAutoConnect.TabIndex = 13;
+            this.checkBoxAutoConnect.Text = "Auto-Connect";
             // 
             // checkBoxRemember
             // 
@@ -604,7 +619,7 @@
             this.btnconnect.Location = new System.Drawing.Point(278, 230);
             this.btnconnect.Name = "btnconnect";
             this.btnconnect.RoundedCorners = true;
-            this.btnconnect.Size = new System.Drawing.Size(90, 35);
+            this.btnconnect.Size = new System.Drawing.Size(102, 35);
             this.btnconnect.TabIndex = 5;
             this.btnconnect.Text = "Connect";
             this.btnconnect.Click += new System.EventHandler(this.btnconnect_Click);
@@ -794,6 +809,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label label3;
         private XylosCheckBox checkBoxRemember;
+        private XylosCheckBox checkBoxAutoConnect;
     }
 }
 
