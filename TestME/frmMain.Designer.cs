@@ -190,7 +190,7 @@
             this.lblRegQ.AutoSize = true;
             this.lblRegQ.Location = new System.Drawing.Point(214, 159);
             this.lblRegQ.Name = "lblRegQ";
-            this.lblRegQ.Size = new System.Drawing.Size(210, 15);
+            this.lblRegQ.Size = new System.Drawing.Size(209, 15);
             this.lblRegQ.TabIndex = 4;
             this.lblRegQ.Text = "You don\'t have any registed Questions";
             // 
@@ -986,18 +986,21 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.Image = global::TestME.Properties.Resources.view;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.Image = global::TestME.Properties.Resources.edit;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
+            this.deleteToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
