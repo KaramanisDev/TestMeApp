@@ -43,13 +43,14 @@ namespace TestME
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Test Logged User
-            Globals.logUser = new User(1, "demo", "fe01ce2a7fbac8fafaed7c982a04e229", "demo@email.com");
-
             Utilities.runInThread(() => {
                 
                 if (Globals.Connected)
                 {
+                    //Test Logged User
+                    Globals.logUser = new User(1, "demo", "fe01ce2a7fbac8fafaed7c982a04e229", "demo@email.com");
+
+
                     //Load Tags
                     Globals.colTags = Utilities.AsyncDB().column("SELECT DISTINCT nametag FROM tags");
 
@@ -59,6 +60,9 @@ namespace TestME
                     Globals.colTags.Add("UserTag");
                     Globals.colTags.Add("SomeTag");
                     Globals.colTags.Add("SomeTag");
+
+                    this.Hide();
+                    new frmMain().Show();
                 }
                 else
                 {
@@ -66,8 +70,6 @@ namespace TestME
                 }
             }).Start();
 
-            this.Hide();
-            new frmMain().Show();
         }
 
         private void btnconnect_Click(object sender, EventArgs e)
