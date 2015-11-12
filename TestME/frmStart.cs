@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace TestME
@@ -43,13 +44,13 @@ namespace TestME
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Utilities.runInThread(() => {
-                
-                if (Globals.Connected)
-                {
+            if (Globals.Connected)
+            {
+                frmStart cFRM = this;
+
+                Utilities.runInThread(() => {            
                     //Test Logged User
                     Globals.logUser = new User(1, "demo", "fe01ce2a7fbac8fafaed7c982a04e229", "demo@email.com");
-
 
                     //Load Tags
                     Globals.colTags = Utilities.AsyncDB().column("SELECT DISTINCT nametag FROM tags");
@@ -61,15 +62,18 @@ namespace TestME
                     Globals.colTags.Add("SomeTag");
                     Globals.colTags.Add("SomeTag");
 
-                    this.Hide();
-                    new frmMain().Show();
-                }
-                else
-                {
-                    Utilities.notifyThem(ntfBox1, "Not connected to DB!", NotificationBox.Type.Warning);
-                }
-            }).Start();
+                    cFRM.Invoke((MethodInvoker)(() =>
+                    {
+                        cFRM.Hide();
+                        new frmMain().Show();
+                    }));
 
+                }).Start();
+            }
+            else
+            {
+                Utilities.notifyThem(ntfBox1, "Not connected to DB!", NotificationBox.Type.Warning);
+            }
         }
 
         private void btnconnect_Click(object sender, EventArgs e)
