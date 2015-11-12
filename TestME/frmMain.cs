@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +47,14 @@ namespace TestME
                 }
                 dgvMyQ.Invoke((MethodInvoker)(() =>
                 {
+                    DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+                    checkColumn.Name = "selectq";
+                    checkColumn.HeaderText = "Select";
+                    checkColumn.Width = 50;
+                    checkColumn.ReadOnly = false;
+                    checkColumn.Visible = true;
+
+                    dgvMyQ.Columns.Add(checkColumn);
                     dgvMyQ.DataSource = dt;
                     dgvMyQ.Columns[1].Visible = false;
                     dgvMyQ.Columns[2].HeaderText = "Questions";
@@ -62,5 +71,66 @@ namespace TestME
 
         }
 
+        private void dgvMyQ_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Utilities.rightClickSelect(dgvMyQ, e);
+        }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Question TempQuest = new Question();
+            TempQuest.id = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
+            TempQuest.question = dgvMyQ.SelectedRows[0].Cells[2].Value.ToString();
+            TempQuest.anwsers = JsonConvert.DeserializeObject<List<Answer>>(dgvMyQ.SelectedRows[0].Cells[3].Value.ToString());
+            TempQuest.dlevel = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
+            TempQuest.prive = Boolean.Parse(dgvMyQ.SelectedRows[0].Cells[5].Value.ToString());
+
+            new frmAnswers(TempQuest).Show();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Question TempQuest = new Question();
+            TempQuest.id = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
+            TempQuest.question = dgvMyQ.SelectedRows[0].Cells[2].Value.ToString();
+            TempQuest.anwsers = JsonConvert.DeserializeObject<List<Answer>>(dgvMyQ.SelectedRows[0].Cells[3].Value.ToString());
+            TempQuest.dlevel = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
+            TempQuest.prive = Boolean.Parse(dgvMyQ.SelectedRows[0].Cells[5].Value.ToString());
+
+            new frmEdit(TempQuest).Show();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var msgbResult = MessageBox.Show("Are you sure that you want to\nPermanatly delete the selected Question ?", "Delete Question",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (msgbResult == DialogResult.Yes)
+            {
+                dgvMyQ.Rows.RemoveAt(0);
+                Utilities.runInThread(() =>
+                {
+                    Utilities.AsyncDB().nQuery("Delete Query Here");
+                });
+            }
+        }
+
+        private void txtAddTags_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtBoxReplaceSpaceNewLine(txtAddTags);
+        }
+
+        private void txtAddQ_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtBoxReplaceNewLine(txtAddQ);
+        }
+
+        private void txtAnswer_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtBoxReplaceNewLine(txtAnswer);
+        }
+
+        private void txtTags_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtBoxReplaceSpaceNewLine(txtTags);
+        }
     }
 }

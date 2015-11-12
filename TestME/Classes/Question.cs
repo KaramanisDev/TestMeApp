@@ -3,20 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TestME.Classes
+namespace TestME
 {
     public class Question
     {
+        private int _id;
         private string _question;
         private List<Answer> _anwsers;
         private int _dlevel; 
         private bool _prive;
 
-        public Question(string q, List<Answer> a, bool p)
+        public Question() { }
+
+        public Question(int i,string q, List<Answer> a, bool p)
         {
+            this._id = i;
             this._question = q;
             this._anwsers = a;
             this._prive = p;
+        }
+
+        public int id
+        {
+            get { return _id; }
+            set { _id = value; }
         }
 
         public string question
@@ -30,6 +40,7 @@ namespace TestME.Classes
             get { return _anwsers; }
             set { _anwsers = value; }
         }
+
         public int dlevel
         {
             get { return _dlevel; }

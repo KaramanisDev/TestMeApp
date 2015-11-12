@@ -10,11 +10,26 @@ namespace TestME
 {
     public static class Utilities
     {
-        public static void txtBoxReplaceSpace(TextBox txtb)
+        public static void txtBoxReplaceNewLine(TextBox txtb)
         {
             int cpos = txtb.SelectionStart;
             txtb.Text = txtb.Text.Replace(Environment.NewLine, "");
             txtb.SelectionStart = cpos;
+        }
+        public static void txtBoxReplaceSpaceNewLine(TextBox txtb)
+        {
+            int cpos = txtb.SelectionStart;
+            txtb.Text = txtb.Text.Replace(Environment.NewLine, "");
+            txtb.Text = txtb.Text.Replace(" ", "");
+            txtb.SelectionStart = cpos;
+        }
+
+        public static void rightClickSelect(DataGridView dgv, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.ColumnIndex >=0 && e.RowIndex >=0)
+            {
+                dgv.CurrentCell = dgv[e.ColumnIndex, e.RowIndex];
+            }
         }
 
         public static void notifyThem(NotificationBox ntfbox,string msg,NotificationBox.Type ntype)

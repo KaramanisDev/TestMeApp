@@ -11,7 +11,7 @@ namespace TestME
 {
     public partial class frmAnswers : Form
     {
-        public frmAnswers()
+        public frmAnswers(Question quest)
         {
             InitializeComponent();
         }

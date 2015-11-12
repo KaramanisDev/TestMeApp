@@ -11,7 +11,7 @@ namespace TestME
 {
     public partial class frmEdit : Form
     {
-        public frmEdit()
+        public frmEdit(Question quest)
         {
             InitializeComponent();
         }

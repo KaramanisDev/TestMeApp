@@ -26,7 +26,7 @@ namespace TestME
 
         public static void ConnectionStr(string host, string user, string pass, string dbname)
         {
-            _connectionstr = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};", host, user, pass, dbname).ToString();
+            _connectionstr = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};Charset=utf8;", host, user, pass, dbname).ToString();
         }
 
         public static List<string> colTags

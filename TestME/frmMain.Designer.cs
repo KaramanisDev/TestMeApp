@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.frmskin = new CustomForm();
             this.tabUser = new XylosTabControl();
@@ -38,7 +41,10 @@
             this.lblRegQ = new System.Windows.Forms.Label();
             this.lblUserMessage = new System.Windows.Forms.Label();
             this.dgvMyQ = new System.Windows.Forms.DataGridView();
-            this.selectq = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.tabAddQ = new System.Windows.Forms.TabPage();
             this.ntfAdd = new NotificationBox();
@@ -90,14 +96,11 @@
             this.btnClose = new CustomButton();
             this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
-            this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyQ)).BeginInit();
+            this.rcmMyQ.SuspendLayout();
             this.tabAddQ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
             this.tabfind.SuspendLayout();
@@ -106,7 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).BeginInit();
             this.tabtest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).BeginInit();
-            this.rcmMyQ.SuspendLayout();
             this.SuspendLayout();
             // 
             // frmskin
@@ -190,7 +192,7 @@
             this.lblRegQ.AutoSize = true;
             this.lblRegQ.Location = new System.Drawing.Point(214, 159);
             this.lblRegQ.Name = "lblRegQ";
-            this.lblRegQ.Size = new System.Drawing.Size(209, 15);
+            this.lblRegQ.Size = new System.Drawing.Size(210, 15);
             this.lblRegQ.TabIndex = 4;
             this.lblRegQ.Text = "You don\'t have any registed Questions";
             // 
@@ -211,18 +213,26 @@
             this.dgvMyQ.AllowUserToDeleteRows = false;
             this.dgvMyQ.AllowUserToResizeColumns = false;
             this.dgvMyQ.AllowUserToResizeRows = false;
+            this.dgvMyQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMyQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMyQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMyQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMyQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.selectq});
+            this.dgvMyQ.ContextMenuStrip = this.rcmMyQ;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyQ.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMyQ.Location = new System.Drawing.Point(59, 74);
             this.dgvMyQ.MultiSelect = false;
             this.dgvMyQ.Name = "dgvMyQ";
             this.dgvMyQ.RowHeadersVisible = false;
             this.dgvMyQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMyQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMyQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMyQ.ShowCellErrors = false;
@@ -231,13 +241,40 @@
             this.dgvMyQ.Size = new System.Drawing.Size(500, 272);
             this.dgvMyQ.TabIndex = 2;
             this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context");
+            this.dgvMyQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyQ_CellMouseUp);
             // 
-            // selectq
+            // rcmMyQ
             // 
-            this.selectq.HeaderText = "Select";
-            this.selectq.Name = "selectq";
-            this.selectq.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.selectq.Width = 50;
+            this.rcmMyQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.rcmMyQ.Name = "rcmMyQ";
+            this.rcmMyQ.Size = new System.Drawing.Size(108, 70);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Image = global::TestME.Properties.Resources.view;
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::TestME.Properties.Resources.edit;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -356,8 +393,10 @@
             this.txtAnswer.Location = new System.Drawing.Point(398, 184);
             this.txtAnswer.Multiline = true;
             this.txtAnswer.Name = "txtAnswer";
+            this.txtAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAnswer.Size = new System.Drawing.Size(200, 40);
             this.txtAnswer.TabIndex = 29;
+            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
             // 
             // listAnswers
             // 
@@ -384,6 +423,7 @@
             this.txtAddQ.Size = new System.Drawing.Size(358, 61);
             this.txtAddQ.TabIndex = 27;
             this.toolTipUser.SetToolTip(this.txtAddQ, "Write your question.");
+            this.txtAddQ.TextChanged += new System.EventHandler(this.txtAddQ_TextChanged);
             // 
             // txtAddTags
             // 
@@ -397,6 +437,7 @@
             this.txtAddTags.Size = new System.Drawing.Size(200, 61);
             this.txtAddTags.TabIndex = 26;
             this.toolTipUser.SetToolTip(this.txtAddTags, "Give tags to your question to \r\nmake it easier for searching.");
+            this.txtAddTags.TextChanged += new System.EventHandler(this.txtAddTags_TextChanged);
             // 
             // label12
             // 
@@ -574,6 +615,7 @@
             this.txtTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTags.Size = new System.Drawing.Size(239, 61);
             this.txtTags.TabIndex = 18;
+            this.txtTags.TextChanged += new System.EventHandler(this.txtTags_TextChanged);
             // 
             // label13
             // 
@@ -602,11 +644,34 @@
             // 
             // dgvFoundQ
             // 
+            this.dgvFoundQ.AllowUserToAddRows = false;
+            this.dgvFoundQ.AllowUserToDeleteRows = false;
+            this.dgvFoundQ.AllowUserToResizeColumns = false;
+            this.dgvFoundQ.AllowUserToResizeRows = false;
+            this.dgvFoundQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvFoundQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvFoundQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFoundQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFoundQ.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFoundQ.Location = new System.Drawing.Point(49, 155);
+            this.dgvFoundQ.MultiSelect = false;
             this.dgvFoundQ.Name = "dgvFoundQ";
+            this.dgvFoundQ.RowHeadersVisible = false;
+            this.dgvFoundQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvFoundQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFoundQ.ShowCellErrors = false;
+            this.dgvFoundQ.ShowCellToolTips = false;
+            this.dgvFoundQ.ShowEditingIcon = false;
+            this.dgvFoundQ.ShowRowErrors = false;
             this.dgvFoundQ.Size = new System.Drawing.Size(523, 185);
             this.dgvFoundQ.TabIndex = 15;
             this.toolTipUser.SetToolTip(this.dgvFoundQ, "List of questions that\r\nmatch with the search.");
@@ -975,36 +1040,6 @@
             this.autocompleteMenu1.MinFragmentLength = 1;
             this.autocompleteMenu1.TargetControlWrapper = null;
             // 
-            // rcmMyQ
-            // 
-            this.rcmMyQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.rcmMyQ.Name = "rcmMyQ";
-            this.rcmMyQ.Size = new System.Drawing.Size(153, 92);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Image = global::TestME.Properties.Resources.view;
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::TestME.Properties.Resources.edit;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1024,6 +1059,7 @@
             this.tabquestions.ResumeLayout(false);
             this.tabquestions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyQ)).EndInit();
+            this.rcmMyQ.ResumeLayout(false);
             this.tabAddQ.ResumeLayout(false);
             this.tabAddQ.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
@@ -1035,7 +1071,6 @@
             this.tabtest.ResumeLayout(false);
             this.tabtest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).EndInit();
-            this.rcmMyQ.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1100,7 +1135,6 @@
         private NotificationBox ntfTest;
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
         private System.Windows.Forms.Label lblRegQ;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn selectq;
         private System.Windows.Forms.ContextMenuStrip rcmMyQ;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;

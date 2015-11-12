@@ -32,7 +32,7 @@ namespace TestME
 
         public void setConnection(string host, string user, string pass, string dbname)
         {
-            connectiondetails = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};", host, user, pass, dbname).ToString();
+            connectiondetails = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};Charset=utf8;", host, user, pass, dbname).ToString();
         }
 
         public bool Connected()
@@ -96,13 +96,14 @@ namespace TestME
                     });
                 }
 
-                this.squery = Query.ToLower();
+                this.squery = Query;
+                string sqt = Query.ToLower();
 
-                if (squery.Contains("select"))
+                if (sqt.Contains("select"))
                 {
                     this.Table = execDatatable();
                 }
-                if (squery.Contains("delete") || squery.Contains("update") || squery.Contains("insert"))
+                if (sqt.Contains("delete") || sqt.Contains("update") || sqt.Contains("insert"))
                 {
                     this.affected_rows = execNonquery();
                 }
