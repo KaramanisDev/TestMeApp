@@ -13,7 +13,7 @@ namespace TestME
         private static User _user;
         private static bool _Connected = false;
         private static EventWaitHandle _waitHandle = new AutoResetEvent(false);
-        private static string _filesPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\TestME\\";
+        private static string _filesPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
         public static DB db
         {

@@ -732,7 +732,7 @@
             this.Name = "frmStart";
             this.Text = "TestME";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmStart_Load);
             this.frmSkin.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tablogin.ResumeLayout(false);

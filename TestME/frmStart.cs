@@ -16,9 +16,14 @@ namespace TestME
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmStart_Load(object sender, EventArgs e)
         {
-           tabMain.SelectTab(1);
+            tabMain.SelectTab(1);
+            string[] fill=Utilities.loadSettings("StoredSettings",4);
+            txthost.Text = fill[0];
+            txtuname.Text = fill[1];
+            txtpasswd.Text = fill[2];
+            txtDatabase.Text = fill[3];
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -53,6 +58,10 @@ namespace TestME
                 Globals.db = new DB(txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
                 if (Globals.db.Connected())
                 {
+                    if (checkBoxRemember.Checked)
+                    {
+                        Utilities.saveSettings("StoredSettings", txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
+                    }
                     Utilities.notifyThem(ntfBox3, "Successfully Connected !", NotificationBox.Type.Success);
 
                 }
