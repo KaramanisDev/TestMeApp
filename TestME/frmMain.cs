@@ -37,7 +37,10 @@ namespace TestME
 
             Utilities.runInThread(() =>
             {
+                //DataTable ta = new DataTable();
+                //ta.Columns.Add(new DataColumn("selectq", typeof(bool)));
                 DataTable dt = Utilities.AsyncDB().query("SELECT * FROM questions WHERE uid=1");
+                //ta.Merge(dt);
                 if (dt.Rows.Count > 0)
                 {
                     lblRegQ.Invoke((MethodInvoker)(() =>
@@ -53,9 +56,13 @@ namespace TestME
                     checkColumn.Width = 50;
                     checkColumn.ReadOnly = false;
                     checkColumn.Visible = true;
+                    checkColumn.FalseValue = false;
+                    checkColumn.TrueValue = true;
 
                     dgvMyQ.Columns.Add(checkColumn);
                     dgvMyQ.DataSource = dt;
+                    dgvMyQ.Columns[0].HeaderText = "Select";
+                    dgvMyQ.Columns[0].Width = 50;
                     dgvMyQ.Columns[1].Visible = false;
                     dgvMyQ.Columns[2].HeaderText = "Questions";
                     dgvMyQ.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -65,6 +72,10 @@ namespace TestME
                     dgvMyQ.Columns[5].HeaderText = "Private";
                     dgvMyQ.Columns[5].Width = 60;
                     dgvMyQ.Columns[6].Visible = false;
+                    for (int i = 0; i < dgvMyQ.Rows.Count; i++)
+                    {
+                        dgvMyQ.Rows[i].Cells[0].Value = "False";
+                    }
                 }));
                 
             }).Start();
@@ -131,6 +142,31 @@ namespace TestME
         private void txtTags_TextChanged(object sender, EventArgs e)
         {
             Utilities.txtBoxReplaceSpaceNewLine(txtTags);
+        }
+
+        private void btnDeleteSelected_Click(object sender, EventArgs e)
+        {
+            btnDeleteSelected.Focus();
+            int a = 0;
+            for(int i =0; i< dgvMyQ.Rows.Count;i++)
+            {
+                try
+                {
+                    if (dgvMyQ.Rows[i].Cells[0].Value.ToString() != null)
+                    {
+                        bool tn = bool.Parse(dgvMyQ.Rows[i].Cells[0].Value.ToString());
+                        if (tn)
+                        {
+                            a++;
+                            MessageBox.Show(a.ToString());
+                        }
+                    }
+                }
+                catch (Exception) {
+                    MessageBox.Show("yyy");
+                }
+            }
+            
         }
     }
 }
