@@ -167,8 +167,8 @@ public class XylosTabControl : TabControl
     {
         base.OnControlAdded(e);
         e.Control.BackColor = Color.White;
-        e.Control.ForeColor = Helpers.ColorFromHex("#7C858E");
-        e.Control.Font = new Font("Segoe UI", 9f);
+        e.Control.ForeColor = Color.DimGray;
+        e.Control.Font = new Font("Trebuchet MS", 9f);
     }
 
     protected override void OnPaint(PaintEventArgs e)

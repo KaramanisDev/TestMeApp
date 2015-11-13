@@ -142,8 +142,8 @@
             // tabdashboard
             // 
             this.tabdashboard.BackColor = System.Drawing.Color.White;
-            this.tabdashboard.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tabdashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tabdashboard.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.tabdashboard.ForeColor = System.Drawing.Color.DimGray;
             this.tabdashboard.Location = new System.Drawing.Point(184, 4);
             this.tabdashboard.Name = "tabdashboard";
             this.tabdashboard.Padding = new System.Windows.Forms.Padding(3);
@@ -162,8 +162,8 @@
             this.tablogin.Controls.Add(this.txtPassword);
             this.tablogin.Controls.Add(this.txtUser);
             this.tablogin.Controls.Add(this.btnLogin);
-            this.tablogin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tablogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tablogin.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.tablogin.ForeColor = System.Drawing.Color.DimGray;
             this.tablogin.ImageIndex = 2;
             this.tablogin.Location = new System.Drawing.Point(184, 4);
             this.tablogin.Name = "tablogin";
@@ -280,8 +280,8 @@
             this.tabregister.Controls.Add(this.lblpass);
             this.tabregister.Controls.Add(this.lblemail);
             this.tabregister.Controls.Add(this.lblusername);
-            this.tabregister.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tabregister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tabregister.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.tabregister.ForeColor = System.Drawing.Color.DimGray;
             this.tabregister.ImageIndex = 1;
             this.tabregister.Location = new System.Drawing.Point(184, 4);
             this.tabregister.Name = "tabregister";
@@ -441,8 +441,8 @@
             this.tabsettings.Controls.Add(this.lblhost);
             this.tabsettings.Controls.Add(this.lbltitle);
             this.tabsettings.Controls.Add(this.btnconnect);
-            this.tabsettings.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tabsettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tabsettings.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.tabsettings.ForeColor = System.Drawing.Color.DimGray;
             this.tabsettings.ImageIndex = 3;
             this.tabsettings.Location = new System.Drawing.Point(184, 4);
             this.tabsettings.Name = "tabsettings";
@@ -627,8 +627,8 @@
             // tabinfo
             // 
             this.tabinfo.BackColor = System.Drawing.Color.White;
-            this.tabinfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tabinfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tabinfo.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.tabinfo.ForeColor = System.Drawing.Color.DimGray;
             this.tabinfo.Location = new System.Drawing.Point(184, 4);
             this.tabinfo.Name = "tabinfo";
             this.tabinfo.Padding = new System.Windows.Forms.Padding(3);
@@ -644,8 +644,8 @@
             this.tababout.Controls.Add(this.linkLabel1);
             this.tababout.Controls.Add(this.Label2);
             this.tababout.Controls.Add(this.pictureBox1);
-            this.tababout.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tababout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.tababout.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.tababout.ForeColor = System.Drawing.Color.DimGray;
             this.tababout.ImageIndex = 0;
             this.tababout.Location = new System.Drawing.Point(184, 4);
             this.tababout.Name = "tababout";

@@ -17,6 +17,7 @@ namespace TestME
         private DataTable Table;
         private int affected_rows;
         private string squery;
+        private bool _querystatus = false;
         private List<string> parameters;
         private bool bDebug = false;
 
@@ -32,12 +33,17 @@ namespace TestME
 
         public void setConnection(string host, string user, string pass, string dbname)
         {
-            connectiondetails = new StringBuilder("").AppendFormat("Server={0};Database={3};Uid={1};Pwd={2};Charset=utf8;", host, user, pass, dbname).ToString();
+            connectiondetails = String.Format("Server={0};Database={3};Uid={1};Pwd={2};Charset=utf8;", host, user, pass, dbname).ToString();
         }
 
         public bool Connected()
         {
             return bConnected;
+        }
+
+        public bool QueryStatus()
+        {
+            return _querystatus;
         }
 
         public bool Debug
@@ -155,9 +161,11 @@ namespace TestME
                 {
                     dt.Columns[i].ReadOnly = true;
                 }
+                this._querystatus = true;
             }
             catch (MySqlException my)
             {
+                this._querystatus = false;
                 string exception = "Exception : " + my.Message.ToString() + "\n\r SQL Query : \n\r" + squery;
                 if (bDebug)
                 {
@@ -176,9 +184,11 @@ namespace TestME
             try
             {
                 affected = command.ExecuteNonQuery();
+                this._querystatus = true;
             }
             catch (MySqlException my)
             {
+                this._querystatus = false;
                 string exception = "Exception : " + my.Message.ToString() + "\n\r SQL Query : \n\r" + squery;
                 if (bDebug)
                 {
