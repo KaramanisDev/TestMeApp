@@ -54,8 +54,8 @@ namespace TestME
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
-            /*
-            MIN TA SBISEI KANEIS EINAI GIA NA KANO MERIKA TEST NESTORAS
+            
+            //MIN TA SBISEI KANEIS EINAI GIA NA KANO MERIKA TEST NESTORAS
 
             List<Question> Mytest = new List<Question>();
             List<Answer> Yo = new List<Answer>();
@@ -69,7 +69,7 @@ namespace TestME
             Mytest.Add(new Question(2, "wut wut?", Yo, false));
 
             Utilities.printPDF("Allilepidrasi","14-11-2015",Mytest,false);
-            */
+            
 
             if (Globals.Connected)
             {

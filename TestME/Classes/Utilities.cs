@@ -170,7 +170,7 @@ namespace TestME
                 {
                     rect = new XRect(35, y, page.Width, fontHeight);
                     y += 25;
-                    XPen pen = new XPen(XColors.Black, Math.PI);
+                    XPen pen = new XPen(XColors.Black, 1.5);
                     gfx.DrawRectangle(pen, platos, ipsos, 10, 10);
                     ipsos += 25;
                     gfx.DrawString("     "+quests[i].anwsers[j].text, fontanswer, XBrushes.Black, rect, XStringFormats.TopLeft);
@@ -181,7 +181,7 @@ namespace TestME
                     }
                     
                 }
-                ipsos += 25;
+                ipsos += 24;
             }
 
             rect = new XRect(25, y, page.Width, fontHeight);
