@@ -62,7 +62,7 @@
     </Reference>
     <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TestSyncApp\bin\Debug\PdfSharp.dll</HintPath>
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
