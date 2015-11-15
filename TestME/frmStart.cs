@@ -53,31 +53,69 @@ namespace TestME
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
+            /*
+            MIN TA SBISEI KANEIS EINAI GIA NA KANO MERIKA TEST NESTORAS
+
+            List<Question> Mytest = new List<Question>();
+            List<Answer> Yo = new List<Answer>();
+            Yo.Clear();
+            Yo.Add(new Answer("aaaaa",false));
+            Yo.Add(new Answer("bbbb", true));
+            Mytest.Add(new Question(1, "What?", Yo, false));
+            Yo.Clear();
+            Yo.Add(new Answer("cccc", false));
+            Yo.Add(new Answer("dddd", true));
+            Mytest.Add(new Question(2, "wut wut?", Yo, false));
+
+            Utilities.printPDF("Allilepidrasi","14-11-2015",Mytest,false);
+            */
+
             if (Globals.Connected)
             {
-                frmStart cFRM = this;
+                //elenxs gia to an einai kena ta pedia
+                if(txtUser.Text == "" || txtPassword.Text == "")
+                {
+                    Utilities.notifyThem(ntfBox1, "Empty username or password!",NotificationBox.Type.Warning);
+                }else
+                {
+                    Utilities.runInThread(() => {
+                        //Test Logged User                
 
-                Utilities.runInThread(() => {            
-                    //Test Logged User
-                    Globals.logUser = new User(1, "demo", "fe01ce2a7fbac8fafaed7c982a04e229", "demo@email.com");
+                        DB TempLogUser = Utilities.AsyncDB();
+                        TempLogUser.bind(new string[] { "user", txtUser.Text, "pass", txtPassword.Text });
+                        DataTable dt = TempLogUser.query("select * from users where user = @user and pass = @pass");
 
-                    //Load Tags
-                    Globals.colTags = Utilities.AsyncDB().column("SELECT DISTINCT nametag FROM tags");
+                        //DataTable userDt = TemplogDb.query("SELECT * FROM `users` WHERE `user`='" + txtUser.Text + "' AND `pass`='" + txtPassword.Text + "'");
+                        //MessageBox.Show(userDt.Rows.Count.ToString());
+                        if (dt.Rows.Count == 1)
+                        {
 
-                    //Add also some extra Tags in case db is empty
-                    Globals.colTags.Add("TestTag");
-                    Globals.colTags.Add("DemoTag");
-                    Globals.colTags.Add("UserTag");
-                    Globals.colTags.Add("SomeTag");
-                    Globals.colTags.Add("SomeTag");
+                            //Load Tags
+                            Globals.colTags = Utilities.AsyncDB().column("SELECT DISTINCT nametag FROM tags");
 
-                    Globals.formStart.Invoke((MethodInvoker)(() =>
-                    {
-                        Globals.formStart.Hide();
-                        Globals.formMain.Show();
-                    }));
+                            int id = int.Parse(dt.Rows[0][0].ToString());
+                            string user = dt.Rows[0][1].ToString();
+                            string pass = dt.Rows[0][2].ToString();
+                            string mail = dt.Rows[0][3].ToString();
+                            Globals.logUser = new User(id, user, pass, mail);
 
-                }).Start();
+                            Globals.formStart.Invoke((MethodInvoker)(() =>
+                            {
+                                Globals.formStart.Hide();
+                                Globals.formMain.Show();
+                            }));
+                        }
+                        else
+                        {
+                            Utilities.notifyThem(ntfBox1, "Wrong username or pass", NotificationBox.Type.Error);
+                        }
+
+                    }).Start();
+                }
+                
+
+                
             }
             else
             {

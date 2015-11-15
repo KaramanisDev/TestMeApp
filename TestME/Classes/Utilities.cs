@@ -5,6 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using PdfSharp;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
+using PdfSharp.Drawing.BarCodes;
+using PdfSharp.Fonts;
+using PdfSharp.Forms;
+using System.Diagnostics;
+using PdfSharp.Pdf.AcroForms;
 
 namespace TestME
 {
@@ -104,6 +113,91 @@ namespace TestME
             tempDB.Debug = DebugMe;
             return tempDB;
         }
+
+        public static void printPDF(string title, string date, List<Question> quests, bool anwsered)
+        {
+
+
+
+            
+            PdfDocument document = new PdfDocument();
+            document.Info.Author = "Rolf Baxter";
+            document.Info.Keywords = "PdfSharp, Examples, C#";
+
+            PdfPage page = document.AddPage();
+            page.Size = PageSize.A4;
+
+            // Obtain an XGraphics object to render to
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+            // Create a font
+            double fontHeight = 22;
+            double fontHeightdate = 15;
+            double fontHeightquest = 13;
+            double fontHeightanswer = 11;
+
+            //create checkbox
+            double ipsos = 145;
+            double platos = 35;
+
+            XFont fonttitle = new XFont("Tahoma", fontHeight, XFontStyle.BoldItalic);
+            XFont fontdate = new XFont("Tahoma", fontHeightdate, XFontStyle.Regular);
+            XFont fontquest = new XFont("Tahoma", fontHeightquest, XFontStyle.Bold);
+            XFont fontanswer = new XFont("Tahoma", fontHeightanswer, XFontStyle.Regular);
+
+            // Get the centre of the page
+            double y = page.Height -820;
+            int lineCount = 0;
+            double linePadding = 10;
+
+            // Create a rectangle to draw the text in and draw in it
+            XRect rect = new XRect(0, y, page.Width, fontHeight); y += 35;
+
+            //gfx.DrawString(title, font, XBrushes.Black, rect, XStringFormats.Center);
+            gfx.DrawString(title, fonttitle, XBrushes.Black, rect, XStringFormats.Center);
+            rect = new XRect(35, y, page.Width, fontHeight);
+            y += 60;
+            gfx.DrawString(date, fontdate, XBrushes.Black, rect, XStringFormat.TopLeft);
+
+
+            for (int i = 0; i < quests.Count; i++)
+            {
+                rect = new XRect(35, y, page.Width, fontHeight);
+                y += 25;
+                gfx.DrawString((i+1)+". "+quests[i].question, fontquest, XBrushes.Black, rect, XStringFormats.TopLeft);
+                
+                for (int j = 0; j < quests[i].anwsers.Count; j++)
+                {
+                    rect = new XRect(35, y, page.Width, fontHeight);
+                    y += 25;
+                    XPen pen = new XPen(XColors.Black, Math.PI);
+                    gfx.DrawRectangle(pen, platos, ipsos, 10, 10);
+                    ipsos += 25;
+                    gfx.DrawString("     "+quests[i].anwsers[j].text, fontanswer, XBrushes.Black, rect, XStringFormats.TopLeft);
+                    //sografise koutaki
+                    if (anwsered == true && quests[i].anwsers[j].correct == true)
+                    {
+                        
+                    }
+                    
+                }
+                ipsos += 25;
+            }
+
+            rect = new XRect(25, y, page.Width, fontHeight);
+            y += 40;
+            gfx.DrawString("Erotisi 1", fontquest, XBrushes.Black, rect, XStringFormats.TopLeft);
+
+
+            // Save and show the document
+            document.Save("TestDocument.pdf");
+            Process.Start("TestDocument.pdf");
+
+
+        }
+
+
+
 
     } //end of class Utilities
 }
