@@ -37,10 +37,13 @@ namespace TestME
 
             Utilities.runInThread(() =>
             {
-                //DataTable ta = new DataTable();
-                //ta.Columns.Add(new DataColumn("selectq", typeof(bool)));
-                DataTable dt = Utilities.AsyncDB().query("SELECT * FROM questions WHERE uid=1");
-                //ta.Merge(dt);
+                DataTable dt = Utilities.AsyncDB().query("SELECT * FROM questions WHERE uid=" + Globals.logUser.id);
+                //set all columns to readonly
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    dt.Columns[i].ReadOnly = true;
+                }
+
                 if (dt.Rows.Count > 0)
                 {
                     lblRegQ.Invoke((MethodInvoker)(() =>
@@ -48,6 +51,7 @@ namespace TestME
                         lblRegQ.Visible = false;
                     }));
                 }
+
                 dgvMyQ.Invoke((MethodInvoker)(() =>
                 {
                     DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
@@ -58,8 +62,8 @@ namespace TestME
                     checkColumn.Visible = true;
                     checkColumn.FalseValue = false;
                     checkColumn.TrueValue = true;
-
                     dgvMyQ.Columns.Add(checkColumn);
+
                     dgvMyQ.DataSource = dt;
                     dgvMyQ.Columns[0].HeaderText = "Select";
                     dgvMyQ.Columns[0].Width = 50;
@@ -90,10 +94,10 @@ namespace TestME
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Question TempQuest = new Question();
-            TempQuest.id = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
+            TempQuest.id = int.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
             TempQuest.question = dgvMyQ.SelectedRows[0].Cells[2].Value.ToString();
             TempQuest.anwsers = JsonConvert.DeserializeObject<List<Answer>>(dgvMyQ.SelectedRows[0].Cells[3].Value.ToString());
-            TempQuest.dlevel = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
+            TempQuest.dlevel = int.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
             TempQuest.prive = Boolean.Parse(dgvMyQ.SelectedRows[0].Cells[5].Value.ToString());
 
             new frmAnswers(TempQuest).Show();
@@ -102,10 +106,10 @@ namespace TestME
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Question TempQuest = new Question();
-            TempQuest.id = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
+            TempQuest.id = int.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
             TempQuest.question = dgvMyQ.SelectedRows[0].Cells[2].Value.ToString();
             TempQuest.anwsers = JsonConvert.DeserializeObject<List<Answer>>(dgvMyQ.SelectedRows[0].Cells[3].Value.ToString());
-            TempQuest.dlevel = Int32.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
+            TempQuest.dlevel = int.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
             TempQuest.prive = Boolean.Parse(dgvMyQ.SelectedRows[0].Cells[5].Value.ToString());
 
             new frmEdit(TempQuest).Show();
@@ -116,11 +120,12 @@ namespace TestME
             var msgbResult = MessageBox.Show("Are you sure that you want to\nPermanatly delete the selected Question ?", "Delete Question",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             if (msgbResult == DialogResult.Yes)
             {
-                dgvMyQ.Rows.RemoveAt(0);
+                int sid = int.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
                 Utilities.runInThread(() =>
                 {
-                    Utilities.AsyncDB().nQuery("Delete Query Here");
-                });
+                    Utilities.AsyncDB().nQuery("DELETE FROM questions WHERE id = " + sid);
+                }).Start();
+                dgvMyQ.Rows.Remove(dgvMyQ.SelectedRows[0]);
             }
         }
 
@@ -147,26 +152,39 @@ namespace TestME
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {
             btnDeleteSelected.Focus();
-            int a = 0;
-            for(int i =0; i< dgvMyQ.Rows.Count;i++)
+            string idsForDelete = "";
+            List<int> cids = new List<int>();
+            for (int i = 0; i < dgvMyQ.Rows.Count; i++)
             {
-                try
+                if (bool.Parse(dgvMyQ.Rows[i].Cells[0].Value.ToString()))
                 {
-                    if (dgvMyQ.Rows[i].Cells[0].Value.ToString() != null)
-                    {
-                        bool tn = bool.Parse(dgvMyQ.Rows[i].Cells[0].Value.ToString());
-                        if (tn)
-                        {
-                            a++;
-                            MessageBox.Show(a.ToString());
-                        }
-                    }
-                }
-                catch (Exception) {
-                    MessageBox.Show("yyy");
+
+                    cids.Add(i);
+                    idsForDelete += dgvMyQ.Rows[i].Cells[1].Value.ToString() + ",";
                 }
             }
-            
+            if (cids.Count > 0)
+            {
+                var msgbResult = MessageBox.Show("Are you sure that you want to\nPermanatly delete the selected Questions ?", "Delete Question", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (msgbResult == DialogResult.Yes)
+                {
+                    for (int k = (cids.Count-1); k >= 0; k--)
+                    {
+                        dgvMyQ.Rows.RemoveAt(int.Parse(cids[k].ToString()));
+                    }
+                    idsForDelete = idsForDelete.Substring(0, idsForDelete.Length - 1);
+                    Utilities.runInThread(() =>
+                    {
+                        Utilities.AsyncDB().nQuery("DELETE FROM questions WHERE id IN (" + idsForDelete + ")");
+                        Utilities.notifyThem(ntfMyQ, "Successfully Deleted " + cids.Count + " Questions !", NotificationBox.Type.Success);
+                    }).Start();
+                }
+            }
+            else
+            {
+                Utilities.notifyThem(ntfMyQ, "You didn't select any questions.", NotificationBox.Type.Warning);
+            }
         }
+       
     }
 }

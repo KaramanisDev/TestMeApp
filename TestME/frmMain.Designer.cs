@@ -44,6 +44,7 @@
             this.tabUser = new XylosTabControl();
             this.userpanel = new System.Windows.Forms.TabPage();
             this.tabquestions = new System.Windows.Forms.TabPage();
+            this.ntfMyQ = new NotificationBox();
             this.btnDeleteSelected = new BonfireButton();
             this.lblRegQ = new System.Windows.Forms.Label();
             this.lblUserMessage = new System.Windows.Forms.Label();
@@ -184,6 +185,7 @@
             // tabquestions
             // 
             this.tabquestions.BackColor = System.Drawing.Color.White;
+            this.tabquestions.Controls.Add(this.ntfMyQ);
             this.tabquestions.Controls.Add(this.btnDeleteSelected);
             this.tabquestions.Controls.Add(this.lblRegQ);
             this.tabquestions.Controls.Add(this.lblUserMessage);
@@ -198,6 +200,22 @@
             this.tabquestions.Size = new System.Drawing.Size(619, 402);
             this.tabquestions.TabIndex = 0;
             this.tabquestions.Text = "My Questions";
+            // 
+            // ntfMyQ
+            // 
+            this.ntfMyQ.BorderCurve = 8;
+            this.ntfMyQ.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.ntfMyQ.Image = null;
+            this.ntfMyQ.Location = new System.Drawing.Point(59, 349);
+            this.ntfMyQ.MinimumSize = new System.Drawing.Size(100, 40);
+            this.ntfMyQ.Name = "ntfMyQ";
+            this.ntfMyQ.NotificationType = NotificationBox.Type.Notice;
+            this.ntfMyQ.RoundCorners = true;
+            this.ntfMyQ.ShowCloseButton = true;
+            this.ntfMyQ.Size = new System.Drawing.Size(319, 40);
+            this.ntfMyQ.TabIndex = 10;
+            this.ntfMyQ.Text = "notificationBox1";
+            this.ntfMyQ.Visible = false;
             // 
             // btnDeleteSelected
             // 
@@ -671,6 +689,7 @@
             this.ntbfindQ.Size = new System.Drawing.Size(241, 40);
             this.ntbfindQ.TabIndex = 20;
             this.ntbfindQ.Text = "ntbfindQ";
+            this.ntbfindQ.Visible = false;
             // 
             // label16
             // 
@@ -1271,5 +1290,6 @@
         private System.Windows.Forms.DataGridView dgvAnswerlist;
         private NotificationBox ntbfindQ;
         private XylosCheckBox checkBoxAnsweredTest;
+        private NotificationBox ntfMyQ;
     }
 }

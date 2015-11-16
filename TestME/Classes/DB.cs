@@ -102,14 +102,13 @@ namespace TestME
                     });
                 }
 
-                this.squery = Query;
-                string sqt = Query.ToLower();
+                this.squery = Query.ToLower();;
 
-                if (sqt.Contains("select"))
+                if (this.squery.Contains("select"))
                 {
                     this.Table = execDatatable();
                 }
-                if (sqt.Contains("delete") || sqt.Contains("update") || sqt.Contains("insert"))
+                if (this.squery.Contains("delete") || this.squery.Contains("update") || this.squery.Contains("insert"))
                 {
                     this.affected_rows = execNonquery();
                 }
@@ -157,10 +156,6 @@ namespace TestME
             {
                 reader = command.ExecuteReader();
                 dt.Load(reader);
-                for(int i =0;i < dt.Columns.Count; i++)
-                {
-                    dt.Columns[i].ReadOnly = true;
-                }
                 this._querystatus = true;
             }
             catch (MySqlException my)

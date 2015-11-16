@@ -15,12 +15,13 @@ namespace TestME
 
         public Question() { }
 
-        public Question(int i,string q, List<Answer> a, bool p)
+        public Question(int id,string question, List<Answer> answers, int dlevel,bool prive)
         {
-            this._id = i;
-            this._question = q;
-            this._anwsers = a;
-            this._prive = p;
+            this._id = id;
+            this._question = question;
+            this._anwsers = answers;
+            this._dlevel = dlevel;
+            this._prive = prive;
         }
 
         public int id

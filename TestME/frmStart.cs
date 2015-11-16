@@ -85,9 +85,6 @@ namespace TestME
                         DB TempLogUser = Utilities.AsyncDB();
                         TempLogUser.bind(new string[] { "user", txtUser.Text, "pass", txtPassword.Text });
                         DataTable dt = TempLogUser.query("select * from users where user = @user and pass = @pass");
-
-                        //DataTable userDt = TemplogDb.query("SELECT * FROM `users` WHERE `user`='" + txtUser.Text + "' AND `pass`='" + txtPassword.Text + "'");
-                        //MessageBox.Show(userDt.Rows.Count.ToString());
                         if (dt.Rows.Count == 1)
                         {
 
@@ -113,9 +110,6 @@ namespace TestME
 
                     }).Start();
                 }
-                
-
-                
             }
             else
             {
