@@ -90,7 +90,7 @@ namespace TestME
                         {
 
                             //Load Tags
-                            Globals.colTags = Utilities.AsyncDB().column("SELECT DISTINCT nametag FROM tags");
+                            Functionality.LoadTags();
 
                             int id = int.Parse(dt.Rows[0][0].ToString());
                             string user = dt.Rows[0][1].ToString();

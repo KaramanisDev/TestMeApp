@@ -151,7 +151,7 @@ namespace TestME
                 List<Answer> Answers = new List<Answer>();
                 for(int i=0; i < dgvAnswerlist.Rows.Count; i++)
                 {
-                    Answers.Add(new Answer(dgvAnswerlist.Rows[i].Cells[0].Value.ToString(), bool.Parse(dgvAnswerlist.Rows[i].Cells[1].Value.ToString())));
+                    Answers.Add(new Answer(dgvAnswerlist.Rows[i].Cells[0].Value.ToString().TrimEnd().TrimStart(), bool.Parse(dgvAnswerlist.Rows[i].Cells[1].Value.ToString())));
                 }
                 Utilities.runInThread(() =>
                 {
@@ -192,8 +192,11 @@ namespace TestME
                         {
                             switchPrivate.isOn = false;
                         });
+
+                        Functionality.LoadTags(autocompleteMenu1);
                     }
                 }).Start();
+
             }
         }
 
@@ -211,14 +214,24 @@ namespace TestME
             }
         }
 
-        private void dgvAnswerlist_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void dgvAnswerlist_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
+            if (dgvAnswerlist.CurrentCell != null && dgvAnswerlist.CurrentCell.ColumnIndex == dgvAnswerlist.Columns["answer"].Index)
+            {
+                Control cntObject = new Control();
+                e.Control.TextChanged += new EventHandler((object sse, EventArgs se) => Cell_TextChanged(sse, dgvAnswerlist, cntObject));
+                cntObject = e.Control;
+                cntObject.TextChanged += (object sse, EventArgs se) => Cell_TextChanged(sse, dgvAnswerlist, cntObject);
+            }
+        }
 
+        private void Cell_TextChanged(object sender,DataGridView dgv, Control e)
+        {
+            if (e != null)
+            {
+                Utilities.txtBoxReplaceNewLine((TextBox)e);
+                dgv.CurrentCell.Value = e.Text;
+            }
         }
     }
 }

@@ -429,7 +429,6 @@
             this.dgvAnswerlist.ShowRowErrors = false;
             this.dgvAnswerlist.Size = new System.Drawing.Size(360, 160);
             this.dgvAnswerlist.TabIndex = 35;
-            this.dgvAnswerlist.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnswerlist_CellValueChanged);
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
             // 
             // answer

@@ -54,5 +54,14 @@ namespace TestME
 
             }).Start();
         }
+
+        public static void LoadTags(AutocompleteMenuNS.AutocompleteMenu autoCMenu = null)
+        {
+            Globals.colTags = Utilities.AsyncDB().column("SELECT DISTINCT nametag FROM tags");
+            if (autoCMenu != null)
+            {
+                autoCMenu.Items = Globals.colTags.ToArray();
+            }
+        }
     }
 }
