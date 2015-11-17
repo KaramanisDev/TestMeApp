@@ -385,8 +385,13 @@ public class CustomButton : ThemedControl
     }
 }
 public class CustomSwitch : ThemedControl {
+    private bool _isOn = false;
     [Category("Theme Settings")]
-    public bool isOn { get; set; }
+    public bool isOn
+    {
+        get { return _isOn; }
+        set { _isOn = value; Invalidate(); }
+    }
     protected override void OnMouseUp(MouseEventArgs e)
     {
         base.OnMouseUp(e);

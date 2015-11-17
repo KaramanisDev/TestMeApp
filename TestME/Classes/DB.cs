@@ -108,7 +108,7 @@ namespace TestME
                 {
                     this.Table = execDatatable();
                 }
-                if (this.squery.Contains("delete") || this.squery.Contains("update") || this.squery.Contains("insert"))
+                else if (this.squery.Contains("delete") || this.squery.Contains("update") || this.squery.Contains("insert"))
                 {
                     this.affected_rows = execNonquery();
                 }

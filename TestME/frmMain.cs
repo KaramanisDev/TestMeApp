@@ -28,61 +28,13 @@ namespace TestME
             Environment.Exit(0);
         }
 
-
-        private void frmUser_Load(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
             lblUserMessage.Text += Globals.logUser.user + " !";
             tabUser.SelectTab(1);
             autocompleteMenu1.Items = Globals.colTags.ToArray();
 
-            Utilities.runInThread(() =>
-            {
-                DataTable dt = Utilities.AsyncDB().query("SELECT * FROM questions WHERE uid=" + Globals.logUser.id);
-                //set all columns to readonly
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    dt.Columns[i].ReadOnly = true;
-                }
-
-                if (dt.Rows.Count > 0)
-                {
-                    lblRegQ.Invoke((MethodInvoker)(() =>
-                    {
-                        lblRegQ.Visible = false;
-                    }));
-                }
-
-                dgvMyQ.Invoke((MethodInvoker)(() =>
-                {
-                    DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-                    checkColumn.Name = "selectq";
-                    checkColumn.HeaderText = "Select";
-                    checkColumn.Width = 50;
-                    checkColumn.ReadOnly = false;
-                    checkColumn.Visible = true;
-                    checkColumn.FalseValue = false;
-                    checkColumn.TrueValue = true;
-                    dgvMyQ.Columns.Add(checkColumn);
-
-                    dgvMyQ.DataSource = dt;
-                    dgvMyQ.Columns[0].HeaderText = "Select";
-                    dgvMyQ.Columns[0].Width = 50;
-                    dgvMyQ.Columns[1].Visible = false;
-                    dgvMyQ.Columns[2].HeaderText = "Questions";
-                    dgvMyQ.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-                    dgvMyQ.Columns[2].Width = 390;
-                    dgvMyQ.Columns[3].Visible = false;
-                    dgvMyQ.Columns[4].Visible = false;
-                    dgvMyQ.Columns[5].HeaderText = "Private";
-                    dgvMyQ.Columns[5].Width = 60;
-                    dgvMyQ.Columns[6].Visible = false;
-                    for (int i = 0; i < dgvMyQ.Rows.Count; i++)
-                    {
-                        dgvMyQ.Rows[i].Cells[0].Value = "False";
-                    }
-                }));
-                
-            }).Start();
+            Functionality.RefreshMyQuestions();
 
         }
 
@@ -124,8 +76,10 @@ namespace TestME
                 Utilities.runInThread(() =>
                 {
                     Utilities.AsyncDB().nQuery("DELETE FROM questions WHERE id = " + sid);
+                    Utilities.AsyncDB().nQuery("DELETE FROM tags WHERE qid = " + sid);
                 }).Start();
                 dgvMyQ.Rows.Remove(dgvMyQ.SelectedRows[0]);
+                Utilities.notifyThem(ntfMyQ, "Successfully Deleted !", NotificationBox.Type.Success);
             }
         }
 
@@ -158,7 +112,6 @@ namespace TestME
             {
                 if (bool.Parse(dgvMyQ.Rows[i].Cells[0].Value.ToString()))
                 {
-
                     cids.Add(i);
                     idsForDelete += dgvMyQ.Rows[i].Cells[1].Value.ToString() + ",";
                 }
@@ -172,10 +125,11 @@ namespace TestME
                     {
                         dgvMyQ.Rows.RemoveAt(int.Parse(cids[k].ToString()));
                     }
-                    idsForDelete = idsForDelete.Substring(0, idsForDelete.Length - 1);
+                    idsForDelete = idsForDelete.TrimEnd(',');
                     Utilities.runInThread(() =>
                     {
                         Utilities.AsyncDB().nQuery("DELETE FROM questions WHERE id IN (" + idsForDelete + ")");
+                        Utilities.AsyncDB().nQuery("DELETE FROM tags WHERE qid IN (" + idsForDelete + ")");
                         Utilities.notifyThem(ntfMyQ, "Successfully Deleted " + cids.Count + " Questions !", NotificationBox.Type.Success);
                     }).Start();
                 }
@@ -185,6 +139,86 @@ namespace TestME
                 Utilities.notifyThem(ntfMyQ, "You didn't select any questions.", NotificationBox.Type.Warning);
             }
         }
-       
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtAddQ.Text.Trim()) == true || string.IsNullOrEmpty(txtAddTags.Text.Trim()) == true || (dgvAnswerlist.Rows.Count < 1))
+            {
+                Utilities.notifyThem(ntfAdd, "You must fill some info about your question first.", NotificationBox.Type.Error);
+            }
+            else
+            {
+                List<Answer> Answers = new List<Answer>();
+                for(int i=0; i < dgvAnswerlist.Rows.Count; i++)
+                {
+                    Answers.Add(new Answer(dgvAnswerlist.Rows[i].Cells[0].Value.ToString(), bool.Parse(dgvAnswerlist.Rows[i].Cells[1].Value.ToString())));
+                }
+                Utilities.runInThread(() =>
+                {
+                    DB TempDB = Utilities.AsyncDB(true);
+                    TempDB.bind(new string[] {"Question",txtAddQ.Text.TrimEnd().TrimStart(), "Answers", JsonConvert.SerializeObject(Answers).ToString(), "Dlevel", difficultyLvl.Value.ToString(), "Prive", (switchPrivate.isOn ? 1 : 0).ToString(), "UID", Globals.logUser.id.ToString() });
+                    string qid = TempDB.single("INSERT INTO questions (question, answers, dlevel, prive, uid) VALUES (@Question, @Answers, @Dlevel, @Prive, @UID); select last_insert_id();");
+
+                    int qAddTag = 0;
+                    string[] tags = txtAddTags.Text.TrimEnd(',').Split(',');
+                    foreach (string tag in tags)
+                    {
+                        TempDB.bind(new string[] { "TAG", tag, "QID", qid });
+                        qAddTag += TempDB.nQuery("INSERT INTO tags (nametag, qid) VALUES (@TAG, @QID)");
+                    }
+
+                    if (string.IsNullOrEmpty(qid) == false && qAddTag > 0)
+                    {
+                        Utilities.notifyThem(ntfAdd, "Successfull Added Question !", NotificationBox.Type.Success);
+                        Functionality.RefreshMyQuestions();
+                        Utilities.InvokeMe(txtAddQ, () =>
+                         {
+                             txtAddQ.Text = "";
+                         });
+                        Utilities.InvokeMe(dgvAnswerlist, () =>
+                        {
+                            dgvAnswerlist.Rows.Clear();
+                            dgvAnswerlist.Refresh();
+                        });
+                        Utilities.InvokeMe(txtAddTags, () =>
+                        {
+                            txtAddTags.Text = "";
+                        });
+                        Utilities.InvokeMe(difficultyLvl, () =>
+                        {
+                            difficultyLvl.Value = 1;
+                        });
+                        Utilities.InvokeMe(switchPrivate, () =>
+                        {
+                            switchPrivate.isOn = false;
+                        });
+                    }
+                }).Start();
+            }
+        }
+
+        private void btnAddAnswer_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtAnswer.Text.Trim()))
+            {
+                Utilities.notifyThem(ntfAdd, "Write your answer first.", NotificationBox.Type.Warning);
+            }
+            else
+            {
+                dgvAnswerlist.Rows.Add(txtAnswer.Text.TrimEnd().TrimStart(), switchCorrectAnswer.isOn);
+                txtAnswer.Text = "";
+                switchCorrectAnswer.isOn = true;
+            }
+        }
+
+        private void dgvAnswerlist_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvAnswerlist_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+
+        }
     }
 }

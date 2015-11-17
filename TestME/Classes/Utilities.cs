@@ -25,6 +25,7 @@ namespace TestME
             txtb.Text = txtb.Text.Replace(Environment.NewLine, "");
             txtb.SelectionStart = cpos;
         }
+
         public static void txtBoxReplaceSpaceNewLine(TextBox txtb)
         {
             int cpos = txtb.SelectionStart;
@@ -43,7 +44,8 @@ namespace TestME
 
         public static void notifyThem(NotificationBox ntfbox,string msg,NotificationBox.Type ntype)
         {
-            ntfbox.Invoke((MethodInvoker)(() => {
+            InvokeMe(ntfbox, () =>
+            { 
                 ntfbox.Text = msg;
                 ntfbox.NotificationType = ntype;
                 ntfbox.Visible = true;
@@ -66,7 +68,7 @@ namespace TestME
                         ntfbox.Image = TestME.Properties.Resources.star;
                         break;
                 }
-            }));
+            });
         }
 
         public static Thread runInThread(Action func)
@@ -112,6 +114,40 @@ namespace TestME
             DB tempDB = new DB(Globals.ConnectionStr());
             tempDB.Debug = DebugMe;
             return tempDB;
+        }
+
+        public static void InvokeMe(this Control ctrl, MethodInvoker mInvoke)
+        {
+            ctrl.Invoke((MethodInvoker)(mInvoke));
+        }
+
+        public static Control FindControl(Form form, string name)
+        {
+            foreach (Control control in form.Controls)
+            {
+                Control result = FindControl(form, control, name);
+                if (result != null)
+                    return result;
+            }
+
+            return null;
+        }
+
+        private static Control FindControl(Form form, Control control, string name)
+        {
+            if (control.Name == name)
+            {
+                return control;
+            }
+
+            foreach (Control subControl in control.Controls)
+            {
+                Control result = FindControl(form, subControl, name);
+                if (result != null)
+                    return result;
+            }
+
+            return null;
         }
 
         public static void printPDF(string title, string date, List<Question> quests, bool anwsered)
@@ -195,9 +231,5 @@ namespace TestME
 
 
         }
-
-
-
-
     } //end of class Utilities
 }

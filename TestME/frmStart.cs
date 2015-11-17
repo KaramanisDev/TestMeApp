@@ -20,6 +20,7 @@ namespace TestME
 
         private void frmStart_Load(object sender, EventArgs e)
         {
+
             tabMain.SelectTab(1);
             string[] fill=Utilities.loadSettings("StoredSettings",6);
             if (fill[0] == "True") { 
@@ -97,11 +98,11 @@ namespace TestME
                             string mail = dt.Rows[0][3].ToString();
                             Globals.logUser = new User(id, user, pass, mail);
 
-                            Globals.formStart.Invoke((MethodInvoker)(() =>
+                            Utilities.InvokeMe(Globals.formStart, ()=>
                             {
                                 Globals.formStart.Hide();
                                 Globals.formMain.Show();
-                            }));
+                            });
                         }
                         else
                         {
@@ -138,9 +139,10 @@ namespace TestME
                             System.IO.File.Delete(Globals.FilesPath + "\\TestME\\StoredSettings");
                         }
                     }
-                    btnconnect.Invoke((MethodInvoker)(() => {
+                    Utilities.InvokeMe(btnconnect,()=>
+                    {
                         btnconnect.Text = "Reconnect";
-                    }));
+                    });
                     Utilities.notifyThem(ntfBox3, "Successfully Connected !", NotificationBox.Type.Success);
                 }
                 else
