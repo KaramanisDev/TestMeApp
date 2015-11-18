@@ -364,5 +364,57 @@ namespace TestME
             switchCorrectAnswer.isOn = true;
             Utilities.notifyThem(ntfAdd, "Cleared Question info !", NotificationBox.Type.Other);
         }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtopassword.Text) == true || string.IsNullOrEmpty(txtnpassword.Text) == true || string.IsNullOrEmpty(txtrnpassword.Text))
+            {
+                Utilities.notifyThem(ntfP, "You must fill all fields", NotificationBox.Type.Error);
+            }
+            else if (!txtnpassword.Text.Equals(txtrnpassword.Text))
+            {
+                Utilities.notifyThem(ntfP, "Different new Password fields", NotificationBox.Type.Error);
+            }
+            else
+            {
+                Utilities.runInThread(() =>
+                {
+                    string qid = Utilities.AsyncDB().single("UPDATE users SET pass='"+ txtnpassword.Text +"' WHERE id=" + Globals.logUser.id);
+                }).Start();
+                Utilities.notifyThem(ntfP, "Password Changed", NotificationBox.Type.Success);
+            }
+        }
+
+        private void btnChangeEmail_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtepassword.Text) == true || string.IsNullOrEmpty(txtnemail.Text) == true)
+            {
+                Utilities.notifyThem(ntfE, "You must fill all fields", NotificationBox.Type.Error);
+            }
+            else
+            {
+                Utilities.runInThread(() =>
+                {
+                    string qid = Utilities.AsyncDB().single("UPDATE users SET email='" + txtnemail.Text + "' WHERE id=" + Globals.logUser.id);
+                }).Start();
+                Utilities.notifyThem(ntfE, "Email Changed", NotificationBox.Type.Success);
+            }
+        }
+
+        private void btnChangeSecurity_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtspassword.Text) == true || string.IsNullOrEmpty(txtncode.Text) == true)
+            {
+                Utilities.notifyThem(ntfC, "You must fill all fields", NotificationBox.Type.Error);
+            }
+            else
+            {
+                Utilities.runInThread(() =>
+                {
+                    string qid = Utilities.AsyncDB().single("UPDATE users SET securitycode='" + txtncode.Text + "' WHERE id=" + Globals.logUser.id);
+                }).Start();
+                Utilities.notifyThem(ntfC, "Security Code Changed", NotificationBox.Type.Success);
+            }
+        }
     }
 }
