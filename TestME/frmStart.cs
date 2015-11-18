@@ -91,7 +91,6 @@ namespace TestME
                 else
                 {
                     Utilities.runInThread(() => {
-                        //Test Logged User                
 
                         DB TempLogUser = Utilities.AsyncDB();
                         TempLogUser.bind(new string[] { "user", txtUser.Text, "pass", txtPassword.Text });

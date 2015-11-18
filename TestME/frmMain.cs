@@ -38,12 +38,17 @@ namespace TestME
 
             pusername.Text = Globals.logUser.user;
             pemail.Text = Globals.logUser.email;
-            pdatabase.Text = Utilities.FindControl(Globals.formStart, "txtDatabase").Text;
+
             Utilities.runInThread(() => 
             {
+                Utilities.InvokeMe(pdatabase, () =>
+                {
+                    pdatabase.Text = Utilities.FindControl(Globals.formStart, "txtDatabase").Text;
+                });
                 Utilities.InvokeMe(pnumQ, () => 
                     {
-                        pnumQ.Text = Utilities.AsyncDB().single("SELECT COUNT(*) FROM questions WHERE uid="+Globals.logUser.id);
+                        string tmp = Utilities.AsyncDB().single("SELECT COUNT(*) FROM questions WHERE uid="+Globals.logUser.id);
+                        pnumQ.Text = tmp;
                     });
             }).Start();
             
@@ -375,45 +380,70 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfP, "Different new Password fields", NotificationBox.Type.Error);
             }
+            else if (!Globals.logUser.pass.Equals(txtopassword.Text))
+            {
+                Utilities.notifyThem(ntfP, "Wrong old Password", NotificationBox.Type.Error);
+            }
             else
             {
                 Utilities.runInThread(() =>
                 {
-                    string qid = Utilities.AsyncDB().single("UPDATE users SET pass='"+ txtnpassword.Text +"' WHERE id=" + Globals.logUser.id);
+                    DB TempDB = Utilities.AsyncDB();
+                    TempDB.bind(new string[] { "Pass", txtnpassword.Text });
+                    TempDB.nQuery("UPDATE users SET pass=@Pass WHERE id=" + Globals.logUser.id);
                 }).Start();
                 Utilities.notifyThem(ntfP, "Password Changed", NotificationBox.Type.Success);
+                txtopassword.Text = "";
+                txtnpassword.Text = "";
+                txtrnpassword.Text = "";
             }
         }
 
         private void btnChangeEmail_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtepassword.Text) == true || string.IsNullOrEmpty(txtnemail.Text) == true)
+            if (string.IsNullOrEmpty(txtepassword.Text) == true || string.IsNullOrEmpty(txtnemail.Text.Trim()) == true)
             {
                 Utilities.notifyThem(ntfE, "You must fill all fields", NotificationBox.Type.Error);
+            }
+            else if (!Globals.logUser.pass.Equals(txtepassword.Text))
+            {
+                Utilities.notifyThem(ntfE, "Wrong Password", NotificationBox.Type.Error);
             }
             else
             {
                 Utilities.runInThread(() =>
                 {
-                    string qid = Utilities.AsyncDB().single("UPDATE users SET email='" + txtnemail.Text + "' WHERE id=" + Globals.logUser.id);
+                    DB TempDB = Utilities.AsyncDB();
+                    TempDB.bind(new string[] { "Email", txtnemail.Text.Trim() });
+                    TempDB.nQuery("UPDATE users SET email=@Email WHERE id=" + Globals.logUser.id);
                 }).Start();
                 Utilities.notifyThem(ntfE, "Email Changed", NotificationBox.Type.Success);
+                txtepassword.Text = "";
+                txtnemail.Text = "";
             }
         }
 
         private void btnChangeSecurity_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtspassword.Text) == true || string.IsNullOrEmpty(txtncode.Text) == true)
+            if (string.IsNullOrEmpty(txtspassword.Text) == true || string.IsNullOrEmpty(txtncode.Text.Trim()) == true)
             {
                 Utilities.notifyThem(ntfC, "You must fill all fields", NotificationBox.Type.Error);
+            }
+            else if (!Globals.logUser.pass.Equals(txtspassword.Text))
+            {
+                Utilities.notifyThem(ntfC, "Wrong Password", NotificationBox.Type.Error);
             }
             else
             {
                 Utilities.runInThread(() =>
                 {
-                    string qid = Utilities.AsyncDB().single("UPDATE users SET securitycode='" + txtncode.Text + "' WHERE id=" + Globals.logUser.id);
+                    DB TempDB = Utilities.AsyncDB();
+                    TempDB.bind(new string[] { "Code", txtncode.Text.Trim() });
+                    TempDB.nQuery("UPDATE users SET securitycode=@Code WHERE id=" + Globals.logUser.id);
                 }).Start();
                 Utilities.notifyThem(ntfC, "Security Code Changed", NotificationBox.Type.Success);
+                txtspassword.Text = "";
+                txtncode.Text = "";
             }
         }
     }
