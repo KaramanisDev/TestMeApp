@@ -14,6 +14,8 @@ using PdfSharp.Fonts;
 using PdfSharp.Forms;
 using System.Diagnostics;
 using PdfSharp.Pdf.AcroForms;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
 
 namespace TestME
 {
@@ -153,9 +155,162 @@ namespace TestME
         public static void printPDF(string title, string date, List<Question> quests, bool anwsered)
         {
 
+            DateTime now = DateTime.Now;
+            string filename = "MixMigraDocAndPdfSharp.pdf";
+            filename = Guid.NewGuid().ToString("D").ToUpper() + ".pdf";
+            PdfDocument document = new PdfDocument();
+            document.Info.Title = "PDFsharp XGraphic Sample";
+            document.Info.Author = "Stefan Lange";
+            document.Info.Subject = "Created with code snippets that show the use of graphical functions";
+            document.Info.Keywords = "PDFsharp, XGraphics";
+
+
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            // HACK²
+            gfx.MUH = PdfFontEncoding.Unicode;
+            gfx.MFEH = PdfFontEmbedding.Default;
+
+            XFont font = new XFont("Tahoma", 13, XFontStyle.Bold);
+
+            // Create a font
+            double fontHeight = 22;
+            double fontHeightdate = 15;
+            double fontHeightquest = 13;
+            double fontHeightanswer = 11;
+
+            //create checkbox
+            double ipsos = 120;
+            double ipsoserot = 3.5;
+            double platos = 37;
+
+            XFont fonttitle = new XFont("Tahoma", fontHeight, XFontStyle.BoldItalic);
+            XFont fontdate = new XFont("Tahoma", fontHeightdate, XFontStyle.Regular);
+            XFont fontquest = new XFont("Tahoma", fontHeightquest, XFontStyle.Bold);
+            XFont fontanswer = new XFont("Tahoma", fontHeightanswer, XFontStyle.Regular);
+
+            // Get the centre of the page
+            double y = page.Height - 820;
+            int lineCount = 0;
+            double linePadding = 10;
+
+            // Create a rectangle to draw the text in and draw in it
+            XRect rect = new XRect(0, y, page.Width, fontHeight); y += 35;
+
+            //gfx.DrawString(title, font, XBrushes.Black, rect, XStringFormats.Center);
+            gfx.DrawString(title, fonttitle, XBrushes.Black, rect, XStringFormats.Center);
+            rect = new XRect(35, y, page.Width, fontHeight);
+            y += 60;
+            gfx.DrawString(date, fontdate, XBrushes.Black, rect, XStringFormat.TopLeft);
+            // You always need a MigraDoc document for rendering.
+            Document doc = new Document();
+            Section sec = doc.AddSection();
+            MigraDoc.Rendering.DocumentRenderer docRenderer = new DocumentRenderer(doc);
+            
+            for (int i = 0; i < quests.Count; i++)
+            {
+
+                // Add a single paragraph with some text and format information.
+                
+                Paragraph para = sec.AddParagraph();
+                sec.IsNull();
+                para.IsNull();
+                para.Format.Alignment = ParagraphAlignment.Left;
+                para.Format.Font.Name = "Tahoma";
+                para.Format.Font.Size = 13;
+                para.Format.Font.Color = MigraDoc.DocumentObjectModel.Colors.Black;
+                para.AddFormattedText((i + 1) + ". " + quests[i].question + "\n",TextFormat.Bold);
+                if (quests[i].question.Length > 8)
+                {
+
+                }
+                //para.AddText((i + 1) + ". " + quests[i].question+"\n");
+                
+                for (int j = 0; j < quests[i].anwsers.Count; j++)
+                {
+                    para.IsNull();
+                    para.Format.Alignment = ParagraphAlignment.Left;
+                    para.Format.Font.Name = "Tahoma";
+                    para.Format.Font.Size = 13;
+                    para.Format.Font.Color = MigraDoc.DocumentObjectModel.Colors.Black;
+                    para.AddText("     " + quests[i].anwsers[j].text + "\n");
+                    
+                    //rect = new XRect(35, y, page.Width, fontHeight);
+                    y += 25;
+                    XPen pen = new XPen(XColors.Black, 1.5);
+                    gfx.DrawRectangle(pen, platos, ipsos, 10, 10);
+                    ipsos += 13.5;
+                    //gfx.DrawString("     " + quests[i].anwsers[j].text, fontanswer, XBrushes.Black, rect, XStringFormats.TopLeft);
+                    
+                    docRenderer.PrepareDocument();
+
+                    // Render the paragraph. You can render tables or shapes the same way.
+                    docRenderer.RenderObject(gfx, XUnit.FromCentimeter(2), XUnit.FromCentimeter(ipsoserot), "17cm", para);
+
+                    
+                    //sografise koutaki
+                    if (anwsered == true && quests[i].anwsers[j].correct == true)
+                    {
+
+                    }
+                }
+                ipsos += 58;
+                ipsoserot += 3;
+
+                //// Create a renderer and prepare (=layout) the document
+                //docRenderer.PrepareDocument();
+
+                //// Render the paragraph. You can render tables or shapes the same way.
+                //docRenderer.RenderObject(gfx, XUnit.FromCentimeter(2), XUnit.FromCentimeter(ipsoserot), "11cm", para);
+                
+            }
 
 
             
+
+            //// You always need a MigraDoc document for rendering.
+            //Document doc = new Document();
+            //Section sec = doc.AddSection();
+            //// Add a single paragraph with some text and format information.
+            //Paragraph para = sec.AddParagraph();
+            //para.Format.Alignment = ParagraphAlignment.Justify;
+            //para.Format.Font.Name = "Tahoma";
+            //para.Format.Font.Size = 13;
+            //para.Format.Font.Color = MigraDoc.DocumentObjectModel.Colors.Black;
+            //para.AddText("Duisism odigna acipsum delesenisl ");
+            //para.AddFormattedText("ullum in velenit", TextFormat.Bold);
+            //para.AddText(" ipit iurero dolum zzriliquisis nit wis dolore vel et " +
+            //  "nonsequipit, velendigna auguercilit lor se dipisl duismod tatem zzrit " +
+            //  "at laore magna feummod oloborting ea con vel essit augiati " +
+            //  "onsequat luptat nos diatum vel ullum illummy nonsent nit ipis et " +
+            //  "nonsequis niation utpat. Odolobor augait et non etueril landre min ut " +
+            //  "ulla feugiam commodo lortie ex essent augait el ing eumsan hendre " +
+            //  "feugait prat augiatem amconul laoreet. &#8804;&#8805;&#8776;&#8800;");
+           
+
+            //// Create a renderer and prepare (=layout) the document
+            //MigraDoc.Rendering.DocumentRenderer docRenderer = new DocumentRenderer(doc);
+            //docRenderer.PrepareDocument();
+
+            //// Render the paragraph. You can render tables or shapes the same way.
+            //docRenderer.RenderObject(gfx, XUnit.FromCentimeter(2), XUnit.FromCentimeter(10), "18cm", para);
+
+
+
+          
+
+
+            // Save the document...
+            document.Save(filename);
+            // ...and start a viewer
+            Process.Start(filename);
+
+
+
+
+
+
+            /*
             PdfDocument document = new PdfDocument();
             document.Info.Author = "Rolf Baxter";
             document.Info.Keywords = "PdfSharp, Examples, C#";
@@ -229,7 +384,8 @@ namespace TestME
             document.Save("TestDocument.pdf");
             Process.Start("TestDocument.pdf");
 
-
+    */
         }
+        
     } //end of class Utilities
 }
