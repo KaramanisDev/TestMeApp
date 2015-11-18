@@ -74,11 +74,13 @@ namespace TestME
 
             if (Globals.Connected)
             {
+                txtUser.Text = txtUser.Text.Trim();
                 //elenxs gia to an einai kena ta pedia
-                if(txtUser.Text == "" || txtPassword.Text == "")
+                if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
                 {
-                    Utilities.notifyThem(ntfBox1, "Empty username or password!",NotificationBox.Type.Warning);
-                }else
+                    Utilities.notifyThem(ntfBox1, "Empty username or password!", NotificationBox.Type.Warning);
+                }
+                else
                 {
                     Utilities.runInThread(() => {
                         //Test Logged User                
