@@ -50,7 +50,6 @@
             this.lblRegQ = new System.Windows.Forms.Label();
             this.lblUserMessage = new System.Windows.Forms.Label();
             this.dgvMyQ = new System.Windows.Forms.DataGridView();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,6 +109,8 @@
             this.btnClose = new CustomButton();
             this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.selectq = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
@@ -296,21 +297,13 @@
             this.dgvMyQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMyQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMyQ.ShowCellErrors = false;
+            this.dgvMyQ.ShowCellToolTips = false;
             this.dgvMyQ.ShowEditingIcon = false;
             this.dgvMyQ.ShowRowErrors = false;
             this.dgvMyQ.Size = new System.Drawing.Size(500, 275);
             this.dgvMyQ.TabIndex = 2;
-            this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context");
+            this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context.");
             this.dgvMyQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyQ_CellMouseUp);
-            // 
-            // select
-            // 
-            this.select.FalseValue = "False";
-            this.select.HeaderText = "Select";
-            this.select.Name = "select";
-            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.select.TrueValue = "True";
-            this.select.Width = 50;
             // 
             // rcmMyQ
             // 
@@ -654,6 +647,7 @@
             this.btnReset.Size = new System.Drawing.Size(79, 35);
             this.btnReset.TabIndex = 18;
             this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnAdd
             // 
@@ -716,13 +710,13 @@
             this.ntbfindQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ntbfindQ.ForeColor = System.Drawing.Color.DimGray;
             this.ntbfindQ.Image = null;
-            this.ntbfindQ.Location = new System.Drawing.Point(53, 351);
+            this.ntbfindQ.Location = new System.Drawing.Point(49, 351);
             this.ntbfindQ.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntbfindQ.Name = "ntbfindQ";
             this.ntbfindQ.NotificationType = NotificationBox.Type.Warning;
             this.ntbfindQ.RoundCorners = true;
             this.ntbfindQ.ShowCloseButton = true;
-            this.ntbfindQ.Size = new System.Drawing.Size(241, 40);
+            this.ntbfindQ.Size = new System.Drawing.Size(283, 40);
             this.ntbfindQ.TabIndex = 20;
             this.ntbfindQ.Text = "ntbfindQ";
             this.ntbfindQ.Visible = false;
@@ -795,6 +789,8 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvFoundQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvFoundQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoundQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.selectq});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 9F);
@@ -866,7 +862,7 @@
             this.numericMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTipUser.SetToolTip(this.numericMax, "Difficult Question");
             this.numericMax.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});
@@ -934,6 +930,7 @@
             this.btnSearch.Size = new System.Drawing.Size(87, 35);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnClear
             // 
@@ -949,6 +946,7 @@
             this.btnClear.Size = new System.Drawing.Size(87, 35);
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnMakeTest
             // 
@@ -964,6 +962,7 @@
             this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
             this.btnMakeTest.TabIndex = 7;
             this.btnMakeTest.Text = "Add To Test";
+            this.btnMakeTest.Click += new System.EventHandler(this.btnMakeTest_Click);
             // 
             // finaltest
             // 
@@ -1059,10 +1058,15 @@
             this.dgvMyTest.Location = new System.Drawing.Point(39, 111);
             this.dgvMyTest.MultiSelect = false;
             this.dgvMyTest.Name = "dgvMyTest";
+            this.dgvMyTest.ReadOnly = true;
             this.dgvMyTest.RowHeadersVisible = false;
             this.dgvMyTest.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMyTest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMyTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMyTest.ShowCellErrors = false;
+            this.dgvMyTest.ShowCellToolTips = false;
+            this.dgvMyTest.ShowEditingIcon = false;
+            this.dgvMyTest.ShowRowErrors = false;
             this.dgvMyTest.Size = new System.Drawing.Size(538, 220);
             this.dgvMyTest.TabIndex = 7;
             this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
@@ -1223,6 +1227,25 @@
             this.autocompleteMenu1.MinFragmentLength = 1;
             this.autocompleteMenu1.TargetControlWrapper = null;
             // 
+            // select
+            // 
+            this.select.FalseValue = "False";
+            this.select.HeaderText = "Select";
+            this.select.Name = "select";
+            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.select.TrueValue = "True";
+            this.select.Visible = false;
+            this.select.Width = 50;
+            // 
+            // selectq
+            // 
+            this.selectq.FalseValue = "False";
+            this.selectq.HeaderText = "Select";
+            this.selectq.Name = "selectq";
+            this.selectq.TrueValue = "True";
+            this.selectq.Visible = false;
+            this.selectq.Width = 50;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1330,5 +1353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn answer;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn selectq;
     }
 }

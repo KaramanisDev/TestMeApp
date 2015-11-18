@@ -192,6 +192,14 @@ namespace TestME
                         {
                             switchPrivate.isOn = false;
                         });
+                        Utilities.InvokeMe(txtAnswer, () =>
+                        {
+                            txtAnswer.Text = "";
+                        });
+                        Utilities.InvokeMe(switchCorrectAnswer, () =>
+                        {
+                            switchCorrectAnswer.isOn = true;
+                        });
 
                         Functionality.LoadTags(autocompleteMenu1);
                     }
@@ -232,6 +240,118 @@ namespace TestME
                 Utilities.txtBoxReplaceNewLine((TextBox)e);
                 dgv.CurrentCell.Value = e.Text;
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTags.Text))
+            {
+                Utilities.notifyThem(ntbfindQ, "You must add some tags first.", NotificationBox.Type.Error);
+            }
+            else
+            {
+                Utilities.runInThread(() =>
+                {
+                    DB TempDB = Utilities.AsyncDB(true);
+                    string[] tags = txtTags.Text.TrimEnd(',').Split(',');
+                    string conQuery = "";
+                    for(int i = 0;i< tags.Length;i++)
+                    {
+                        conQuery += "@" + i + ",";
+                    }
+
+                    string fromall = "";
+                    if (switchFindAll.isOn)
+                    {
+                        fromall = "(prive = 0 and uid != " + Globals.logUser.id + ") or ";
+                    }
+
+                    DataTable dt = new DataTable();
+
+                    TempDB.qBind(tags);
+                    if (!switchAllTags.isOn) {
+                        dt = TempDB.query("select * from questions where (" + fromall + "uid = " + Globals.logUser.id + ") and dlevel >= "+ numericMin.Value + " and dlevel <= " + numericMax.Value + " and id in(select distinct qid from tags where nametag in (" + conQuery.TrimEnd(',') + "));");
+                    }
+                    else
+                    {
+                        dt = TempDB.query("SELECT * FROM  `questions` WHERE (" + fromall + "uid = " + Globals.logUser.id + ") and dlevel >= " + numericMin.Value + " and dlevel <= " + numericMax.Value + " and id IN (SELECT qid FROM  `tags` WHERE nametag IN (SELECT nametag FROM tags WHERE nametag IN (" + conQuery.TrimEnd(',') + ")) GROUP BY qid HAVING COUNT( qid ) = " + tags.Length +")");
+                    }
+
+                    for (int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        dt.Columns[i].ReadOnly = true;
+                    }
+
+                    Utilities.InvokeMe(dgvFoundQ, () =>
+                    {
+                        dgvFoundQ.DataSource = dt;
+                        dgvFoundQ.Columns[0].Visible = true;
+                        dgvFoundQ.Columns[0].Width = 50;
+                        dgvFoundQ.Columns[1].Visible = false;
+                        dgvFoundQ.Columns[2].HeaderText = "Questions";
+                        dgvFoundQ.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dgvFoundQ.Columns[2].Width = 410;
+                        dgvFoundQ.Columns[3].Visible = false;
+                        dgvFoundQ.Columns[4].HeaderText = "Difficulty";
+                        dgvFoundQ.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgvFoundQ.Columns[4].Width = 60;
+                        dgvFoundQ.Columns[5].Visible = false;
+                        dgvFoundQ.Columns[6].Visible = false;
+                        for (int i = 0; i < dgvFoundQ.Rows.Count; i++)
+                        {
+                            dgvFoundQ.Rows[i].Cells[0].Value = "True";
+                        }
+                    });
+
+                    if (dt.Rows.Count < 1) {
+                        DataTable da = new DataTable();
+                        Utilities.InvokeMe(dgvFoundQ, () =>
+                        {
+                            dgvFoundQ.DataSource = da;
+                            dgvFoundQ.Columns[0].Visible = false;
+                        });
+                    }
+
+                    Utilities.notifyThem(ntbfindQ, "Found " + dt.Rows.Count + " Questions.", NotificationBox.Type.Notice);
+
+                }).Start();
+            }
+        }
+
+        private void btnMakeTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            for (int i = (dgvFoundQ.Rows.Count-1); i >= 0 ; i--)
+            {
+                dgvFoundQ.Rows.RemoveAt(i);
+            }
+
+            txtTags.Text = "";
+            switchAllTags.isOn = false;
+            switchFindAll.isOn = true;
+            numericMin.Value = 1;
+            numericMax.Value = 5;
+            Utilities.notifyThem(ntbfindQ, "Cleared Search result and settings !", NotificationBox.Type.Other);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            for (int i = (dgvAnswerlist.Rows.Count - 1); i >= 0; i--)
+            {
+                dgvAnswerlist.Rows.RemoveAt(i);
+            }
+
+            txtAddQ.Text = "";
+            txtAddTags.Text = "";
+            txtAnswer.Text = "";
+            difficultyLvl.Value = 1;
+            switchPrivate.isOn = false;
+            switchCorrectAnswer.isOn = true;
+            Utilities.notifyThem(ntfAdd, "Cleared Question info !", NotificationBox.Type.Other);
         }
     }
 }

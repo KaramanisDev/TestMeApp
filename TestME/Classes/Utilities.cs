@@ -116,7 +116,7 @@ namespace TestME
             return tempDB;
         }
 
-        public static void InvokeMe(this Control ctrl, MethodInvoker mInvoke)
+        public static void InvokeMe(Control ctrl, MethodInvoker mInvoke)
         {
             ctrl.Invoke((MethodInvoker)(mInvoke));
         }

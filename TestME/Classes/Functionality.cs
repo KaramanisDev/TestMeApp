@@ -30,6 +30,22 @@ namespace TestME
                     {
                         lblRegQ.Visible = false;
                     });
+                    Utilities.InvokeMe(dgvMyQ, () =>
+                    {
+                        dgvMyQ.Columns[0].Visible = true;
+                    });
+                }
+                else
+                {
+                    Utilities.InvokeMe(lblRegQ, () =>
+                    {
+                        lblRegQ.Visible = true;
+                    });
+
+                    Utilities.InvokeMe(dgvMyQ, () =>
+                    {
+                        dgvMyQ.Columns[0].Visible = false;
+                    });
                 }
 
                 Utilities.InvokeMe(dgvMyQ, () =>
