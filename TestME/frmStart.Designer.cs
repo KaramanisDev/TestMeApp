@@ -35,6 +35,7 @@
             this.tabMain = new XylosTabControl();
             this.tabdashboard = new System.Windows.Forms.TabPage();
             this.tablogin = new System.Windows.Forms.TabPage();
+            this.ckbRemember = new XylosCheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@
             this.txtUser = new XylosTextBox();
             this.btnLogin = new BonfireButton();
             this.tabregister = new System.Windows.Forms.TabPage();
+            this.txtSecurityCode = new XylosTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnRegister = new BonfireButton();
             this.ntfBox2 = new NotificationBox();
             this.txtrepeatpass = new XylosTextBox();
@@ -75,6 +78,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.bonfireLabel1 = new BonfireLabel();
             this.frmSkin.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tablogin.SuspendLayout();
@@ -155,6 +159,7 @@
             // tablogin
             // 
             this.tablogin.BackColor = System.Drawing.Color.White;
+            this.tablogin.Controls.Add(this.ckbRemember);
             this.tablogin.Controls.Add(this.label3);
             this.tablogin.Controls.Add(this.lblUser);
             this.tablogin.Controls.Add(this.lblPassword);
@@ -171,6 +176,19 @@
             this.tablogin.Size = new System.Drawing.Size(409, 290);
             this.tablogin.TabIndex = 0;
             this.tablogin.Text = "Login";
+            // 
+            // ckbRemember
+            // 
+            this.ckbRemember.Checked = false;
+            this.ckbRemember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbRemember.EnabledCalc = true;
+            this.ckbRemember.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbRemember.ForeColor = System.Drawing.Color.DimGray;
+            this.ckbRemember.Location = new System.Drawing.Point(128, 183);
+            this.ckbRemember.Name = "ckbRemember";
+            this.ckbRemember.Size = new System.Drawing.Size(113, 18);
+            this.ckbRemember.TabIndex = 13;
+            this.ckbRemember.Text = "Remember Me";
             // 
             // label3
             // 
@@ -270,6 +288,9 @@
             // tabregister
             // 
             this.tabregister.BackColor = System.Drawing.Color.White;
+            this.tabregister.Controls.Add(this.bonfireLabel1);
+            this.tabregister.Controls.Add(this.txtSecurityCode);
+            this.tabregister.Controls.Add(this.label4);
             this.tabregister.Controls.Add(this.btnRegister);
             this.tabregister.Controls.Add(this.ntfBox2);
             this.tabregister.Controls.Add(this.txtrepeatpass);
@@ -290,6 +311,31 @@
             this.tabregister.TabIndex = 1;
             this.tabregister.Text = "Register";
             // 
+            // txtSecurityCode
+            // 
+            this.txtSecurityCode.EnabledCalc = true;
+            this.txtSecurityCode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSecurityCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.txtSecurityCode.Location = new System.Drawing.Point(178, 181);
+            this.txtSecurityCode.MaxLength = 32767;
+            this.txtSecurityCode.MultiLine = false;
+            this.txtSecurityCode.Name = "txtSecurityCode";
+            this.txtSecurityCode.ReadOnly = false;
+            this.txtSecurityCode.Size = new System.Drawing.Size(182, 29);
+            this.txtSecurityCode.TabIndex = 11;
+            this.txtSecurityCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSecurityCode.UseSystemPasswordChar = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label4.Location = new System.Drawing.Point(54, 186);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 18);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Security Code: *";
+            // 
             // btnRegister
             // 
             this.btnRegister.ButtonStyle = BonfireButton.Style.Dark;
@@ -297,7 +343,7 @@
             this.btnRegister.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Image = global::TestME.Properties.Resources.edit_5_24;
-            this.btnRegister.Location = new System.Drawing.Point(263, 190);
+            this.btnRegister.Location = new System.Drawing.Point(263, 232);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.RoundedCorners = true;
             this.btnRegister.Size = new System.Drawing.Size(97, 35);
@@ -310,13 +356,13 @@
             this.ntfBox2.BorderCurve = 15;
             this.ntfBox2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ntfBox2.Image = null;
-            this.ntfBox2.Location = new System.Drawing.Point(56, 231);
+            this.ntfBox2.Location = new System.Drawing.Point(22, 230);
             this.ntfBox2.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfBox2.Name = "ntfBox2";
             this.ntfBox2.NotificationType = NotificationBox.Type.Warning;
             this.ntfBox2.RoundCorners = true;
             this.ntfBox2.ShowCloseButton = true;
-            this.ntfBox2.Size = new System.Drawing.Size(304, 40);
+            this.ntfBox2.Size = new System.Drawing.Size(217, 40);
             this.ntfBox2.TabIndex = 8;
             this.ntfBox2.Text = "All fields are necessary";
             this.ntfBox2.Visible = false;
@@ -326,7 +372,7 @@
             this.txtrepeatpass.EnabledCalc = true;
             this.txtrepeatpass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrepeatpass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtrepeatpass.Location = new System.Drawing.Point(178, 139);
+            this.txtrepeatpass.Location = new System.Drawing.Point(178, 144);
             this.txtrepeatpass.MaxLength = 32767;
             this.txtrepeatpass.MultiLine = false;
             this.txtrepeatpass.Name = "txtrepeatpass";
@@ -341,7 +387,7 @@
             this.txtpass.EnabledCalc = true;
             this.txtpass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtpass.Location = new System.Drawing.Point(178, 104);
+            this.txtpass.Location = new System.Drawing.Point(178, 109);
             this.txtpass.MaxLength = 32767;
             this.txtpass.MultiLine = false;
             this.txtpass.Name = "txtpass";
@@ -356,7 +402,7 @@
             this.txtemail.EnabledCalc = true;
             this.txtemail.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemail.ForeColor = System.Drawing.Color.DimGray;
-            this.txtemail.Location = new System.Drawing.Point(178, 69);
+            this.txtemail.Location = new System.Drawing.Point(178, 74);
             this.txtemail.MaxLength = 32767;
             this.txtemail.MultiLine = false;
             this.txtemail.Name = "txtemail";
@@ -371,7 +417,7 @@
             this.txtusername.EnabledCalc = true;
             this.txtusername.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusername.ForeColor = System.Drawing.Color.DimGray;
-            this.txtusername.Location = new System.Drawing.Point(178, 34);
+            this.txtusername.Location = new System.Drawing.Point(178, 39);
             this.txtusername.MaxLength = 32767;
             this.txtusername.MultiLine = false;
             this.txtusername.Name = "txtusername";
@@ -386,7 +432,7 @@
             this.lblrepeatpass.AutoSize = true;
             this.lblrepeatpass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrepeatpass.ForeColor = System.Drawing.Color.DimGray;
-            this.lblrepeatpass.Location = new System.Drawing.Point(53, 145);
+            this.lblrepeatpass.Location = new System.Drawing.Point(53, 150);
             this.lblrepeatpass.Name = "lblrepeatpass";
             this.lblrepeatpass.Size = new System.Drawing.Size(119, 18);
             this.lblrepeatpass.TabIndex = 3;
@@ -397,7 +443,7 @@
             this.lblpass.AutoSize = true;
             this.lblpass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpass.ForeColor = System.Drawing.Color.DimGray;
-            this.lblpass.Location = new System.Drawing.Point(53, 110);
+            this.lblpass.Location = new System.Drawing.Point(53, 115);
             this.lblpass.Name = "lblpass";
             this.lblpass.Size = new System.Drawing.Size(75, 18);
             this.lblpass.TabIndex = 2;
@@ -408,7 +454,7 @@
             this.lblemail.AutoSize = true;
             this.lblemail.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblemail.ForeColor = System.Drawing.Color.DimGray;
-            this.lblemail.Location = new System.Drawing.Point(53, 75);
+            this.lblemail.Location = new System.Drawing.Point(53, 80);
             this.lblemail.Name = "lblemail";
             this.lblemail.Size = new System.Drawing.Size(54, 18);
             this.lblemail.TabIndex = 1;
@@ -419,7 +465,7 @@
             this.lblusername.AutoSize = true;
             this.lblusername.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusername.ForeColor = System.Drawing.Color.DimGray;
-            this.lblusername.Location = new System.Drawing.Point(53, 41);
+            this.lblusername.Location = new System.Drawing.Point(53, 46);
             this.lblusername.Name = "lblusername";
             this.lblusername.Size = new System.Drawing.Size(80, 18);
             this.lblusername.TabIndex = 0;
@@ -602,7 +648,7 @@
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltitle.Location = new System.Drawing.Point(129, 13);
+            this.lbltitle.Location = new System.Drawing.Point(129, 10);
             this.lbltitle.Name = "lbltitle";
             this.lbltitle.Size = new System.Drawing.Size(169, 22);
             this.lbltitle.TabIndex = 0;
@@ -670,7 +716,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(149, 140);
+            this.linkLabel1.Location = new System.Drawing.Point(145, 140);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(230, 18);
             this.linkLabel1.TabIndex = 2;
@@ -684,9 +730,9 @@
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Label2.ForeColor = System.Drawing.Color.DimGray;
-            this.Label2.Location = new System.Drawing.Point(26, 86);
+            this.Label2.Location = new System.Drawing.Point(11, 86);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(368, 162);
+            this.Label2.Size = new System.Drawing.Size(386, 162);
             this.Label2.TabIndex = 1;
             this.Label2.Text = resources.GetString("Label2.Text");
             this.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -733,6 +779,17 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // bonfireLabel1
+            // 
+            this.bonfireLabel1.AutoSize = true;
+            this.bonfireLabel1.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.bonfireLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bonfireLabel1.Location = new System.Drawing.Point(146, 5);
+            this.bonfireLabel1.Name = "bonfireLabel1";
+            this.bonfireLabel1.Size = new System.Drawing.Size(118, 20);
+            this.bonfireLabel1.TabIndex = 12;
+            this.bonfireLabel1.Text = "Create Account";
             // 
             // frmStart
             // 
@@ -810,6 +867,10 @@
         private System.Windows.Forms.Label label3;
         private XylosCheckBox checkBoxRemember;
         private XylosCheckBox checkBoxAutoConnect;
+        private XylosCheckBox ckbRemember;
+        private XylosTextBox txtSecurityCode;
+        private System.Windows.Forms.Label label4;
+        private BonfireLabel bonfireLabel1;
     }
 }
 

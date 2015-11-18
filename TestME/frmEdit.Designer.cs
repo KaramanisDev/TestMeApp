@@ -34,7 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdit));
             this.customForm1 = new CustomForm();
+            this.ntfEdit = new NotificationBox();
             this.dgvEditAnswers = new System.Windows.Forms.DataGridView();
+            this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSaveChanges = new BonfireButton();
             this.txtAddQ = new System.Windows.Forms.TextBox();
@@ -48,13 +51,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ntfEdit = new NotificationBox();
             this.customForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditAnswers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
             this.rcmAnswer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
             this.SuspendLayout();
             // 
             // customForm1
@@ -95,6 +95,22 @@
             this.customForm1.TopSize = 35;
             this.customForm1.TopSpace = 0;
             // 
+            // ntfEdit
+            // 
+            this.ntfEdit.BorderCurve = 8;
+            this.ntfEdit.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.ntfEdit.Image = null;
+            this.ntfEdit.Location = new System.Drawing.Point(422, 310);
+            this.ntfEdit.MinimumSize = new System.Drawing.Size(100, 40);
+            this.ntfEdit.Name = "ntfEdit";
+            this.ntfEdit.NotificationType = NotificationBox.Type.Notice;
+            this.ntfEdit.RoundCorners = true;
+            this.ntfEdit.ShowCloseButton = true;
+            this.ntfEdit.Size = new System.Drawing.Size(200, 40);
+            this.ntfEdit.TabIndex = 48;
+            this.ntfEdit.Text = "!";
+            this.ntfEdit.Visible = false;
+            // 
             // dgvEditAnswers
             // 
             this.dgvEditAnswers.BackgroundColor = System.Drawing.Color.White;
@@ -130,12 +146,26 @@
             this.dgvEditAnswers.Size = new System.Drawing.Size(358, 150);
             this.dgvEditAnswers.TabIndex = 47;
             // 
+            // rcmAnswer
+            // 
+            this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeToolStripMenuItem});
+            this.rcmAnswer.Name = "rcmAnswer";
+            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(291, 47);
+            this.label2.Location = new System.Drawing.Point(280, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 22);
             this.label2.TabIndex = 46;
@@ -143,7 +173,7 @@
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.BackColor = System.Drawing.Color.Teal;
+            this.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
             this.btnSaveChanges.ButtonStyle = BonfireButton.Style.Custom;
             this.btnSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveChanges.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,35 +335,6 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // rcmAnswer
-            // 
-            this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removeToolStripMenuItem});
-            this.rcmAnswer.Name = "rcmAnswer";
-            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            // 
-            // ntfEdit
-            // 
-            this.ntfEdit.BorderCurve = 8;
-            this.ntfEdit.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.ntfEdit.Image = null;
-            this.ntfEdit.Location = new System.Drawing.Point(422, 310);
-            this.ntfEdit.MinimumSize = new System.Drawing.Size(100, 40);
-            this.ntfEdit.Name = "ntfEdit";
-            this.ntfEdit.NotificationType = NotificationBox.Type.Notice;
-            this.ntfEdit.RoundCorners = true;
-            this.ntfEdit.ShowCloseButton = true;
-            this.ntfEdit.Size = new System.Drawing.Size(200, 40);
-            this.ntfEdit.TabIndex = 48;
-            this.ntfEdit.Text = "!";
-            // 
             // frmEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,8 +351,8 @@
             this.customForm1.ResumeLayout(false);
             this.customForm1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditAnswers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
             this.rcmAnswer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
             this.ResumeLayout(false);
 
         }

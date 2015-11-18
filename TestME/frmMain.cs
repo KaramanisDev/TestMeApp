@@ -36,6 +36,17 @@ namespace TestME
 
             Functionality.RefreshMyQuestions();
 
+            pusername.Text = Globals.logUser.user;
+            pemail.Text = Globals.logUser.email;
+            pdatabase.Text = Utilities.FindControl(Globals.formStart, "txtDatabase").Text;
+            Utilities.runInThread(() => 
+            {
+                Utilities.InvokeMe(pnumQ, () => 
+                    {
+                        pnumQ.Text = Utilities.AsyncDB().single("SELECT COUNT(*) FROM questions WHERE uid="+Globals.logUser.id);
+                    });
+            }).Start();
+            
         }
 
         private void dgvMyQ_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)

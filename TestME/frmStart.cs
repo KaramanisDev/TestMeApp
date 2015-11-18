@@ -20,8 +20,8 @@ namespace TestME
 
         private void frmStart_Load(object sender, EventArgs e)
         {
-
             tabMain.SelectTab(1);
+
             string[] fill=Utilities.loadSettings("StoredSettings",6);
             if (fill[0] == "True") { 
                 txthost.Text = fill[2];
@@ -34,6 +34,14 @@ namespace TestME
             {
                 checkBoxAutoConnect.Checked = true;
                 this.btnconnect_Click(this, new EventArgs());
+            }
+
+            string[] fill1 = Utilities.loadSettings("StoredAccount", 3);
+            if (fill1[0] == "True")
+            {
+                txtUser.Text = fill1[1];
+                txtPassword.Text = fill1[2];
+                ckbRemember.Checked = true;
             }
         }
 
@@ -90,6 +98,17 @@ namespace TestME
                         DataTable dt = TempLogUser.query("select * from users where user = @user and pass = @pass");
                         if (dt.Rows.Count == 1)
                         {
+                            if(ckbRemember.Checked)
+                            {
+                                Utilities.saveSettings("StoredAccount", ckbRemember.Checked.ToString(), txtUser.Text, txtPassword.Text);
+                            }
+                            else
+                            {
+                                if (System.IO.File.Exists(Globals.FilesPath + "\\TestME\\StoredAccount"))
+                                {
+                                    System.IO.File.Delete(Globals.FilesPath + "\\TestME\\StoredAccount");
+                                }
+                            }
 
                             //Load Tags
                             Functionality.LoadTags();

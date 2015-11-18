@@ -29,18 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rcmFindQ = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
+            this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.frmskin = new CustomForm();
             this.tabUser = new XylosTabControl();
             this.testpanel = new System.Windows.Forms.TabPage();
@@ -50,13 +61,12 @@
             this.lblUserMessage = new System.Windows.Forms.Label();
             this.dgvMyQ = new System.Windows.Forms.DataGridView();
             this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.btnDeleteSelected = new BonfireButton();
             this.tabAddQ = new System.Windows.Forms.TabPage();
             this.dgvAnswerlist = new System.Windows.Forms.DataGridView();
             this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ntfAdd = new NotificationBox();
             this.switchCorrectAnswer = new CustomSwitch();
             this.label15 = new System.Windows.Forms.Label();
@@ -71,6 +81,9 @@
             this.difficultyLvl = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnAddAnswer = new BonfireButton();
+            this.btnReset = new BonfireButton();
+            this.btnAdd = new BonfireButton();
             this.tabfind = new System.Windows.Forms.TabPage();
             this.ntbfindQ = new NotificationBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -79,13 +92,15 @@
             this.switchAllTags = new CustomSwitch();
             this.dgvFoundQ = new System.Windows.Forms.DataGridView();
             this.selectq = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.rcmFindQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.switchFindAll = new CustomSwitch();
             this.numericMax = new System.Windows.Forms.NumericUpDown();
             this.numericMin = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnSearch = new BonfireButton();
+            this.btnClear = new BonfireButton();
+            this.btnMakeTest = new BonfireButton();
             this.tabtest = new System.Windows.Forms.TabPage();
             this.checkBoxAnsweredTest = new XylosCheckBox();
             this.ntfTest = new NotificationBox();
@@ -95,6 +110,8 @@
             this.txtTestTitle = new XylosTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSave = new BonfireButton();
+            this.btnPrint = new BonfireButton();
             this.userpanel = new System.Windows.Forms.TabPage();
             this.editprofile = new System.Windows.Forms.TabPage();
             this.gbSecurity = new System.Windows.Forms.GroupBox();
@@ -103,67 +120,48 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtncode = new XylosTextBox();
             this.txtspassword = new XylosTextBox();
+            this.btnChangeSecurity = new BonfireButton();
             this.gbEmail = new System.Windows.Forms.GroupBox();
             this.ntfE = new NotificationBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtnemail = new XylosTextBox();
             this.txtepassword = new XylosTextBox();
+            this.btnChangeEmail = new BonfireButton();
             this.gbPassword = new System.Windows.Forms.GroupBox();
             this.ntfP = new NotificationBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnChangePassword = new BonfireButton();
             this.txtrnpassword = new XylosTextBox();
             this.txtnpassword = new XylosTextBox();
             this.txtopassword = new XylosTextBox();
             this.gbProfile = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
             this.pnumQ = new System.Windows.Forms.Label();
             this.pdatabase = new System.Windows.Forms.Label();
             this.pemail = new System.Windows.Forms.Label();
-            this.psecurity = new System.Windows.Forms.Label();
             this.pusername = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
-            this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
-            this.btnDeleteSelected = new BonfireButton();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddAnswer = new BonfireButton();
-            this.btnReset = new BonfireButton();
-            this.btnAdd = new BonfireButton();
-            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSearch = new BonfireButton();
-            this.btnClear = new BonfireButton();
-            this.btnMakeTest = new BonfireButton();
-            this.btnSave = new BonfireButton();
-            this.btnPrint = new BonfireButton();
-            this.btnChangeSecurity = new BonfireButton();
-            this.btnChangeEmail = new BonfireButton();
-            this.btnChangePassword = new BonfireButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rcmMyQ.SuspendLayout();
+            this.rcmAnswer.SuspendLayout();
+            this.rcmFindQ.SuspendLayout();
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyQ)).BeginInit();
-            this.rcmMyQ.SuspendLayout();
             this.tabAddQ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).BeginInit();
-            this.rcmAnswer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
             this.tabfind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoundQ)).BeginInit();
-            this.rcmFindQ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).BeginInit();
             this.tabtest.SuspendLayout();
@@ -175,6 +173,98 @@
             this.gbProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // rcmMyQ
+            // 
+            this.rcmMyQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.rcmMyQ.Name = "rcmMyQ";
+            this.rcmMyQ.Size = new System.Drawing.Size(108, 70);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Image = global::TestME.Properties.Resources.view;
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::TestME.Properties.Resources.edit;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // rcmAnswer
+            // 
+            this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeToolStripMenuItem});
+            this.rcmAnswer.Name = "rcmAnswer";
+            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            // 
+            // rcmFindQ
+            // 
+            this.rcmFindQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem1});
+            this.rcmFindQ.Name = "rcmFindQ";
+            this.rcmFindQ.Size = new System.Drawing.Size(100, 26);
+            // 
+            // viewToolStripMenuItem1
+            // 
+            this.viewToolStripMenuItem1.Image = global::TestME.Properties.Resources.view;
+            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem1.Text = "View";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "pages-4-16.png");
+            this.imageList1.Images.SetKeyName(1, "home-16.png");
+            this.imageList1.Images.SetKeyName(2, "plus-4-16.png");
+            this.imageList1.Images.SetKeyName(3, "search-16.png");
+            this.imageList1.Images.SetKeyName(4, "edit-user-16.png");
+            // 
+            // toolTipUser
+            // 
+            this.toolTipUser.AutoPopDelay = 4000;
+            this.toolTipUser.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolTipUser.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.toolTipUser.InitialDelay = 500;
+            this.toolTipUser.IsBalloon = true;
+            this.toolTipUser.ReshowDelay = 100;
+            // 
+            // autocompleteMenu1
+            // 
+            this.autocompleteMenu1.AllowsTabKey = true;
+            this.autocompleteMenu1.AppearInterval = 100;
+            this.autocompleteMenu1.Colors = ((AutocompleteMenuNS.Colors)(resources.GetObject("autocompleteMenu1.Colors")));
+            this.autocompleteMenu1.Font = new System.Drawing.Font("Trebuchet MS", 9.5F);
+            this.autocompleteMenu1.ImageList = null;
+            this.autocompleteMenu1.Items = new string[0];
+            this.autocompleteMenu1.LeftPadding = 1;
+            this.autocompleteMenu1.MinFragmentLength = 1;
+            this.autocompleteMenu1.TargetControlWrapper = null;
             // 
             // frmskin
             // 
@@ -268,14 +358,14 @@
             this.ntfMyQ.ShowCloseButton = true;
             this.ntfMyQ.Size = new System.Drawing.Size(319, 40);
             this.ntfMyQ.TabIndex = 10;
-            this.ntfMyQ.Text = "notificationBox1";
+            this.ntfMyQ.Text = "ntfMyQ";
             this.ntfMyQ.Visible = false;
             // 
             // lblRegQ
             // 
             this.lblRegQ.AutoSize = true;
             this.lblRegQ.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblRegQ.Location = new System.Drawing.Point(214, 159);
+            this.lblRegQ.Location = new System.Drawing.Point(206, 182);
             this.lblRegQ.Name = "lblRegQ";
             this.lblRegQ.Size = new System.Drawing.Size(220, 18);
             this.lblRegQ.TabIndex = 4;
@@ -301,33 +391,33 @@
             this.dgvMyQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMyQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMyQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMyQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMyQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMyQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.select});
             this.dgvMyQ.ContextMenuStrip = this.rcmMyQ;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMyQ.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyQ.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvMyQ.Location = new System.Drawing.Point(59, 64);
             this.dgvMyQ.MultiSelect = false;
             this.dgvMyQ.Name = "dgvMyQ";
             this.dgvMyQ.RowHeadersVisible = false;
             this.dgvMyQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvMyQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMyQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMyQ.ShowCellErrors = false;
@@ -349,15 +439,6 @@
             this.select.Visible = false;
             this.select.Width = 50;
             // 
-            // rcmMyQ
-            // 
-            this.rcmMyQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.rcmMyQ.Name = "rcmMyQ";
-            this.rcmMyQ.Size = new System.Drawing.Size(108, 70);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -368,6 +449,22 @@
             this.label2.Size = new System.Drawing.Size(123, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Your Questions";
+            // 
+            // btnDeleteSelected
+            // 
+            this.btnDeleteSelected.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDeleteSelected.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnDeleteSelected.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSelected.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSelected.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDeleteSelected.Image = global::TestME.Properties.Resources.delete_24;
+            this.btnDeleteSelected.Location = new System.Drawing.Point(422, 354);
+            this.btnDeleteSelected.Name = "btnDeleteSelected";
+            this.btnDeleteSelected.RoundedCorners = true;
+            this.btnDeleteSelected.Size = new System.Drawing.Size(137, 35);
+            this.btnDeleteSelected.TabIndex = 9;
+            this.btnDeleteSelected.Text = "Delete Selected";
+            this.btnDeleteSelected.Click += new System.EventHandler(this.btnDeleteSelected_Click);
             // 
             // tabAddQ
             // 
@@ -409,27 +506,27 @@
             this.dgvAnswerlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAnswerlist.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvAnswerlist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAnswerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAnswerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvAnswerlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAnswerlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.answer,
             this.Correct});
             this.dgvAnswerlist.ContextMenuStrip = this.rcmAnswer;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnswerlist.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnswerlist.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvAnswerlist.Location = new System.Drawing.Point(22, 165);
             this.dgvAnswerlist.MultiSelect = false;
             this.dgvAnswerlist.Name = "dgvAnswerlist";
@@ -447,8 +544,8 @@
             // 
             // answer
             // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.answer.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.answer.DefaultCellStyle = dataGridViewCellStyle13;
             this.answer.HeaderText = "Answer";
             this.answer.Name = "answer";
             this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -459,13 +556,6 @@
             this.Correct.HeaderText = "Correct";
             this.Correct.Name = "Correct";
             this.Correct.Width = 60;
-            // 
-            // rcmAnswer
-            // 
-            this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removeToolStripMenuItem});
-            this.rcmAnswer.Name = "rcmAnswer";
-            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
             // 
             // ntfAdd
             // 
@@ -656,6 +746,54 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Tags:";
             // 
+            // btnAddAnswer
+            // 
+            this.btnAddAnswer.BackColor = System.Drawing.Color.Chocolate;
+            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddAnswer.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
+            this.btnAddAnswer.Name = "btnAddAnswer";
+            this.btnAddAnswer.RoundedCorners = true;
+            this.btnAddAnswer.Size = new System.Drawing.Size(122, 35);
+            this.btnAddAnswer.TabIndex = 32;
+            this.btnAddAnswer.Text = "Add Answer";
+            this.btnAddAnswer.Click += new System.EventHandler(this.btnAddAnswer_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
+            this.btnReset.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReset.Image = global::TestME.Properties.Resources.undo_5_24;
+            this.btnReset.Location = new System.Drawing.Point(159, 348);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.RoundedCorners = true;
+            this.btnReset.Size = new System.Drawing.Size(79, 35);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAdd.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnAdd.Location = new System.Drawing.Point(24, 348);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RoundedCorners = true;
+            this.btnAdd.Size = new System.Drawing.Size(129, 35);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Add Question";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // tabfind
             // 
             this.tabfind.BackColor = System.Drawing.Color.White;
@@ -760,33 +898,33 @@
             this.dgvFoundQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvFoundQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvFoundQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFoundQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFoundQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFoundQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoundQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selectq});
             this.dgvFoundQ.ContextMenuStrip = this.rcmFindQ;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFoundQ.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFoundQ.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFoundQ.Location = new System.Drawing.Point(49, 155);
             this.dgvFoundQ.MultiSelect = false;
             this.dgvFoundQ.Name = "dgvFoundQ";
             this.dgvFoundQ.RowHeadersVisible = false;
             this.dgvFoundQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvFoundQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFoundQ.ShowCellErrors = false;
             this.dgvFoundQ.ShowCellToolTips = false;
@@ -804,13 +942,6 @@
             this.selectq.TrueValue = "True";
             this.selectq.Visible = false;
             this.selectq.Width = 50;
-            // 
-            // rcmFindQ
-            // 
-            this.rcmFindQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem1});
-            this.rcmFindQ.Name = "rcmFindQ";
-            this.rcmFindQ.Size = new System.Drawing.Size(100, 26);
             // 
             // label7
             // 
@@ -913,6 +1044,54 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Tags:";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Teal;
+            this.btnSearch.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.Image = global::TestME.Properties.Resources.search_24;
+            this.btnSearch.Location = new System.Drawing.Point(487, 107);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.RoundedCorners = true;
+            this.btnSearch.Size = new System.Drawing.Size(87, 35);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnClear.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.Image = global::TestME.Properties.Resources.delete_24;
+            this.btnClear.Location = new System.Drawing.Point(487, 351);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.RoundedCorners = true;
+            this.btnClear.Size = new System.Drawing.Size(87, 35);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnMakeTest
+            // 
+            this.btnMakeTest.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnMakeTest.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnMakeTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMakeTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeTest.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMakeTest.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnMakeTest.Location = new System.Drawing.Point(346, 351);
+            this.btnMakeTest.Name = "btnMakeTest";
+            this.btnMakeTest.RoundedCorners = true;
+            this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
+            this.btnMakeTest.TabIndex = 7;
+            this.btnMakeTest.Text = "Add To Test";
+            this.btnMakeTest.Click += new System.EventHandler(this.btnMakeTest_Click);
+            // 
             // tabtest
             // 
             this.tabtest.BackColor = System.Drawing.Color.White;
@@ -976,23 +1155,23 @@
             this.dgvMyTest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMyTest.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMyTest.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMyTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMyTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMyTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMyTest.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyTest.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMyTest.Location = new System.Drawing.Point(39, 111);
             this.dgvMyTest.MultiSelect = false;
             this.dgvMyTest.Name = "dgvMyTest";
@@ -1070,6 +1249,38 @@
             this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Your Test";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnSave.Location = new System.Drawing.Point(503, 349);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.RoundedCorners = true;
+            this.btnSave.Size = new System.Drawing.Size(74, 35);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
+            this.btnPrint.Location = new System.Drawing.Point(390, 349);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.RoundedCorners = true;
+            this.btnPrint.Size = new System.Drawing.Size(81, 35);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "Print";
+            this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
             // 
             // userpanel
             // 
@@ -1180,6 +1391,20 @@
             this.txtspassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtspassword.UseSystemPasswordChar = false;
             // 
+            // btnChangeSecurity
+            // 
+            this.btnChangeSecurity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnChangeSecurity.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnChangeSecurity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeSecurity.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnChangeSecurity.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangeSecurity.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnChangeSecurity.Location = new System.Drawing.Point(230, 131);
+            this.btnChangeSecurity.Name = "btnChangeSecurity";
+            this.btnChangeSecurity.RoundedCorners = true;
+            this.btnChangeSecurity.Size = new System.Drawing.Size(46, 39);
+            this.btnChangeSecurity.TabIndex = 4;
+            // 
             // gbEmail
             // 
             this.gbEmail.Controls.Add(this.ntfE);
@@ -1260,6 +1485,20 @@
             this.txtepassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtepassword.UseSystemPasswordChar = false;
             // 
+            // btnChangeEmail
+            // 
+            this.btnChangeEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnChangeEmail.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnChangeEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeEmail.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnChangeEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangeEmail.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnChangeEmail.Location = new System.Drawing.Point(219, 131);
+            this.btnChangeEmail.Name = "btnChangeEmail";
+            this.btnChangeEmail.RoundedCorners = true;
+            this.btnChangeEmail.Size = new System.Drawing.Size(46, 39);
+            this.btnChangeEmail.TabIndex = 4;
+            // 
             // gbPassword
             // 
             this.gbPassword.Controls.Add(this.ntfP);
@@ -1321,6 +1560,20 @@
             this.label17.TabIndex = 4;
             this.label17.Text = "Old Password:";
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnChangePassword.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePassword.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnChangePassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangePassword.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnChangePassword.Location = new System.Drawing.Point(230, 155);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.RoundedCorners = true;
+            this.btnChangePassword.Size = new System.Drawing.Size(46, 39);
+            this.btnChangePassword.TabIndex = 3;
+            // 
             // txtrnpassword
             // 
             this.txtrnpassword.EnabledCalc = true;
@@ -1374,11 +1627,9 @@
             this.gbProfile.Controls.Add(this.pnumQ);
             this.gbProfile.Controls.Add(this.pdatabase);
             this.gbProfile.Controls.Add(this.pemail);
-            this.gbProfile.Controls.Add(this.psecurity);
             this.gbProfile.Controls.Add(this.pusername);
             this.gbProfile.Controls.Add(this.label28);
             this.gbProfile.Controls.Add(this.label27);
-            this.gbProfile.Controls.Add(this.label26);
             this.gbProfile.Controls.Add(this.label25);
             this.gbProfile.Controls.Add(this.label24);
             this.gbProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1390,12 +1641,22 @@
             this.gbProfile.TabStop = false;
             this.gbProfile.Text = "Profile";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TestME.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(210, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Monotype Corsiva", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label34.ForeColor = System.Drawing.Color.Silver;
-            this.label34.Location = new System.Drawing.Point(27, 124);
+            this.label34.Location = new System.Drawing.Point(27, 111);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(225, 13);
             this.label34.TabIndex = 10;
@@ -1405,62 +1666,51 @@
             // 
             this.pnumQ.AutoSize = true;
             this.pnumQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.pnumQ.ForeColor = System.Drawing.Color.Black;
-            this.pnumQ.Location = new System.Drawing.Point(177, 172);
+            this.pnumQ.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.pnumQ.Location = new System.Drawing.Point(177, 167);
             this.pnumQ.Name = "pnumQ";
             this.pnumQ.Size = new System.Drawing.Size(24, 18);
             this.pnumQ.TabIndex = 9;
-            this.pnumQ.Text = "33";
+            this.pnumQ.Text = "30";
             // 
             // pdatabase
             // 
             this.pdatabase.AutoSize = true;
             this.pdatabase.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.pdatabase.ForeColor = System.Drawing.Color.Black;
-            this.pdatabase.Location = new System.Drawing.Point(150, 143);
+            this.pdatabase.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.pdatabase.Location = new System.Drawing.Point(150, 134);
             this.pdatabase.Name = "pdatabase";
             this.pdatabase.Size = new System.Drawing.Size(63, 18);
             this.pdatabase.TabIndex = 8;
-            this.pdatabase.Text = "Database";
+            this.pdatabase.Text = "database";
             // 
             // pemail
             // 
             this.pemail.AutoSize = true;
             this.pemail.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.pemail.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pemail.Location = new System.Drawing.Point(111, 96);
+            this.pemail.Location = new System.Drawing.Point(84, 82);
             this.pemail.Name = "pemail";
             this.pemail.Size = new System.Drawing.Size(114, 18);
             this.pemail.TabIndex = 7;
             this.pemail.Text = "email@email.com";
             // 
-            // psecurity
-            // 
-            this.psecurity.AutoSize = true;
-            this.psecurity.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.psecurity.ForeColor = System.Drawing.Color.Maroon;
-            this.psecurity.Location = new System.Drawing.Point(111, 63);
-            this.psecurity.Name = "psecurity";
-            this.psecurity.Size = new System.Drawing.Size(38, 18);
-            this.psecurity.TabIndex = 6;
-            this.psecurity.Text = "label";
-            // 
             // pusername
             // 
             this.pusername.AutoSize = true;
             this.pusername.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.pusername.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.pusername.Location = new System.Drawing.Point(110, 29);
+            this.pusername.ForeColor = System.Drawing.Color.Maroon;
+            this.pusername.Location = new System.Drawing.Point(84, 40);
             this.pusername.Name = "pusername";
-            this.pusername.Size = new System.Drawing.Size(41, 18);
+            this.pusername.Size = new System.Drawing.Size(35, 18);
             this.pusername.TabIndex = 5;
-            this.pusername.Text = "demo";
+            this.pusername.Text = "user";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label28.Location = new System.Drawing.Point(14, 172);
+            this.label28.Location = new System.Drawing.Point(14, 168);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(158, 18);
             this.label28.TabIndex = 4;
@@ -1470,27 +1720,17 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label27.Location = new System.Drawing.Point(14, 144);
+            this.label27.Location = new System.Drawing.Point(14, 135);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(130, 18);
             this.label27.TabIndex = 3;
             this.label27.Text = "Connected Database: ";
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label26.Location = new System.Drawing.Point(14, 63);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(90, 18);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Security Code:";
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label25.Location = new System.Drawing.Point(16, 96);
+            this.label25.Location = new System.Drawing.Point(16, 83);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(39, 18);
             this.label25.TabIndex = 1;
@@ -1500,21 +1740,11 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label24.Location = new System.Drawing.Point(14, 30);
+            this.label24.Location = new System.Drawing.Point(14, 40);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(70, 18);
             this.label24.TabIndex = 0;
             this.label24.Text = "Username: ";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "pages-4-16.png");
-            this.imageList1.Images.SetKeyName(1, "home-16.png");
-            this.imageList1.Images.SetKeyName(2, "plus-4-16.png");
-            this.imageList1.Images.SetKeyName(3, "search-16.png");
-            this.imageList1.Images.SetKeyName(4, "edit-user-16.png");
             // 
             // btnMin
             // 
@@ -1549,261 +1779,6 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // toolTipUser
-            // 
-            this.toolTipUser.AutoPopDelay = 4000;
-            this.toolTipUser.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.toolTipUser.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.toolTipUser.InitialDelay = 500;
-            this.toolTipUser.IsBalloon = true;
-            this.toolTipUser.ReshowDelay = 100;
-            // 
-            // autocompleteMenu1
-            // 
-            this.autocompleteMenu1.AllowsTabKey = true;
-            this.autocompleteMenu1.AppearInterval = 100;
-            this.autocompleteMenu1.Colors = ((AutocompleteMenuNS.Colors)(resources.GetObject("autocompleteMenu1.Colors")));
-            this.autocompleteMenu1.Font = new System.Drawing.Font("Trebuchet MS", 9.5F);
-            this.autocompleteMenu1.ImageList = null;
-            this.autocompleteMenu1.Items = new string[0];
-            this.autocompleteMenu1.LeftPadding = 1;
-            this.autocompleteMenu1.MinFragmentLength = 1;
-            this.autocompleteMenu1.TargetControlWrapper = null;
-            // 
-            // btnDeleteSelected
-            // 
-            this.btnDeleteSelected.BackColor = System.Drawing.Color.Brown;
-            this.btnDeleteSelected.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnDeleteSelected.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteSelected.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteSelected.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDeleteSelected.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnDeleteSelected.Location = new System.Drawing.Point(422, 354);
-            this.btnDeleteSelected.Name = "btnDeleteSelected";
-            this.btnDeleteSelected.RoundedCorners = true;
-            this.btnDeleteSelected.Size = new System.Drawing.Size(137, 35);
-            this.btnDeleteSelected.TabIndex = 9;
-            this.btnDeleteSelected.Text = "Delete Selected";
-            this.btnDeleteSelected.Click += new System.EventHandler(this.btnDeleteSelected_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Image = global::TestME.Properties.Resources.view;
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::TestME.Properties.Resources.edit;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            // 
-            // btnAddAnswer
-            // 
-            this.btnAddAnswer.BackColor = System.Drawing.Color.Chocolate;
-            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddAnswer.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
-            this.btnAddAnswer.Name = "btnAddAnswer";
-            this.btnAddAnswer.RoundedCorners = true;
-            this.btnAddAnswer.Size = new System.Drawing.Size(122, 35);
-            this.btnAddAnswer.TabIndex = 32;
-            this.btnAddAnswer.Text = "Add Answer";
-            this.btnAddAnswer.Click += new System.EventHandler(this.btnAddAnswer_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnReset.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReset.Image = global::TestME.Properties.Resources.undo_5_24;
-            this.btnReset.Location = new System.Drawing.Point(159, 348);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.RoundedCorners = true;
-            this.btnReset.Size = new System.Drawing.Size(79, 35);
-            this.btnReset.TabIndex = 18;
-            this.btnReset.Text = "Reset";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAdd.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnAdd.Location = new System.Drawing.Point(24, 348);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.RoundedCorners = true;
-            this.btnAdd.Size = new System.Drawing.Size(129, 35);
-            this.btnAdd.TabIndex = 17;
-            this.btnAdd.Text = "Add Question";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // viewToolStripMenuItem1
-            // 
-            this.viewToolStripMenuItem1.Image = global::TestME.Properties.Resources.view;
-            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
-            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
-            this.viewToolStripMenuItem1.Text = "View";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Teal;
-            this.btnSearch.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.Image = global::TestME.Properties.Resources.search_24;
-            this.btnSearch.Location = new System.Drawing.Point(487, 107);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.RoundedCorners = true;
-            this.btnSearch.Size = new System.Drawing.Size(87, 35);
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnClear.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClear.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnClear.Location = new System.Drawing.Point(487, 351);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.RoundedCorners = true;
-            this.btnClear.Size = new System.Drawing.Size(87, 35);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnMakeTest
-            // 
-            this.btnMakeTest.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnMakeTest.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnMakeTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMakeTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMakeTest.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMakeTest.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnMakeTest.Location = new System.Drawing.Point(346, 351);
-            this.btnMakeTest.Name = "btnMakeTest";
-            this.btnMakeTest.RoundedCorners = true;
-            this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
-            this.btnMakeTest.TabIndex = 7;
-            this.btnMakeTest.Text = "Add To Test";
-            this.btnMakeTest.Click += new System.EventHandler(this.btnMakeTest_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnSave.Location = new System.Drawing.Point(503, 349);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.RoundedCorners = true;
-            this.btnSave.Size = new System.Drawing.Size(74, 35);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.Teal;
-            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
-            this.btnPrint.Location = new System.Drawing.Point(390, 349);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.RoundedCorners = true;
-            this.btnPrint.Size = new System.Drawing.Size(81, 35);
-            this.btnPrint.TabIndex = 5;
-            this.btnPrint.Text = "Print";
-            this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
-            // 
-            // btnChangeSecurity
-            // 
-            this.btnChangeSecurity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
-            this.btnChangeSecurity.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnChangeSecurity.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeSecurity.Font = new System.Drawing.Font("Verdana", 8F);
-            this.btnChangeSecurity.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangeSecurity.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangeSecurity.Location = new System.Drawing.Point(230, 131);
-            this.btnChangeSecurity.Name = "btnChangeSecurity";
-            this.btnChangeSecurity.RoundedCorners = true;
-            this.btnChangeSecurity.Size = new System.Drawing.Size(46, 39);
-            this.btnChangeSecurity.TabIndex = 4;
-            // 
-            // btnChangeEmail
-            // 
-            this.btnChangeEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
-            this.btnChangeEmail.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnChangeEmail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeEmail.Font = new System.Drawing.Font("Verdana", 8F);
-            this.btnChangeEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangeEmail.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangeEmail.Location = new System.Drawing.Point(219, 131);
-            this.btnChangeEmail.Name = "btnChangeEmail";
-            this.btnChangeEmail.RoundedCorners = true;
-            this.btnChangeEmail.Size = new System.Drawing.Size(46, 39);
-            this.btnChangeEmail.TabIndex = 4;
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
-            this.btnChangePassword.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangePassword.Font = new System.Drawing.Font("Verdana", 8F);
-            this.btnChangePassword.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangePassword.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangePassword.Location = new System.Drawing.Point(230, 155);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.RoundedCorners = true;
-            this.btnChangePassword.Size = new System.Drawing.Size(46, 39);
-            this.btnChangePassword.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TestME.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(210, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1818,21 +1793,21 @@
             this.Text = "TestME";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.rcmMyQ.ResumeLayout(false);
+            this.rcmAnswer.ResumeLayout(false);
+            this.rcmFindQ.ResumeLayout(false);
             this.frmskin.ResumeLayout(false);
             this.tabUser.ResumeLayout(false);
             this.tabquestions.ResumeLayout(false);
             this.tabquestions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyQ)).EndInit();
-            this.rcmMyQ.ResumeLayout(false);
             this.tabAddQ.ResumeLayout(false);
             this.tabAddQ.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).EndInit();
-            this.rcmAnswer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
             this.tabfind.ResumeLayout(false);
             this.tabfind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoundQ)).EndInit();
-            this.rcmFindQ.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).EndInit();
             this.tabtest.ResumeLayout(false);
@@ -1958,11 +1933,9 @@
         private System.Windows.Forms.Label pnumQ;
         private System.Windows.Forms.Label pdatabase;
         private System.Windows.Forms.Label pemail;
-        private System.Windows.Forms.Label psecurity;
         private System.Windows.Forms.Label pusername;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
