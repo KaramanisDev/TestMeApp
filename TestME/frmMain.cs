@@ -34,7 +34,10 @@ namespace TestME
             tabUser.SelectTab(1);
             autocompleteMenu1.Items = Globals.colTags.ToArray();
 
-            Functionality.RefreshMyQuestions();
+            Utilities.runInThread(() =>
+            {
+                Functionality.RefreshMyQuestions();
+            }).Start();
 
             pusername.Text = Globals.logUser.user;
             pemail.Text = Globals.logUser.email;
@@ -45,9 +48,12 @@ namespace TestME
                 {
                     pdatabase.Text = Utilities.FindControl(Globals.formStart, "txtDatabase").Text;
                 });
+
+                string tmp = Utilities.AsyncDB().single("SELECT COUNT(*) FROM questions WHERE uid=" + Globals.logUser.id);
+
+
                 Utilities.InvokeMe(pnumQ, () => 
                     {
-                        string tmp = Utilities.AsyncDB().single("SELECT COUNT(*) FROM questions WHERE uid="+Globals.logUser.id);
                         pnumQ.Text = tmp;
                     });
             }).Start();
