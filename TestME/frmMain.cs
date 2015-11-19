@@ -477,7 +477,7 @@ namespace TestME
 
         private void txtncode_TextChanged(object sender, EventArgs e)
         {
-            Utilities.txtCustomReplaceText(txtncode);
+            Utilities.txtCustomReplaceSpace(txtncode);
         }
 
         private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -493,6 +493,11 @@ namespace TestME
         private void dgvMyTest_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyTest.SelectedRows[0])).Show();
+        }
+
+        private void txtnemail_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceSpace(txtnemail);
         }
     }
 }

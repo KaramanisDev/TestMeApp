@@ -1527,6 +1527,7 @@
             this.txtnemail.TabIndex = 6;
             this.txtnemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtnemail.UseSystemPasswordChar = false;
+            this.txtnemail.TextChanged += new System.EventHandler(this.txtnemail_TextChanged);
             // 
             // txtepassword
             // 

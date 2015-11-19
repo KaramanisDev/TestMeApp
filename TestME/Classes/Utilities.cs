@@ -37,7 +37,7 @@ namespace TestME
             txtb.SelectionStart = cpos;
         }
     
-        public static void txtCustomReplaceText(XylosTextBox txtb)
+        public static void txtCustomReplaceSpace(XylosTextBox txtb)
         {
             int cpos = txtb.SelectionStart;
             txtb.Text = txtb.Text.Replace(Environment.NewLine, "");

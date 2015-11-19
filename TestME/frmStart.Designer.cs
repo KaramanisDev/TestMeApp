@@ -300,6 +300,7 @@
             this.txtUser.TabIndex = 3;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUser.UseSystemPasswordChar = false;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // btnLogin
             // 
@@ -369,6 +370,7 @@
             this.txtSecurityCode.TabIndex = 11;
             this.txtSecurityCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtSecurityCode.UseSystemPasswordChar = false;
+            this.txtSecurityCode.TextChanged += new System.EventHandler(this.txtSecurityCode_TextChanged);
             // 
             // label4
             // 
@@ -458,6 +460,7 @@
             this.txtemail.TabIndex = 5;
             this.txtemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtemail.UseSystemPasswordChar = false;
+            this.txtemail.TextChanged += new System.EventHandler(this.txtemail_TextChanged);
             // 
             // txtusername
             // 
@@ -474,6 +477,7 @@
             this.txtusername.TabIndex = 4;
             this.txtusername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtusername.UseSystemPasswordChar = false;
+            this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
             // 
             // lblrepeatpass
             // 
@@ -924,6 +928,7 @@
             this.txtPassCode.TabIndex = 1;
             this.txtPassCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassCode.UseSystemPasswordChar = false;
+            this.txtPassCode.TextChanged += new System.EventHandler(this.txtPassCode_TextChanged);
             // 
             // txtPassUser
             // 
@@ -940,6 +945,7 @@
             this.txtPassUser.TabIndex = 0;
             this.txtPassUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassUser.UseSystemPasswordChar = false;
+            this.txtPassUser.TextChanged += new System.EventHandler(this.txtPassUser_TextChanged);
             // 
             // btnMin
             // 

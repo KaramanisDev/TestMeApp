@@ -226,5 +226,35 @@ namespace TestME
             txtPassCode.Text = "";
             ntfForgot.Hide();
         }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceSpace(txtUser);
+        }
+
+        private void txtusername_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceSpace(txtusername);
+        }
+
+        private void txtemail_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceSpace(txtemail);
+        }
+
+        private void txtSecurityCode_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceSpace(txtSecurityCode);
+        }
+
+        private void txtPassUser_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceSpace(txtPassUser);
+        }
+
+        private void txtPassCode_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceSpace(txtPassCode);
+        }
     }
 }
