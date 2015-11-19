@@ -21,6 +21,8 @@ namespace TestME
         private void frmStart_Load(object sender, EventArgs e)
         {
             tabMain.SelectTab(1);
+            tabforgot.Text = "";
+            tabforgot.Tag = "hide";
 
             string[] fill=Utilities.loadSettings("StoredSettings",6);
             if (fill[0] == "True") { 
@@ -208,6 +210,21 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfBox2, "Not connected to DB!", NotificationBox.Type.Warning);
             }
+        }
+
+        private void linkForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            tabforgot.Tag = "";
+            tabMain.SelectTab(6);
+        }
+
+        private void tabforgot_Leave(object sender, EventArgs e)
+        {
+            tabforgot.Tag = "hide";
+            txtPassCode.Text = "";
+            txtPassPassword.Text = "";
+            txtPassCode.Text = "";
+            ntfForgot.Hide();
         }
     }
 }

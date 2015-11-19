@@ -301,7 +301,7 @@ public class XylosTabControl : TabControl
                 tag = Conversions.ToString(e.TabPage.Tag.ToString());
             }
 
-            bool flag2 = tag.Equals("header");
+            bool flag2 = tag.Equals("header") || tag.Equals("hide");
 
             if (flag2)
             {
@@ -329,7 +329,7 @@ public class XylosTabControl : TabControl
                     tag = Conversions.ToString((base.TabPages[i].Tag));
                 }
 
-                bool flag2 = !tag.Equals("header");
+                bool flag2 = !tag.Equals("header") && !tag.Equals("hide");
 
                 bool flag = base.GetTabRect(i).Contains(e.Location) & base.SelectedIndex != i & flag2;
                 if (flag)
