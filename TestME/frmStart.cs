@@ -71,11 +71,11 @@ namespace TestME
             Yo.Clear();
             Yo.Add(new Answer("aaaaa",false));
             Yo.Add(new Answer("bbbb", true));
-            Mytest.Add(new Question(1, "What?", Yo, false));
+            Mytest.Add(new Question(1, "What?", Yo,1, false));
             Yo.Clear();
             Yo.Add(new Answer("cccc", false));
             Yo.Add(new Answer("dddd", true));
-            Mytest.Add(new Question(2, "wut wut?", Yo, false));
+            Mytest.Add(new Question(2, "wut wut?", Yo,1, false));
 
             Utilities.printPDF("Allilepidrasi","14-11-2015",Mytest,false);
             */
@@ -116,7 +116,8 @@ namespace TestME
                             string user = dt.Rows[0][1].ToString();
                             string pass = dt.Rows[0][2].ToString();
                             string mail = dt.Rows[0][3].ToString();
-                            Globals.logUser = new User(id, user, pass, mail);
+                            string scode = dt.Rows[0][4].ToString();
+                            Globals.logUser = new User(id, user, pass, mail, scode);
 
                             Utilities.InvokeMe(Globals.formStart, ()=>
                             {

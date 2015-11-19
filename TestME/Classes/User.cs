@@ -11,13 +11,15 @@ namespace TestME
         string _user;
         string _pass;
         string _email;
+        string _scode;
 
-        public User(int i,string u,string p,string e)
+        public User(int i,string u,string p,string e,string scode)
         {
             this._id = i;
             this._user = u;
             this._pass = p;
             this._email = e;
+            this._scode = scode;
         }
 
         public int id
@@ -42,6 +44,11 @@ namespace TestME
         {
             get { return _email; }
             set { _email = value; }
+        }
+        public string scode
+        {
+            get { return _scode; }
+            set { _scode = value; }
         }
     }
 }
