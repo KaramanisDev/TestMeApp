@@ -25,5 +25,20 @@ namespace TestME
         {
             this.Close();
         }
+
+        private void txtAddQ_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtBoxReplaceNewLine(txtAddQ);
+        }
+
+        private void txtAddTags_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtBoxReplaceSpaceNewLine(txtAddTags);
+        }
+
+        private void dgvAnswerlist_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            Utilities.dgvCellEditing(dgvAnswerlist, "answer", e);
+        }
     }
 }

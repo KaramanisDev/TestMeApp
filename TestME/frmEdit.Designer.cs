@@ -30,14 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdit));
-            this.customForm1 = new CustomForm();
-            this.ntfEdit = new NotificationBox();
-            this.dgvEditAnswers = new System.Windows.Forms.DataGridView();
             this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customForm1 = new CustomForm();
+            this.dgvAnswerlist = new System.Windows.Forms.DataGridView();
+            this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ntfEdit = new NotificationBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSaveChanges = new BonfireButton();
             this.txtAddQ = new System.Windows.Forms.TextBox();
@@ -51,18 +53,32 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.customForm1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditAnswers)).BeginInit();
             this.rcmAnswer.SuspendLayout();
+            this.customForm1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
             this.SuspendLayout();
+            // 
+            // rcmAnswer
+            // 
+            this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeToolStripMenuItem});
+            this.rcmAnswer.Name = "rcmAnswer";
+            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
             // 
             // customForm1
             // 
             this.customForm1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.customForm1.BorderSize = 10;
+            this.customForm1.Controls.Add(this.dgvAnswerlist);
             this.customForm1.Controls.Add(this.ntfEdit);
-            this.customForm1.Controls.Add(this.dgvEditAnswers);
             this.customForm1.Controls.Add(this.label2);
             this.customForm1.Controls.Add(this.btnSaveChanges);
             this.customForm1.Controls.Add(this.txtAddQ);
@@ -95,26 +111,14 @@
             this.customForm1.TopSize = 35;
             this.customForm1.TopSpace = 0;
             // 
-            // ntfEdit
+            // dgvAnswerlist
             // 
-            this.ntfEdit.BorderCurve = 8;
-            this.ntfEdit.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.ntfEdit.Image = null;
-            this.ntfEdit.Location = new System.Drawing.Point(422, 310);
-            this.ntfEdit.MinimumSize = new System.Drawing.Size(100, 40);
-            this.ntfEdit.Name = "ntfEdit";
-            this.ntfEdit.NotificationType = NotificationBox.Type.Notice;
-            this.ntfEdit.RoundCorners = true;
-            this.ntfEdit.ShowCloseButton = true;
-            this.ntfEdit.Size = new System.Drawing.Size(200, 40);
-            this.ntfEdit.TabIndex = 48;
-            this.ntfEdit.Text = "!";
-            this.ntfEdit.Visible = false;
-            // 
-            // dgvEditAnswers
-            // 
-            this.dgvEditAnswers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEditAnswers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnswerlist.AllowUserToDeleteRows = false;
+            this.dgvAnswerlist.AllowUserToResizeColumns = false;
+            this.dgvAnswerlist.AllowUserToResizeRows = false;
+            this.dgvAnswerlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvAnswerlist.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvAnswerlist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
@@ -122,54 +126,76 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEditAnswers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEditAnswers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEditAnswers.ContextMenuStrip = this.rcmAnswer;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEditAnswers.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEditAnswers.Location = new System.Drawing.Point(46, 193);
-            this.dgvEditAnswers.Name = "dgvEditAnswers";
+            this.dgvAnswerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAnswerlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnswerlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.answer,
+            this.Correct});
+            this.dgvAnswerlist.ContextMenuStrip = this.rcmAnswer;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEditAnswers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEditAnswers.Size = new System.Drawing.Size(358, 150);
-            this.dgvEditAnswers.TabIndex = 47;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnswerlist.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAnswerlist.Location = new System.Drawing.Point(30, 184);
+            this.dgvAnswerlist.MultiSelect = false;
+            this.dgvAnswerlist.Name = "dgvAnswerlist";
+            this.dgvAnswerlist.RowHeadersVisible = false;
+            this.dgvAnswerlist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAnswerlist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnswerlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAnswerlist.ShowCellErrors = false;
+            this.dgvAnswerlist.ShowCellToolTips = false;
+            this.dgvAnswerlist.ShowEditingIcon = false;
+            this.dgvAnswerlist.ShowRowErrors = false;
+            this.dgvAnswerlist.Size = new System.Drawing.Size(360, 150);
+            this.dgvAnswerlist.TabIndex = 49;
+            this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
             // 
-            // rcmAnswer
+            // answer
             // 
-            this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removeToolStripMenuItem});
-            this.rcmAnswer.Name = "rcmAnswer";
-            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.answer.DefaultCellStyle = dataGridViewCellStyle2;
+            this.answer.HeaderText = "Answer";
+            this.answer.Name = "answer";
+            this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.answer.Width = 300;
             // 
-            // removeToolStripMenuItem
+            // Correct
             // 
-            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
+            this.Correct.HeaderText = "Correct";
+            this.Correct.Name = "Correct";
+            this.Correct.Width = 60;
+            // 
+            // ntfEdit
+            // 
+            this.ntfEdit.BorderCurve = 8;
+            this.ntfEdit.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.ntfEdit.Image = null;
+            this.ntfEdit.Location = new System.Drawing.Point(403, 294);
+            this.ntfEdit.MinimumSize = new System.Drawing.Size(100, 40);
+            this.ntfEdit.Name = "ntfEdit";
+            this.ntfEdit.NotificationType = NotificationBox.Type.Notice;
+            this.ntfEdit.RoundCorners = true;
+            this.ntfEdit.ShowCloseButton = true;
+            this.ntfEdit.Size = new System.Drawing.Size(235, 40);
+            this.ntfEdit.TabIndex = 48;
+            this.ntfEdit.Text = "!";
+            this.ntfEdit.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(280, 47);
+            this.label2.Location = new System.Drawing.Point(280, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 22);
+            this.label2.Size = new System.Drawing.Size(110, 22);
             this.label2.TabIndex = 46;
-            this.label2.Text = "Edit Content";
+            this.label2.Text = "Edit Question";
             // 
             // btnSaveChanges
             // 
@@ -179,7 +205,7 @@
             this.btnSaveChanges.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSaveChanges.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnSaveChanges.Location = new System.Drawing.Point(467, 269);
+            this.btnSaveChanges.Location = new System.Drawing.Point(460, 248);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.RoundedCorners = true;
             this.btnSaveChanges.Size = new System.Drawing.Size(123, 35);
@@ -190,30 +216,32 @@
             // 
             this.txtAddQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddQ.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAddQ.Location = new System.Drawing.Point(46, 101);
+            this.txtAddQ.Location = new System.Drawing.Point(30, 92);
             this.txtAddQ.Multiline = true;
             this.txtAddQ.Name = "txtAddQ";
             this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAddQ.Size = new System.Drawing.Size(358, 61);
             this.txtAddQ.TabIndex = 43;
+            this.txtAddQ.TextChanged += new System.EventHandler(this.txtAddQ_TextChanged);
             // 
             // txtAddTags
             // 
             this.txtAddTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddTags.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAddTags.Location = new System.Drawing.Point(422, 101);
+            this.txtAddTags.Location = new System.Drawing.Point(403, 92);
             this.txtAddTags.Multiline = true;
             this.txtAddTags.Name = "txtAddTags";
             this.txtAddTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAddTags.Size = new System.Drawing.Size(200, 61);
+            this.txtAddTags.Size = new System.Drawing.Size(235, 61);
             this.txtAddTags.TabIndex = 42;
+            this.txtAddTags.TextChanged += new System.EventHandler(this.txtAddTags_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(44, 83);
+            this.label12.Location = new System.Drawing.Point(28, 74);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 18);
             this.label12.TabIndex = 41;
@@ -224,7 +252,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(46, 176);
+            this.label11.Location = new System.Drawing.Point(30, 167);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 18);
             this.label11.TabIndex = 40;
@@ -235,7 +263,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(463, 230);
+            this.label8.Location = new System.Drawing.Point(457, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 18);
             this.label8.TabIndex = 39;
@@ -248,7 +276,7 @@
             this.switchPrivate.Font = new System.Drawing.Font("Trebuchet MS", 10F);
             this.switchPrivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
             this.switchPrivate.isOn = false;
-            this.switchPrivate.Location = new System.Drawing.Point(518, 229);
+            this.switchPrivate.Location = new System.Drawing.Point(533, 212);
             this.switchPrivate.MinimumSize = new System.Drawing.Size(20, 20);
             this.switchPrivate.Name = "switchPrivate";
             this.switchPrivate.Size = new System.Drawing.Size(50, 20);
@@ -259,7 +287,7 @@
             this.difficultyLvl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.difficultyLvl.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.difficultyLvl.ForeColor = System.Drawing.Color.DimGray;
-            this.difficultyLvl.Location = new System.Drawing.Point(568, 188);
+            this.difficultyLvl.Location = new System.Drawing.Point(559, 179);
             this.difficultyLvl.Maximum = new decimal(new int[] {
             5,
             0,
@@ -285,7 +313,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(466, 190);
+            this.label9.Location = new System.Drawing.Point(457, 181);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 18);
             this.label9.TabIndex = 36;
@@ -296,7 +324,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(420, 82);
+            this.label10.Location = new System.Drawing.Point(411, 73);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 18);
             this.label10.TabIndex = 35;
@@ -348,10 +376,10 @@
             this.Name = "frmEdit";
             this.Text = "TestMe";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.rcmAnswer.ResumeLayout(false);
             this.customForm1.ResumeLayout(false);
             this.customForm1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditAnswers)).EndInit();
-            this.rcmAnswer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
             this.ResumeLayout(false);
 
@@ -373,9 +401,11 @@
         private CustomButton btnMin;
         private CustomButton btnClose;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvEditAnswers;
         private System.Windows.Forms.ContextMenuStrip rcmAnswer;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private NotificationBox ntfEdit;
+        private System.Windows.Forms.DataGridView dgvAnswerlist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn answer;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
     }
 }

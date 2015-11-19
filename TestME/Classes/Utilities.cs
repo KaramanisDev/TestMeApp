@@ -16,6 +16,7 @@ using System.Diagnostics;
 using PdfSharp.Pdf.AcroForms;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.Rendering;
+using Newtonsoft.Json;
 
 namespace TestME
 {
@@ -34,6 +35,45 @@ namespace TestME
             txtb.Text = txtb.Text.Replace(Environment.NewLine, "");
             txtb.Text = txtb.Text.Replace(" ", "");
             txtb.SelectionStart = cpos;
+        }
+    
+        public static void txtCustomReplaceText(XylosTextBox txtb)
+        {
+            int cpos = txtb.SelectionStart;
+            txtb.Text = txtb.Text.Replace(Environment.NewLine, "");
+            txtb.Text = txtb.Text.Replace(" ", "");
+            txtb.SelectionStart = cpos;
+        }
+
+        public static void Cell_TextChanged(object sender, DataGridView dgv, Control e)
+        {
+            if (e != null)
+            {
+                Utilities.txtBoxReplaceNewLine((TextBox)e);
+                dgv.CurrentCell.Value = e.Text;
+            }
+        }
+        public static void dgvCellEditing(DataGridView dgv,string columnName, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgv.CurrentCell != null && dgv.CurrentCell.ColumnIndex == dgv.Columns[columnName].Index)
+            {
+                Control cntObject = new Control();
+                e.Control.TextChanged += new EventHandler((object sse, EventArgs se) => Utilities.Cell_TextChanged(sse, dgv, cntObject));
+                cntObject = e.Control;
+                cntObject.TextChanged += (object sse, EventArgs se) => Utilities.Cell_TextChanged(sse, dgv, cntObject);
+            }
+        }
+
+        public static Question dgvRowIntoQuestion(DataGridViewRow dgvRow)
+        {
+            Question TempQuest = new Question();
+            TempQuest.id = int.Parse(dgvRow.Cells[1].Value.ToString());
+            TempQuest.question = dgvRow.Cells[2].Value.ToString();
+            TempQuest.anwsers = JsonConvert.DeserializeObject<List<Answer>>(dgvRow.Cells[3].Value.ToString());
+            TempQuest.dlevel = int.Parse(dgvRow.Cells[4].Value.ToString());
+            TempQuest.prive = Boolean.Parse(dgvRow.Cells[5].Value.ToString());
+
+            return TempQuest;
         }
 
         public static void rightClickSelect(DataGridView dgv, DataGridViewCellMouseEventArgs e)

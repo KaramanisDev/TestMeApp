@@ -10,10 +10,12 @@ namespace TestME
     {
         private static string _connectionstr;
         private static List<string> _tags = new List<string>();
+        private static List<int> _mytestqis = new List<int>();
         private static User _user;
         private static bool _Connected = false;
         private static EventWaitHandle _waitHandle = new AutoResetEvent(false);
         private static string _filesPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
 
         public static frmStart formStart = new frmStart();
         public static frmMain formMain = new frmMain();
@@ -33,6 +35,11 @@ namespace TestME
         {
             get { return _tags; }
             set { _tags = value; }
+        }
+        public static List<int> MyTestQids
+        {
+            get { return _mytestqis; }
+            set { _mytestqis = value; }
         }
 
         public static User logUser

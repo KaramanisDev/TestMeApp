@@ -67,26 +67,12 @@ namespace TestME
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Question TempQuest = new Question();
-            TempQuest.id = int.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
-            TempQuest.question = dgvMyQ.SelectedRows[0].Cells[2].Value.ToString();
-            TempQuest.anwsers = JsonConvert.DeserializeObject<List<Answer>>(dgvMyQ.SelectedRows[0].Cells[3].Value.ToString());
-            TempQuest.dlevel = int.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
-            TempQuest.prive = Boolean.Parse(dgvMyQ.SelectedRows[0].Cells[5].Value.ToString());
-
-            new frmAnswers(TempQuest).Show();
+            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Question TempQuest = new Question();
-            TempQuest.id = int.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
-            TempQuest.question = dgvMyQ.SelectedRows[0].Cells[2].Value.ToString();
-            TempQuest.anwsers = JsonConvert.DeserializeObject<List<Answer>>(dgvMyQ.SelectedRows[0].Cells[3].Value.ToString());
-            TempQuest.dlevel = int.Parse(dgvMyQ.SelectedRows[0].Cells[4].Value.ToString());
-            TempQuest.prive = Boolean.Parse(dgvMyQ.SelectedRows[0].Cells[5].Value.ToString());
-
-            new frmEdit(TempQuest).Show();
+            new frmEdit(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -185,7 +171,7 @@ namespace TestME
                     string[] tags = txtAddTags.Text.TrimEnd(',').Split(',');
                     foreach (string tag in tags)
                     {
-                        TempDB.bind(new string[] { "TAG", tag, "QID", qid });
+                        TempDB.bind(new string[] { "TAG", tag.ToLower(), "QID", qid });
                         qAddTag += TempDB.nQuery("INSERT INTO tags (nametag, qid) VALUES (@TAG, @QID)");
                     }
 
@@ -246,23 +232,9 @@ namespace TestME
 
         private void dgvAnswerlist_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (dgvAnswerlist.CurrentCell != null && dgvAnswerlist.CurrentCell.ColumnIndex == dgvAnswerlist.Columns["answer"].Index)
-            {
-                Control cntObject = new Control();
-                e.Control.TextChanged += new EventHandler((object sse, EventArgs se) => Cell_TextChanged(sse, dgvAnswerlist, cntObject));
-                cntObject = e.Control;
-                cntObject.TextChanged += (object sse, EventArgs se) => Cell_TextChanged(sse, dgvAnswerlist, cntObject);
-            }
+            Utilities.dgvCellEditing(dgvAnswerlist, "answer", e);
         }
 
-        private void Cell_TextChanged(object sender,DataGridView dgv, Control e)
-        {
-            if (e != null)
-            {
-                Utilities.txtBoxReplaceNewLine((TextBox)e);
-                dgv.CurrentCell.Value = e.Text;
-            }
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -316,12 +288,13 @@ namespace TestME
                         dgvFoundQ.Columns[3].Visible = false;
                         dgvFoundQ.Columns[4].HeaderText = "Difficulty";
                         dgvFoundQ.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dgvFoundQ.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
                         dgvFoundQ.Columns[4].Width = 60;
                         dgvFoundQ.Columns[5].Visible = false;
                         dgvFoundQ.Columns[6].Visible = false;
                         for (int i = 0; i < dgvFoundQ.Rows.Count; i++)
                         {
-                            dgvFoundQ.Rows[i].Cells[0].Value = "True";
+                            dgvFoundQ.Rows[i].Cells[0].Value = "False";
                         }
                     });
 
@@ -342,7 +315,31 @@ namespace TestME
 
         private void btnMakeTest_Click(object sender, EventArgs e)
         {
+            btnMakeTest.Focus();
 
+            int AddedQ = 0;
+
+            for (int i = 0; i < dgvFoundQ.Rows.Count; i++)
+            {
+                int id = int.Parse(dgvFoundQ.Rows[i].Cells[1].Value.ToString());
+                if (bool.Parse(dgvFoundQ.Rows[i].Cells[0].Value.ToString()) && !Globals.MyTestQids.Contains(id))
+                {
+                    AddedQ++;
+                    string question = dgvFoundQ.Rows[i].Cells[2].Value.ToString();
+                    string answers = dgvFoundQ.Rows[i].Cells[3].Value.ToString();
+                    int dlevel = int.Parse(dgvFoundQ.Rows[i].Cells[4].Value.ToString());
+                    dgvMyTest.Rows.Add(id, question, answers, dlevel);
+                    Globals.MyTestQids.Add(id);
+                }
+            }
+            if(AddedQ < 1)
+            {
+                Utilities.notifyThem(ntbfindQ, "No Questions selected to add.", NotificationBox.Type.Warning);
+            }
+            else
+            {
+                Utilities.notifyThem(ntbfindQ, AddedQ + " Questions Added to your Test !", NotificationBox.Type.Success);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -451,6 +448,51 @@ namespace TestME
                 txtspassword.Text = "";
                 txtncode.Text = "";
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dgvMyTest.Rows[0].Cells[2].Value.ToString());
+        }
+
+        private void dgvAnswerlist_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Utilities.rightClickSelect(dgvAnswerlist, e);
+        }
+
+        private void dgvFoundQ_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Utilities.rightClickSelect(dgvFoundQ, e);
+        }
+
+        private void dgvMyTest_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Utilities.rightClickSelect(dgvMyTest, e);
+        }
+
+        private void dgvMyQ_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
+        }
+
+        private void txtncode_TextChanged(object sender, EventArgs e)
+        {
+            Utilities.txtCustomReplaceText(txtncode);
+        }
+
+        private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0]));
+        }
+
+        private void dgvFoundQ_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
+        }
+
+        private void dgvMyTest_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyTest.SelectedRows[0])).Show();
         }
     }
 }

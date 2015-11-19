@@ -30,17 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +53,32 @@
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
+            this.dgvMyQ = new System.Windows.Forms.DataGridView();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.switchCorrectAnswer = new CustomSwitch();
+            this.txtAddQ = new System.Windows.Forms.TextBox();
+            this.txtAddTags = new System.Windows.Forms.TextBox();
+            this.switchPrivate = new CustomSwitch();
+            this.difficultyLvl = new System.Windows.Forms.NumericUpDown();
+            this.switchAllTags = new CustomSwitch();
+            this.dgvFoundQ = new System.Windows.Forms.DataGridView();
+            this.selectq = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.switchFindAll = new CustomSwitch();
+            this.numericMax = new System.Windows.Forms.NumericUpDown();
+            this.numericMin = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxAnsweredTest = new XylosCheckBox();
+            this.dgvMyTest = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.question = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dlevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.txtTestTitle = new XylosTextBox();
+            this.btnSave = new BonfireButton();
+            this.btnPrint = new BonfireButton();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
+            this.txtAnswer = new System.Windows.Forms.TextBox();
+            this.txtTags = new System.Windows.Forms.TextBox();
             this.frmskin = new CustomForm();
             this.tabUser = new XylosTabControl();
             this.testpanel = new System.Windows.Forms.TabPage();
@@ -59,8 +86,6 @@
             this.ntfMyQ = new NotificationBox();
             this.lblRegQ = new System.Windows.Forms.Label();
             this.lblUserMessage = new System.Windows.Forms.Label();
-            this.dgvMyQ = new System.Windows.Forms.DataGridView();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDeleteSelected = new BonfireButton();
             this.tabAddQ = new System.Windows.Forms.TabPage();
@@ -68,17 +93,11 @@
             this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ntfAdd = new NotificationBox();
-            this.switchCorrectAnswer = new CustomSwitch();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtAnswer = new System.Windows.Forms.TextBox();
-            this.txtAddQ = new System.Windows.Forms.TextBox();
-            this.txtAddTags = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.switchPrivate = new CustomSwitch();
-            this.difficultyLvl = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAddAnswer = new BonfireButton();
@@ -87,31 +106,18 @@
             this.tabfind = new System.Windows.Forms.TabPage();
             this.ntbfindQ = new NotificationBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtTags = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.switchAllTags = new CustomSwitch();
-            this.dgvFoundQ = new System.Windows.Forms.DataGridView();
-            this.selectq = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
-            this.switchFindAll = new CustomSwitch();
-            this.numericMax = new System.Windows.Forms.NumericUpDown();
-            this.numericMin = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSearch = new BonfireButton();
             this.btnClear = new BonfireButton();
             this.btnMakeTest = new BonfireButton();
             this.tabtest = new System.Windows.Forms.TabPage();
-            this.checkBoxAnsweredTest = new XylosCheckBox();
             this.ntfTest = new NotificationBox();
-            this.dgvMyTest = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.txtTestTitle = new XylosTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSave = new BonfireButton();
-            this.btnPrint = new BonfireButton();
             this.userpanel = new System.Windows.Forms.TabPage();
             this.editprofile = new System.Windows.Forms.TabPage();
             this.gbSecurity = new System.Windows.Forms.GroupBox();
@@ -153,19 +159,19 @@
             this.rcmMyQ.SuspendLayout();
             this.rcmAnswer.SuspendLayout();
             this.rcmFindQ.SuspendLayout();
-            this.frmskin.SuspendLayout();
-            this.tabUser.SuspendLayout();
-            this.tabquestions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyQ)).BeginInit();
-            this.tabAddQ.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).BeginInit();
-            this.tabfind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoundQ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).BeginInit();
-            this.tabtest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).BeginInit();
+            this.frmskin.SuspendLayout();
+            this.tabUser.SuspendLayout();
+            this.tabquestions.SuspendLayout();
+            this.tabAddQ.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).BeginInit();
+            this.tabfind.SuspendLayout();
+            this.tabtest.SuspendLayout();
             this.editprofile.SuspendLayout();
             this.gbSecurity.SuspendLayout();
             this.gbEmail.SuspendLayout();
@@ -234,6 +240,7 @@
             this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
             this.viewToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
             this.viewToolStripMenuItem1.Text = "View";
+            this.viewToolStripMenuItem1.Click += new System.EventHandler(this.viewToolStripMenuItem1_Click);
             // 
             // imageList1
             // 
@@ -254,6 +261,440 @@
             this.toolTipUser.IsBalloon = true;
             this.toolTipUser.ReshowDelay = 100;
             // 
+            // dgvMyQ
+            // 
+            this.dgvMyQ.AllowUserToAddRows = false;
+            this.dgvMyQ.AllowUserToDeleteRows = false;
+            this.dgvMyQ.AllowUserToResizeColumns = false;
+            this.dgvMyQ.AllowUserToResizeRows = false;
+            this.dgvMyQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMyQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvMyQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMyQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMyQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMyQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.select});
+            this.dgvMyQ.ContextMenuStrip = this.rcmMyQ;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyQ.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMyQ.Location = new System.Drawing.Point(59, 64);
+            this.dgvMyQ.MultiSelect = false;
+            this.dgvMyQ.Name = "dgvMyQ";
+            this.dgvMyQ.RowHeadersVisible = false;
+            this.dgvMyQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMyQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvMyQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMyQ.ShowCellErrors = false;
+            this.dgvMyQ.ShowCellToolTips = false;
+            this.dgvMyQ.ShowEditingIcon = false;
+            this.dgvMyQ.ShowRowErrors = false;
+            this.dgvMyQ.Size = new System.Drawing.Size(500, 275);
+            this.dgvMyQ.TabIndex = 2;
+            this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context.");
+            this.dgvMyQ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyQ_CellDoubleClick);
+            this.dgvMyQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyQ_CellMouseUp);
+            // 
+            // select
+            // 
+            this.select.FalseValue = "False";
+            this.select.HeaderText = "Select";
+            this.select.Name = "select";
+            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.select.TrueValue = "True";
+            this.select.Visible = false;
+            this.select.Width = 50;
+            // 
+            // switchCorrectAnswer
+            // 
+            this.switchCorrectAnswer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.switchCorrectAnswer.Font = new System.Drawing.Font("Trebuchet MS", 10F);
+            this.switchCorrectAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
+            this.switchCorrectAnswer.isOn = true;
+            this.switchCorrectAnswer.Location = new System.Drawing.Point(553, 233);
+            this.switchCorrectAnswer.MinimumSize = new System.Drawing.Size(20, 20);
+            this.switchCorrectAnswer.Name = "switchCorrectAnswer";
+            this.switchCorrectAnswer.Size = new System.Drawing.Size(45, 20);
+            this.switchCorrectAnswer.TabIndex = 33;
+            this.toolTipUser.SetToolTip(this.switchCorrectAnswer, "Enable it if your \r\nanswer is correct.");
+            // 
+            // txtAddQ
+            // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAddQ, null);
+            this.txtAddQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddQ.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAddQ.Location = new System.Drawing.Point(22, 53);
+            this.txtAddQ.Multiline = true;
+            this.txtAddQ.Name = "txtAddQ";
+            this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAddQ.Size = new System.Drawing.Size(358, 61);
+            this.txtAddQ.TabIndex = 27;
+            this.toolTipUser.SetToolTip(this.txtAddQ, "Write your question.");
+            this.txtAddQ.TextChanged += new System.EventHandler(this.txtAddQ_TextChanged);
+            // 
+            // txtAddTags
+            // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAddTags, this.autocompleteMenu1);
+            this.txtAddTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddTags.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAddTags.Location = new System.Drawing.Point(398, 53);
+            this.txtAddTags.Multiline = true;
+            this.txtAddTags.Name = "txtAddTags";
+            this.txtAddTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAddTags.Size = new System.Drawing.Size(200, 61);
+            this.txtAddTags.TabIndex = 26;
+            this.toolTipUser.SetToolTip(this.txtAddTags, "Give tags to your question to \r\nmake it easier for searching.");
+            this.txtAddTags.TextChanged += new System.EventHandler(this.txtAddTags_TextChanged);
+            // 
+            // switchPrivate
+            // 
+            this.switchPrivate.BackColor = System.Drawing.Color.White;
+            this.switchPrivate.Font = new System.Drawing.Font("Trebuchet MS", 10F);
+            this.switchPrivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
+            this.switchPrivate.isOn = false;
+            this.switchPrivate.Location = new System.Drawing.Point(554, 125);
+            this.switchPrivate.MinimumSize = new System.Drawing.Size(20, 20);
+            this.switchPrivate.Name = "switchPrivate";
+            this.switchPrivate.Size = new System.Drawing.Size(50, 20);
+            this.switchPrivate.TabIndex = 21;
+            this.toolTipUser.SetToolTip(this.switchPrivate, "Enable it to prevent other\r\nusers to use your question.");
+            // 
+            // difficultyLvl
+            // 
+            this.difficultyLvl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.difficultyLvl.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.difficultyLvl.ForeColor = System.Drawing.Color.DimGray;
+            this.difficultyLvl.Location = new System.Drawing.Point(427, 124);
+            this.difficultyLvl.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.difficultyLvl.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.difficultyLvl.Name = "difficultyLvl";
+            this.difficultyLvl.Size = new System.Drawing.Size(38, 23);
+            this.difficultyLvl.TabIndex = 20;
+            this.difficultyLvl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTipUser.SetToolTip(this.difficultyLvl, "Choose a difficulty level\r\n(from easy 1 to very difficult 5).");
+            this.difficultyLvl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // switchAllTags
+            // 
+            this.switchAllTags.BackColor = System.Drawing.Color.White;
+            this.switchAllTags.Font = new System.Drawing.Font("Trebuchet MS", 10F);
+            this.switchAllTags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
+            this.switchAllTags.isOn = false;
+            this.switchAllTags.Location = new System.Drawing.Point(525, 24);
+            this.switchAllTags.MinimumSize = new System.Drawing.Size(20, 20);
+            this.switchAllTags.Name = "switchAllTags";
+            this.switchAllTags.Size = new System.Drawing.Size(50, 20);
+            this.switchAllTags.TabIndex = 16;
+            this.toolTipUser.SetToolTip(this.switchAllTags, "Enable it to find a question\r\nthat has all the given tags.");
+            // 
+            // dgvFoundQ
+            // 
+            this.dgvFoundQ.AllowUserToAddRows = false;
+            this.dgvFoundQ.AllowUserToDeleteRows = false;
+            this.dgvFoundQ.AllowUserToResizeColumns = false;
+            this.dgvFoundQ.AllowUserToResizeRows = false;
+            this.dgvFoundQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvFoundQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvFoundQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFoundQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvFoundQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoundQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.selectq});
+            this.dgvFoundQ.ContextMenuStrip = this.rcmFindQ;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFoundQ.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvFoundQ.Location = new System.Drawing.Point(49, 155);
+            this.dgvFoundQ.MultiSelect = false;
+            this.dgvFoundQ.Name = "dgvFoundQ";
+            this.dgvFoundQ.RowHeadersVisible = false;
+            this.dgvFoundQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvFoundQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFoundQ.ShowCellErrors = false;
+            this.dgvFoundQ.ShowCellToolTips = false;
+            this.dgvFoundQ.ShowEditingIcon = false;
+            this.dgvFoundQ.ShowRowErrors = false;
+            this.dgvFoundQ.Size = new System.Drawing.Size(523, 185);
+            this.dgvFoundQ.TabIndex = 15;
+            this.dgvFoundQ.Tag = "";
+            this.toolTipUser.SetToolTip(this.dgvFoundQ, "List of questions that\r\nmatch with the search.\r\nDouble-click to view results.");
+            this.dgvFoundQ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoundQ_CellDoubleClick);
+            this.dgvFoundQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFoundQ_CellMouseUp);
+            // 
+            // selectq
+            // 
+            this.selectq.FalseValue = "False";
+            this.selectq.HeaderText = "Select";
+            this.selectq.Name = "selectq";
+            this.selectq.TrueValue = "True";
+            this.selectq.Visible = false;
+            this.selectq.Width = 50;
+            // 
+            // switchFindAll
+            // 
+            this.switchFindAll.BackColor = System.Drawing.Color.White;
+            this.switchFindAll.Font = new System.Drawing.Font("Trebuchet MS", 10F);
+            this.switchFindAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
+            this.switchFindAll.isOn = true;
+            this.switchFindAll.Location = new System.Drawing.Point(524, 65);
+            this.switchFindAll.MinimumSize = new System.Drawing.Size(20, 20);
+            this.switchFindAll.Name = "switchFindAll";
+            this.switchFindAll.Size = new System.Drawing.Size(50, 20);
+            this.switchFindAll.TabIndex = 12;
+            this.toolTipUser.SetToolTip(this.switchFindAll, "Enable it to find questions\r\nregistered from all users.");
+            // 
+            // numericMax
+            // 
+            this.numericMax.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.numericMax.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericMax.ForeColor = System.Drawing.Color.DimGray;
+            this.numericMax.Location = new System.Drawing.Point(296, 103);
+            this.numericMax.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericMax.Name = "numericMax";
+            this.numericMax.Size = new System.Drawing.Size(38, 23);
+            this.numericMax.TabIndex = 11;
+            this.numericMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTipUser.SetToolTip(this.numericMax, "Difficult Question");
+            this.numericMax.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // numericMin
+            // 
+            this.numericMin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.numericMin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericMin.ForeColor = System.Drawing.Color.DimGray;
+            this.numericMin.Location = new System.Drawing.Point(213, 103);
+            this.numericMin.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericMin.Name = "numericMin";
+            this.numericMin.Size = new System.Drawing.Size(38, 23);
+            this.numericMin.TabIndex = 10;
+            this.numericMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTipUser.SetToolTip(this.numericMin, "Easy Question");
+            this.numericMin.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // checkBoxAnsweredTest
+            // 
+            this.checkBoxAnsweredTest.Checked = false;
+            this.checkBoxAnsweredTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxAnsweredTest.EnabledCalc = true;
+            this.checkBoxAnsweredTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.checkBoxAnsweredTest.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBoxAnsweredTest.Location = new System.Drawing.Point(261, 356);
+            this.checkBoxAnsweredTest.Name = "checkBoxAnsweredTest";
+            this.checkBoxAnsweredTest.Size = new System.Drawing.Size(108, 18);
+            this.checkBoxAnsweredTest.TabIndex = 9;
+            this.checkBoxAnsweredTest.Text = "Answered Test";
+            this.toolTipUser.SetToolTip(this.checkBoxAnsweredTest, "Print or Save the test with\r\nthe correct answers marked");
+            // 
+            // dgvMyTest
+            // 
+            this.dgvMyTest.AllowUserToAddRows = false;
+            this.dgvMyTest.AllowUserToDeleteRows = false;
+            this.dgvMyTest.AllowUserToResizeColumns = false;
+            this.dgvMyTest.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DimGray;
+            this.dgvMyTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvMyTest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMyTest.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvMyTest.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMyTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvMyTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMyTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.question,
+            this.answers,
+            this.dlevel});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyTest.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvMyTest.Location = new System.Drawing.Point(39, 111);
+            this.dgvMyTest.MultiSelect = false;
+            this.dgvMyTest.Name = "dgvMyTest";
+            this.dgvMyTest.ReadOnly = true;
+            this.dgvMyTest.RowHeadersVisible = false;
+            this.dgvMyTest.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvMyTest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvMyTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMyTest.ShowCellErrors = false;
+            this.dgvMyTest.ShowCellToolTips = false;
+            this.dgvMyTest.ShowEditingIcon = false;
+            this.dgvMyTest.ShowRowErrors = false;
+            this.dgvMyTest.Size = new System.Drawing.Size(540, 220);
+            this.dgvMyTest.TabIndex = 7;
+            this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
+            this.dgvMyTest.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellDoubleClick);
+            this.dgvMyTest.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyTest_CellMouseUp);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // question
+            // 
+            this.question.HeaderText = "Questions";
+            this.question.Name = "question";
+            this.question.ReadOnly = true;
+            this.question.Width = 438;
+            // 
+            // answers
+            // 
+            this.answers.HeaderText = "answers";
+            this.answers.Name = "answers";
+            this.answers.ReadOnly = true;
+            this.answers.Visible = false;
+            // 
+            // dlevel
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dlevel.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dlevel.HeaderText = "Difficulty";
+            this.dlevel.Name = "dlevel";
+            this.dlevel.ReadOnly = true;
+            // 
+            // datePicker
+            // 
+            this.datePicker.CalendarTitleForeColor = System.Drawing.Color.DimGray;
+            this.datePicker.CalendarTrailingForeColor = System.Drawing.Color.DimGray;
+            this.datePicker.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePicker.Location = new System.Drawing.Point(449, 63);
+            this.datePicker.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(128, 23);
+            this.datePicker.TabIndex = 3;
+            this.toolTipUser.SetToolTip(this.datePicker, "Date that the Test will take place.");
+            // 
+            // txtTestTitle
+            // 
+            this.txtTestTitle.EnabledCalc = true;
+            this.txtTestTitle.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTestTitle.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTestTitle.Location = new System.Drawing.Point(81, 60);
+            this.txtTestTitle.MaxLength = 32767;
+            this.txtTestTitle.MultiLine = false;
+            this.txtTestTitle.Name = "txtTestTitle";
+            this.txtTestTitle.ReadOnly = false;
+            this.txtTestTitle.SelectionStart = 0;
+            this.txtTestTitle.Size = new System.Drawing.Size(318, 29);
+            this.txtTestTitle.TabIndex = 2;
+            this.txtTestTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.toolTipUser.SetToolTip(this.txtTestTitle, "Write the title of the final Test.");
+            this.txtTestTitle.UseSystemPasswordChar = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnSave.Location = new System.Drawing.Point(503, 349);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.RoundedCorners = true;
+            this.btnSave.Size = new System.Drawing.Size(74, 35);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
+            this.btnPrint.Location = new System.Drawing.Point(390, 349);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.RoundedCorners = true;
+            this.btnPrint.Size = new System.Drawing.Size(81, 35);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "Print";
+            this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // autocompleteMenu1
             // 
             this.autocompleteMenu1.AllowsTabKey = true;
@@ -265,6 +706,32 @@
             this.autocompleteMenu1.LeftPadding = 1;
             this.autocompleteMenu1.MinFragmentLength = 1;
             this.autocompleteMenu1.TargetControlWrapper = null;
+            // 
+            // txtAnswer
+            // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAnswer, null);
+            this.txtAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAnswer.Location = new System.Drawing.Point(398, 177);
+            this.txtAnswer.Multiline = true;
+            this.txtAnswer.Name = "txtAnswer";
+            this.txtAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAnswer.Size = new System.Drawing.Size(200, 47);
+            this.txtAnswer.TabIndex = 29;
+            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
+            // 
+            // txtTags
+            // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtTags, this.autocompleteMenu1);
+            this.txtTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTags.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTags.Location = new System.Drawing.Point(93, 24);
+            this.txtTags.Multiline = true;
+            this.txtTags.Name = "txtTags";
+            this.txtTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtTags.Size = new System.Drawing.Size(239, 61);
+            this.txtTags.TabIndex = 18;
+            this.txtTags.TextChanged += new System.EventHandler(this.txtTags_TextChanged);
             // 
             // frmskin
             // 
@@ -323,7 +790,7 @@
             this.testpanel.Name = "testpanel";
             this.testpanel.Size = new System.Drawing.Size(619, 402);
             this.testpanel.TabIndex = 5;
-            this.testpanel.Tag = "Test Panel";
+            this.testpanel.Tag = "header";
             this.testpanel.Text = "Test Panel";
             // 
             // tabquestions
@@ -381,63 +848,6 @@
             this.lblUserMessage.Size = new System.Drawing.Size(78, 20);
             this.lblUserMessage.TabIndex = 3;
             this.lblUserMessage.Text = "Welcome ";
-            // 
-            // dgvMyQ
-            // 
-            this.dgvMyQ.AllowUserToAddRows = false;
-            this.dgvMyQ.AllowUserToDeleteRows = false;
-            this.dgvMyQ.AllowUserToResizeColumns = false;
-            this.dgvMyQ.AllowUserToResizeRows = false;
-            this.dgvMyQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvMyQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvMyQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMyQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvMyQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMyQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.select});
-            this.dgvMyQ.ContextMenuStrip = this.rcmMyQ;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMyQ.DefaultCellStyle = dataGridViewCellStyle22;
-            this.dgvMyQ.Location = new System.Drawing.Point(59, 64);
-            this.dgvMyQ.MultiSelect = false;
-            this.dgvMyQ.Name = "dgvMyQ";
-            this.dgvMyQ.RowHeadersVisible = false;
-            this.dgvMyQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle23;
-            this.dgvMyQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvMyQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMyQ.ShowCellErrors = false;
-            this.dgvMyQ.ShowCellToolTips = false;
-            this.dgvMyQ.ShowEditingIcon = false;
-            this.dgvMyQ.ShowRowErrors = false;
-            this.dgvMyQ.Size = new System.Drawing.Size(500, 275);
-            this.dgvMyQ.TabIndex = 2;
-            this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context.");
-            this.dgvMyQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyQ_CellMouseUp);
-            // 
-            // select
-            // 
-            this.select.FalseValue = "False";
-            this.select.HeaderText = "Select";
-            this.select.Name = "select";
-            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.select.TrueValue = "True";
-            this.select.Visible = false;
-            this.select.Width = 50;
             // 
             // label2
             // 
@@ -506,27 +916,27 @@
             this.dgvAnswerlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAnswerlist.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvAnswerlist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAnswerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAnswerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvAnswerlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAnswerlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.answer,
             this.Correct});
             this.dgvAnswerlist.ContextMenuStrip = this.rcmAnswer;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnswerlist.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnswerlist.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvAnswerlist.Location = new System.Drawing.Point(22, 165);
             this.dgvAnswerlist.MultiSelect = false;
             this.dgvAnswerlist.Name = "dgvAnswerlist";
@@ -540,12 +950,13 @@
             this.dgvAnswerlist.ShowRowErrors = false;
             this.dgvAnswerlist.Size = new System.Drawing.Size(360, 160);
             this.dgvAnswerlist.TabIndex = 35;
+            this.dgvAnswerlist.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAnswerlist_CellMouseUp);
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
             // 
             // answer
             // 
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.answer.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.answer.DefaultCellStyle = dataGridViewCellStyle12;
             this.answer.HeaderText = "Answer";
             this.answer.Name = "answer";
             this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -574,19 +985,6 @@
             this.ntfAdd.Text = "Add up to 5 answers";
             this.ntfAdd.Visible = false;
             // 
-            // switchCorrectAnswer
-            // 
-            this.switchCorrectAnswer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.switchCorrectAnswer.Font = new System.Drawing.Font("Trebuchet MS", 10F);
-            this.switchCorrectAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
-            this.switchCorrectAnswer.isOn = true;
-            this.switchCorrectAnswer.Location = new System.Drawing.Point(553, 233);
-            this.switchCorrectAnswer.MinimumSize = new System.Drawing.Size(20, 20);
-            this.switchCorrectAnswer.Name = "switchCorrectAnswer";
-            this.switchCorrectAnswer.Size = new System.Drawing.Size(45, 20);
-            this.switchCorrectAnswer.TabIndex = 33;
-            this.toolTipUser.SetToolTip(this.switchCorrectAnswer, "Enable it if your \r\nanswer is correct.");
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -608,47 +1006,6 @@
             this.label14.Size = new System.Drawing.Size(90, 18);
             this.label14.TabIndex = 30;
             this.label14.Text = "Write Answer:";
-            // 
-            // txtAnswer
-            // 
-            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAnswer, null);
-            this.txtAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAnswer.Location = new System.Drawing.Point(398, 177);
-            this.txtAnswer.Multiline = true;
-            this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAnswer.Size = new System.Drawing.Size(200, 47);
-            this.txtAnswer.TabIndex = 29;
-            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
-            // 
-            // txtAddQ
-            // 
-            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAddQ, null);
-            this.txtAddQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddQ.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAddQ.Location = new System.Drawing.Point(22, 53);
-            this.txtAddQ.Multiline = true;
-            this.txtAddQ.Name = "txtAddQ";
-            this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAddQ.Size = new System.Drawing.Size(358, 61);
-            this.txtAddQ.TabIndex = 27;
-            this.toolTipUser.SetToolTip(this.txtAddQ, "Write your question.");
-            this.txtAddQ.TextChanged += new System.EventHandler(this.txtAddQ_TextChanged);
-            // 
-            // txtAddTags
-            // 
-            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAddTags, this.autocompleteMenu1);
-            this.txtAddTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddTags.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAddTags.Location = new System.Drawing.Point(398, 53);
-            this.txtAddTags.Multiline = true;
-            this.txtAddTags.Name = "txtAddTags";
-            this.txtAddTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAddTags.Size = new System.Drawing.Size(200, 61);
-            this.txtAddTags.TabIndex = 26;
-            this.toolTipUser.SetToolTip(this.txtAddTags, "Give tags to your question to \r\nmake it easier for searching.");
-            this.txtAddTags.TextChanged += new System.EventHandler(this.txtAddTags_TextChanged);
             // 
             // label12
             // 
@@ -683,46 +1040,6 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Private:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // switchPrivate
-            // 
-            this.switchPrivate.BackColor = System.Drawing.Color.White;
-            this.switchPrivate.Font = new System.Drawing.Font("Trebuchet MS", 10F);
-            this.switchPrivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
-            this.switchPrivate.isOn = false;
-            this.switchPrivate.Location = new System.Drawing.Point(554, 125);
-            this.switchPrivate.MinimumSize = new System.Drawing.Size(20, 20);
-            this.switchPrivate.Name = "switchPrivate";
-            this.switchPrivate.Size = new System.Drawing.Size(50, 20);
-            this.switchPrivate.TabIndex = 21;
-            this.toolTipUser.SetToolTip(this.switchPrivate, "Enable it to prevent other\r\nusers to use your question.");
-            // 
-            // difficultyLvl
-            // 
-            this.difficultyLvl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.difficultyLvl.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.difficultyLvl.ForeColor = System.Drawing.Color.DimGray;
-            this.difficultyLvl.Location = new System.Drawing.Point(427, 124);
-            this.difficultyLvl.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.difficultyLvl.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.difficultyLvl.Name = "difficultyLvl";
-            this.difficultyLvl.Size = new System.Drawing.Size(38, 23);
-            this.difficultyLvl.TabIndex = 20;
-            this.difficultyLvl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTipUser.SetToolTip(this.difficultyLvl, "Choose a difficulty level\r\n(from easy 1 to very difficult 5).");
-            this.difficultyLvl.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label9
             // 
@@ -851,19 +1168,6 @@
             this.label16.TabIndex = 19;
             this.label16.Text = "Result:";
             // 
-            // txtTags
-            // 
-            this.autocompleteMenu1.SetAutocompleteMenu(this.txtTags, this.autocompleteMenu1);
-            this.txtTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTags.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTags.Location = new System.Drawing.Point(93, 24);
-            this.txtTags.Multiline = true;
-            this.txtTags.Name = "txtTags";
-            this.txtTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTags.Size = new System.Drawing.Size(239, 61);
-            this.txtTags.TabIndex = 18;
-            this.txtTags.TextChanged += new System.EventHandler(this.txtTags_TextChanged);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -876,73 +1180,6 @@
             this.label13.Text = "Match All Tags:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // switchAllTags
-            // 
-            this.switchAllTags.BackColor = System.Drawing.Color.White;
-            this.switchAllTags.Font = new System.Drawing.Font("Trebuchet MS", 10F);
-            this.switchAllTags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
-            this.switchAllTags.isOn = false;
-            this.switchAllTags.Location = new System.Drawing.Point(525, 24);
-            this.switchAllTags.MinimumSize = new System.Drawing.Size(20, 20);
-            this.switchAllTags.Name = "switchAllTags";
-            this.switchAllTags.Size = new System.Drawing.Size(50, 20);
-            this.switchAllTags.TabIndex = 16;
-            this.toolTipUser.SetToolTip(this.switchAllTags, "Enable it to find a question\r\nthat has all the given tags.");
-            // 
-            // dgvFoundQ
-            // 
-            this.dgvFoundQ.AllowUserToAddRows = false;
-            this.dgvFoundQ.AllowUserToDeleteRows = false;
-            this.dgvFoundQ.AllowUserToResizeColumns = false;
-            this.dgvFoundQ.AllowUserToResizeRows = false;
-            this.dgvFoundQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvFoundQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvFoundQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFoundQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvFoundQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoundQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.selectq});
-            this.dgvFoundQ.ContextMenuStrip = this.rcmFindQ;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFoundQ.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvFoundQ.Location = new System.Drawing.Point(49, 155);
-            this.dgvFoundQ.MultiSelect = false;
-            this.dgvFoundQ.Name = "dgvFoundQ";
-            this.dgvFoundQ.RowHeadersVisible = false;
-            this.dgvFoundQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.dgvFoundQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFoundQ.ShowCellErrors = false;
-            this.dgvFoundQ.ShowCellToolTips = false;
-            this.dgvFoundQ.ShowEditingIcon = false;
-            this.dgvFoundQ.ShowRowErrors = false;
-            this.dgvFoundQ.Size = new System.Drawing.Size(523, 185);
-            this.dgvFoundQ.TabIndex = 15;
-            this.toolTipUser.SetToolTip(this.dgvFoundQ, "List of questions that\r\nmatch with the search.\r\nDouble-click to view results.");
-            // 
-            // selectq
-            // 
-            this.selectq.FalseValue = "False";
-            this.selectq.HeaderText = "Select";
-            this.selectq.Name = "selectq";
-            this.selectq.TrueValue = "True";
-            this.selectq.Visible = false;
-            this.selectq.Width = 50;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -954,73 +1191,6 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "From All Users:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // switchFindAll
-            // 
-            this.switchFindAll.BackColor = System.Drawing.Color.White;
-            this.switchFindAll.Font = new System.Drawing.Font("Trebuchet MS", 10F);
-            this.switchFindAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(149)))), ((int)(((byte)(152)))));
-            this.switchFindAll.isOn = true;
-            this.switchFindAll.Location = new System.Drawing.Point(524, 65);
-            this.switchFindAll.MinimumSize = new System.Drawing.Size(20, 20);
-            this.switchFindAll.Name = "switchFindAll";
-            this.switchFindAll.Size = new System.Drawing.Size(50, 20);
-            this.switchFindAll.TabIndex = 12;
-            this.toolTipUser.SetToolTip(this.switchFindAll, "Enable it to find questions\r\nregistered from all users.");
-            // 
-            // numericMax
-            // 
-            this.numericMax.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.numericMax.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericMax.ForeColor = System.Drawing.Color.DimGray;
-            this.numericMax.Location = new System.Drawing.Point(296, 103);
-            this.numericMax.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericMax.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericMax.Name = "numericMax";
-            this.numericMax.Size = new System.Drawing.Size(38, 23);
-            this.numericMax.TabIndex = 11;
-            this.numericMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTipUser.SetToolTip(this.numericMax, "Difficult Question");
-            this.numericMax.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // numericMin
-            // 
-            this.numericMin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.numericMin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericMin.ForeColor = System.Drawing.Color.DimGray;
-            this.numericMin.Location = new System.Drawing.Point(213, 103);
-            this.numericMin.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericMin.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericMin.Name = "numericMin";
-            this.numericMin.Size = new System.Drawing.Size(38, 23);
-            this.numericMin.TabIndex = 10;
-            this.numericMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTipUser.SetToolTip(this.numericMin, "Easy Question");
-            this.numericMin.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label6
             // 
@@ -1115,20 +1285,6 @@
             this.tabtest.TabIndex = 3;
             this.tabtest.Text = "My Test";
             // 
-            // checkBoxAnsweredTest
-            // 
-            this.checkBoxAnsweredTest.Checked = false;
-            this.checkBoxAnsweredTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxAnsweredTest.EnabledCalc = true;
-            this.checkBoxAnsweredTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.checkBoxAnsweredTest.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxAnsweredTest.Location = new System.Drawing.Point(261, 356);
-            this.checkBoxAnsweredTest.Name = "checkBoxAnsweredTest";
-            this.checkBoxAnsweredTest.Size = new System.Drawing.Size(108, 18);
-            this.checkBoxAnsweredTest.TabIndex = 9;
-            this.checkBoxAnsweredTest.Text = "Answered Test";
-            this.toolTipUser.SetToolTip(this.checkBoxAnsweredTest, "Print or Save the test with\r\nthe correct answers marked");
-            // 
             // ntfTest
             // 
             this.ntfTest.BorderCurve = 15;
@@ -1146,48 +1302,6 @@
             this.ntfTest.Text = "Empty Test";
             this.ntfTest.Visible = false;
             // 
-            // dgvMyTest
-            // 
-            this.dgvMyTest.AllowUserToAddRows = false;
-            this.dgvMyTest.AllowUserToDeleteRows = false;
-            this.dgvMyTest.AllowUserToResizeColumns = false;
-            this.dgvMyTest.AllowUserToResizeRows = false;
-            this.dgvMyTest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvMyTest.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvMyTest.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMyTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvMyTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMyTest.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvMyTest.Location = new System.Drawing.Point(39, 111);
-            this.dgvMyTest.MultiSelect = false;
-            this.dgvMyTest.Name = "dgvMyTest";
-            this.dgvMyTest.ReadOnly = true;
-            this.dgvMyTest.RowHeadersVisible = false;
-            this.dgvMyTest.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvMyTest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvMyTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMyTest.ShowCellErrors = false;
-            this.dgvMyTest.ShowCellToolTips = false;
-            this.dgvMyTest.ShowEditingIcon = false;
-            this.dgvMyTest.ShowRowErrors = false;
-            this.dgvMyTest.Size = new System.Drawing.Size(538, 220);
-            this.dgvMyTest.TabIndex = 7;
-            this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1198,35 +1312,6 @@
             this.label4.Size = new System.Drawing.Size(40, 18);
             this.label4.TabIndex = 4;
             this.label4.Text = "Date:";
-            // 
-            // datePicker
-            // 
-            this.datePicker.CalendarTitleForeColor = System.Drawing.Color.DimGray;
-            this.datePicker.CalendarTrailingForeColor = System.Drawing.Color.DimGray;
-            this.datePicker.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.Location = new System.Drawing.Point(449, 63);
-            this.datePicker.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(128, 23);
-            this.datePicker.TabIndex = 3;
-            this.toolTipUser.SetToolTip(this.datePicker, "Date that the Test will take place.");
-            // 
-            // txtTestTitle
-            // 
-            this.txtTestTitle.EnabledCalc = true;
-            this.txtTestTitle.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTestTitle.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTestTitle.Location = new System.Drawing.Point(81, 60);
-            this.txtTestTitle.MaxLength = 32767;
-            this.txtTestTitle.MultiLine = false;
-            this.txtTestTitle.Name = "txtTestTitle";
-            this.txtTestTitle.ReadOnly = false;
-            this.txtTestTitle.Size = new System.Drawing.Size(318, 29);
-            this.txtTestTitle.TabIndex = 2;
-            this.txtTestTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.toolTipUser.SetToolTip(this.txtTestTitle, "Write the title of the final Test.");
-            this.txtTestTitle.UseSystemPasswordChar = false;
             // 
             // label3
             // 
@@ -1250,38 +1335,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Your Test";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnSave.Location = new System.Drawing.Point(503, 349);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.RoundedCorners = true;
-            this.btnSave.Size = new System.Drawing.Size(74, 35);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
-            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
-            this.btnPrint.Location = new System.Drawing.Point(390, 349);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.RoundedCorners = true;
-            this.btnPrint.Size = new System.Drawing.Size(81, 35);
-            this.btnPrint.TabIndex = 5;
-            this.btnPrint.Text = "Print";
-            this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
-            // 
             // userpanel
             // 
             this.userpanel.BackColor = System.Drawing.Color.White;
@@ -1292,7 +1345,7 @@
             this.userpanel.Padding = new System.Windows.Forms.Padding(3);
             this.userpanel.Size = new System.Drawing.Size(619, 402);
             this.userpanel.TabIndex = 4;
-            this.userpanel.Tag = "User Panel";
+            this.userpanel.Tag = "header";
             this.userpanel.Text = "User Panel";
             // 
             // editprofile
@@ -1371,10 +1424,12 @@
             this.txtncode.MultiLine = false;
             this.txtncode.Name = "txtncode";
             this.txtncode.ReadOnly = false;
+            this.txtncode.SelectionStart = 0;
             this.txtncode.Size = new System.Drawing.Size(166, 29);
             this.txtncode.TabIndex = 6;
             this.txtncode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtncode.UseSystemPasswordChar = false;
+            this.txtncode.TextChanged += new System.EventHandler(this.txtncode_TextChanged);
             // 
             // txtspassword
             // 
@@ -1386,6 +1441,7 @@
             this.txtspassword.MultiLine = false;
             this.txtspassword.Name = "txtspassword";
             this.txtspassword.ReadOnly = false;
+            this.txtspassword.SelectionStart = 0;
             this.txtspassword.Size = new System.Drawing.Size(166, 29);
             this.txtspassword.TabIndex = 5;
             this.txtspassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1466,6 +1522,7 @@
             this.txtnemail.MultiLine = false;
             this.txtnemail.Name = "txtnemail";
             this.txtnemail.ReadOnly = false;
+            this.txtnemail.SelectionStart = 0;
             this.txtnemail.Size = new System.Drawing.Size(166, 29);
             this.txtnemail.TabIndex = 6;
             this.txtnemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1481,6 +1538,7 @@
             this.txtepassword.MultiLine = false;
             this.txtepassword.Name = "txtepassword";
             this.txtepassword.ReadOnly = false;
+            this.txtepassword.SelectionStart = 0;
             this.txtepassword.Size = new System.Drawing.Size(166, 29);
             this.txtepassword.TabIndex = 5;
             this.txtepassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1587,6 +1645,7 @@
             this.txtrnpassword.MultiLine = false;
             this.txtrnpassword.Name = "txtrnpassword";
             this.txtrnpassword.ReadOnly = false;
+            this.txtrnpassword.SelectionStart = 0;
             this.txtrnpassword.Size = new System.Drawing.Size(151, 29);
             this.txtrnpassword.TabIndex = 2;
             this.txtrnpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1602,6 +1661,7 @@
             this.txtnpassword.MultiLine = false;
             this.txtnpassword.Name = "txtnpassword";
             this.txtnpassword.ReadOnly = false;
+            this.txtnpassword.SelectionStart = 0;
             this.txtnpassword.Size = new System.Drawing.Size(151, 29);
             this.txtnpassword.TabIndex = 1;
             this.txtnpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1617,6 +1677,7 @@
             this.txtopassword.MultiLine = false;
             this.txtopassword.Name = "txtopassword";
             this.txtopassword.ReadOnly = false;
+            this.txtopassword.SelectionStart = 0;
             this.txtopassword.Size = new System.Drawing.Size(151, 29);
             this.txtopassword.TabIndex = 0;
             this.txtopassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1799,23 +1860,23 @@
             this.rcmMyQ.ResumeLayout(false);
             this.rcmAnswer.ResumeLayout(false);
             this.rcmFindQ.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyQ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoundQ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).EndInit();
             this.frmskin.ResumeLayout(false);
             this.tabUser.ResumeLayout(false);
             this.tabquestions.ResumeLayout(false);
             this.tabquestions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMyQ)).EndInit();
             this.tabAddQ.ResumeLayout(false);
             this.tabAddQ.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.difficultyLvl)).EndInit();
             this.tabfind.ResumeLayout(false);
             this.tabfind.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoundQ)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericMin)).EndInit();
             this.tabtest.ResumeLayout(false);
             this.tabtest.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).EndInit();
             this.editprofile.ResumeLayout(false);
             this.gbSecurity.ResumeLayout(false);
             this.gbSecurity.PerformLayout();
@@ -1941,5 +2002,9 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn question;
+        private System.Windows.Forms.DataGridViewTextBoxColumn answers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dlevel;
     }
 }
