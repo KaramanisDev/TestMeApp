@@ -103,12 +103,16 @@
     <Compile Include="Classes\Utilities.cs" />
     <Compile Include="Classes\Validation.cs" />
     <Compile Include="CustomControls\BonfireTheme.cs" />
+    <Compile Include="CustomControls\CoolPrintPreviewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CustomControls\CustomTheme.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\NotificationBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\PageImageList.cs" />
     <Compile Include="CustomControls\XylosTheme.cs" />
     <Compile Include="frmAnswers.cs">
       <SubType>Form</SubType>
@@ -121,6 +125,12 @@
     </Compile>
     <Compile Include="frmEdit.Designer.cs">
       <DependentUpon>frmEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintPreview.designer.cs">
+      <DependentUpon>frmPrintPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStart.cs">
       <SubType>Form</SubType>
@@ -141,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit.resx">
       <DependentUpon>frmEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintPreview.resx">
+      <DependentUpon>frmPrintPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStart.resx">
       <DependentUpon>frmStart.cs</DependentUpon>
