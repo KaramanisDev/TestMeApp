@@ -328,7 +328,7 @@ namespace TestME
                     string question = dgvFoundQ.Rows[i].Cells[2].Value.ToString();
                     string answers = dgvFoundQ.Rows[i].Cells[3].Value.ToString();
                     int dlevel = int.Parse(dgvFoundQ.Rows[i].Cells[4].Value.ToString());
-                    dgvMyTest.Rows.Add(id, question, answers, dlevel);
+                    dgvMyTest.Rows.Add("NONE",id, question, answers, dlevel,false);
                     Globals.MyTestQids.Add(id);
                 }
             }
@@ -452,7 +452,30 @@ namespace TestME
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvMyTest.Rows[0].Cells[2].Value.ToString());
+            List<Question> myTest = new List<Question>();
+          
+            if (string.IsNullOrWhiteSpace(txtTestTitle.Text))
+            {
+                Utilities.notifyThem(ntfTest, "No title found.", NotificationBox.Type.Warning);
+            }
+            else if (dgvMyTest.Rows.Count < 1)
+            {
+                Utilities.notifyThem(ntfTest, "No Questions Found.", NotificationBox.Type.Warning);
+            }
+            else
+            {
+
+                foreach (DataGridViewRow row in dgvMyTest.Rows)
+                {
+                    myTest.Add(Utilities.dgvRowIntoQuestion(row));
+                }
+
+                PrintTest.Initialize();
+                PrintTest.SetTest = myTest;
+                Globals.formPrint.Document = PrintTest.Document;
+                Globals.formPrint.ShowDialog();
+            }
+            
         }
 
         private void dgvAnswerlist_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
@@ -472,7 +495,10 @@ namespace TestME
 
         private void dgvMyQ_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
+            if (dgvMyQ.SelectedRows.Count > 0)
+            {
+                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
+            }
         }
 
         private void txtncode_TextChanged(object sender, EventArgs e)
@@ -487,12 +513,18 @@ namespace TestME
 
         private void dgvFoundQ_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
+            if (dgvFoundQ.SelectedRows.Count > 0)
+            {
+                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
+            }
         }
 
         private void dgvMyTest_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyTest.SelectedRows[0])).Show();
+            if (dgvMyTest.SelectedRows.Count > 0)
+            {
+                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyTest.SelectedRows[0])).Show();
+            }
         }
 
         private void txtnemail_TextChanged(object sender, EventArgs e)

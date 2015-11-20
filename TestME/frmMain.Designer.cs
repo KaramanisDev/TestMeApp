@@ -39,10 +39,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,10 +68,6 @@
             this.numericMin = new System.Windows.Forms.NumericUpDown();
             this.checkBoxAnsweredTest = new XylosCheckBox();
             this.dgvMyTest = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.question = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dlevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.txtTestTitle = new XylosTextBox();
             this.btnSave = new BonfireButton();
@@ -156,6 +152,12 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.nothing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.question = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dlevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.rcmMyQ.SuspendLayout();
             this.rcmAnswer.SuspendLayout();
             this.rcmFindQ.SuspendLayout();
@@ -573,10 +575,12 @@
             this.dgvMyTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvMyTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nothing,
             this.id,
             this.question,
             this.answers,
-            this.dlevel});
+            this.dlevel,
+            this.prive});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Trebuchet MS", 9F);
@@ -602,35 +606,6 @@
             this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
             this.dgvMyTest.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellDoubleClick);
             this.dgvMyTest.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyTest_CellMouseUp);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // question
-            // 
-            this.question.HeaderText = "Questions";
-            this.question.Name = "question";
-            this.question.ReadOnly = true;
-            this.question.Width = 438;
-            // 
-            // answers
-            // 
-            this.answers.HeaderText = "answers";
-            this.answers.Name = "answers";
-            this.answers.ReadOnly = true;
-            this.answers.Visible = false;
-            // 
-            // dlevel
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dlevel.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dlevel.HeaderText = "Difficulty";
-            this.dlevel.Name = "dlevel";
-            this.dlevel.ReadOnly = true;
             // 
             // datePicker
             // 
@@ -1844,6 +1819,49 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // nothing
+            // 
+            this.nothing.HeaderText = "nothing";
+            this.nothing.Name = "nothing";
+            this.nothing.ReadOnly = true;
+            this.nothing.Visible = false;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // question
+            // 
+            this.question.HeaderText = "Questions";
+            this.question.Name = "question";
+            this.question.ReadOnly = true;
+            this.question.Width = 438;
+            // 
+            // answers
+            // 
+            this.answers.HeaderText = "answers";
+            this.answers.Name = "answers";
+            this.answers.ReadOnly = true;
+            this.answers.Visible = false;
+            // 
+            // dlevel
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dlevel.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dlevel.HeaderText = "Difficulty";
+            this.dlevel.Name = "dlevel";
+            this.dlevel.ReadOnly = true;
+            // 
+            // prive
+            // 
+            this.prive.HeaderText = "prive";
+            this.prive.Name = "prive";
+            this.prive.ReadOnly = true;
+            this.prive.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2003,9 +2021,11 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nothing;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn question;
         private System.Windows.Forms.DataGridViewTextBoxColumn answers;
         private System.Windows.Forms.DataGridViewTextBoxColumn dlevel;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn prive;
     }
 }

@@ -98,6 +98,7 @@
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\Functionality.cs" />
     <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Classes\Print.cs" />
     <Compile Include="Classes\Question.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utilities.cs" />

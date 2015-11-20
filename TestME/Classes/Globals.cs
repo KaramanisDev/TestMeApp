@@ -19,6 +19,7 @@ namespace TestME
 
         public static frmStart formStart = new frmStart();
         public static frmMain formMain = new frmMain();
+        public static frmPrintPreview formPrint = new frmPrintPreview();
 
 
         public static string ConnectionStr()
