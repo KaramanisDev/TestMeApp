@@ -143,6 +143,8 @@ namespace TestME
             this.preview.Name = "preview";
             this.preview.Size = new System.Drawing.Size(546, 362);
             this.preview.TabIndex = 3;
+            this.preview.StartPageChanged += new System.EventHandler(this.preview_StartPageChanged_1);
+            this.preview.PageCountChanged += new System.EventHandler(this.preview_PageCountChanged_1);
             // 
             // _toolStrip
             // 
@@ -182,6 +184,7 @@ namespace TestME
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(23, 22);
             this.btnPrint.Text = "Print Document";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnPageSetup
             // 
@@ -191,6 +194,7 @@ namespace TestME
             this.btnPageSetup.Name = "btnPageSetup";
             this.btnPageSetup.Size = new System.Drawing.Size(23, 22);
             this.btnPageSetup.Text = "Page Setup";
+            this.btnPageSetup.Click += new System.EventHandler(this.btnPageSetup_Click);
             // 
             // toolStripSeparator2
             // 
@@ -219,6 +223,8 @@ namespace TestME
             this.btnZoom.Name = "btnZoom";
             this.btnZoom.Size = new System.Drawing.Size(71, 22);
             this.btnZoom.Text = "&Zoom";
+            this.btnZoom.ButtonClick += new System.EventHandler(this.btnZoom_ButtonClick);
+            this.btnZoom.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.btnZoom_DropDownItemClicked);
             // 
             // itemActualSize
             // 
@@ -309,6 +315,7 @@ namespace TestME
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(23, 22);
             this.btnFirst.Text = "First Page";
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrev
             // 
@@ -318,6 +325,7 @@ namespace TestME
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(23, 22);
             this.btnPrev.Text = "Previous Page";
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // txtStartPage
             // 
@@ -325,6 +333,9 @@ namespace TestME
             this.txtStartPage.Name = "txtStartPage";
             this.txtStartPage.Size = new System.Drawing.Size(32, 23);
             this.txtStartPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStartPage.Enter += new System.EventHandler(this.txtStartPage_Enter);
+            this.txtStartPage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStartPage_KeyPress);
+            this.txtStartPage.Validating += new System.ComponentModel.CancelEventHandler(this.txtStartPage_Validating);
             // 
             // lblPageCount
             // 
@@ -340,6 +351,7 @@ namespace TestME
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(23, 22);
             this.btnNext.Text = "Next Page";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -349,6 +361,7 @@ namespace TestME
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(23, 22);
             this.btnLast.Text = "Last Page";
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // _separator
             // 
@@ -364,6 +377,7 @@ namespace TestME
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(63, 22);
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmPrintPreview
             // 
