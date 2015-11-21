@@ -471,7 +471,7 @@ namespace TestME
                 }
 
                 PrintTest.Initialize();
-                PrintTest.SetTest = myTest;
+                PrintTest.SetTest(txtTestTitle.Text, datePicker.Value.ToShortDateString(), myTest, checkBoxAnsweredTest.Checked);
                 Globals.formPrint.Document = PrintTest.Document;
                 Globals.formPrint.ShowDialog();
             }
@@ -530,6 +530,57 @@ namespace TestME
         private void txtnemail_TextChanged(object sender, EventArgs e)
         {
             Utilities.txtCustomReplaceSpace(txtnemail);
+        }
+
+        private void btnAddTest_Click(object sender, EventArgs e)
+        {
+            btnAddTest.Focus();
+
+            int AddedQ = 0;
+
+            for (int i = 0; i < dgvMyQ.Rows.Count; i++)
+            {
+                int id = int.Parse(dgvMyQ.Rows[i].Cells[1].Value.ToString());
+                if (bool.Parse(dgvMyQ.Rows[i].Cells[0].Value.ToString()) && !Globals.MyTestQids.Contains(id))
+                {
+                    AddedQ++;
+                    string question = dgvMyQ.Rows[i].Cells[2].Value.ToString();
+                    string answers = dgvMyQ.Rows[i].Cells[3].Value.ToString();
+                    int dlevel = int.Parse(dgvMyQ.Rows[i].Cells[4].Value.ToString());
+                    dgvMyTest.Rows.Add("NONE", id, question, answers, dlevel, false);
+                    Globals.MyTestQids.Add(id);
+                }
+            }
+            if (AddedQ < 1)
+            {
+                Utilities.notifyThem(ntfMyQ, "No Questions added.", NotificationBox.Type.Warning);
+            }
+            else
+            {
+                Utilities.notifyThem(ntfMyQ, AddedQ + " Questions Added to your Test !", NotificationBox.Type.Success);
+            }
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvFoundQ.Rows.Count > 0)
+            {
+                for (int i = 0; i < dgvFoundQ.Rows.Count; i++)
+                {
+                    dgvFoundQ.Rows[i].Cells[0].Value = "True";
+                }
+            }
+        }
+
+        private void selectAllToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (dgvMyQ.Rows.Count > 0)
+            {
+                for (int i = 0; i < dgvMyQ.Rows.Count; i++)
+                {
+                    dgvMyQ.Rows[i].Cells[0].Value = "True";
+                }
+            }
         }
     }
 }

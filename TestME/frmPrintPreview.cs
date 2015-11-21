@@ -139,6 +139,7 @@ namespace TestME
                 // configure dialog
                 dlg.AllowSomePages = true;
                 dlg.AllowSelection = true;
+                dlg.AllowCurrentPage = true;
                 dlg.UseEXDialog = true;
                 dlg.Document = Document;
 
@@ -160,6 +161,7 @@ namespace TestME
         {
             using (var dlg = new PageSetupDialog())
             {
+                dlg.EnableMetric = true;
                 dlg.Document = Document;
                 if (dlg.ShowDialog(this) == DialogResult.OK)
                 {

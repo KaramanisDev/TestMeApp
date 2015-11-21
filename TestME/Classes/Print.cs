@@ -11,11 +11,15 @@ namespace TestME
     {
         private static PrintDocument _document;
         private static List<Question> _test;
+        private static string title;
+        private static string date;
+        private static bool solved;
 
         //PrintPage Globals
         private static int iq, ia;
         private static bool flagBreak;
         private static bool typedQ;
+        private static int noPage;
 
 
         public static void Initialize()
@@ -25,9 +29,9 @@ namespace TestME
             _document.BeginPrint += new PrintEventHandler(endPrint);
             _document.EndPrint += new PrintEventHandler(endPrint);
             _document.DefaultPageSettings.Margins = new Margins(50, 50, 50, 50);
-            foreach(PaperSize ps in _document.PrinterSettings.PaperSizes)
+            foreach (PaperSize ps in _document.PrinterSettings.PaperSizes)
             {
-                if(ps.PaperName == "A4")
+                if (ps.PaperName == "A4")
                 {
                     _document.DefaultPageSettings.PaperSize = ps;
                     break;
@@ -40,9 +44,12 @@ namespace TestME
             get { return _document; }
         }
 
-        public static List<Question> SetTest
+        public static void SetTest(string titles, string dates, List<Question> questions, bool ok)
         {
-            set { _test = value; }
+            title = titles;
+            date = dates;
+            _test = questions;
+            solved = ok;
         }
         public static Margins Margins
         {
@@ -59,17 +66,34 @@ namespace TestME
             float bottom = e.PageSettings.Margins.Bottom;
             float width = e.PageSettings.Bounds.Width;
             float height = e.PageSettings.Bounds.Height;
-
             G.FillRectangle(Brushes.White, 0, 0, width, height);
 
             float y = top;
             float x = left;
-            Font fontQ = new Font("Segoe UI", 12F, FontStyle.Bold);
-            Font fontA = new Font("Segoe UI", 10F);
+            Font titleFont = new Font("Calibri", 14F, FontStyle.Bold);
+            Font fontQ = new Font("Calibri", 12F);
+            Font fontA = new Font("Calibri", 11F);
 
             flagBreak = false;
             var img = new Bitmap(1, 1);
             Graphics E = Graphics.FromImage(img);
+
+            if (noPage == 1)
+            {
+                G.DrawStringML(title, titleFont, Brushes.Black, x, ref y, width - right);
+                y += (titleFont.GetHeight(G) + 20);
+                G.DrawString("Date: " + date, fontQ, Brushes.Black, width - right - 150, y);
+                G.DrawString("First Name: ___________________", fontQ, Brushes.Black, x, y);
+                y += fontQ.GetHeight(G) + 5;
+                G.DrawString("Last Name:  ___________________", fontQ, Brushes.Black, x, y);
+                y += fontQ.GetHeight(G) + 5;
+                G.DrawString("Class: ________", fontQ, Brushes.Black, x, y);
+                y += fontQ.GetHeight(G) + 5;
+                G.DrawString("Points:________", fontQ, Brushes.Black, x, y);
+                y += fontQ.GetHeight(G) + 35;
+                G.DrawStringML("Choose the correct answer. There might be more than one correct answers.", fontQ, Brushes.Black, x, ref y, width - right);
+                y += fontQ.GetHeight(G) + 20;
+            }
 
             while (iq < _test.Count && flagBreak == false)
             {
@@ -94,7 +118,7 @@ namespace TestME
                     while (ia < _test[iq].anwsers.Count && flagBreak == false)
                     {
                         //Edw pernei to keimeno tis apantisis
-                        string answer = (ia + 1) + ". " + _test[iq].anwsers[ia].text;
+                        string answer = _test[iq].anwsers[ia].text;
                         tempY = y;
                         E.DrawStringML(answer, fontQ, Brushes.Black, x, ref tempY, width - right);
 
@@ -107,7 +131,12 @@ namespace TestME
                         {
                             y += 8;
                             //Edw tipwnei apantisi
-                            G.DrawStringML(answer, fontA, Brushes.Black, x + 30, ref y, width - right);
+                            G.DrawRectangle(new Pen(Color.Black), x+15, y, 20, 20);
+                            if (solved && _test[iq].anwsers[ia].correct)
+                            {
+                                G.FillRectangle(Brushes.Black, x+15, y, 20, 20);
+                            }
+                            G.DrawStringML(answer, fontA, Brushes.Black, x + 45, ref y, width - right);
                             ia++;
                         }
                     }
@@ -128,6 +157,7 @@ namespace TestME
                 }
             }
 
+            noPage++;
             e.HasMorePages = flagBreak;
 
         }
@@ -138,6 +168,7 @@ namespace TestME
             ia = 0;
             flagBreak = false;
             typedQ = false;
+            noPage = 1;
         }
 
         private static void endPrint(object sender, PrintEventArgs e)
@@ -146,6 +177,7 @@ namespace TestME
             ia = 0;
             flagBreak = false;
             typedQ = false;
+            noPage = 1;
         }
 
         private static void DrawStringML(this Graphics G, string Text, Font font, Brush brush, float x, ref float y, float mX)

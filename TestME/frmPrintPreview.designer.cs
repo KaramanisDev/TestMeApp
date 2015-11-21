@@ -73,7 +73,7 @@ namespace TestME
             this.frmSkin.Name = "frmSkin";
             this.frmSkin.Padding = new System.Windows.Forms.Padding(13, 38, 13, 13);
             this.frmSkin.Sizable = true;
-            this.frmSkin.Size = new System.Drawing.Size(572, 438);
+            this.frmSkin.Size = new System.Drawing.Size(653, 632);
             this.frmSkin.TabIndex = 2;
             this.frmSkin.Text = "TestME : Print Preview";
             this.frmSkin.TitleAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -90,7 +90,7 @@ namespace TestME
             this.btnMax.DrawSeparator = false;
             this.btnMax.Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnMax.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMax.Location = new System.Drawing.Point(496, 5);
+            this.btnMax.Location = new System.Drawing.Point(577, 5);
             this.btnMax.MinimumSize = new System.Drawing.Size(20, 20);
             this.btnMax.Name = "btnMax";
             this.btnMax.OverlayCol = System.Drawing.Color.DarkGreen;
@@ -107,7 +107,7 @@ namespace TestME
             this.btnMin.DrawSeparator = false;
             this.btnMin.Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btnMin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMin.Location = new System.Drawing.Point(460, 5);
+            this.btnMin.Location = new System.Drawing.Point(541, 5);
             this.btnMin.MinimumSize = new System.Drawing.Size(20, 20);
             this.btnMin.Name = "btnMin";
             this.btnMin.OverlayCol = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -124,7 +124,7 @@ namespace TestME
             this.btnClose.DrawSeparator = false;
             this.btnClose.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClose.Location = new System.Drawing.Point(532, 5);
+            this.btnClose.Location = new System.Drawing.Point(613, 5);
             this.btnClose.MinimumSize = new System.Drawing.Size(20, 20);
             this.btnClose.Name = "btnClose";
             this.btnClose.OverlayCol = System.Drawing.Color.Maroon;
@@ -141,7 +141,7 @@ namespace TestME
             this.preview.Document = null;
             this.preview.Location = new System.Drawing.Point(13, 63);
             this.preview.Name = "preview";
-            this.preview.Size = new System.Drawing.Size(546, 362);
+            this.preview.Size = new System.Drawing.Size(627, 556);
             this.preview.TabIndex = 3;
             this.preview.StartPageChanged += new System.EventHandler(this.preview_StartPageChanged_1);
             this.preview.PageCountChanged += new System.EventHandler(this.preview_PageCountChanged_1);
@@ -165,7 +165,7 @@ namespace TestME
             this.btnCancel});
             this._toolStrip.Location = new System.Drawing.Point(13, 38);
             this._toolStrip.Name = "_toolStrip";
-            this._toolStrip.Size = new System.Drawing.Size(546, 25);
+            this._toolStrip.Size = new System.Drawing.Size(627, 25);
             this._toolStrip.Stretch = true;
             this._toolStrip.TabIndex = 2;
             this._toolStrip.Text = "toolStrip1";
@@ -383,7 +383,7 @@ namespace TestME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(572, 438);
+            this.ClientSize = new System.Drawing.Size(653, 632);
             this.Controls.Add(this.frmSkin);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
