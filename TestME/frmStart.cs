@@ -64,24 +64,6 @@ namespace TestME
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
-            /*
-            //MIN TA SBISEI KANEIS EINAI GIA NA KANO MERIKA TEST NESTORAS
-
-            List<Question> Mytest = new List<Question>();
-            List<Answer> Yo = new List<Answer>();
-            Yo.Clear();
-            Yo.Add(new Answer("aaaaa",false));
-            Yo.Add(new Answer("bbbb", true));
-            Mytest.Add(new Question(1, "What?", Yo,1, false));
-            Yo.Clear();
-            Yo.Add(new Answer("cccc", false));
-            Yo.Add(new Answer("dddd", true));
-            Mytest.Add(new Question(2, "wut wut?", Yo,1, false));
-
-            Utilities.printPDF("Allilepidrasi","14-11-2015",Mytest,false);
-            */
-
             if (Globals.Connected)
             {
                 txtLUser.Text = txtLUser.Text.Trim();
