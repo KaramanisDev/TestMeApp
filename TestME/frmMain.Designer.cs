@@ -694,14 +694,14 @@
             this.removeToolStripMenuItem1,
             this.shuffleAllToolStripMenuItem});
             this.rcmMyTest.Name = "rcmMyTest";
-            this.rcmMyTest.Size = new System.Drawing.Size(153, 136);
+            this.rcmMyTest.Size = new System.Drawing.Size(139, 114);
             this.rcmMyTest.Opening += new System.ComponentModel.CancelEventHandler(this.rcmMyTest_Opening);
             // 
             // viewToolStripMenuItem2
             // 
             this.viewToolStripMenuItem2.Image = global::TestME.Properties.Resources.view;
             this.viewToolStripMenuItem2.Name = "viewToolStripMenuItem2";
-            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
             this.viewToolStripMenuItem2.Text = "View";
             this.viewToolStripMenuItem2.Click += new System.EventHandler(this.viewToolStripMenuItem2_Click);
             // 
@@ -709,21 +709,21 @@
             // 
             this.moveUpToolStripMenuItem.Image = global::TestME.Properties.Resources.up;
             this.moveUpToolStripMenuItem.Name = "moveUpToolStripMenuItem";
-            this.moveUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.moveUpToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.moveUpToolStripMenuItem.Text = "Move Up";
             // 
             // moveDownToolStripMenuItem
             // 
             this.moveDownToolStripMenuItem.Image = global::TestME.Properties.Resources.down;
             this.moveDownToolStripMenuItem.Name = "moveDownToolStripMenuItem";
-            this.moveDownToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.moveDownToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.moveDownToolStripMenuItem.Text = "Move Down";
             // 
             // removeToolStripMenuItem1
             // 
             this.removeToolStripMenuItem1.Image = global::TestME.Properties.Resources.delete;
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
             this.removeToolStripMenuItem1.Text = "Remove";
             this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
             // 
@@ -731,7 +731,7 @@
             // 
             this.shuffleAllToolStripMenuItem.Image = global::TestME.Properties.Resources.suffle;
             this.shuffleAllToolStripMenuItem.Name = "shuffleAllToolStripMenuItem";
-            this.shuffleAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shuffleAllToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.shuffleAllToolStripMenuItem.Text = "Shuffle All";
             // 
             // datePicker
@@ -779,6 +779,7 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrint
             // 

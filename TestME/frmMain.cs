@@ -643,5 +643,36 @@ namespace TestME
         {
             new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            List<Question> myTest = new List<Question>();
+
+            if (string.IsNullOrWhiteSpace(txtTestTitle.Text))
+            {
+                Utilities.notifyThem(ntfTest, "No title found.", NotificationBox.Type.Warning);
+            }
+            else if (dgvMyTest.Rows.Count < 1)
+            {
+                Utilities.notifyThem(ntfTest, "No Questions Found.", NotificationBox.Type.Warning);
+            }
+            else
+            {
+
+                foreach (DataGridViewRow row in dgvMyTest.Rows)
+                {
+                    myTest.Add(Utilities.dgvRowIntoQuestion(row));
+                }
+
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF file|*.pdf";
+                sfd.Title = "Save The Test into a PDF file";
+                sfd.ShowDialog();
+                SavePDF.SetTest(txtTestTitle.Text, datePicker.Value.ToShortDateString(), myTest, checkBoxAnsweredTest.Checked, sfd.FileName);
+                SavePDF.SaveTest();
+                Utilities.notifyThem(ntfTest, "Successfully Saved !", NotificationBox.Type.Success);
+            }
+
+        }
     }
 }
