@@ -100,7 +100,8 @@
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Print.cs" />
     <Compile Include="Classes\Question.cs" />
-    <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Classes\SavePDF.cs" />
+	<Compile Include="Classes\Settings.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utilities.cs" />
     <Compile Include="Classes\Validation.cs" />
