@@ -24,7 +24,7 @@ namespace TestME
             tabforgot.Text = "";
             tabforgot.Tag = "hide";
 
-            string[] fillS=Utilities.loadSettings("StoredSettings",6);
+            string[] fillS=Settings.load("StoredSettings",6);
             if (fillS[0] == "True") { 
                 txtSHost.Text = fillS[2];
                 txtSUser.Text = fillS[3];
@@ -38,7 +38,7 @@ namespace TestME
                 this.btnconnect_Click(this, new EventArgs());
             }
 
-            string[] fillL = Utilities.loadSettings("StoredAccount", 3);
+            string[] fillL = Settings.load("StoredAccount", 3);
             if (fillL[0] == "True")
             {
                 txtLUser.Text = fillL[1];
@@ -101,14 +101,11 @@ namespace TestME
                         {
                             if(ckbLRemember.Checked)
                             {
-                                Utilities.saveSettings("StoredAccount", ckbLRemember.Checked.ToString(), txtLUser.Text, txtLPass.Text);
+                                Settings.save("StoredAccount", ckbLRemember.Checked.ToString(), txtLUser.Text, txtLPass.Text);
                             }
                             else
                             {
-                                if (System.IO.File.Exists(Globals.FilesPath + "\\TestME\\StoredAccount"))
-                                {
-                                    System.IO.File.Delete(Globals.FilesPath + "\\TestME\\StoredAccount");
-                                }
+                                Settings.delete("StoredAccount");
                             }
 
                             //Load Tags
@@ -153,14 +150,11 @@ namespace TestME
                 {
                     if (checkBoxRemember.Checked)
                     {
-                        Utilities.saveSettings("StoredSettings", checkBoxRemember.Checked.ToString(), checkBoxAutoConnect.Checked.ToString(), txtSHost.Text, txtSUser.Text, txtSPass.Text, txtSDatabase.Text);
+                        Settings.save("StoredSettings", checkBoxRemember.Checked.ToString(), checkBoxAutoConnect.Checked.ToString(), txtSHost.Text, txtSUser.Text, txtSPass.Text, txtSDatabase.Text);
                     }
                     else
                     {
-                        if (System.IO.File.Exists(Globals.FilesPath + "\\TestME\\StoredSettings"))
-                        {
-                            System.IO.File.Delete(Globals.FilesPath + "\\TestME\\StoredSettings");
-                        }
+                        Settings.delete("StoredSettings");
                     }
                     Utilities.InvokeMe(btnconnect,()=>
                     {
