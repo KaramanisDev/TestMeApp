@@ -37,8 +37,6 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customForm1 = new CustomForm();
             this.dgvAnswerlist = new System.Windows.Forms.DataGridView();
-            this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ntfEdit = new NotificationBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSaveChanges = new BonfireButton();
@@ -53,6 +51,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.rcmAnswer.SuspendLayout();
             this.customForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).BeginInit();
@@ -154,21 +154,6 @@
             this.dgvAnswerlist.Size = new System.Drawing.Size(360, 150);
             this.dgvAnswerlist.TabIndex = 49;
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
-            // 
-            // answer
-            // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.answer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.answer.HeaderText = "Answer";
-            this.answer.Name = "answer";
-            this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.answer.Width = 300;
-            // 
-            // Correct
-            // 
-            this.Correct.HeaderText = "Correct";
-            this.Correct.Name = "Correct";
-            this.Correct.Width = 60;
             // 
             // ntfEdit
             // 
@@ -362,6 +347,21 @@
             this.btnClose.TabIndex = 33;
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // answer
+            // 
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.answer.DefaultCellStyle = dataGridViewCellStyle2;
+            this.answer.HeaderText = "Answer";
+            this.answer.Name = "answer";
+            this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.answer.Width = 280;
+            // 
+            // Correct
+            // 
+            this.Correct.HeaderText = "Correct";
+            this.Correct.Name = "Correct";
+            this.Correct.Width = 80;
             // 
             // frmEdit
             // 

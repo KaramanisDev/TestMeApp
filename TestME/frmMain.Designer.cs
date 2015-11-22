@@ -44,8 +44,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rcmFindQ = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTipUser = new System.Windows.Forms.ToolTip(this.components);
             this.dgvMyQ = new System.Windows.Forms.DataGridView();
@@ -69,8 +76,16 @@
             this.answers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dlevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.rcmMyTest = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveDownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.shuffleAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.txtTestTitle = new XylosTextBox();
+            this.btnSave = new BonfireButton();
+            this.btnPrint = new BonfireButton();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.txtAnswer = new System.Windows.Forms.TextBox();
             this.txtTags = new System.Windows.Forms.TextBox();
@@ -78,10 +93,12 @@
             this.tabUser = new XylosTabControl();
             this.testpanel = new System.Windows.Forms.TabPage();
             this.tabquestions = new System.Windows.Forms.TabPage();
+            this.btnAddTest = new BonfireButton();
             this.ntfMyQ = new NotificationBox();
             this.lblRegQ = new System.Windows.Forms.Label();
             this.lblUserMessage = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnDeleteSelected = new BonfireButton();
             this.tabAddQ = new System.Windows.Forms.TabPage();
             this.dgvAnswerlist = new System.Windows.Forms.DataGridView();
             this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +111,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnAddAnswer = new BonfireButton();
+            this.btnReset = new BonfireButton();
+            this.btnAdd = new BonfireButton();
             this.tabfind = new System.Windows.Forms.TabPage();
             this.ntbfindQ = new NotificationBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -101,7 +121,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnSearch = new BonfireButton();
+            this.btnClear = new BonfireButton();
+            this.btnMakeTest = new BonfireButton();
             this.tabtest = new System.Windows.Forms.TabPage();
+            this.btnClearTest = new BonfireButton();
             this.ntfTest = new NotificationBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -114,21 +138,25 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtncode = new XylosTextBox();
             this.txtspassword = new XylosTextBox();
+            this.btnChangeSecurity = new BonfireButton();
             this.gbEmail = new System.Windows.Forms.GroupBox();
             this.ntfE = new NotificationBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtnemail = new XylosTextBox();
             this.txtepassword = new XylosTextBox();
+            this.btnChangeEmail = new BonfireButton();
             this.gbPassword = new System.Windows.Forms.GroupBox();
             this.ntfP = new NotificationBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnChangePassword = new BonfireButton();
             this.txtrnpassword = new XylosTextBox();
             this.txtnpassword = new XylosTextBox();
             this.txtopassword = new XylosTextBox();
             this.gbProfile = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
             this.pnumQ = new System.Windows.Forms.Label();
             this.pdatabase = new System.Windows.Forms.Label();
@@ -140,34 +168,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.rcmMyTest = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.suffleAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddTest = new BonfireButton();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDeleteSelected = new BonfireButton();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddAnswer = new BonfireButton();
-            this.btnReset = new BonfireButton();
-            this.btnAdd = new BonfireButton();
-            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSearch = new BonfireButton();
-            this.btnClear = new BonfireButton();
-            this.btnMakeTest = new BonfireButton();
-            this.btnClearTest = new BonfireButton();
-            this.btnSave = new BonfireButton();
-            this.btnPrint = new BonfireButton();
-            this.btnChangeSecurity = new BonfireButton();
-            this.btnChangeEmail = new BonfireButton();
-            this.btnChangePassword = new BonfireButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.viewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.moveUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.moveDownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rcmMyQ.SuspendLayout();
             this.rcmAnswer.SuspendLayout();
             this.rcmFindQ.SuspendLayout();
@@ -177,6 +177,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).BeginInit();
+            this.rcmMyTest.SuspendLayout();
             this.frmskin.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabquestions.SuspendLayout();
@@ -189,7 +190,6 @@
             this.gbEmail.SuspendLayout();
             this.gbPassword.SuspendLayout();
             this.gbProfile.SuspendLayout();
-            this.rcmMyTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,6 +202,39 @@
             this.selectAllToolStripMenuItem1});
             this.rcmMyQ.Name = "rcmMyQ";
             this.rcmMyQ.Size = new System.Drawing.Size(123, 92);
+            this.rcmMyQ.Opening += new System.ComponentModel.CancelEventHandler(this.rcmMyQ_Opening);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Image = global::TestME.Properties.Resources.view;
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::TestME.Properties.Resources.edit;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // selectAllToolStripMenuItem1
+            // 
+            this.selectAllToolStripMenuItem1.Image = global::TestME.Properties.Resources.select;
+            this.selectAllToolStripMenuItem1.Name = "selectAllToolStripMenuItem1";
+            this.selectAllToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.selectAllToolStripMenuItem1.Text = "Select All";
+            this.selectAllToolStripMenuItem1.Click += new System.EventHandler(this.selectAllToolStripMenuItem1_Click);
             // 
             // rcmAnswer
             // 
@@ -209,6 +242,15 @@
             this.removeToolStripMenuItem});
             this.rcmAnswer.Name = "rcmAnswer";
             this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
+            this.rcmAnswer.Opening += new System.ComponentModel.CancelEventHandler(this.rcmAnswer_Opening);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // rcmFindQ
             // 
@@ -217,6 +259,23 @@
             this.selectAllToolStripMenuItem});
             this.rcmFindQ.Name = "rcmFindQ";
             this.rcmFindQ.Size = new System.Drawing.Size(123, 48);
+            this.rcmFindQ.Opening += new System.ComponentModel.CancelEventHandler(this.rcmFindQ_Opening);
+            // 
+            // viewToolStripMenuItem1
+            // 
+            this.viewToolStripMenuItem1.Image = global::TestME.Properties.Resources.view;
+            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.viewToolStripMenuItem1.Text = "View";
+            this.viewToolStripMenuItem1.Click += new System.EventHandler(this.viewToolStripMenuItem1_Click);
+            // 
+            // selectAllToolStripMenuItem
+            // 
+            this.selectAllToolStripMenuItem.Image = global::TestME.Properties.Resources.select;
+            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.selectAllToolStripMenuItem.Text = "Select All";
+            this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
             // 
             // imageList1
             // 
@@ -282,7 +341,7 @@
             this.dgvMyQ.Size = new System.Drawing.Size(555, 275);
             this.dgvMyQ.TabIndex = 2;
             this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context.");
-            this.dgvMyQ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyQ_CellDoubleClick);
+            this.dgvMyQ.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyQ_CellContentDoubleClick);
             this.dgvMyQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyQ_CellMouseUp);
             // 
             // select
@@ -425,6 +484,7 @@
             this.dgvFoundQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvFoundQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvFoundQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFoundQ.ShowCellErrors = false;
             this.dgvFoundQ.ShowCellToolTips = false;
@@ -434,7 +494,7 @@
             this.dgvFoundQ.TabIndex = 15;
             this.dgvFoundQ.Tag = "";
             this.toolTipUser.SetToolTip(this.dgvFoundQ, "List of questions that\r\nmatch with the search.\r\nDouble-click to view results.");
-            this.dgvFoundQ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoundQ_CellDoubleClick);
+            this.dgvFoundQ.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoundQ_CellContentDoubleClick);
             this.dgvFoundQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFoundQ_CellMouseUp);
             // 
             // selectq
@@ -555,6 +615,7 @@
             this.answers,
             this.dlevel,
             this.prive});
+            this.dgvMyTest.ContextMenuStrip = this.rcmMyTest;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Trebuchet MS", 9F);
@@ -578,7 +639,7 @@
             this.dgvMyTest.Size = new System.Drawing.Size(540, 220);
             this.dgvMyTest.TabIndex = 7;
             this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
-            this.dgvMyTest.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellDoubleClick);
+            this.dgvMyTest.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellContentDoubleClick);
             this.dgvMyTest.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyTest_CellMouseUp);
             // 
             // nothing
@@ -624,6 +685,55 @@
             this.prive.ReadOnly = true;
             this.prive.Visible = false;
             // 
+            // rcmMyTest
+            // 
+            this.rcmMyTest.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem2,
+            this.moveUpToolStripMenuItem,
+            this.moveDownToolStripMenuItem,
+            this.removeToolStripMenuItem1,
+            this.shuffleAllToolStripMenuItem});
+            this.rcmMyTest.Name = "rcmMyTest";
+            this.rcmMyTest.Size = new System.Drawing.Size(153, 136);
+            this.rcmMyTest.Opening += new System.ComponentModel.CancelEventHandler(this.rcmMyTest_Opening);
+            // 
+            // viewToolStripMenuItem2
+            // 
+            this.viewToolStripMenuItem2.Image = global::TestME.Properties.Resources.view;
+            this.viewToolStripMenuItem2.Name = "viewToolStripMenuItem2";
+            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem2.Text = "View";
+            this.viewToolStripMenuItem2.Click += new System.EventHandler(this.viewToolStripMenuItem2_Click);
+            // 
+            // moveUpToolStripMenuItem
+            // 
+            this.moveUpToolStripMenuItem.Image = global::TestME.Properties.Resources.up;
+            this.moveUpToolStripMenuItem.Name = "moveUpToolStripMenuItem";
+            this.moveUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.moveUpToolStripMenuItem.Text = "Move Up";
+            // 
+            // moveDownToolStripMenuItem
+            // 
+            this.moveDownToolStripMenuItem.Image = global::TestME.Properties.Resources.down;
+            this.moveDownToolStripMenuItem.Name = "moveDownToolStripMenuItem";
+            this.moveDownToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.moveDownToolStripMenuItem.Text = "Move Down";
+            // 
+            // removeToolStripMenuItem1
+            // 
+            this.removeToolStripMenuItem1.Image = global::TestME.Properties.Resources.delete;
+            this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem1.Text = "Remove";
+            this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
+            // 
+            // shuffleAllToolStripMenuItem
+            // 
+            this.shuffleAllToolStripMenuItem.Image = global::TestME.Properties.Resources.suffle;
+            this.shuffleAllToolStripMenuItem.Name = "shuffleAllToolStripMenuItem";
+            this.shuffleAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shuffleAllToolStripMenuItem.Text = "Shuffle All";
+            // 
             // datePicker
             // 
             this.datePicker.CalendarTitleForeColor = System.Drawing.Color.DimGray;
@@ -653,6 +763,39 @@
             this.txtTestTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.toolTipUser.SetToolTip(this.txtTestTitle, "Write the title of the final Test.");
             this.txtTestTitle.UseSystemPasswordChar = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnSave.Location = new System.Drawing.Point(470, 349);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.RoundedCorners = true;
+            this.btnSave.Size = new System.Drawing.Size(74, 35);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
+            this.btnPrint.Location = new System.Drawing.Point(378, 349);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.RoundedCorners = true;
+            this.btnPrint.Size = new System.Drawing.Size(81, 35);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "Print";
+            this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // autocompleteMenu1
             // 
@@ -688,7 +831,7 @@
             this.txtTags.Multiline = true;
             this.txtTags.Name = "txtTags";
             this.txtTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTags.Size = new System.Drawing.Size(239, 61);
+            this.txtTags.Size = new System.Drawing.Size(241, 61);
             this.txtTags.TabIndex = 18;
             this.txtTags.TextChanged += new System.EventHandler(this.txtTags_TextChanged);
             // 
@@ -772,6 +915,22 @@
             this.tabquestions.TabIndex = 0;
             this.tabquestions.Text = "My Questions";
             // 
+            // btnAddTest
+            // 
+            this.btnAddTest.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAddTest.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnAddTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTest.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddTest.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnAddTest.Location = new System.Drawing.Point(318, 354);
+            this.btnAddTest.Name = "btnAddTest";
+            this.btnAddTest.RoundedCorners = true;
+            this.btnAddTest.Size = new System.Drawing.Size(115, 35);
+            this.btnAddTest.TabIndex = 11;
+            this.btnAddTest.Text = "Add To Test";
+            this.btnAddTest.Click += new System.EventHandler(this.btnAddTest_Click);
+            // 
             // ntfMyQ
             // 
             this.ntfMyQ.BorderCurve = 8;
@@ -819,6 +978,22 @@
             this.label2.Size = new System.Drawing.Size(123, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Your Questions";
+            // 
+            // btnDeleteSelected
+            // 
+            this.btnDeleteSelected.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDeleteSelected.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnDeleteSelected.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSelected.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSelected.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDeleteSelected.Image = global::TestME.Properties.Resources.delete_24;
+            this.btnDeleteSelected.Location = new System.Drawing.Point(449, 354);
+            this.btnDeleteSelected.Name = "btnDeleteSelected";
+            this.btnDeleteSelected.RoundedCorners = true;
+            this.btnDeleteSelected.Size = new System.Drawing.Size(137, 35);
+            this.btnDeleteSelected.TabIndex = 9;
+            this.btnDeleteSelected.Text = "Delete Selected";
+            this.btnDeleteSelected.Click += new System.EventHandler(this.btnDeleteSelected_Click);
             // 
             // tabAddQ
             // 
@@ -904,13 +1079,13 @@
             this.answer.HeaderText = "Answer";
             this.answer.Name = "answer";
             this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.answer.Width = 300;
+            this.answer.Width = 280;
             // 
             // Correct
             // 
             this.Correct.HeaderText = "Correct";
             this.Correct.Name = "Correct";
-            this.Correct.Width = 60;
+            this.Correct.Width = 80;
             // 
             // ntfAdd
             // 
@@ -1006,6 +1181,54 @@
             this.label10.Size = new System.Drawing.Size(39, 18);
             this.label10.TabIndex = 15;
             this.label10.Text = "Tags:";
+            // 
+            // btnAddAnswer
+            // 
+            this.btnAddAnswer.BackColor = System.Drawing.Color.Chocolate;
+            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddAnswer.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
+            this.btnAddAnswer.Name = "btnAddAnswer";
+            this.btnAddAnswer.RoundedCorners = true;
+            this.btnAddAnswer.Size = new System.Drawing.Size(122, 35);
+            this.btnAddAnswer.TabIndex = 32;
+            this.btnAddAnswer.Text = "Add Answer";
+            this.btnAddAnswer.Click += new System.EventHandler(this.btnAddAnswer_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
+            this.btnReset.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReset.Image = global::TestME.Properties.Resources.undo_5_24;
+            this.btnReset.Location = new System.Drawing.Point(159, 348);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.RoundedCorners = true;
+            this.btnReset.Size = new System.Drawing.Size(79, 35);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAdd.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnAdd.Location = new System.Drawing.Point(24, 348);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RoundedCorners = true;
+            this.btnAdd.Size = new System.Drawing.Size(129, 35);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Add Question";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tabfind
             // 
@@ -1110,6 +1333,54 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Tags:";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Teal;
+            this.btnSearch.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.Image = global::TestME.Properties.Resources.search_24;
+            this.btnSearch.Location = new System.Drawing.Point(487, 107);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.RoundedCorners = true;
+            this.btnSearch.Size = new System.Drawing.Size(87, 35);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnClear.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.Image = global::TestME.Properties.Resources.delete_24;
+            this.btnClear.Location = new System.Drawing.Point(487, 351);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.RoundedCorners = true;
+            this.btnClear.Size = new System.Drawing.Size(87, 35);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnMakeTest
+            // 
+            this.btnMakeTest.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnMakeTest.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnMakeTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMakeTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeTest.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMakeTest.Image = global::TestME.Properties.Resources.plus_5_24;
+            this.btnMakeTest.Location = new System.Drawing.Point(346, 351);
+            this.btnMakeTest.Name = "btnMakeTest";
+            this.btnMakeTest.RoundedCorners = true;
+            this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
+            this.btnMakeTest.TabIndex = 7;
+            this.btnMakeTest.Text = "Add To Test";
+            this.btnMakeTest.Click += new System.EventHandler(this.btnMakeTest_Click);
+            // 
             // tabtest
             // 
             this.tabtest.BackColor = System.Drawing.Color.White;
@@ -1133,6 +1404,18 @@
             this.tabtest.Size = new System.Drawing.Size(619, 402);
             this.tabtest.TabIndex = 3;
             this.tabtest.Text = "My Test";
+            // 
+            // btnClearTest
+            // 
+            this.btnClearTest.ButtonStyle = BonfireButton.Style.Dark;
+            this.btnClearTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClearTest.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnClearTest.Image = global::TestME.Properties.Resources.delete_24;
+            this.btnClearTest.Location = new System.Drawing.Point(558, 346);
+            this.btnClearTest.Name = "btnClearTest";
+            this.btnClearTest.RoundedCorners = true;
+            this.btnClearTest.Size = new System.Drawing.Size(43, 40);
+            this.btnClearTest.TabIndex = 10;
             // 
             // ntfTest
             // 
@@ -1296,6 +1579,21 @@
             this.txtspassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtspassword.UseSystemPasswordChar = true;
             // 
+            // btnChangeSecurity
+            // 
+            this.btnChangeSecurity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnChangeSecurity.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnChangeSecurity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeSecurity.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnChangeSecurity.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangeSecurity.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnChangeSecurity.Location = new System.Drawing.Point(230, 131);
+            this.btnChangeSecurity.Name = "btnChangeSecurity";
+            this.btnChangeSecurity.RoundedCorners = true;
+            this.btnChangeSecurity.Size = new System.Drawing.Size(46, 39);
+            this.btnChangeSecurity.TabIndex = 4;
+            this.btnChangeSecurity.Click += new System.EventHandler(this.btnChangeSecurity_Click);
+            // 
             // gbEmail
             // 
             this.gbEmail.Controls.Add(this.ntfE);
@@ -1379,6 +1677,21 @@
             this.txtepassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtepassword.UseSystemPasswordChar = true;
             // 
+            // btnChangeEmail
+            // 
+            this.btnChangeEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnChangeEmail.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnChangeEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeEmail.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnChangeEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangeEmail.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnChangeEmail.Location = new System.Drawing.Point(219, 131);
+            this.btnChangeEmail.Name = "btnChangeEmail";
+            this.btnChangeEmail.RoundedCorners = true;
+            this.btnChangeEmail.Size = new System.Drawing.Size(46, 39);
+            this.btnChangeEmail.TabIndex = 4;
+            this.btnChangeEmail.Click += new System.EventHandler(this.btnChangeEmail_Click);
+            // 
             // gbPassword
             // 
             this.gbPassword.Controls.Add(this.ntfP);
@@ -1439,6 +1752,21 @@
             this.label17.Size = new System.Drawing.Size(85, 18);
             this.label17.TabIndex = 4;
             this.label17.Text = "Old Password:";
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
+            this.btnChangePassword.ButtonStyle = BonfireButton.Style.Custom;
+            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePassword.Font = new System.Drawing.Font("Verdana", 8F);
+            this.btnChangePassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnChangePassword.Image = global::TestME.Properties.Resources.save_as_24;
+            this.btnChangePassword.Location = new System.Drawing.Point(230, 155);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.RoundedCorners = true;
+            this.btnChangePassword.Size = new System.Drawing.Size(46, 39);
+            this.btnChangePassword.TabIndex = 3;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // txtrnpassword
             // 
@@ -1509,6 +1837,16 @@
             this.gbProfile.TabIndex = 1;
             this.gbProfile.TabStop = false;
             this.gbProfile.Text = "Profile";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TestME.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(210, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // label34
             // 
@@ -1638,335 +1976,6 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // rcmMyTest
-            // 
-            this.rcmMyTest.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem2,
-            this.moveUpToolStripMenuItem,
-            this.moveDownToolStripMenuItem,
-            this.removeToolStripMenuItem1,
-            this.suffleAllToolStripMenuItem});
-            this.rcmMyTest.Name = "rcmMyTest";
-            this.rcmMyTest.Size = new System.Drawing.Size(139, 114);
-            // 
-            // suffleAllToolStripMenuItem
-            // 
-            this.suffleAllToolStripMenuItem.Image = global::TestME.Properties.Resources.suffle;
-            this.suffleAllToolStripMenuItem.Name = "suffleAllToolStripMenuItem";
-            this.suffleAllToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.suffleAllToolStripMenuItem.Text = "Suffle All";
-            // 
-            // btnAddTest
-            // 
-            this.btnAddTest.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAddTest.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnAddTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTest.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddTest.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnAddTest.Location = new System.Drawing.Point(318, 354);
-            this.btnAddTest.Name = "btnAddTest";
-            this.btnAddTest.RoundedCorners = true;
-            this.btnAddTest.Size = new System.Drawing.Size(115, 35);
-            this.btnAddTest.TabIndex = 11;
-            this.btnAddTest.Text = "Add To Test";
-            this.btnAddTest.Click += new System.EventHandler(this.btnAddTest_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Image = global::TestME.Properties.Resources.view;
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::TestME.Properties.Resources.edit;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // selectAllToolStripMenuItem1
-            // 
-            this.selectAllToolStripMenuItem1.Image = global::TestME.Properties.Resources.select;
-            this.selectAllToolStripMenuItem1.Name = "selectAllToolStripMenuItem1";
-            this.selectAllToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.selectAllToolStripMenuItem1.Text = "Select All";
-            this.selectAllToolStripMenuItem1.Click += new System.EventHandler(this.selectAllToolStripMenuItem1_Click);
-            // 
-            // btnDeleteSelected
-            // 
-            this.btnDeleteSelected.BackColor = System.Drawing.Color.Firebrick;
-            this.btnDeleteSelected.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnDeleteSelected.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteSelected.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteSelected.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDeleteSelected.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnDeleteSelected.Location = new System.Drawing.Point(449, 354);
-            this.btnDeleteSelected.Name = "btnDeleteSelected";
-            this.btnDeleteSelected.RoundedCorners = true;
-            this.btnDeleteSelected.Size = new System.Drawing.Size(137, 35);
-            this.btnDeleteSelected.TabIndex = 9;
-            this.btnDeleteSelected.Text = "Delete Selected";
-            this.btnDeleteSelected.Click += new System.EventHandler(this.btnDeleteSelected_Click);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            // 
-            // btnAddAnswer
-            // 
-            this.btnAddAnswer.BackColor = System.Drawing.Color.Chocolate;
-            this.btnAddAnswer.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnAddAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnswer.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddAnswer.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnAddAnswer.Location = new System.Drawing.Point(398, 259);
-            this.btnAddAnswer.Name = "btnAddAnswer";
-            this.btnAddAnswer.RoundedCorners = true;
-            this.btnAddAnswer.Size = new System.Drawing.Size(122, 35);
-            this.btnAddAnswer.TabIndex = 32;
-            this.btnAddAnswer.Text = "Add Answer";
-            this.btnAddAnswer.Click += new System.EventHandler(this.btnAddAnswer_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(160)))));
-            this.btnReset.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReset.Image = global::TestME.Properties.Resources.undo_5_24;
-            this.btnReset.Location = new System.Drawing.Point(159, 348);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.RoundedCorners = true;
-            this.btnReset.Size = new System.Drawing.Size(79, 35);
-            this.btnReset.TabIndex = 18;
-            this.btnReset.Text = "Reset";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAdd.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnAdd.Location = new System.Drawing.Point(24, 348);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.RoundedCorners = true;
-            this.btnAdd.Size = new System.Drawing.Size(129, 35);
-            this.btnAdd.TabIndex = 17;
-            this.btnAdd.Text = "Add Question";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // viewToolStripMenuItem1
-            // 
-            this.viewToolStripMenuItem1.Image = global::TestME.Properties.Resources.view;
-            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
-            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.viewToolStripMenuItem1.Text = "View";
-            this.viewToolStripMenuItem1.Click += new System.EventHandler(this.viewToolStripMenuItem1_Click);
-            // 
-            // selectAllToolStripMenuItem
-            // 
-            this.selectAllToolStripMenuItem.Image = global::TestME.Properties.Resources.select;
-            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.selectAllToolStripMenuItem.Text = "Select All";
-            this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Teal;
-            this.btnSearch.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.Image = global::TestME.Properties.Resources.search_24;
-            this.btnSearch.Location = new System.Drawing.Point(487, 107);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.RoundedCorners = true;
-            this.btnSearch.Size = new System.Drawing.Size(87, 35);
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnClear.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClear.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnClear.Location = new System.Drawing.Point(487, 351);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.RoundedCorners = true;
-            this.btnClear.Size = new System.Drawing.Size(87, 35);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnMakeTest
-            // 
-            this.btnMakeTest.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnMakeTest.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnMakeTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMakeTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMakeTest.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMakeTest.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnMakeTest.Location = new System.Drawing.Point(346, 351);
-            this.btnMakeTest.Name = "btnMakeTest";
-            this.btnMakeTest.RoundedCorners = true;
-            this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
-            this.btnMakeTest.TabIndex = 7;
-            this.btnMakeTest.Text = "Add To Test";
-            this.btnMakeTest.Click += new System.EventHandler(this.btnMakeTest_Click);
-            // 
-            // btnClearTest
-            // 
-            this.btnClearTest.ButtonStyle = BonfireButton.Style.Dark;
-            this.btnClearTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClearTest.Font = new System.Drawing.Font("Verdana", 8F);
-            this.btnClearTest.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnClearTest.Location = new System.Drawing.Point(558, 346);
-            this.btnClearTest.Name = "btnClearTest";
-            this.btnClearTest.RoundedCorners = true;
-            this.btnClearTest.Size = new System.Drawing.Size(43, 40);
-            this.btnClearTest.TabIndex = 10;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnSave.Location = new System.Drawing.Point(470, 349);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.RoundedCorners = true;
-            this.btnSave.Size = new System.Drawing.Size(74, 35);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.toolTipUser.SetToolTip(this.btnSave, "Save As PDF");
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
-            this.btnPrint.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
-            this.btnPrint.Location = new System.Drawing.Point(378, 349);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.RoundedCorners = true;
-            this.btnPrint.Size = new System.Drawing.Size(81, 35);
-            this.btnPrint.TabIndex = 5;
-            this.btnPrint.Text = "Print";
-            this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnChangeSecurity
-            // 
-            this.btnChangeSecurity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
-            this.btnChangeSecurity.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnChangeSecurity.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeSecurity.Font = new System.Drawing.Font("Verdana", 8F);
-            this.btnChangeSecurity.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangeSecurity.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangeSecurity.Location = new System.Drawing.Point(230, 131);
-            this.btnChangeSecurity.Name = "btnChangeSecurity";
-            this.btnChangeSecurity.RoundedCorners = true;
-            this.btnChangeSecurity.Size = new System.Drawing.Size(46, 39);
-            this.btnChangeSecurity.TabIndex = 4;
-            this.btnChangeSecurity.Click += new System.EventHandler(this.btnChangeSecurity_Click);
-            // 
-            // btnChangeEmail
-            // 
-            this.btnChangeEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
-            this.btnChangeEmail.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnChangeEmail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeEmail.Font = new System.Drawing.Font("Verdana", 8F);
-            this.btnChangeEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangeEmail.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangeEmail.Location = new System.Drawing.Point(219, 131);
-            this.btnChangeEmail.Name = "btnChangeEmail";
-            this.btnChangeEmail.RoundedCorners = true;
-            this.btnChangeEmail.Size = new System.Drawing.Size(46, 39);
-            this.btnChangeEmail.TabIndex = 4;
-            this.btnChangeEmail.Click += new System.EventHandler(this.btnChangeEmail_Click);
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(80)))));
-            this.btnChangePassword.ButtonStyle = BonfireButton.Style.Custom;
-            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangePassword.Font = new System.Drawing.Font("Verdana", 8F);
-            this.btnChangePassword.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnChangePassword.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangePassword.Location = new System.Drawing.Point(230, 155);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.RoundedCorners = true;
-            this.btnChangePassword.Size = new System.Drawing.Size(46, 39);
-            this.btnChangePassword.TabIndex = 3;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TestME.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(210, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // viewToolStripMenuItem2
-            // 
-            this.viewToolStripMenuItem2.Image = global::TestME.Properties.Resources.view;
-            this.viewToolStripMenuItem2.Name = "viewToolStripMenuItem2";
-            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
-            this.viewToolStripMenuItem2.Text = "View";
-            // 
-            // moveUpToolStripMenuItem
-            // 
-            this.moveUpToolStripMenuItem.Image = global::TestME.Properties.Resources.up;
-            this.moveUpToolStripMenuItem.Name = "moveUpToolStripMenuItem";
-            this.moveUpToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.moveUpToolStripMenuItem.Text = "Move Up";
-            // 
-            // moveDownToolStripMenuItem
-            // 
-            this.moveDownToolStripMenuItem.Image = global::TestME.Properties.Resources.down;
-            this.moveDownToolStripMenuItem.Name = "moveDownToolStripMenuItem";
-            this.moveDownToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.moveDownToolStripMenuItem.Text = "Move Down";
-            // 
-            // removeToolStripMenuItem1
-            // 
-            this.removeToolStripMenuItem1.Image = global::TestME.Properties.Resources.delete;
-            this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.removeToolStripMenuItem1.Text = "Remove";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1990,6 +1999,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyTest)).EndInit();
+            this.rcmMyTest.ResumeLayout(false);
             this.frmskin.ResumeLayout(false);
             this.tabUser.ResumeLayout(false);
             this.tabquestions.ResumeLayout(false);
@@ -2010,7 +2020,6 @@
             this.gbPassword.PerformLayout();
             this.gbProfile.ResumeLayout(false);
             this.gbProfile.PerformLayout();
-            this.rcmMyTest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -2084,8 +2093,6 @@
         private NotificationBox ntbfindQ;
         private XylosCheckBox checkBoxAnsweredTest;
         private NotificationBox ntfMyQ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn answer;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selectq;
         private System.Windows.Forms.ContextMenuStrip rcmAnswer;
@@ -2142,6 +2149,8 @@
         private System.Windows.Forms.ToolStripMenuItem moveUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveDownToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem suffleAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shuffleAllToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn answer;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
     }
 }

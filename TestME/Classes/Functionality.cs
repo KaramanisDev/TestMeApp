@@ -53,11 +53,11 @@ namespace TestME
                 dgvMyQ.Columns[1].Visible = false;
                 dgvMyQ.Columns[2].HeaderText = "Questions";
                 dgvMyQ.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-                dgvMyQ.Columns[2].Width = 390;
+                dgvMyQ.Columns[2].Width = 420;
                 dgvMyQ.Columns[3].Visible = false;
                 dgvMyQ.Columns[4].Visible = false;
                 dgvMyQ.Columns[5].HeaderText = "Private";
-                dgvMyQ.Columns[5].Width = 60;
+                dgvMyQ.Columns[5].Width = 80;
                 dgvMyQ.Columns[6].Visible = false;
                 for (int i = 0; i < dgvMyQ.Rows.Count; i++)
                 {

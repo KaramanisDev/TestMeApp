@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnswers));
             this.frmskin = new CustomForm();
             this.lblDifficultylvl = new System.Windows.Forms.Label();
@@ -40,16 +40,18 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.dgvEditAnswers = new System.Windows.Forms.DataGridView();
+            this.dgvAnswerList = new System.Windows.Forms.DataGridView();
+            this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.frmskin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditAnswers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerList)).BeginInit();
             this.SuspendLayout();
             // 
             // frmskin
             // 
             this.frmskin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.frmskin.BorderSize = 10;
-            this.frmskin.Controls.Add(this.dgvEditAnswers);
+            this.frmskin.Controls.Add(this.dgvAnswerList);
             this.frmskin.Controls.Add(this.lblDifficultylvl);
             this.frmskin.Controls.Add(this.txtAddQ);
             this.frmskin.Controls.Add(this.label12);
@@ -164,39 +166,63 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dgvEditAnswers
+            // dgvAnswerList
             // 
-            this.dgvEditAnswers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEditAnswers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnswerList.AllowUserToAddRows = false;
+            this.dgvAnswerList.AllowUserToDeleteRows = false;
+            this.dgvAnswerList.AllowUserToResizeColumns = false;
+            this.dgvAnswerList.AllowUserToResizeRows = false;
+            this.dgvAnswerList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvAnswerList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvAnswerList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEditAnswers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEditAnswers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEditAnswers.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEditAnswers.Location = new System.Drawing.Point(87, 184);
-            this.dgvEditAnswers.Name = "dgvEditAnswers";
+            this.dgvAnswerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAnswerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnswerList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.answer,
+            this.Correct});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEditAnswers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEditAnswers.Size = new System.Drawing.Size(399, 150);
-            this.dgvEditAnswers.TabIndex = 48;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnswerList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAnswerList.Location = new System.Drawing.Point(87, 186);
+            this.dgvAnswerList.MultiSelect = false;
+            this.dgvAnswerList.Name = "dgvAnswerList";
+            this.dgvAnswerList.RowHeadersVisible = false;
+            this.dgvAnswerList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAnswerList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnswerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAnswerList.ShowCellErrors = false;
+            this.dgvAnswerList.ShowCellToolTips = false;
+            this.dgvAnswerList.ShowEditingIcon = false;
+            this.dgvAnswerList.ShowRowErrors = false;
+            this.dgvAnswerList.Size = new System.Drawing.Size(400, 150);
+            this.dgvAnswerList.TabIndex = 49;
+            // 
+            // answer
+            // 
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.answer.DefaultCellStyle = dataGridViewCellStyle2;
+            this.answer.HeaderText = "Answer";
+            this.answer.Name = "answer";
+            this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.answer.Width = 320;
+            // 
+            // Correct
+            // 
+            this.Correct.HeaderText = "Correct";
+            this.Correct.Name = "Correct";
+            this.Correct.Width = 80;
             // 
             // frmAnswers
             // 
@@ -214,7 +240,7 @@
             this.Load += new System.EventHandler(this.frmAnswers_Load);
             this.frmskin.ResumeLayout(false);
             this.frmskin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditAnswers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +255,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvEditAnswers;
+        private System.Windows.Forms.DataGridView dgvAnswerList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn answer;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
     }
 }

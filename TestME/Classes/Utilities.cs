@@ -75,6 +75,23 @@ namespace TestME
             return TempQuest;
         }
 
+        public static void contextMenuEnable(DataGridView dgv,params ToolStripMenuItem[] controls)
+        {
+            bool qExists;
+            if (dgv.Rows.Count < 1)
+            {
+                qExists = false;
+            }
+            else
+            {
+                qExists = true;
+            }
+            foreach (ToolStripMenuItem ctrl in controls)
+            {
+                ctrl.Enabled = qExists;
+            }
+        }
+
         public static void rightClickSelect(DataGridView dgv, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && e.ColumnIndex >=0 && e.RowIndex >=0)
