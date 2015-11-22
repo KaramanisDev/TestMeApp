@@ -36,24 +36,24 @@
             this.tabdashboard = new System.Windows.Forms.TabPage();
             this.tablogin = new System.Windows.Forms.TabPage();
             this.linkForgot = new System.Windows.Forms.LinkLabel();
-            this.ckbRemember = new XylosCheckBox();
+            this.ckbLRemember = new XylosCheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.ntfBox1 = new NotificationBox();
-            this.txtPassword = new XylosTextBox();
-            this.txtUser = new XylosTextBox();
+            this.txtLPass = new XylosTextBox();
+            this.txtLUser = new XylosTextBox();
             this.btnLogin = new BonfireButton();
             this.tabregister = new System.Windows.Forms.TabPage();
             this.bonfireLabel1 = new BonfireLabel();
-            this.txtSecurityCode = new XylosTextBox();
+            this.txtRSecurityCode = new XylosTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnRegister = new BonfireButton();
             this.ntfBox2 = new NotificationBox();
-            this.txtrepeatpass = new XylosTextBox();
-            this.txtpass = new XylosTextBox();
-            this.txtemail = new XylosTextBox();
-            this.txtusername = new XylosTextBox();
+            this.txtRrepeatPass = new XylosTextBox();
+            this.txtRPass = new XylosTextBox();
+            this.txtREmail = new XylosTextBox();
+            this.txtRUser = new XylosTextBox();
             this.lblrepeatpass = new BonfireLabel();
             this.lblpass = new BonfireLabel();
             this.lblemail = new BonfireLabel();
@@ -62,10 +62,10 @@
             this.checkBoxAutoConnect = new XylosCheckBox();
             this.checkBoxRemember = new XylosCheckBox();
             this.ntfBox3 = new NotificationBox();
-            this.txtDatabase = new XylosTextBox();
-            this.txtpasswd = new XylosTextBox();
-            this.txtuname = new XylosTextBox();
-            this.txthost = new XylosTextBox();
+            this.txtSDatabase = new XylosTextBox();
+            this.txtSPass = new XylosTextBox();
+            this.txtSUser = new XylosTextBox();
+            this.txtSHost = new XylosTextBox();
             this.lbltable = new BonfireLabel();
             this.lblpasswd = new BonfireLabel();
             this.lbluname = new BonfireLabel();
@@ -173,13 +173,13 @@
             // 
             this.tablogin.BackColor = System.Drawing.Color.White;
             this.tablogin.Controls.Add(this.linkForgot);
-            this.tablogin.Controls.Add(this.ckbRemember);
+            this.tablogin.Controls.Add(this.ckbLRemember);
             this.tablogin.Controls.Add(this.label3);
             this.tablogin.Controls.Add(this.lblUser);
             this.tablogin.Controls.Add(this.lblPassword);
             this.tablogin.Controls.Add(this.ntfBox1);
-            this.tablogin.Controls.Add(this.txtPassword);
-            this.tablogin.Controls.Add(this.txtUser);
+            this.tablogin.Controls.Add(this.txtLPass);
+            this.tablogin.Controls.Add(this.txtLUser);
             this.tablogin.Controls.Add(this.btnLogin);
             this.tablogin.Font = new System.Drawing.Font("Trebuchet MS", 9F);
             this.tablogin.ForeColor = System.Drawing.Color.DimGray;
@@ -207,18 +207,18 @@
             this.linkForgot.VisitedLinkColor = System.Drawing.Color.Gray;
             this.linkForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkForgot_LinkClicked);
             // 
-            // ckbRemember
+            // ckbLRemember
             // 
-            this.ckbRemember.Checked = false;
-            this.ckbRemember.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbRemember.EnabledCalc = true;
-            this.ckbRemember.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbRemember.ForeColor = System.Drawing.Color.DimGray;
-            this.ckbRemember.Location = new System.Drawing.Point(221, 161);
-            this.ckbRemember.Name = "ckbRemember";
-            this.ckbRemember.Size = new System.Drawing.Size(113, 18);
-            this.ckbRemember.TabIndex = 13;
-            this.ckbRemember.Text = "Remember Me";
+            this.ckbLRemember.Checked = false;
+            this.ckbLRemember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbLRemember.EnabledCalc = true;
+            this.ckbLRemember.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbLRemember.ForeColor = System.Drawing.Color.DimGray;
+            this.ckbLRemember.Location = new System.Drawing.Point(221, 161);
+            this.ckbLRemember.Name = "ckbLRemember";
+            this.ckbLRemember.Size = new System.Drawing.Size(113, 18);
+            this.ckbLRemember.TabIndex = 13;
+            this.ckbLRemember.Text = "Remember Me";
             // 
             // label3
             // 
@@ -269,38 +269,38 @@
             this.ntfBox1.Text = "Username or Password were incorrect!";
             this.ntfBox1.Visible = false;
             // 
-            // txtPassword
+            // txtLPass
             // 
-            this.txtPassword.EnabledCalc = true;
-            this.txtPassword.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(126, 116);
-            this.txtPassword.MaxLength = 32767;
-            this.txtPassword.MultiLine = false;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.ReadOnly = false;
-            this.txtPassword.SelectionStart = 0;
-            this.txtPassword.Size = new System.Drawing.Size(200, 29);
-            this.txtPassword.TabIndex = 4;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtLPass.EnabledCalc = true;
+            this.txtLPass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtLPass.Location = new System.Drawing.Point(126, 116);
+            this.txtLPass.MaxLength = 32767;
+            this.txtLPass.MultiLine = false;
+            this.txtLPass.Name = "txtLPass";
+            this.txtLPass.ReadOnly = false;
+            this.txtLPass.SelectionStart = 0;
+            this.txtLPass.Size = new System.Drawing.Size(200, 29);
+            this.txtLPass.TabIndex = 4;
+            this.txtLPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtLPass.UseSystemPasswordChar = true;
             // 
-            // txtUser
+            // txtLUser
             // 
-            this.txtUser.EnabledCalc = true;
-            this.txtUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUser.Location = new System.Drawing.Point(126, 66);
-            this.txtUser.MaxLength = 32767;
-            this.txtUser.MultiLine = false;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.ReadOnly = false;
-            this.txtUser.SelectionStart = 0;
-            this.txtUser.Size = new System.Drawing.Size(200, 29);
-            this.txtUser.TabIndex = 3;
-            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtUser.UseSystemPasswordChar = false;
-            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
+            this.txtLUser.EnabledCalc = true;
+            this.txtLUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLUser.ForeColor = System.Drawing.Color.DimGray;
+            this.txtLUser.Location = new System.Drawing.Point(126, 66);
+            this.txtLUser.MaxLength = 32767;
+            this.txtLUser.MultiLine = false;
+            this.txtLUser.Name = "txtLUser";
+            this.txtLUser.ReadOnly = false;
+            this.txtLUser.SelectionStart = 0;
+            this.txtLUser.Size = new System.Drawing.Size(200, 29);
+            this.txtLUser.TabIndex = 3;
+            this.txtLUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtLUser.UseSystemPasswordChar = false;
+            this.txtLUser.TextChanged += new System.EventHandler(this.txtLUser_TextChanged);
             // 
             // btnLogin
             // 
@@ -322,14 +322,14 @@
             // 
             this.tabregister.BackColor = System.Drawing.Color.White;
             this.tabregister.Controls.Add(this.bonfireLabel1);
-            this.tabregister.Controls.Add(this.txtSecurityCode);
+            this.tabregister.Controls.Add(this.txtRSecurityCode);
             this.tabregister.Controls.Add(this.label4);
             this.tabregister.Controls.Add(this.btnRegister);
             this.tabregister.Controls.Add(this.ntfBox2);
-            this.tabregister.Controls.Add(this.txtrepeatpass);
-            this.tabregister.Controls.Add(this.txtpass);
-            this.tabregister.Controls.Add(this.txtemail);
-            this.tabregister.Controls.Add(this.txtusername);
+            this.tabregister.Controls.Add(this.txtRrepeatPass);
+            this.tabregister.Controls.Add(this.txtRPass);
+            this.tabregister.Controls.Add(this.txtREmail);
+            this.tabregister.Controls.Add(this.txtRUser);
             this.tabregister.Controls.Add(this.lblrepeatpass);
             this.tabregister.Controls.Add(this.lblpass);
             this.tabregister.Controls.Add(this.lblemail);
@@ -355,22 +355,22 @@
             this.bonfireLabel1.TabIndex = 12;
             this.bonfireLabel1.Text = "Create Account";
             // 
-            // txtSecurityCode
+            // txtRSecurityCode
             // 
-            this.txtSecurityCode.EnabledCalc = true;
-            this.txtSecurityCode.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSecurityCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.txtSecurityCode.Location = new System.Drawing.Point(178, 181);
-            this.txtSecurityCode.MaxLength = 32767;
-            this.txtSecurityCode.MultiLine = false;
-            this.txtSecurityCode.Name = "txtSecurityCode";
-            this.txtSecurityCode.ReadOnly = false;
-            this.txtSecurityCode.SelectionStart = 0;
-            this.txtSecurityCode.Size = new System.Drawing.Size(182, 29);
-            this.txtSecurityCode.TabIndex = 11;
-            this.txtSecurityCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSecurityCode.UseSystemPasswordChar = false;
-            this.txtSecurityCode.TextChanged += new System.EventHandler(this.txtSecurityCode_TextChanged);
+            this.txtRSecurityCode.EnabledCalc = true;
+            this.txtRSecurityCode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtRSecurityCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.txtRSecurityCode.Location = new System.Drawing.Point(178, 181);
+            this.txtRSecurityCode.MaxLength = 32767;
+            this.txtRSecurityCode.MultiLine = false;
+            this.txtRSecurityCode.Name = "txtRSecurityCode";
+            this.txtRSecurityCode.ReadOnly = false;
+            this.txtRSecurityCode.SelectionStart = 0;
+            this.txtRSecurityCode.Size = new System.Drawing.Size(182, 29);
+            this.txtRSecurityCode.TabIndex = 11;
+            this.txtRSecurityCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRSecurityCode.UseSystemPasswordChar = false;
+            this.txtRSecurityCode.TextChanged += new System.EventHandler(this.txtRSecurityCode_TextChanged);
             // 
             // label4
             // 
@@ -413,71 +413,71 @@
             this.ntfBox2.Text = "All fields are necessary";
             this.ntfBox2.Visible = false;
             // 
-            // txtrepeatpass
+            // txtRrepeatPass
             // 
-            this.txtrepeatpass.EnabledCalc = true;
-            this.txtrepeatpass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtrepeatpass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtrepeatpass.Location = new System.Drawing.Point(178, 144);
-            this.txtrepeatpass.MaxLength = 32767;
-            this.txtrepeatpass.MultiLine = false;
-            this.txtrepeatpass.Name = "txtrepeatpass";
-            this.txtrepeatpass.ReadOnly = false;
-            this.txtrepeatpass.SelectionStart = 0;
-            this.txtrepeatpass.Size = new System.Drawing.Size(182, 29);
-            this.txtrepeatpass.TabIndex = 7;
-            this.txtrepeatpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtrepeatpass.UseSystemPasswordChar = true;
+            this.txtRrepeatPass.EnabledCalc = true;
+            this.txtRrepeatPass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRrepeatPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtRrepeatPass.Location = new System.Drawing.Point(178, 144);
+            this.txtRrepeatPass.MaxLength = 32767;
+            this.txtRrepeatPass.MultiLine = false;
+            this.txtRrepeatPass.Name = "txtRrepeatPass";
+            this.txtRrepeatPass.ReadOnly = false;
+            this.txtRrepeatPass.SelectionStart = 0;
+            this.txtRrepeatPass.Size = new System.Drawing.Size(182, 29);
+            this.txtRrepeatPass.TabIndex = 7;
+            this.txtRrepeatPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRrepeatPass.UseSystemPasswordChar = true;
             // 
-            // txtpass
+            // txtRPass
             // 
-            this.txtpass.EnabledCalc = true;
-            this.txtpass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtpass.Location = new System.Drawing.Point(178, 109);
-            this.txtpass.MaxLength = 32767;
-            this.txtpass.MultiLine = false;
-            this.txtpass.Name = "txtpass";
-            this.txtpass.ReadOnly = false;
-            this.txtpass.SelectionStart = 0;
-            this.txtpass.Size = new System.Drawing.Size(182, 29);
-            this.txtpass.TabIndex = 6;
-            this.txtpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtpass.UseSystemPasswordChar = true;
+            this.txtRPass.EnabledCalc = true;
+            this.txtRPass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtRPass.Location = new System.Drawing.Point(178, 109);
+            this.txtRPass.MaxLength = 32767;
+            this.txtRPass.MultiLine = false;
+            this.txtRPass.Name = "txtRPass";
+            this.txtRPass.ReadOnly = false;
+            this.txtRPass.SelectionStart = 0;
+            this.txtRPass.Size = new System.Drawing.Size(182, 29);
+            this.txtRPass.TabIndex = 6;
+            this.txtRPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRPass.UseSystemPasswordChar = true;
             // 
-            // txtemail
+            // txtREmail
             // 
-            this.txtemail.EnabledCalc = true;
-            this.txtemail.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.ForeColor = System.Drawing.Color.DimGray;
-            this.txtemail.Location = new System.Drawing.Point(178, 74);
-            this.txtemail.MaxLength = 32767;
-            this.txtemail.MultiLine = false;
-            this.txtemail.Name = "txtemail";
-            this.txtemail.ReadOnly = false;
-            this.txtemail.SelectionStart = 0;
-            this.txtemail.Size = new System.Drawing.Size(182, 29);
-            this.txtemail.TabIndex = 5;
-            this.txtemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtemail.UseSystemPasswordChar = false;
-            this.txtemail.TextChanged += new System.EventHandler(this.txtemail_TextChanged);
+            this.txtREmail.EnabledCalc = true;
+            this.txtREmail.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtREmail.ForeColor = System.Drawing.Color.DimGray;
+            this.txtREmail.Location = new System.Drawing.Point(178, 74);
+            this.txtREmail.MaxLength = 32767;
+            this.txtREmail.MultiLine = false;
+            this.txtREmail.Name = "txtREmail";
+            this.txtREmail.ReadOnly = false;
+            this.txtREmail.SelectionStart = 0;
+            this.txtREmail.Size = new System.Drawing.Size(182, 29);
+            this.txtREmail.TabIndex = 5;
+            this.txtREmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtREmail.UseSystemPasswordChar = false;
+            this.txtREmail.TextChanged += new System.EventHandler(this.txtREmail_TextChanged);
             // 
-            // txtusername
+            // txtRUser
             // 
-            this.txtusername.EnabledCalc = true;
-            this.txtusername.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.ForeColor = System.Drawing.Color.DimGray;
-            this.txtusername.Location = new System.Drawing.Point(178, 39);
-            this.txtusername.MaxLength = 32767;
-            this.txtusername.MultiLine = false;
-            this.txtusername.Name = "txtusername";
-            this.txtusername.ReadOnly = false;
-            this.txtusername.SelectionStart = 0;
-            this.txtusername.Size = new System.Drawing.Size(182, 29);
-            this.txtusername.TabIndex = 4;
-            this.txtusername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtusername.UseSystemPasswordChar = false;
-            this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
+            this.txtRUser.EnabledCalc = true;
+            this.txtRUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRUser.ForeColor = System.Drawing.Color.DimGray;
+            this.txtRUser.Location = new System.Drawing.Point(178, 39);
+            this.txtRUser.MaxLength = 32767;
+            this.txtRUser.MultiLine = false;
+            this.txtRUser.Name = "txtRUser";
+            this.txtRUser.ReadOnly = false;
+            this.txtRUser.SelectionStart = 0;
+            this.txtRUser.Size = new System.Drawing.Size(182, 29);
+            this.txtRUser.TabIndex = 4;
+            this.txtRUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRUser.UseSystemPasswordChar = false;
+            this.txtRUser.TextChanged += new System.EventHandler(this.txtRUser_TextChanged);
             // 
             // lblrepeatpass
             // 
@@ -529,10 +529,10 @@
             this.tabsettings.Controls.Add(this.checkBoxAutoConnect);
             this.tabsettings.Controls.Add(this.checkBoxRemember);
             this.tabsettings.Controls.Add(this.ntfBox3);
-            this.tabsettings.Controls.Add(this.txtDatabase);
-            this.tabsettings.Controls.Add(this.txtpasswd);
-            this.tabsettings.Controls.Add(this.txtuname);
-            this.tabsettings.Controls.Add(this.txthost);
+            this.tabsettings.Controls.Add(this.txtSDatabase);
+            this.tabsettings.Controls.Add(this.txtSPass);
+            this.tabsettings.Controls.Add(this.txtSUser);
+            this.tabsettings.Controls.Add(this.txtSHost);
             this.tabsettings.Controls.Add(this.lbltable);
             this.tabsettings.Controls.Add(this.lblpasswd);
             this.tabsettings.Controls.Add(this.lbluname);
@@ -591,69 +591,69 @@
             this.ntfBox3.Text = "Connection Successful";
             this.ntfBox3.Visible = false;
             // 
-            // txtDatabase
+            // txtSDatabase
             // 
-            this.txtDatabase.EnabledCalc = true;
-            this.txtDatabase.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatabase.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDatabase.Location = new System.Drawing.Point(145, 158);
-            this.txtDatabase.MaxLength = 32767;
-            this.txtDatabase.MultiLine = false;
-            this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.ReadOnly = false;
-            this.txtDatabase.SelectionStart = 0;
-            this.txtDatabase.Size = new System.Drawing.Size(151, 29);
-            this.txtDatabase.TabIndex = 9;
-            this.txtDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDatabase.UseSystemPasswordChar = false;
+            this.txtSDatabase.EnabledCalc = true;
+            this.txtSDatabase.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDatabase.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSDatabase.Location = new System.Drawing.Point(145, 158);
+            this.txtSDatabase.MaxLength = 32767;
+            this.txtSDatabase.MultiLine = false;
+            this.txtSDatabase.Name = "txtSDatabase";
+            this.txtSDatabase.ReadOnly = false;
+            this.txtSDatabase.SelectionStart = 0;
+            this.txtSDatabase.Size = new System.Drawing.Size(151, 29);
+            this.txtSDatabase.TabIndex = 9;
+            this.txtSDatabase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSDatabase.UseSystemPasswordChar = false;
             // 
-            // txtpasswd
+            // txtSPass
             // 
-            this.txtpasswd.EnabledCalc = true;
-            this.txtpasswd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpasswd.ForeColor = System.Drawing.Color.DimGray;
-            this.txtpasswd.Location = new System.Drawing.Point(145, 120);
-            this.txtpasswd.MaxLength = 32767;
-            this.txtpasswd.MultiLine = false;
-            this.txtpasswd.Name = "txtpasswd";
-            this.txtpasswd.ReadOnly = false;
-            this.txtpasswd.SelectionStart = 0;
-            this.txtpasswd.Size = new System.Drawing.Size(151, 29);
-            this.txtpasswd.TabIndex = 8;
-            this.txtpasswd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtpasswd.UseSystemPasswordChar = true;
+            this.txtSPass.EnabledCalc = true;
+            this.txtSPass.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSPass.Location = new System.Drawing.Point(145, 120);
+            this.txtSPass.MaxLength = 32767;
+            this.txtSPass.MultiLine = false;
+            this.txtSPass.Name = "txtSPass";
+            this.txtSPass.ReadOnly = false;
+            this.txtSPass.SelectionStart = 0;
+            this.txtSPass.Size = new System.Drawing.Size(151, 29);
+            this.txtSPass.TabIndex = 8;
+            this.txtSPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSPass.UseSystemPasswordChar = true;
             // 
-            // txtuname
+            // txtSUser
             // 
-            this.txtuname.EnabledCalc = true;
-            this.txtuname.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtuname.ForeColor = System.Drawing.Color.DimGray;
-            this.txtuname.Location = new System.Drawing.Point(145, 82);
-            this.txtuname.MaxLength = 32767;
-            this.txtuname.MultiLine = false;
-            this.txtuname.Name = "txtuname";
-            this.txtuname.ReadOnly = false;
-            this.txtuname.SelectionStart = 0;
-            this.txtuname.Size = new System.Drawing.Size(151, 29);
-            this.txtuname.TabIndex = 7;
-            this.txtuname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtuname.UseSystemPasswordChar = false;
+            this.txtSUser.EnabledCalc = true;
+            this.txtSUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSUser.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSUser.Location = new System.Drawing.Point(145, 82);
+            this.txtSUser.MaxLength = 32767;
+            this.txtSUser.MultiLine = false;
+            this.txtSUser.Name = "txtSUser";
+            this.txtSUser.ReadOnly = false;
+            this.txtSUser.SelectionStart = 0;
+            this.txtSUser.Size = new System.Drawing.Size(151, 29);
+            this.txtSUser.TabIndex = 7;
+            this.txtSUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSUser.UseSystemPasswordChar = false;
             // 
-            // txthost
+            // txtSHost
             // 
-            this.txthost.EnabledCalc = true;
-            this.txthost.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txthost.ForeColor = System.Drawing.Color.DimGray;
-            this.txthost.Location = new System.Drawing.Point(145, 44);
-            this.txthost.MaxLength = 32767;
-            this.txthost.MultiLine = false;
-            this.txthost.Name = "txthost";
-            this.txthost.ReadOnly = false;
-            this.txthost.SelectionStart = 0;
-            this.txthost.Size = new System.Drawing.Size(203, 29);
-            this.txthost.TabIndex = 6;
-            this.txthost.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txthost.UseSystemPasswordChar = false;
+            this.txtSHost.EnabledCalc = true;
+            this.txtSHost.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSHost.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSHost.Location = new System.Drawing.Point(145, 44);
+            this.txtSHost.MaxLength = 32767;
+            this.txtSHost.MultiLine = false;
+            this.txtSHost.Name = "txtSHost";
+            this.txtSHost.ReadOnly = false;
+            this.txtSHost.SelectionStart = 0;
+            this.txtSHost.Size = new System.Drawing.Size(203, 29);
+            this.txtSHost.TabIndex = 6;
+            this.txtSHost.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSHost.UseSystemPasswordChar = false;
             // 
             // lbltable
             // 
@@ -1023,15 +1023,15 @@
         private System.Windows.Forms.TabPage tababout;
         private System.Windows.Forms.TabPage tabdashboard;
         private NotificationBox ntfBox1;
-        private XylosTextBox txtPassword;
-        private XylosTextBox txtUser;
+        private XylosTextBox txtLPass;
+        private XylosTextBox txtLUser;
         private BonfireButton btnLogin;
         private BonfireButton btnRegister;
         private NotificationBox ntfBox2;
-        private XylosTextBox txtrepeatpass;
-        private XylosTextBox txtpass;
-        private XylosTextBox txtemail;
-        private XylosTextBox txtusername;
+        private XylosTextBox txtRrepeatPass;
+        private XylosTextBox txtRPass;
+        private XylosTextBox txtREmail;
+        private XylosTextBox txtRUser;
         private BonfireLabel lblrepeatpass;
         private BonfireLabel lblpass;
         private BonfireLabel lblemail;
@@ -1040,10 +1040,10 @@
         private BonfireLabel Label2;
         private System.Windows.Forms.TabPage tabsettings;
         private NotificationBox ntfBox3;
-        private XylosTextBox txtDatabase;
-        private XylosTextBox txtpasswd;
-        private XylosTextBox txtuname;
-        private XylosTextBox txthost;
+        private XylosTextBox txtSDatabase;
+        private XylosTextBox txtSPass;
+        private XylosTextBox txtSUser;
+        private XylosTextBox txtSHost;
         private BonfireButton btnconnect;
         private BonfireLabel lbltable;
         private BonfireLabel lblpasswd;
@@ -1058,8 +1058,8 @@
         private System.Windows.Forms.Label label3;
         private XylosCheckBox checkBoxRemember;
         private XylosCheckBox checkBoxAutoConnect;
-        private XylosCheckBox ckbRemember;
-        private XylosTextBox txtSecurityCode;
+        private XylosCheckBox ckbLRemember;
+        private XylosTextBox txtRSecurityCode;
         private System.Windows.Forms.Label label4;
         private BonfireLabel bonfireLabel1;
         private System.Windows.Forms.TabPage tabforgot;

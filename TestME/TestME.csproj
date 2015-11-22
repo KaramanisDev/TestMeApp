@@ -261,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="document.ico" />
+    <None Include="Resources\suffle.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\up.png" />
     <None Include="Resources\select.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -44,7 +44,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.selectAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.rcmFindQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -141,10 +140,13 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.rcmMyTest = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.suffleAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddTest = new BonfireButton();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDeleteSelected = new BonfireButton();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddAnswer = new BonfireButton();
@@ -162,6 +164,10 @@
             this.btnChangeEmail = new BonfireButton();
             this.btnChangePassword = new BonfireButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.viewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveDownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rcmMyQ.SuspendLayout();
             this.rcmAnswer.SuspendLayout();
             this.rcmFindQ.SuspendLayout();
@@ -183,6 +189,7 @@
             this.gbEmail.SuspendLayout();
             this.gbPassword.SuspendLayout();
             this.gbProfile.SuspendLayout();
+            this.rcmMyTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,14 +202,6 @@
             this.selectAllToolStripMenuItem1});
             this.rcmMyQ.Name = "rcmMyQ";
             this.rcmMyQ.Size = new System.Drawing.Size(123, 92);
-            // 
-            // selectAllToolStripMenuItem1
-            // 
-            this.selectAllToolStripMenuItem1.Image = global::TestME.Properties.Resources.select;
-            this.selectAllToolStripMenuItem1.Name = "selectAllToolStripMenuItem1";
-            this.selectAllToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.selectAllToolStripMenuItem1.Text = "Select All";
-            this.selectAllToolStripMenuItem1.Click += new System.EventHandler(this.selectAllToolStripMenuItem1_Click);
             // 
             // rcmAnswer
             // 
@@ -1639,6 +1638,24 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // rcmMyTest
+            // 
+            this.rcmMyTest.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem2,
+            this.moveUpToolStripMenuItem,
+            this.moveDownToolStripMenuItem,
+            this.removeToolStripMenuItem1,
+            this.suffleAllToolStripMenuItem});
+            this.rcmMyTest.Name = "rcmMyTest";
+            this.rcmMyTest.Size = new System.Drawing.Size(139, 114);
+            // 
+            // suffleAllToolStripMenuItem
+            // 
+            this.suffleAllToolStripMenuItem.Image = global::TestME.Properties.Resources.suffle;
+            this.suffleAllToolStripMenuItem.Name = "suffleAllToolStripMenuItem";
+            this.suffleAllToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.suffleAllToolStripMenuItem.Text = "Suffle All";
+            // 
             // btnAddTest
             // 
             this.btnAddTest.BackColor = System.Drawing.Color.ForestGreen;
@@ -1678,6 +1695,14 @@
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // selectAllToolStripMenuItem1
+            // 
+            this.selectAllToolStripMenuItem1.Image = global::TestME.Properties.Resources.select;
+            this.selectAllToolStripMenuItem1.Name = "selectAllToolStripMenuItem1";
+            this.selectAllToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.selectAllToolStripMenuItem1.Text = "Select All";
+            this.selectAllToolStripMenuItem1.Click += new System.EventHandler(this.selectAllToolStripMenuItem1_Click);
             // 
             // btnDeleteSelected
             // 
@@ -1914,6 +1939,34 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // viewToolStripMenuItem2
+            // 
+            this.viewToolStripMenuItem2.Image = global::TestME.Properties.Resources.view;
+            this.viewToolStripMenuItem2.Name = "viewToolStripMenuItem2";
+            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
+            this.viewToolStripMenuItem2.Text = "View";
+            // 
+            // moveUpToolStripMenuItem
+            // 
+            this.moveUpToolStripMenuItem.Image = global::TestME.Properties.Resources.up;
+            this.moveUpToolStripMenuItem.Name = "moveUpToolStripMenuItem";
+            this.moveUpToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.moveUpToolStripMenuItem.Text = "Move Up";
+            // 
+            // moveDownToolStripMenuItem
+            // 
+            this.moveDownToolStripMenuItem.Image = global::TestME.Properties.Resources.down;
+            this.moveDownToolStripMenuItem.Name = "moveDownToolStripMenuItem";
+            this.moveDownToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.moveDownToolStripMenuItem.Text = "Move Down";
+            // 
+            // removeToolStripMenuItem1
+            // 
+            this.removeToolStripMenuItem1.Image = global::TestME.Properties.Resources.delete;
+            this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.removeToolStripMenuItem1.Text = "Remove";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1957,6 +2010,7 @@
             this.gbPassword.PerformLayout();
             this.gbProfile.ResumeLayout(false);
             this.gbProfile.PerformLayout();
+            this.rcmMyTest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -2083,5 +2137,11 @@
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem1;
         private BonfireButton btnClearTest;
+        private System.Windows.Forms.ContextMenuStrip rcmMyTest;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem moveUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moveDownToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem suffleAllToolStripMenuItem;
     }
 }

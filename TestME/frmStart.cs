@@ -24,26 +24,26 @@ namespace TestME
             tabforgot.Text = "";
             tabforgot.Tag = "hide";
 
-            string[] fill=Utilities.loadSettings("StoredSettings",6);
-            if (fill[0] == "True") { 
-                txthost.Text = fill[2];
-                txtuname.Text = fill[3];
-                txtpasswd.Text = fill[4];
-                txtDatabase.Text = fill[5];
+            string[] fillS=Utilities.loadSettings("StoredSettings",6);
+            if (fillS[0] == "True") { 
+                txtSHost.Text = fillS[2];
+                txtSUser.Text = fillS[3];
+                txtSPass.Text = fillS[4];
+                txtSDatabase.Text = fillS[5];
                 checkBoxRemember.Checked = true;
             }
-            if (fill[1] == "True")
+            if (fillS[1] == "True")
             {
                 checkBoxAutoConnect.Checked = true;
                 this.btnconnect_Click(this, new EventArgs());
             }
 
-            string[] fill1 = Utilities.loadSettings("StoredAccount", 3);
-            if (fill1[0] == "True")
+            string[] fillL = Utilities.loadSettings("StoredAccount", 3);
+            if (fillL[0] == "True")
             {
-                txtUser.Text = fill1[1];
-                txtPassword.Text = fill1[2];
-                ckbRemember.Checked = true;
+                txtLUser.Text = fillL[1];
+                txtLPass.Text = fillL[2];
+                ckbLRemember.Checked = true;
             }
         }
 
@@ -84,9 +84,9 @@ namespace TestME
 
             if (Globals.Connected)
             {
-                txtUser.Text = txtUser.Text.Trim();
-                //elenxs gia to an einai kena ta pedia
-                if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
+                txtLUser.Text = txtLUser.Text.Trim();
+                //elegxos gia kena pedia
+                if (string.IsNullOrEmpty(txtLUser.Text) || string.IsNullOrEmpty(txtLPass.Text))
                 {
                     Utilities.notifyThem(ntfBox1, "Empty username or password!", NotificationBox.Type.Warning);
                 }
@@ -95,13 +95,13 @@ namespace TestME
                     Utilities.runInThread(() => {
 
                         DB TempLogUser = Utilities.AsyncDB();
-                        TempLogUser.bind(new string[] { "user", txtUser.Text, "pass", txtPassword.Text });
+                        TempLogUser.bind(new string[] { "user", txtLUser.Text, "pass", txtLPass.Text });
                         DataTable dt = TempLogUser.query("select * from users where user = @user and pass = @pass");
                         if (dt.Rows.Count == 1)
                         {
-                            if(ckbRemember.Checked)
+                            if(ckbLRemember.Checked)
                             {
-                                Utilities.saveSettings("StoredAccount", ckbRemember.Checked.ToString(), txtUser.Text, txtPassword.Text);
+                                Utilities.saveSettings("StoredAccount", ckbLRemember.Checked.ToString(), txtLUser.Text, txtLPass.Text);
                             }
                             else
                             {
@@ -144,7 +144,7 @@ namespace TestME
         private void btnconnect_Click(object sender, EventArgs e)
         {
             Utilities.runInThread(() => {
-                Globals.ConnectionStr(txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
+                Globals.ConnectionStr(txtSHost.Text, txtSUser.Text, txtSPass.Text, txtSDatabase.Text);
                 if (Utilities.AsyncDB().Connected())
                 {
                     Globals.Connected = true;                   
@@ -153,7 +153,7 @@ namespace TestME
                 {
                     if (checkBoxRemember.Checked)
                     {
-                        Utilities.saveSettings("StoredSettings", checkBoxRemember.Checked.ToString(), checkBoxAutoConnect.Checked.ToString(), txthost.Text, txtuname.Text, txtpasswd.Text, txtDatabase.Text);
+                        Utilities.saveSettings("StoredSettings", checkBoxRemember.Checked.ToString(), checkBoxAutoConnect.Checked.ToString(), txtSHost.Text, txtSUser.Text, txtSPass.Text, txtSDatabase.Text);
                     }
                     else
                     {
@@ -179,13 +179,13 @@ namespace TestME
         {
             if (Globals.Connected)
             {
-                if (txtusername.Text == "" || txtpass.Text == "" || txtrepeatpass.Text == "" || txtemail.Text == "")
+                if (txtRUser.Text == "" || txtRPass.Text == "" || txtRrepeatPass.Text == "" || txtREmail.Text == "")
                 {
                     Utilities.notifyThem(ntfBox2, "All fields are necessary.", NotificationBox.Type.Warning);
-                }else if (txtpass.Text != txtrepeatpass.Text)
+                }else if (txtRPass.Text != txtRrepeatPass.Text)
                 {
                     Utilities.notifyThem(ntfBox2, "Passwords don't match.", NotificationBox.Type.Warning);
-                }else if (!Validation.IsValidEmail(txtemail.Text))
+                }else if (!Validation.IsValidEmail(txtREmail.Text))
                 {
                     Utilities.notifyThem(ntfBox2, "Email is not valid.", NotificationBox.Type.Warning);
                 }else
@@ -193,7 +193,7 @@ namespace TestME
                     Utilities.runInThread(() =>
                     {
                         DB tDB = Utilities.AsyncDB();
-                        tDB.bind(new string[] { "usern", txtusername.Text, "pass1", txtpass.Text , "email1", txtemail.Text });
+                        tDB.bind(new string[] { "usern", txtRUser.Text, "pass1", txtRPass.Text , "email1", txtREmail.Text });
                         
                         int qreg = tDB.nQuery("INSERT INTO users (user, pass, email) VALUES (@usern, @pass1, @email1)");
                         
@@ -227,24 +227,24 @@ namespace TestME
             ntfForgot.Hide();
         }
 
-        private void txtUser_TextChanged(object sender, EventArgs e)
+        private void txtLUser_TextChanged(object sender, EventArgs e)
         {
-            Utilities.txtCustomReplaceSpace(txtUser);
+            Utilities.txtCustomReplaceSpace(txtLUser);
         }
 
-        private void txtusername_TextChanged(object sender, EventArgs e)
+        private void txtRUser_TextChanged(object sender, EventArgs e)
         {
-            Utilities.txtCustomReplaceSpace(txtusername);
+            Utilities.txtCustomReplaceSpace(txtRUser);
         }
 
-        private void txtemail_TextChanged(object sender, EventArgs e)
+        private void txtREmail_TextChanged(object sender, EventArgs e)
         {
-            Utilities.txtCustomReplaceSpace(txtemail);
+            Utilities.txtCustomReplaceSpace(txtREmail);
         }
 
-        private void txtSecurityCode_TextChanged(object sender, EventArgs e)
+        private void txtRSecurityCode_TextChanged(object sender, EventArgs e)
         {
-            Utilities.txtCustomReplaceSpace(txtSecurityCode);
+            Utilities.txtCustomReplaceSpace(txtRSecurityCode);
         }
 
         private void txtPassUser_TextChanged(object sender, EventArgs e)
