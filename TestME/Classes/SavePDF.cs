@@ -1,19 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using PdfSharp;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
-using PdfSharp.Drawing.Layout;
-using PdfSharp.Drawing.BarCodes;
-using PdfSharp.Fonts;
-using PdfSharp.Forms;
 using System.Diagnostics;
-using PdfSharp.Pdf.AcroForms;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Windows.Forms;
 
 namespace TestME
 {
@@ -49,7 +41,7 @@ namespace TestME
 
             initialize();
             PdfPage page = _document.AddPage();
-            XGraphics X = XGraphics.FromPdfPage(page);
+            XGraphics X = XGraphics.FromPdfPage(page, XGraphicsPdfPageOptions.Prepend);
             page.Size = PageSize.A4;
 
             double width = page.Width;
@@ -62,9 +54,10 @@ namespace TestME
             double y = top;
             double x = left;
             XFont titleFont = new XFont("Calibri", 14F, XFontStyle.Bold,options);
+            XFont fontW = new XFont("Calibri", 100F, XFontStyle.Regular, options);
             XFont fontQ = new XFont("Calibri", 12F, XFontStyle.Regular,options);
             XFont fontA = new XFont("Calibri", 11F, XFontStyle.Regular, options);
-
+            
             var img = new Bitmap(1, 1);
             XGraphics E = XGraphics.FromGraphics(Graphics.FromImage(img), new XSize());
 
@@ -95,6 +88,7 @@ namespace TestME
                 E.DrawStringML(question, fontQ, Brushes.Black, x, ref tempY, width - right);
                 if (tempY > height - bottom)
                 {
+                    watermarkprint(X, page, fontW);
                     page = _document.AddPage();
                     X = XGraphics.FromPdfPage(page);
                     y = top;
@@ -110,6 +104,7 @@ namespace TestME
                     E.DrawStringML(answer, fontQ, Brushes.Black, x, ref tempY, width - right);
                     if (tempY > height-bottom)
                     {
+                        watermarkprint(X, page, fontW);
                         page = _document.AddPage();
                         X = XGraphics.FromPdfPage(page);
                         y = top;
@@ -130,9 +125,10 @@ namespace TestME
                 }
                 y += 30;
             }
+            watermarkprint(X,page,fontW);
 
-            _document.Save("TestDocument.pdf");
-            Process.Start("TestDocument.pdf");
+            _document.Save(_savePath);
+            Process.Start(_savePath);
         }
 
         private static void DrawStringML(this XGraphics G, string Text, XFont font, XBrush brush, double x, ref double y, double mX)
@@ -156,6 +152,33 @@ namespace TestME
                 tempX += tempWordWidth+4;
             }
             y += font.GetHeight(G);
+        }
+
+        static void watermarkprint(XGraphics gfx, PdfPage page, XFont font)
+        {
+            string watermark = "TestME";
+           
+
+            // Get the size (in point) of the text
+            XSize size = gfx.MeasureString(watermark, font);
+
+            // Define a rotation transformation at the center of the page
+            gfx.TranslateTransform(page.Width / 2, page.Height / 2);
+            gfx.RotateTransform(-Math.Atan(page.Height / page.Width) * 180 / Math.PI);
+            gfx.TranslateTransform(-page.Width / 2, -page.Height / 2);
+
+            // Create a string format
+            XStringFormat format = new XStringFormat();
+            format.Alignment = XStringAlignment.Near;
+            format.LineAlignment = XLineAlignment.Near;
+
+            // Create a dimmed red brush
+            XBrush brush = new XSolidBrush(XColor.FromArgb(60, 128, 125, 123));
+
+            // Draw the string
+            gfx.DrawString(watermark, font, brush,
+              new XPoint((page.Width - size.Width) / 2, (page.Height - size.Height) / 2),
+              format);
         }
     }
 }
