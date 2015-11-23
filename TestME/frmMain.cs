@@ -674,5 +674,12 @@ namespace TestME
             }
 
         }
+
+        private void btnClearTest_Click(object sender, EventArgs e)
+        {
+            txtTestTitle.Text = "";
+            dgvMyTest.Rows.Clear();
+            Globals.MyTestQids.Clear();
+        }
     }
 }
