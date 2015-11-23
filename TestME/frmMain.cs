@@ -395,18 +395,8 @@ namespace TestME
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Pass", txtnpassword.Text });
                     TempDB.nQuery("UPDATE users SET pass=@Pass WHERE id=" + Globals.logUser.id);
-                    Utilities.InvokeMe(txtopassword, () =>
-                    {
-                        txtopassword.Text = "";
-                    });
-                    Utilities.InvokeMe(txtnpassword, () =>
-                    {
-                        txtnpassword.Text = "";
-                    });
-                    Utilities.InvokeMe(txtrnpassword, () =>
-                    {
-                        txtrnpassword.Text = "";
-                    });
+                    Globals.logUser.pass = txtnpassword.Text;
+                    Utilities.clearText(txtopassword, txtnpassword, txtrnpassword);
                 }).Start();
                 Utilities.notifyThem(ntfP, "Password Changed", NotificationBox.Type.Success);
             }
@@ -429,14 +419,8 @@ namespace TestME
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Email", txtnemail.Text.Trim() });
                     TempDB.nQuery("UPDATE users SET email=@Email WHERE id=" + Globals.logUser.id);
-                    Utilities.InvokeMe(txtepassword, () =>
-                    {
-                        txtepassword.Text = "";
-                    }); 
-                    Utilities.InvokeMe(txtnemail, () =>
-                    {
-                        txtnemail.Text = "";
-                    }); 
+                    Globals.logUser.email = txtnemail.Text;
+                    Utilities.clearText(txtepassword,txtnemail); 
                 }).Start();
                 Utilities.notifyThem(ntfE, "Email Changed", NotificationBox.Type.Success);
             }
@@ -459,14 +443,8 @@ namespace TestME
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Code", txtncode.Text.Trim() });
                     TempDB.nQuery("UPDATE users SET securitycode=@Code WHERE id=" + Globals.logUser.id);
-                    Utilities.InvokeMe(txtspassword, () =>
-                    {
-                        txtspassword.Text = "";
-                    }); 
-                    Utilities.InvokeMe(txtncode, () =>
-                    {
-                        txtncode.Text = "";
-                    }); 
+                    Globals.logUser.scode = txtncode.Text;
+                    Utilities.clearText(txtspassword, txtncode); 
                 }).Start();
                 Utilities.notifyThem(ntfC, "Security Code Changed", NotificationBox.Type.Success);
             }

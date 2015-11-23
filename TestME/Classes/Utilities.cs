@@ -161,6 +161,24 @@ namespace TestME
 
             return null;
         }
-        
+
+        public static void clearText(params Control[] controls)
+        {
+            for (int i= 0; i < controls.Length; i++) {
+                InvokeMe(controls[i], () => {
+                    switch (controls[i].GetType().ToString())
+                    {
+                        case "XylosTextBox":
+                            controls[i].Text = "";
+                            break;
+                        case "TextBox":
+                            controls[i].Text = "";
+                            break;
+                    }
+                });
+            }
+        }
+
+
     } //end of class Utilities
 }
