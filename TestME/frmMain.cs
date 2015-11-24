@@ -181,18 +181,11 @@ namespace TestME
                     {
                         Utilities.notifyThem(ntfAdd, "Successfull Added Question !", NotificationBox.Type.Success);
                         Functionality.RefreshMyQuestions();
-                        Utilities.InvokeMe(txtAddQ, () =>
-                         {
-                             txtAddQ.Text = "";
-                         });
+                        Utilities.clearText(txtAddQ,txtAddTags,txtAnswer);
                         Utilities.InvokeMe(dgvAnswerlist, () =>
                         {
                             dgvAnswerlist.Rows.Clear();
                             dgvAnswerlist.Refresh();
-                        });
-                        Utilities.InvokeMe(txtAddTags, () =>
-                        {
-                            txtAddTags.Text = "";
                         });
                         Utilities.InvokeMe(difficultyLvl, () =>
                         {
@@ -201,10 +194,6 @@ namespace TestME
                         Utilities.InvokeMe(switchPrivate, () =>
                         {
                             switchPrivate.isOn = false;
-                        });
-                        Utilities.InvokeMe(txtAnswer, () =>
-                        {
-                            txtAnswer.Text = "";
                         });
                         Utilities.InvokeMe(switchCorrectAnswer, () =>
                         {
@@ -365,9 +354,7 @@ namespace TestME
                 dgvAnswerlist.Rows.RemoveAt(i);
             }
 
-            txtAddQ.Text = "";
-            txtAddTags.Text = "";
-            txtAnswer.Text = "";
+            Utilities.clearText(txtAddQ,txtAddTags,txtAnswer);
             difficultyLvl.Value = 1;
             switchPrivate.isOn = false;
             switchCorrectAnswer.isOn = true;

@@ -73,6 +73,7 @@ namespace TestME
             Font titleFont = new Font("Calibri", 14F, FontStyle.Bold);
             Font fontQ = new Font("Calibri", 12F);
             Font fontA = new Font("Calibri", 11F);
+            Font fontW = new Font("Calibri", 100F);
 
             flagBreak = false;
             var img = new Bitmap(1, 1);
@@ -97,7 +98,7 @@ namespace TestME
 
             while (iq < _test.Count && flagBreak == false)
             {
-                //Edw pernei to keimeno tis erwtisis
+                //Define the question
                 string question = (iq + 1) + ". " + _test[iq].question;
                 float tempY = y;
                 E.DrawStringML(question, fontQ, Brushes.Black, x, ref tempY, width - right);
@@ -111,13 +112,13 @@ namespace TestME
                 {
                     if (!typedQ)
                     {
-                        //Edw tipwnei erwtisi
+                        //Draw the question
                         G.DrawStringML(question, fontQ, Brushes.Black, x, ref y, width - right);
                         typedQ = true;
                     }
                     while (ia < _test[iq].anwsers.Count && flagBreak == false)
                     {
-                        //Edw pernei to keimeno tis apantisis
+                        //Define the answer
                         string answer = _test[iq].anwsers[ia].text;
                         tempY = y;
                         E.DrawStringML(answer, fontQ, Brushes.Black, x, ref tempY, width - right);
@@ -130,7 +131,7 @@ namespace TestME
                         else
                         {
                             y += 8;
-                            //Edw tipwnei apantisi
+                            //Draw the answer
                             G.DrawRectangle(new Pen(Color.Black), x+15, y, 20, 20);
                             if (solved && _test[iq].anwsers[ia].correct)
                             {
@@ -156,6 +157,28 @@ namespace TestME
                     }
                 }
             }
+
+            string watermark = "TestME";
+
+
+            // Get the size of watermark
+            SizeF size = G.MeasureString(watermark, fontW);
+
+            // Define a rotation transformation at the center of the page
+            G.TranslateTransform(width / 2, height / 2);
+            G.RotateTransform((float)(-Math.Atan(height / width) * 180 / Math.PI));
+            G.TranslateTransform(-width / 2, -height / 2);
+
+            // Create a string format
+            StringFormat format = new StringFormat();
+            format.Alignment = StringAlignment.Near;
+            format.LineAlignment = StringAlignment.Near;
+            Brush brush = new SolidBrush(Color.FromArgb(60, 128, 125, 123));
+
+            // Draw the watermark
+            G.DrawString(watermark, fontW, brush,
+              new PointF((width - size.Width) / 2, (height - size.Height) / 2),
+              format);
 
             noPage++;
             e.HasMorePages = flagBreak;
