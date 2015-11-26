@@ -866,6 +866,7 @@
             this.btnPassGenerate.Size = new System.Drawing.Size(93, 38);
             this.btnPassGenerate.TabIndex = 6;
             this.btnPassGenerate.Text = "Generate";
+            this.btnPassGenerate.Click += new System.EventHandler(this.btnPassGenerate_Click);
             // 
             // label7
             // 

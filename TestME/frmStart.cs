@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace TestME
 {
+
     public partial class frmStart : Form
     {
+
         public frmStart()
         {
             InitializeComponent();
@@ -231,6 +233,103 @@ namespace TestME
         private void txtPassCode_TextChanged(object sender, EventArgs e)
         {
             Utilities.txtCustomReplaceSpace(txtPassCode);
+        }
+
+        private void btnPassGenerate_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPassUser.Text)){
+                Utilities.notifyThem(ntfForgot, "Empty username. Try again", NotificationBox.Type.Error);
+                return;
+            }
+            else if (string.IsNullOrEmpty(txtPassCode.Text))
+            {
+                Utilities.notifyThem(ntfForgot, "Enter security code", NotificationBox.Type.Error);
+                return;
+            }
+            String username = txtPassUser.Text;
+            String securityCodeCompare = txtPassCode.Text;
+            String password = txtPassPassword.Text;
+
+            if (securityCodeCheck(username, securityCodeCompare)){//elenxos an ta securitycode tairiazoyn
+                newRandomPassword(username,20);
+           }
+           else{
+                Utilities.notifyThem(ntfForgot, "Wrong combination,try again", NotificationBox.Type.Error);
+                return;
+           }
+        }
+
+        private bool securityCodeCheck(String username,String securityCodeCompare)
+        {
+
+            bool checkPass = false;
+            Thread t = new Thread(delegate () {  //den xrisimopoiw tin methodo sto utilities giati thelw na kanw join, wste na pernw tin timi toy checkPass
+                
+                DB TempLogUser = Utilities.AsyncDB();
+                TempLogUser.bind(new string[] { "user", username });
+                DataTable dt = TempLogUser.query("select securitycode from users where user=@user");
+                if (dt.Rows.Count == 1)
+                {
+                    String securityCode = dt.Rows[0][0].ToString();
+                    if (securityCode.Equals(securityCodeCompare))
+                    {
+                        checkPass = true;
+                    }
+                    else
+                    {
+                        checkPass = false;
+                    }
+                }
+                else
+                {
+                    checkPass = false;
+                }
+            });
+            t.Start();
+            t.Join();
+
+            return checkPass;
+        }
+
+        private void newRandomPassword(String user,int length)
+        {
+            if (Globals.Connected)
+            {
+                String password = createPassword(length);//posa grammata tha ine o kwdikos
+                
+                Utilities.runInThread(() =>
+                    {
+                        DB changePassDB = Utilities.AsyncDB();
+                        changePassDB.bind(new string[] { "usern", user, "pass1", password});
+
+                        int qreg = changePassDB.nQuery("UPDATE users SET pass=@pass1 where user=@usern");
+
+                        if (qreg > 0)
+                        {
+                            Utilities.notifyThem(ntfForgot, "Successfull change.", NotificationBox.Type.Success);
+                            Utilities.InvokeMe(txtPassPassword, () =>
+                            {
+                                txtPassPassword.Text = password;
+                            });
+                        }
+                        else{
+                            Utilities.notifyThem(ntfForgot, "Failed to change.", NotificationBox.Type.Error);
+                        }
+
+                    }).Start();
+                }
+        }
+
+        public string createPassword(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~!@#$%^&*()";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
         }
     }
 }
