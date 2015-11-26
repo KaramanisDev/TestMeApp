@@ -1417,6 +1417,7 @@
             this.btnClearTest.RoundedCorners = true;
             this.btnClearTest.Size = new System.Drawing.Size(43, 40);
             this.btnClearTest.TabIndex = 10;
+            this.btnClearTest.Click += new System.EventHandler(this.btnClearTest_Click);
             // 
             // ntfTest
             // 
