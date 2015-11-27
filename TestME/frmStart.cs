@@ -78,8 +78,10 @@ namespace TestME
                 {
                     Utilities.runInThread(() => {
 
+                        String HashPass = Utilities.MD5Hash(txtLPass.Text);
+
                         DB TempLogUser = Utilities.AsyncDB();
-                        TempLogUser.bind(new string[] { "user", txtLUser.Text, "pass", txtLPass.Text });
+                        TempLogUser.bind(new string[] { "user", txtLUser.Text, "pass", HashPass });
                         DataTable dt = TempLogUser.query("select * from users where user = @user and pass = @pass");
                         if (dt.Rows.Count == 1)
                         {

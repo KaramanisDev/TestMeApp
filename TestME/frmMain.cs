@@ -371,7 +371,7 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfP, "Different new Password fields", NotificationBox.Type.Error);
             }
-            else if (!Globals.logUser.pass.Equals(txtopassword.Text))
+            else if (!Globals.logUser.pass.Equals(Utilities.MD5Hash(txtopassword.Text)))
             {
                 Utilities.notifyThem(ntfP, "Wrong old Password", NotificationBox.Type.Error);
             }
@@ -379,8 +379,10 @@ namespace TestME
             {
                 Utilities.runInThread(() =>
                 {
+                    String HashPass = Utilities.MD5Hash(txtnpassword.Text);
+
                     DB TempDB = Utilities.AsyncDB();
-                    TempDB.bind(new string[] { "Pass", txtnpassword.Text });
+                    TempDB.bind(new string[] { "Pass", HashPass });
                     TempDB.nQuery("UPDATE users SET pass=@Pass WHERE id=" + Globals.logUser.id);
                     Globals.logUser.pass = txtnpassword.Text;
                     Utilities.clearText(txtopassword, txtnpassword, txtrnpassword);
@@ -391,13 +393,18 @@ namespace TestME
 
         private void btnChangeEmail_Click(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(txtepassword.Text) == true || string.IsNullOrEmpty(txtnemail.Text.Trim()) == true)
             {
                 Utilities.notifyThem(ntfE, "You must fill all fields", NotificationBox.Type.Error);
             }
-            else if (!Globals.logUser.pass.Equals(txtepassword.Text))
+            else if (!Globals.logUser.pass.Equals(Utilities.MD5Hash(txtepassword.Text)))
             {
                 Utilities.notifyThem(ntfE, "Wrong Password", NotificationBox.Type.Error);
+            }
+            else if (!Validation.IsValidEmail(txtnemail.Text))
+            {
+                Utilities.notifyThem(ntfE, "Email is not valid.", NotificationBox.Type.Warning);
             }
             else
             {
@@ -419,16 +426,26 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfC, "You must fill all fields", NotificationBox.Type.Error);
             }
-            else if (!Globals.logUser.pass.Equals(txtspassword.Text))
+            else if (!Globals.logUser.pass.Equals(Utilities.MD5Hash(txtspassword.Text)))
             {
                 Utilities.notifyThem(ntfC, "Wrong Password", NotificationBox.Type.Error);
+            }
+            else if (txtspassword.Text.Length < 4)
+            {
+                Utilities.notifyThem(ntfC, "Security code must be at least 4 characters.", NotificationBox.Type.Warning);
+            }
+            else if (Validation.IsValidSecurityCode(txtspassword.Text))
+            {
+                Utilities.notifyThem(ntfC, "Security code must be number and character only.", NotificationBox.Type.Warning);
             }
             else
             {
                 Utilities.runInThread(() =>
                 {
+                    String HashSecur = Utilities.MD5Hash(txtspassword.Text.Trim());
+
                     DB TempDB = Utilities.AsyncDB();
-                    TempDB.bind(new string[] { "Code", txtncode.Text.Trim() });
+                    TempDB.bind(new string[] { "Code", HashSecur });
                     TempDB.nQuery("UPDATE users SET securitycode=@Code WHERE id=" + Globals.logUser.id);
                     Globals.logUser.scode = txtncode.Text;
                     Utilities.clearText(txtspassword, txtncode); 
