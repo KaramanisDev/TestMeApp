@@ -29,6 +29,18 @@ namespace TestME
                    RegexOptions.IgnoreCase);
         }
 
+        public static bool IsValidSecurityCode(String str)
+        {
+            Regex regex = new Regex(@"^[a-zA-Z0-9]+$");
+
+            if (regex.IsMatch(str))
+            {
+                return invalid = false;
+            }
+            else
+                return invalid = true;
+        }
+
         private static string DomainMapper(Match match)
         {
             // IdnMapping class with default property values.

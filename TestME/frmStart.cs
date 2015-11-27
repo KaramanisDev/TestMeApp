@@ -160,22 +160,36 @@ namespace TestME
                 if (txtRUser.Text == "" || txtRPass.Text == "" || txtRrepeatPass.Text == "" || txtREmail.Text == "")
                 {
                     Utilities.notifyThem(ntfBox2, "All fields are necessary.", NotificationBox.Type.Warning);
-                }else if (txtRPass.Text != txtRrepeatPass.Text)
+                }
+                else if (txtRPass.Text != txtRrepeatPass.Text)
                 {
                     Utilities.notifyThem(ntfBox2, "Passwords don't match.", NotificationBox.Type.Warning);
-                }else if (!Validation.IsValidEmail(txtREmail.Text))
+                }
+                else if (!Validation.IsValidEmail(txtREmail.Text))
                 {
                     Utilities.notifyThem(ntfBox2, "Email is not valid.", NotificationBox.Type.Warning);
+                }
+                else if (txtRSecurityCode.Text.Length < 4)
+                {
+                    Utilities.notifyThem(ntfBox2, "Security code must be at least 4 characters.", NotificationBox.Type.Warning);
+                }
+                else if (Validation.IsValidSecurityCode(txtRSecurityCode.Text))
+                {
+                    Utilities.notifyThem(ntfBox2, "Security code must be number and character only.", NotificationBox.Type.Warning);
                 }else
                 {
                     Utilities.runInThread(() =>
                     {
+                        String HashPass = Utilities.MD5Hash(txtRPass.Text);
+                        String HashSecur = Utilities.MD5Hash(txtRSecurityCode.Text);
+
                         DB tDB = Utilities.AsyncDB();
-                        tDB.bind(new string[] { "usern", txtRUser.Text, "pass1", txtRPass.Text , "email1", txtREmail.Text });
-                        
-                        int qreg = tDB.nQuery("INSERT INTO users (user, pass, email) VALUES (@usern, @pass1, @email1)");
-                        
-                        if (qreg>0)
+                        tDB.bind(new string[] { "usern", txtRUser.Text, "pass1", HashPass, "email1", txtREmail.Text, "securcode", HashSecur });
+
+                        int qreg = tDB.nQuery("INSERT INTO users (user, pass, email,securitycode) VALUES (@usern, @pass1, @email1, @securcode)");
+
+
+                        if (qreg > 0)
                         {
                             Utilities.notifyThem(ntfBox2, "Successfull Registration.", NotificationBox.Type.Success);
                         }
