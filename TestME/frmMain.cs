@@ -71,7 +71,7 @@ namespace TestME
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmEdit(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
+            new frmEdit(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).ShowDialog();
             
         }
 
@@ -564,30 +564,6 @@ namespace TestME
             }
         }
 
-        private void dgvMyQ_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvMyQ.SelectedRows.Count > 0)
-            {
-                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
-            }
-        }
-
-        private void dgvFoundQ_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvFoundQ.SelectedRows.Count > 0)
-            {
-                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
-            }
-        }
-
-        private void dgvMyTest_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvMyTest.SelectedRows.Count > 0)
-            {
-                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyTest.SelectedRows[0])).Show();
-            }
-        }
-
         private void rcmMyQ_Opening(object sender, CancelEventArgs e)
         {
             Utilities.contextMenuEnable(dgvMyQ, selectAllToolStripMenuItem1,
@@ -619,6 +595,7 @@ namespace TestME
 
         private void removeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Globals.MyTestQids.Remove(int.Parse(dgvMyTest.SelectedRows[0].Cells[1].Value.ToString()));
             dgvMyTest.Rows.Remove(dgvMyTest.SelectedRows[0]);
         }
 
@@ -664,7 +641,44 @@ namespace TestME
             dgvMyTest.Rows.Clear();
             Globals.MyTestQids.Clear();
         }
-        
 
+        private void moveUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilities.dgvRowMoveUpDown(dgvMyTest, false);
+        }
+
+        private void moveDownToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilities.dgvRowMoveUpDown(dgvMyTest, true);
+        }
+
+        private void shuffleAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utilities.dgvRandomShuffle(dgvMyTest);
+        }
+
+        private void dgvMyTest_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMyTest.SelectedRows.Count > 0 && e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyTest.SelectedRows[0])).Show();
+            }
+        }
+
+        private void dgvMyQ_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMyQ.SelectedRows.Count > 0 && e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
+            }
+        }
+
+        private void dgvFoundQ_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvFoundQ.SelectedRows.Count > 0 && e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
+            }
+        }
     }
 }

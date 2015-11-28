@@ -149,11 +149,6 @@ namespace TestME
             }
         }
 
-        private void btnClose_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtAddQ_KeyPress(object sender, KeyPressEventArgs e)
         {
             change = true;
@@ -164,9 +159,19 @@ namespace TestME
             change = true;
         }
 
-        private void dgvAnswerlist_MouseClick(object sender, MouseEventArgs e)
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgvAnswerlist.Rows.Remove(dgvAnswerlist.SelectedRows[0]);
+        }
+
+        private void dgvAnswerlist_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             change = true;
+        }
+
+        private void rcmAnswer_Opening(object sender, CancelEventArgs e)
+        {
+            Utilities.contextMenuEnable(dgvAnswerlist, removeToolStripMenuItem);
         }
     }
 }

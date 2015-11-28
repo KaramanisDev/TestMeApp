@@ -50,6 +50,7 @@ namespace TestME
                 cntObject = e.Control;
                 cntObject.TextChanged += (object sse, EventArgs se) => Utilities.Cell_TextChanged(sse, dgv, cntObject);
             }
+            dgv.RefreshEdit();
         }
 
         public static Question dgvRowIntoQuestion(DataGridViewRow dgvRow)
@@ -62,6 +63,79 @@ namespace TestME
             TempQuest.prive = Boolean.Parse(dgvRow.Cells[5].Value.ToString());
 
             return TempQuest;
+        }
+
+        public static void dgvRowMoveUpDown(DataGridView dgv,bool moveDown)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                int rowCount = dgv.Rows.Count;
+                int index = dgv.SelectedCells[0].OwningRow.Index;
+
+                if (moveDown)
+                {
+                    if (index == (rowCount - 1)) // include the header row
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    if (index == 0)
+                    {
+                        return;
+                    }
+                }
+
+                DataGridViewRowCollection rows = dgv.Rows;
+                DataGridViewRow tempRow;
+
+                if (moveDown)
+                {
+                    tempRow = rows[index + 1];
+                }
+                else
+                {
+                    tempRow = rows[index - 1];
+                }
+
+                rows.Remove(tempRow);
+                tempRow.Frozen = false;
+                rows.Insert(index, tempRow);
+                dgv.ClearSelection();
+                if (moveDown)
+                {
+                    dgv.Rows[index + 1].Selected = true;
+                }
+                else
+                {
+                    dgv.Rows[index - 1].Selected = true;
+                }
+
+            }
+        }
+
+        public static void dgvRandomShuffle(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                dgv.Rows[i].Selected = true;
+
+                Random rnd = new Random();
+                int timesToShuffle = rnd.Next(1, dgv.Rows.Count);
+                for (int k = 0; k < timesToShuffle; k++)
+                {
+                    int upOrDown = rnd.Next(1, 10);
+                    if (upOrDown <= 5)
+                    {
+                        dgvRowMoveUpDown(dgv, true);
+                    }
+                    else
+                    {
+                        dgvRowMoveUpDown(dgv, false);
+                    }
+                }
+            }
         }
 
         public static void contextMenuEnable(DataGridView dgv,params ToolStripMenuItem[] controls)

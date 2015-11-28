@@ -64,14 +64,16 @@
             this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeToolStripMenuItem});
             this.rcmAnswer.Name = "rcmAnswer";
-            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
+            this.rcmAnswer.Size = new System.Drawing.Size(153, 48);
+            this.rcmAnswer.Opening += new System.ComponentModel.CancelEventHandler(this.rcmAnswer_Opening);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // customForm1
             // 
@@ -113,7 +115,6 @@
             // 
             // dgvAnswerlist
             // 
-            this.dgvAnswerlist.AllowUserToDeleteRows = false;
             this.dgvAnswerlist.AllowUserToResizeColumns = false;
             this.dgvAnswerlist.AllowUserToResizeRows = false;
             this.dgvAnswerlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -153,8 +154,8 @@
             this.dgvAnswerlist.ShowRowErrors = false;
             this.dgvAnswerlist.Size = new System.Drawing.Size(360, 150);
             this.dgvAnswerlist.TabIndex = 49;
+            this.dgvAnswerlist.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAnswerlist_CellBeginEdit);
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
-            this.dgvAnswerlist.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvAnswerlist_MouseClick);
             // 
             // answer
             // 
@@ -224,7 +225,6 @@
             this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAddQ.Size = new System.Drawing.Size(358, 61);
             this.txtAddQ.TabIndex = 43;
-            this.txtAddQ.Text = "test";
             this.txtAddQ.TextChanged += new System.EventHandler(this.txtAddQ_TextChanged);
             this.txtAddQ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddQ_KeyPress);
             // 
@@ -366,7 +366,6 @@
             this.btnClose.Size = new System.Drawing.Size(30, 26);
             this.btnClose.TabIndex = 33;
             this.btnClose.Text = "X";
-            this.btnClose.TextChanged += new System.EventHandler(this.btnClose_TextChanged);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmEdit

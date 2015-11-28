@@ -341,7 +341,7 @@
             this.dgvMyQ.Size = new System.Drawing.Size(555, 275);
             this.dgvMyQ.TabIndex = 2;
             this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context.");
-            this.dgvMyQ.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyQ_CellContentDoubleClick);
+            this.dgvMyQ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyQ_CellDoubleClick);
             this.dgvMyQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyQ_CellMouseUp);
             // 
             // select
@@ -494,7 +494,7 @@
             this.dgvFoundQ.TabIndex = 15;
             this.dgvFoundQ.Tag = "";
             this.toolTipUser.SetToolTip(this.dgvFoundQ, "List of questions that\r\nmatch with the search.\r\nDouble-click to view results.");
-            this.dgvFoundQ.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoundQ_CellContentDoubleClick);
+            this.dgvFoundQ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoundQ_CellDoubleClick);
             this.dgvFoundQ.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFoundQ_CellMouseUp);
             // 
             // selectq
@@ -639,7 +639,7 @@
             this.dgvMyTest.Size = new System.Drawing.Size(540, 220);
             this.dgvMyTest.TabIndex = 7;
             this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
-            this.dgvMyTest.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellContentDoubleClick);
+            this.dgvMyTest.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellDoubleClick);
             this.dgvMyTest.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyTest_CellMouseUp);
             // 
             // nothing
@@ -711,6 +711,7 @@
             this.moveUpToolStripMenuItem.Name = "moveUpToolStripMenuItem";
             this.moveUpToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.moveUpToolStripMenuItem.Text = "Move Up";
+            this.moveUpToolStripMenuItem.Click += new System.EventHandler(this.moveUpToolStripMenuItem_Click);
             // 
             // moveDownToolStripMenuItem
             // 
@@ -718,6 +719,7 @@
             this.moveDownToolStripMenuItem.Name = "moveDownToolStripMenuItem";
             this.moveDownToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.moveDownToolStripMenuItem.Text = "Move Down";
+            this.moveDownToolStripMenuItem.Click += new System.EventHandler(this.moveDownToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem1
             // 
@@ -733,6 +735,7 @@
             this.shuffleAllToolStripMenuItem.Name = "shuffleAllToolStripMenuItem";
             this.shuffleAllToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.shuffleAllToolStripMenuItem.Text = "Shuffle All";
+            this.shuffleAllToolStripMenuItem.Click += new System.EventHandler(this.shuffleAllToolStripMenuItem_Click);
             // 
             // datePicker
             // 
