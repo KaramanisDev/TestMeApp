@@ -267,7 +267,7 @@ namespace TestME
             String password = txtPassPassword.Text;
 
             if (securityCodeCheck(username, securityCodeCompare)){//elenxos an ta securitycode tairiazoyn
-                newRandomPassword(username,20);
+                newRandomPassword(username,6);
            }
            else{
                 Utilities.notifyThem(ntfForgot, "Wrong combination,try again", NotificationBox.Type.Error);

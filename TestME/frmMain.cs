@@ -72,6 +72,7 @@ namespace TestME
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmEdit(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
+            
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -663,5 +664,7 @@ namespace TestME
             dgvMyTest.Rows.Clear();
             Globals.MyTestQids.Clear();
         }
+        
+
     }
 }

@@ -37,6 +37,8 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customForm1 = new CustomForm();
             this.dgvAnswerlist = new System.Windows.Forms.DataGridView();
+            this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ntfEdit = new NotificationBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSaveChanges = new BonfireButton();
@@ -51,8 +53,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
-            this.answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.rcmAnswer.SuspendLayout();
             this.customForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).BeginInit();
@@ -154,6 +154,22 @@
             this.dgvAnswerlist.Size = new System.Drawing.Size(360, 150);
             this.dgvAnswerlist.TabIndex = 49;
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
+            this.dgvAnswerlist.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvAnswerlist_MouseClick);
+            // 
+            // answer
+            // 
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.answer.DefaultCellStyle = dataGridViewCellStyle2;
+            this.answer.HeaderText = "Answer";
+            this.answer.Name = "answer";
+            this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.answer.Width = 280;
+            // 
+            // Correct
+            // 
+            this.Correct.HeaderText = "Correct";
+            this.Correct.Name = "Correct";
+            this.Correct.Width = 80;
             // 
             // ntfEdit
             // 
@@ -196,6 +212,7 @@
             this.btnSaveChanges.Size = new System.Drawing.Size(123, 35);
             this.btnSaveChanges.TabIndex = 45;
             this.btnSaveChanges.Text = "Save Changes";
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // txtAddQ
             // 
@@ -207,7 +224,9 @@
             this.txtAddQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAddQ.Size = new System.Drawing.Size(358, 61);
             this.txtAddQ.TabIndex = 43;
+            this.txtAddQ.Text = "test";
             this.txtAddQ.TextChanged += new System.EventHandler(this.txtAddQ_TextChanged);
+            this.txtAddQ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddQ_KeyPress);
             // 
             // txtAddTags
             // 
@@ -220,6 +239,7 @@
             this.txtAddTags.Size = new System.Drawing.Size(235, 61);
             this.txtAddTags.TabIndex = 42;
             this.txtAddTags.TextChanged += new System.EventHandler(this.txtAddTags_TextChanged);
+            this.txtAddTags.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddTags_KeyPress);
             // 
             // label12
             // 
@@ -346,22 +366,8 @@
             this.btnClose.Size = new System.Drawing.Size(30, 26);
             this.btnClose.TabIndex = 33;
             this.btnClose.Text = "X";
+            this.btnClose.TextChanged += new System.EventHandler(this.btnClose_TextChanged);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // answer
-            // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.answer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.answer.HeaderText = "Answer";
-            this.answer.Name = "answer";
-            this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.answer.Width = 280;
-            // 
-            // Correct
-            // 
-            this.Correct.HeaderText = "Correct";
-            this.Correct.Name = "Correct";
-            this.Correct.Width = 80;
             // 
             // frmEdit
             // 
@@ -376,6 +382,7 @@
             this.Name = "frmEdit";
             this.Text = "TestMe";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.Load += new System.EventHandler(this.frmEdit_Load);
             this.rcmAnswer.ResumeLayout(false);
             this.customForm1.ResumeLayout(false);
             this.customForm1.PerformLayout();
