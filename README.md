@@ -10,7 +10,7 @@ Then he can print the test or save it for later use.
 
 ## What does it do?
 
-*Some of the **features** of TestME are:*
+_Some of the **features** of TestME are:_
 
 * There is autoconnect mode in database settings
 * Every user has their own account to manage their questions
