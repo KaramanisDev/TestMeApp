@@ -90,6 +90,7 @@ namespace TestME
                 {
                     watermarkprint(X, page, fontW);
                     page = _document.AddPage();
+                    page.Size = PageSize.A4;
                     X = XGraphics.FromPdfPage(page);
                     y = top;
                 }
@@ -106,6 +107,7 @@ namespace TestME
                     {
                         watermarkprint(X, page, fontW);
                         page = _document.AddPage();
+                        page.Size = PageSize.A4;
                         X = XGraphics.FromPdfPage(page);
                         y = top;
                     }
@@ -126,9 +128,9 @@ namespace TestME
                 y += 30;
             }
             watermarkprint(X,page,fontW);
-
-            _document.Save(_savePath);
-            Process.Start(_savePath);
+           
+                _document.Save(_savePath);
+                Process.Start(_savePath); 
         }
 
         private static void DrawStringML(this XGraphics G, string Text, XFont font, XBrush brush, double x, ref double y, double mX)

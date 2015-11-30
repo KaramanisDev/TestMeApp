@@ -627,10 +627,13 @@ namespace TestME
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "PDF file|*.pdf";
                 sfd.Title = "Save The Test into a PDF file";
-                sfd.ShowDialog();
-                SavePDF.SetTest(txtTestTitle.Text, datePicker.Value.ToShortDateString(), myTest, checkBoxAnsweredTest.Checked, sfd.FileName);
-                SavePDF.SaveTest();
-                Utilities.notifyThem(ntfTest, "Successfully Saved !", NotificationBox.Type.Success);
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    SavePDF.SetTest(txtTestTitle.Text, datePicker.Value.ToShortDateString(), myTest, checkBoxAnsweredTest.Checked, sfd.FileName);
+                    SavePDF.SaveTest();
+                    Utilities.notifyThem(ntfTest, "Successfully Saved !", NotificationBox.Type.Success);
+                }
+                
             }
 
         }
