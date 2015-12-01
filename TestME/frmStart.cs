@@ -69,7 +69,6 @@ namespace TestME
             if (Globals.Connected)
             {
                 txtLUser.Text = txtLUser.Text.Trim();
-                //elegxos gia kena pedia
                 if (string.IsNullOrEmpty(txtLUser.Text) || string.IsNullOrEmpty(txtLPass.Text))
                 {
                     Utilities.notifyThem(ntfBox1, "Empty username or password!", NotificationBox.Type.Warning);
@@ -112,7 +111,7 @@ namespace TestME
                         }
                         else
                         {
-                            Utilities.notifyThem(ntfBox1, "Wrong username or pass", NotificationBox.Type.Error);
+                            Utilities.notifyThem(ntfBox1, "Username or Password were incorrect", NotificationBox.Type.Error);
                         }
 
                     }).Start();
@@ -146,11 +145,11 @@ namespace TestME
                     {
                         btnconnect.Text = "Reconnect";
                     });
-                    Utilities.notifyThem(ntfBox3, "Successfully Connected !", NotificationBox.Type.Success);
+                    Utilities.notifyThem(ntfBox3, "Successfully Connected", NotificationBox.Type.Success);
                 }
                 else
                 {
-                    Utilities.notifyThem(ntfBox3, "Could not Connect to the Database.", NotificationBox.Type.Error);
+                    Utilities.notifyThem(ntfBox3, "Could not connect to the Database", NotificationBox.Type.Error);
                 }
             }).Start();
         }
@@ -330,7 +329,7 @@ namespace TestME
                             });
                         }
                         else{
-                            Utilities.notifyThem(ntfForgot, "Failed to generate.", NotificationBox.Type.Error);
+                            Utilities.notifyThem(ntfForgot, "Failed to Generate", NotificationBox.Type.Error);
                         }
 
                     }).Start();

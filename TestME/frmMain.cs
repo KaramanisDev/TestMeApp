@@ -144,7 +144,7 @@ namespace TestME
             }
             else
             {
-                Utilities.notifyThem(ntfMyQ, "You didn't select any questions.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfMyQ, "You didn't select any questions", NotificationBox.Type.Warning);
             }
         }
 
@@ -152,7 +152,7 @@ namespace TestME
         {
             if (string.IsNullOrEmpty(txtAddQ.Text.Trim()) == true || string.IsNullOrEmpty(txtAddTags.Text.Trim()) == true || (dgvAnswerlist.Rows.Count < 1))
             {
-                Utilities.notifyThem(ntfAdd, "You must fill some info about your question first.", NotificationBox.Type.Error);
+                Utilities.notifyThem(ntfAdd, "You must fill some info about your question first", NotificationBox.Type.Error);
             }
             else
             {
@@ -212,7 +212,7 @@ namespace TestME
         {
             if (string.IsNullOrEmpty(txtAnswer.Text.Trim()))
             {
-                Utilities.notifyThem(ntfAdd, "Write your answer first.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfAdd, "Write your answer first", NotificationBox.Type.Warning);
             }
             else
             {
@@ -231,7 +231,7 @@ namespace TestME
         {
             if (string.IsNullOrEmpty(txtTags.Text))
             {
-                Utilities.notifyThem(ntbfindQ, "You must add some tags first.", NotificationBox.Type.Error);
+                Utilities.notifyThem(ntbfindQ, "You must add some tags first", NotificationBox.Type.Error);
             }
             else
             {
@@ -298,7 +298,7 @@ namespace TestME
                         });
                     }
 
-                    Utilities.notifyThem(ntbfindQ, "Found " + dt.Rows.Count + " Questions.", NotificationBox.Type.Notice);
+                    Utilities.notifyThem(ntbfindQ, "Found " + dt.Rows.Count + " Questions", NotificationBox.Type.Notice);
 
                 }).Start();
             }
@@ -325,11 +325,11 @@ namespace TestME
             }
             if(AddedQ < 1)
             {
-                Utilities.notifyThem(ntbfindQ, "No Questions Added.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntbfindQ, "No Questions Added", NotificationBox.Type.Warning);
             }
             else
             {
-                Utilities.notifyThem(ntbfindQ, AddedQ + " Questions Added to your Test !", NotificationBox.Type.Success);
+                Utilities.notifyThem(ntbfindQ, AddedQ + "Questions Added to your Test", NotificationBox.Type.Success);
             }
         }
 
@@ -345,7 +345,7 @@ namespace TestME
             switchFindAll.isOn = true;
             numericMin.Value = 1;
             numericMax.Value = 5;
-            Utilities.notifyThem(ntbfindQ, "Cleared Search result and settings !", NotificationBox.Type.Other);
+            Utilities.notifyThem(ntbfindQ, "Cleared Search result and settings", NotificationBox.Type.Other);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -359,7 +359,7 @@ namespace TestME
             difficultyLvl.Value = 1;
             switchPrivate.isOn = false;
             switchCorrectAnswer.isOn = true;
-            Utilities.notifyThem(ntfAdd, "Cleared Question info !", NotificationBox.Type.Other);
+            Utilities.notifyThem(ntfAdd, "Cleared Question info", NotificationBox.Type.Other);
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -461,11 +461,11 @@ namespace TestME
           
             if (string.IsNullOrWhiteSpace(txtTestTitle.Text))
             {
-                Utilities.notifyThem(ntfTest, "No title found.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfTest, "No title found", NotificationBox.Type.Warning);
             }
             else if (dgvMyTest.Rows.Count < 1)
             {
-                Utilities.notifyThem(ntfTest, "No Questions Found.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfTest, "No Questions Found", NotificationBox.Type.Warning);
             }
             else
             {
@@ -534,11 +534,11 @@ namespace TestME
             }
             if (AddedQ < 1)
             {
-                Utilities.notifyThem(ntfMyQ, "No Questions added.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfMyQ, "No Questions added", NotificationBox.Type.Warning);
             }
             else
             {
-                Utilities.notifyThem(ntfMyQ, AddedQ + " Questions Added to your Test !", NotificationBox.Type.Success);
+                Utilities.notifyThem(ntfMyQ, AddedQ + "Questions Added to your Test", NotificationBox.Type.Success);
             }
         }
 
@@ -610,11 +610,11 @@ namespace TestME
 
             if (string.IsNullOrWhiteSpace(txtTestTitle.Text))
             {
-                Utilities.notifyThem(ntfTest, "No title found.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfTest, "No title found", NotificationBox.Type.Warning);
             }
             else if (dgvMyTest.Rows.Count < 1)
             {
-                Utilities.notifyThem(ntfTest, "No Questions Found.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfTest, "No Questions Found", NotificationBox.Type.Warning);
             }
             else
             {
@@ -631,7 +631,7 @@ namespace TestME
                 {
                     SavePDF.SetTest(txtTestTitle.Text, datePicker.Value.ToShortDateString(), myTest, checkBoxAnsweredTest.Checked, sfd.FileName);
                     SavePDF.SaveTest();
-                    Utilities.notifyThem(ntfTest, "Successfully Saved !", NotificationBox.Type.Success);
+                    Utilities.notifyThem(ntfTest, "Successfully Saved", NotificationBox.Type.Success);
                 }
                 
             }
