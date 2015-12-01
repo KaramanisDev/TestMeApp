@@ -683,5 +683,16 @@ namespace TestME
                 new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
             }
         }
+
+        private void tabUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabUser.SelectedIndex == 7)
+            {
+                Globals.formStart.Show();
+                Globals.formMain.Close();
+
+                Globals.formMain = new frmMain();
+            }
+        }
     }
 }
