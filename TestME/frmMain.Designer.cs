@@ -43,6 +43,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            AutocompleteMenuNS.Colors colors1 = new AutocompleteMenuNS.Colors();
             this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +87,6 @@
             this.txtTestTitle = new XylosTextBox();
             this.btnSave = new BonfireButton();
             this.btnPrint = new BonfireButton();
-            this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.txtAnswer = new System.Windows.Forms.TextBox();
             this.txtTags = new System.Windows.Forms.TextBox();
             this.frmskin = new CustomForm();
@@ -169,6 +169,7 @@
             this.TabLogout = new System.Windows.Forms.TabPage();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.rcmMyQ.SuspendLayout();
             this.rcmAnswer.SuspendLayout();
             this.rcmFindQ.SuspendLayout();
@@ -801,18 +802,6 @@
             this.btnPrint.Text = "Print";
             this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // autocompleteMenu1
-            // 
-            this.autocompleteMenu1.AllowsTabKey = true;
-            this.autocompleteMenu1.AppearInterval = 100;
-            this.autocompleteMenu1.Colors = ((AutocompleteMenuNS.Colors)(resources.GetObject("autocompleteMenu1.Colors")));
-            this.autocompleteMenu1.Font = new System.Drawing.Font("Trebuchet MS", 9.5F);
-            this.autocompleteMenu1.ImageList = null;
-            this.autocompleteMenu1.Items = new string[0];
-            this.autocompleteMenu1.LeftPadding = 1;
-            this.autocompleteMenu1.MinFragmentLength = 1;
-            this.autocompleteMenu1.TargetControlWrapper = null;
             // 
             // txtAnswer
             // 
@@ -1996,6 +1985,23 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // autocompleteMenu1
+            // 
+            this.autocompleteMenu1.AppearInterval = 100;
+            colors1.BackColor = System.Drawing.Color.White;
+            colors1.ForeColor = System.Drawing.Color.Black;
+            colors1.HighlightingColor = System.Drawing.Color.YellowGreen;
+            colors1.SelectedBackColor = System.Drawing.Color.YellowGreen;
+            colors1.SelectedBackColor2 = System.Drawing.Color.White;
+            colors1.SelectedForeColor = System.Drawing.Color.Black;
+            this.autocompleteMenu1.Colors = colors1;
+            this.autocompleteMenu1.Font = new System.Drawing.Font("Trebuchet MS", 9.5F);
+            this.autocompleteMenu1.ImageList = null;
+            this.autocompleteMenu1.Items = new string[0];
+            this.autocompleteMenu1.LeftPadding = 0;
+            this.autocompleteMenu1.MinFragmentLength = 1;
+            this.autocompleteMenu1.TargetControlWrapper = null;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2102,7 +2108,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblUserMessage;
         private NotificationBox ntfTest;
-        private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
         private System.Windows.Forms.Label lblRegQ;
         private System.Windows.Forms.ContextMenuStrip rcmMyQ;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
@@ -2173,5 +2178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn answer;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
         private System.Windows.Forms.TabPage TabLogout;
+        private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
     }
 }

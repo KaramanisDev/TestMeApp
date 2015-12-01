@@ -51,9 +51,6 @@
     <ApplicationIcon>document.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutocompleteMenu">
-      <HintPath>..\packages\AutocompleteMenu\AutocompleteMenu.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.9.8\lib\net40\MySql.Data.dll</HintPath>
@@ -89,6 +86,23 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utilities.cs" />
     <Compile Include="Classes\Validation.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\AutocompleteItem.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\AutocompleteItems.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\AutocompleteListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AutocompleteMenu\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AutocompleteMenu\AutocompleteMenuHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AutocompleteMenu\Colors.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\EventArgs.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\IAutocompleteListView.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\ITextBoxWrapper.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\Range.cs" />
+    <Compile Include="CustomControls\AutocompleteMenu\TextBoxWrapper.cs" />
     <Compile Include="CustomControls\BonfireTheme.cs" />
     <Compile Include="CustomControls\CoolPrintPreviewControl.cs">
       <SubType>UserControl</SubType>
