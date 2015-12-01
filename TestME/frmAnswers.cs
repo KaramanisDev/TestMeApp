@@ -11,13 +11,22 @@ namespace TestME
 {
     public partial class frmAnswers : Form
     {
+        Question Q;
+
         public frmAnswers(Question quest)
         {
             InitializeComponent();
+            Q = quest;
         }
 
         private void frmAnswers_Load(object sender, EventArgs e)
         {
+            txtAddQ.Text = Q.question;
+            lblDifficultylvl.Text = Q.dlevel.ToString();
+            for (int i = 0; i < Q.anwsers.Count; i++)
+            {
+                dgvAnswerList.Rows.Add(Q.anwsers[i].text, Q.anwsers[i].correct);
+            }
             switch (lblDifficultylvl.Text)
             {
                 case "1":
