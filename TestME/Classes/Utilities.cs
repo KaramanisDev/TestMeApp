@@ -247,7 +247,7 @@ namespace TestME
                         case "XylosTextBox":
                             controls[i].Text = "";
                             break;
-                        case "TextBox":
+                        case "System.Windows.Forms.TextBox":
                             controls[i].Text = "";
                             break;
                     }

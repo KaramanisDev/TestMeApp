@@ -215,9 +215,7 @@ namespace TestME
         private void tabforgot_Leave(object sender, EventArgs e)
         {
             tabforgot.Tag = "hide";
-            txtPassCode.Text = "";
-            txtPassPassword.Text = "";
-            txtPassCode.Text = "";
+            Utilities.clearText(txtPassUser,txtPassCode,txtPassPassword);
             ntfForgot.Hide();
         }
 
@@ -253,8 +251,9 @@ namespace TestME
 
         private void btnPassGenerate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPassUser.Text)){
-                Utilities.notifyThem(ntfForgot, "Empty username. Try again", NotificationBox.Type.Error);
+            if (string.IsNullOrEmpty(txtPassUser.Text))
+            {
+                Utilities.notifyThem(ntfForgot, "Empty username", NotificationBox.Type.Error);
                 return;
             }
             else if (string.IsNullOrEmpty(txtPassCode.Text))
@@ -266,21 +265,23 @@ namespace TestME
             String securityCodeCompare = txtPassCode.Text;
             String password = txtPassPassword.Text;
 
-            if (securityCodeCheck(username, securityCodeCompare)){//elenxos an ta securitycode tairiazoyn
+            if (securityCodeCheck(username, securityCodeCompare))
+            {
                 newRandomPassword(username,6);
-           }
-           else{
+            }
+            else
+            {
                 Utilities.notifyThem(ntfForgot, "Wrong combination,try again", NotificationBox.Type.Error);
                 return;
-           }
+            }
         }
 
         private bool securityCodeCheck(String username,String securityCodeCompare)
         {
 
             bool checkPass = false;
-            Thread t = new Thread(delegate () {  //den xrisimopoiw tin methodo sto utilities giati thelw na kanw join, wste na pernw tin timi toy checkPass
-                
+            Thread t = Utilities.runInThread(()=>
+            {
                 DB TempLogUser = Utilities.AsyncDB();
                 TempLogUser.bind(new string[] { "user", username });
                 DataTable dt = TempLogUser.query("select securitycode from users where user=@user");
@@ -311,7 +312,7 @@ namespace TestME
         {
             if (Globals.Connected)
             {
-                String password = createPassword(length);//posa grammata tha ine o kwdikos
+                String password = createPassword(length);
                 
                 Utilities.runInThread(() =>
                     {
@@ -322,14 +323,14 @@ namespace TestME
 
                         if (qreg > 0)
                         {
-                            Utilities.notifyThem(ntfForgot, "Successfull change.", NotificationBox.Type.Success);
+                            Utilities.notifyThem(ntfForgot, "Successfully Generated", NotificationBox.Type.Success);
                             Utilities.InvokeMe(txtPassPassword, () =>
                             {
                                 txtPassPassword.Text = password;
                             });
                         }
                         else{
-                            Utilities.notifyThem(ntfForgot, "Failed to change.", NotificationBox.Type.Error);
+                            Utilities.notifyThem(ntfForgot, "Failed to generate.", NotificationBox.Type.Error);
                         }
 
                     }).Start();
@@ -338,7 +339,7 @@ namespace TestME
 
         public string createPassword(int length)
         {
-            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~!@#$%^&*()";
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~!@#$%^&*";
             StringBuilder res = new StringBuilder();
             Random rnd = new Random();
             while (0 < length--)

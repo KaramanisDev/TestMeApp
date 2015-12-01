@@ -366,7 +366,7 @@ namespace TestME
         {
             if (string.IsNullOrEmpty(txtopassword.Text) == true || string.IsNullOrEmpty(txtnpassword.Text) == true || string.IsNullOrEmpty(txtrnpassword.Text))
             {
-                Utilities.notifyThem(ntfP, "You must fill all fields", NotificationBox.Type.Error);
+                Utilities.notifyThem(ntfP, "All fields are necessary", NotificationBox.Type.Error);
             }
             else if (!txtnpassword.Text.Equals(txtrnpassword.Text))
             {
@@ -397,7 +397,7 @@ namespace TestME
             
             if (string.IsNullOrEmpty(txtepassword.Text) == true || string.IsNullOrEmpty(txtnemail.Text.Trim()) == true)
             {
-                Utilities.notifyThem(ntfE, "You must fill all fields", NotificationBox.Type.Error);
+                Utilities.notifyThem(ntfE, "All fields are necessary", NotificationBox.Type.Error);
             }
             else if (!Globals.logUser.pass.Equals(Utilities.MD5Hash(txtepassword.Text)))
             {
@@ -425,7 +425,7 @@ namespace TestME
         {
             if (string.IsNullOrEmpty(txtspassword.Text) == true || string.IsNullOrEmpty(txtncode.Text.Trim()) == true)
             {
-                Utilities.notifyThem(ntfC, "You must fill all fields", NotificationBox.Type.Error);
+                Utilities.notifyThem(ntfC, "All fields are necessary", NotificationBox.Type.Error);
             }
             else if (!Globals.logUser.pass.Equals(Utilities.MD5Hash(txtspassword.Text)))
             {
@@ -433,11 +433,11 @@ namespace TestME
             }
             else if (txtspassword.Text.Length < 4)
             {
-                Utilities.notifyThem(ntfC, "Security code must be at least 4 characters.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfC, "Security code must be at least 4 characters", NotificationBox.Type.Warning);
             }
             else if (Validation.IsValidSecurityCode(txtspassword.Text))
             {
-                Utilities.notifyThem(ntfC, "Security code must be number and character only.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfC, "Security code must be only numbers-letters ", NotificationBox.Type.Warning);
             }
             else
             {

@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rcmMyQ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -305,40 +305,40 @@
             this.dgvMyQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMyQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMyQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMyQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMyQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvMyQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.select});
             this.dgvMyQ.ContextMenuStrip = this.rcmMyQ;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMyQ.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyQ.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvMyQ.Location = new System.Drawing.Point(31, 64);
             this.dgvMyQ.MultiSelect = false;
             this.dgvMyQ.Name = "dgvMyQ";
             this.dgvMyQ.RowHeadersVisible = false;
             this.dgvMyQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            this.dgvMyQ.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvMyQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMyQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMyQ.ShowCellErrors = false;
             this.dgvMyQ.ShowCellToolTips = false;
             this.dgvMyQ.ShowEditingIcon = false;
             this.dgvMyQ.ShowRowErrors = false;
-            this.dgvMyQ.Size = new System.Drawing.Size(555, 275);
+            this.dgvMyQ.Size = new System.Drawing.Size(555, 287);
             this.dgvMyQ.TabIndex = 2;
             this.toolTipUser.SetToolTip(this.dgvMyQ, "Right click a row to edit the context.");
             this.dgvMyQ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyQ_CellDoubleClick);
@@ -457,33 +457,33 @@
             this.dgvFoundQ.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvFoundQ.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvFoundQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFoundQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFoundQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvFoundQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoundQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selectq});
             this.dgvFoundQ.ContextMenuStrip = this.rcmFindQ;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFoundQ.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFoundQ.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvFoundQ.Location = new System.Drawing.Point(49, 155);
             this.dgvFoundQ.MultiSelect = false;
             this.dgvFoundQ.Name = "dgvFoundQ";
             this.dgvFoundQ.RowHeadersVisible = false;
             this.dgvFoundQ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.dgvFoundQ.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvFoundQ.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvFoundQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFoundQ.ShowCellErrors = false;
@@ -580,7 +580,7 @@
             this.checkBoxAnsweredTest.EnabledCalc = true;
             this.checkBoxAnsweredTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.checkBoxAnsweredTest.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxAnsweredTest.Location = new System.Drawing.Point(261, 356);
+            this.checkBoxAnsweredTest.Location = new System.Drawing.Point(261, 367);
             this.checkBoxAnsweredTest.Name = "checkBoxAnsweredTest";
             this.checkBoxAnsweredTest.Size = new System.Drawing.Size(108, 18);
             this.checkBoxAnsweredTest.TabIndex = 9;
@@ -593,20 +593,20 @@
             this.dgvMyTest.AllowUserToDeleteRows = false;
             this.dgvMyTest.AllowUserToResizeColumns = false;
             this.dgvMyTest.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DimGray;
-            this.dgvMyTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
+            this.dgvMyTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMyTest.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMyTest.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMyTest.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMyTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMyTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMyTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nothing,
@@ -616,14 +616,14 @@
             this.dlevel,
             this.prive});
             this.dgvMyTest.ContextMenuStrip = this.rcmMyTest;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMyTest.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyTest.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgvMyTest.Location = new System.Drawing.Point(39, 111);
             this.dgvMyTest.MultiSelect = false;
             this.dgvMyTest.Name = "dgvMyTest";
@@ -636,7 +636,7 @@
             this.dgvMyTest.ShowCellToolTips = false;
             this.dgvMyTest.ShowEditingIcon = false;
             this.dgvMyTest.ShowRowErrors = false;
-            this.dgvMyTest.Size = new System.Drawing.Size(540, 220);
+            this.dgvMyTest.Size = new System.Drawing.Size(540, 225);
             this.dgvMyTest.TabIndex = 7;
             this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
             this.dgvMyTest.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellDoubleClick);
@@ -672,8 +672,8 @@
             // 
             // dlevel
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dlevel.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dlevel.DefaultCellStyle = dataGridViewCellStyle3;
             this.dlevel.HeaderText = "Difficulty";
             this.dlevel.Name = "dlevel";
             this.dlevel.ReadOnly = true;
@@ -775,7 +775,7 @@
             this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnSave.Location = new System.Drawing.Point(470, 349);
+            this.btnSave.Location = new System.Drawing.Point(470, 360);
             this.btnSave.Name = "btnSave";
             this.btnSave.RoundedCorners = true;
             this.btnSave.Size = new System.Drawing.Size(74, 35);
@@ -792,7 +792,7 @@
             this.btnPrint.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPrint.Image = global::TestME.Properties.Resources.printer_24;
-            this.btnPrint.Location = new System.Drawing.Point(378, 349);
+            this.btnPrint.Location = new System.Drawing.Point(378, 360);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.RoundedCorners = true;
             this.btnPrint.Size = new System.Drawing.Size(81, 35);
@@ -854,7 +854,7 @@
             this.frmskin.Name = "frmskin";
             this.frmskin.Padding = new System.Windows.Forms.Padding(13, 38, 13, 13);
             this.frmskin.Sizable = false;
-            this.frmskin.Size = new System.Drawing.Size(833, 461);
+            this.frmskin.Size = new System.Drawing.Size(833, 474);
             this.frmskin.TabIndex = 0;
             this.frmskin.Text = "TestME";
             this.frmskin.TitleAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -883,7 +883,7 @@
             this.tabUser.Multiline = true;
             this.tabUser.Name = "tabUser";
             this.tabUser.SelectedIndex = 0;
-            this.tabUser.Size = new System.Drawing.Size(807, 410);
+            this.tabUser.Size = new System.Drawing.Size(807, 423);
             this.tabUser.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabUser.TabIndex = 4;
             // 
@@ -915,7 +915,7 @@
             this.tabquestions.Location = new System.Drawing.Point(184, 4);
             this.tabquestions.Name = "tabquestions";
             this.tabquestions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabquestions.Size = new System.Drawing.Size(619, 402);
+            this.tabquestions.Size = new System.Drawing.Size(619, 415);
             this.tabquestions.TabIndex = 0;
             this.tabquestions.Text = "My Questions";
             // 
@@ -927,7 +927,7 @@
             this.btnAddTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTest.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAddTest.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnAddTest.Location = new System.Drawing.Point(318, 354);
+            this.btnAddTest.Location = new System.Drawing.Point(318, 365);
             this.btnAddTest.Name = "btnAddTest";
             this.btnAddTest.RoundedCorners = true;
             this.btnAddTest.Size = new System.Drawing.Size(115, 35);
@@ -940,7 +940,7 @@
             this.ntfMyQ.BorderCurve = 8;
             this.ntfMyQ.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ntfMyQ.Image = null;
-            this.ntfMyQ.Location = new System.Drawing.Point(31, 349);
+            this.ntfMyQ.Location = new System.Drawing.Point(31, 360);
             this.ntfMyQ.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfMyQ.Name = "ntfMyQ";
             this.ntfMyQ.NotificationType = NotificationBox.Type.Notice;
@@ -991,7 +991,7 @@
             this.btnDeleteSelected.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteSelected.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnDeleteSelected.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnDeleteSelected.Location = new System.Drawing.Point(449, 354);
+            this.btnDeleteSelected.Location = new System.Drawing.Point(449, 365);
             this.btnDeleteSelected.Name = "btnDeleteSelected";
             this.btnDeleteSelected.RoundedCorners = true;
             this.btnDeleteSelected.Size = new System.Drawing.Size(137, 35);
@@ -1026,7 +1026,7 @@
             this.tabAddQ.Location = new System.Drawing.Point(184, 4);
             this.tabAddQ.Name = "tabAddQ";
             this.tabAddQ.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAddQ.Size = new System.Drawing.Size(619, 402);
+            this.tabAddQ.Size = new System.Drawing.Size(619, 415);
             this.tabAddQ.TabIndex = 1;
             this.tabAddQ.Text = "Add Question";
             // 
@@ -1039,27 +1039,27 @@
             this.dgvAnswerlist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAnswerlist.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvAnswerlist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAnswerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAnswerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAnswerlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAnswerlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.answer,
             this.Correct});
             this.dgvAnswerlist.ContextMenuStrip = this.rcmAnswer;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Trebuchet MS", 9F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnswerlist.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Trebuchet MS", 9F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnswerlist.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgvAnswerlist.Location = new System.Drawing.Point(22, 165);
             this.dgvAnswerlist.MultiSelect = false;
             this.dgvAnswerlist.Name = "dgvAnswerlist";
@@ -1071,15 +1071,15 @@
             this.dgvAnswerlist.ShowCellToolTips = false;
             this.dgvAnswerlist.ShowEditingIcon = false;
             this.dgvAnswerlist.ShowRowErrors = false;
-            this.dgvAnswerlist.Size = new System.Drawing.Size(360, 160);
+            this.dgvAnswerlist.Size = new System.Drawing.Size(360, 174);
             this.dgvAnswerlist.TabIndex = 35;
             this.dgvAnswerlist.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAnswerlist_CellMouseUp);
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
             // 
             // answer
             // 
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.answer.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.answer.DefaultCellStyle = dataGridViewCellStyle5;
             this.answer.HeaderText = "Answer";
             this.answer.Name = "answer";
             this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1097,7 +1097,7 @@
             this.ntfAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ntfAdd.ForeColor = System.Drawing.Color.DimGray;
             this.ntfAdd.Image = null;
-            this.ntfAdd.Location = new System.Drawing.Point(273, 343);
+            this.ntfAdd.Location = new System.Drawing.Point(273, 355);
             this.ntfAdd.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfAdd.Name = "ntfAdd";
             this.ntfAdd.NotificationType = NotificationBox.Type.Warning;
@@ -1210,7 +1210,7 @@
             this.btnReset.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnReset.Image = global::TestME.Properties.Resources.undo_5_24;
-            this.btnReset.Location = new System.Drawing.Point(159, 348);
+            this.btnReset.Location = new System.Drawing.Point(159, 360);
             this.btnReset.Name = "btnReset";
             this.btnReset.RoundedCorners = true;
             this.btnReset.Size = new System.Drawing.Size(79, 35);
@@ -1226,7 +1226,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAdd.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnAdd.Location = new System.Drawing.Point(24, 348);
+            this.btnAdd.Location = new System.Drawing.Point(24, 360);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.RoundedCorners = true;
             this.btnAdd.Size = new System.Drawing.Size(129, 35);
@@ -1258,7 +1258,7 @@
             this.tabfind.Location = new System.Drawing.Point(184, 4);
             this.tabfind.Name = "tabfind";
             this.tabfind.Padding = new System.Windows.Forms.Padding(3);
-            this.tabfind.Size = new System.Drawing.Size(619, 402);
+            this.tabfind.Size = new System.Drawing.Size(619, 415);
             this.tabfind.TabIndex = 2;
             this.tabfind.Text = "Find Question";
             // 
@@ -1268,7 +1268,7 @@
             this.ntbfindQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ntbfindQ.ForeColor = System.Drawing.Color.DimGray;
             this.ntbfindQ.Image = null;
-            this.ntbfindQ.Location = new System.Drawing.Point(49, 351);
+            this.ntbfindQ.Location = new System.Drawing.Point(49, 357);
             this.ntbfindQ.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntbfindQ.Name = "ntbfindQ";
             this.ntbfindQ.NotificationType = NotificationBox.Type.Warning;
@@ -1361,7 +1361,7 @@
             this.btnClear.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnClear.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnClear.Location = new System.Drawing.Point(487, 351);
+            this.btnClear.Location = new System.Drawing.Point(487, 357);
             this.btnClear.Name = "btnClear";
             this.btnClear.RoundedCorners = true;
             this.btnClear.Size = new System.Drawing.Size(87, 35);
@@ -1377,7 +1377,7 @@
             this.btnMakeTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMakeTest.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnMakeTest.Image = global::TestME.Properties.Resources.plus_5_24;
-            this.btnMakeTest.Location = new System.Drawing.Point(346, 351);
+            this.btnMakeTest.Location = new System.Drawing.Point(346, 357);
             this.btnMakeTest.Name = "btnMakeTest";
             this.btnMakeTest.RoundedCorners = true;
             this.btnMakeTest.Size = new System.Drawing.Size(121, 35);
@@ -1405,7 +1405,7 @@
             this.tabtest.Location = new System.Drawing.Point(184, 4);
             this.tabtest.Name = "tabtest";
             this.tabtest.Padding = new System.Windows.Forms.Padding(3);
-            this.tabtest.Size = new System.Drawing.Size(619, 402);
+            this.tabtest.Size = new System.Drawing.Size(619, 415);
             this.tabtest.TabIndex = 3;
             this.tabtest.Text = "My Test";
             // 
@@ -1415,7 +1415,7 @@
             this.btnClearTest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearTest.Font = new System.Drawing.Font("Verdana", 8F);
             this.btnClearTest.Image = global::TestME.Properties.Resources.delete_24;
-            this.btnClearTest.Location = new System.Drawing.Point(558, 346);
+            this.btnClearTest.Location = new System.Drawing.Point(558, 357);
             this.btnClearTest.Name = "btnClearTest";
             this.btnClearTest.RoundedCorners = true;
             this.btnClearTest.Size = new System.Drawing.Size(43, 40);
@@ -1428,13 +1428,13 @@
             this.ntfTest.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ntfTest.ForeColor = System.Drawing.Color.DimGray;
             this.ntfTest.Image = null;
-            this.ntfTest.Location = new System.Drawing.Point(39, 344);
+            this.ntfTest.Location = new System.Drawing.Point(39, 352);
             this.ntfTest.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfTest.Name = "ntfTest";
             this.ntfTest.NotificationType = NotificationBox.Type.Warning;
             this.ntfTest.RoundCorners = true;
             this.ntfTest.ShowCloseButton = true;
-            this.ntfTest.Size = new System.Drawing.Size(199, 40);
+            this.ntfTest.Size = new System.Drawing.Size(199, 43);
             this.ntfTest.TabIndex = 8;
             this.ntfTest.Text = "Empty Test";
             this.ntfTest.Visible = false;
@@ -1497,7 +1497,7 @@
             this.editprofile.ImageIndex = 4;
             this.editprofile.Location = new System.Drawing.Point(184, 4);
             this.editprofile.Name = "editprofile";
-            this.editprofile.Size = new System.Drawing.Size(619, 402);
+            this.editprofile.Size = new System.Drawing.Size(619, 415);
             this.editprofile.TabIndex = 6;
             this.editprofile.Text = "Edit Profile";
             // 
@@ -1512,7 +1512,7 @@
             this.gbSecurity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbSecurity.Location = new System.Drawing.Point(310, 215);
             this.gbSecurity.Name = "gbSecurity";
-            this.gbSecurity.Size = new System.Drawing.Size(291, 176);
+            this.gbSecurity.Size = new System.Drawing.Size(291, 185);
             this.gbSecurity.TabIndex = 4;
             this.gbSecurity.TabStop = false;
             this.gbSecurity.Text = "Change Security Code";
@@ -1522,15 +1522,15 @@
             this.ntfC.BorderCurve = 15;
             this.ntfC.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.ntfC.Image = null;
-            this.ntfC.Location = new System.Drawing.Point(20, 130);
+            this.ntfC.Location = new System.Drawing.Point(16, 131);
             this.ntfC.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfC.Name = "ntfC";
             this.ntfC.NotificationType = NotificationBox.Type.Success;
             this.ntfC.RoundCorners = true;
             this.ntfC.ShowCloseButton = true;
-            this.ntfC.Size = new System.Drawing.Size(169, 40);
+            this.ntfC.Size = new System.Drawing.Size(194, 48);
             this.ntfC.TabIndex = 10;
-            this.ntfC.Text = "Security Code Changed";
+            this.ntfC.Text = "Security code changed";
             this.ntfC.Visible = false;
             // 
             // label23
@@ -1592,7 +1592,7 @@
             this.btnChangeSecurity.Font = new System.Drawing.Font("Verdana", 8F);
             this.btnChangeSecurity.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnChangeSecurity.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangeSecurity.Location = new System.Drawing.Point(230, 131);
+            this.btnChangeSecurity.Location = new System.Drawing.Point(230, 135);
             this.btnChangeSecurity.Name = "btnChangeSecurity";
             this.btnChangeSecurity.RoundedCorners = true;
             this.btnChangeSecurity.Size = new System.Drawing.Size(46, 39);
@@ -1610,7 +1610,7 @@
             this.gbEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbEmail.Location = new System.Drawing.Point(22, 215);
             this.gbEmail.Name = "gbEmail";
-            this.gbEmail.Size = new System.Drawing.Size(280, 176);
+            this.gbEmail.Size = new System.Drawing.Size(280, 185);
             this.gbEmail.TabIndex = 3;
             this.gbEmail.TabStop = false;
             this.gbEmail.Text = "Change Email";
@@ -1626,7 +1626,7 @@
             this.ntfE.NotificationType = NotificationBox.Type.Success;
             this.ntfE.RoundCorners = true;
             this.ntfE.ShowCloseButton = true;
-            this.ntfE.Size = new System.Drawing.Size(169, 40);
+            this.ntfE.Size = new System.Drawing.Size(185, 48);
             this.ntfE.TabIndex = 9;
             this.ntfE.Text = "Email Changed";
             this.ntfE.Visible = false;
@@ -1690,7 +1690,7 @@
             this.btnChangeEmail.Font = new System.Drawing.Font("Verdana", 8F);
             this.btnChangeEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnChangeEmail.Image = global::TestME.Properties.Resources.save_as_24;
-            this.btnChangeEmail.Location = new System.Drawing.Point(219, 131);
+            this.btnChangeEmail.Location = new System.Drawing.Point(219, 135);
             this.btnChangeEmail.Name = "btnChangeEmail";
             this.btnChangeEmail.RoundedCorners = true;
             this.btnChangeEmail.Size = new System.Drawing.Size(46, 39);
@@ -1726,7 +1726,7 @@
             this.ntfP.NotificationType = NotificationBox.Type.Success;
             this.ntfP.RoundCorners = true;
             this.ntfP.ShowCloseButton = true;
-            this.ntfP.Size = new System.Drawing.Size(186, 40);
+            this.ntfP.Size = new System.Drawing.Size(195, 40);
             this.ntfP.TabIndex = 10;
             this.ntfP.Text = "Password Changed";
             this.ntfP.Visible = false;
@@ -1985,7 +1985,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 461);
+            this.ClientSize = new System.Drawing.Size(833, 474);
             this.Controls.Add(this.frmskin);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
