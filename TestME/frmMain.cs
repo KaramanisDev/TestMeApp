@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-
 namespace TestME
 {
     public partial class frmMain : Form
@@ -385,7 +384,7 @@ namespace TestME
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Pass", HashPass });
                     TempDB.nQuery("UPDATE users SET pass=@Pass WHERE id=" + Globals.logUser.id);
-                    Globals.logUser.pass = txtnpassword.Text;
+                    Globals.logUser.pass = HashPass;
                     Utilities.clearText(txtopassword, txtnpassword, txtrnpassword);
                 }).Start();
                 Utilities.notifyThem(ntfP, "Password Changed", NotificationBox.Type.Success);
@@ -448,7 +447,7 @@ namespace TestME
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Code", HashSecur });
                     TempDB.nQuery("UPDATE users SET securitycode=@Code WHERE id=" + Globals.logUser.id);
-                    Globals.logUser.scode = txtncode.Text;
+                    Globals.logUser.scode = HashSecur;
                     Utilities.clearText(txtspassword, txtncode); 
                 }).Start();
                 Utilities.notifyThem(ntfC, "Security Code Changed", NotificationBox.Type.Success);
@@ -681,6 +680,17 @@ namespace TestME
             if (dgvFoundQ.SelectedRows.Count > 0 && e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
+            }
+        }
+
+        private void tabUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabUser.SelectedIndex == 7)
+            {
+                Globals.formStart.Show();
+                Globals.formMain.Close();
+
+                Globals.formMain = new frmMain();
             }
         }
     }
