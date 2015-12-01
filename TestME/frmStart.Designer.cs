@@ -258,15 +258,15 @@
             this.ntfBox1.BorderCurve = 15;
             this.ntfBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ntfBox1.Image = null;
-            this.ntfBox1.Location = new System.Drawing.Point(53, 242);
+            this.ntfBox1.Location = new System.Drawing.Point(53, 251);
             this.ntfBox1.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfBox1.Name = "ntfBox1";
             this.ntfBox1.NotificationType = NotificationBox.Type.Error;
             this.ntfBox1.RoundCorners = true;
             this.ntfBox1.ShowCloseButton = true;
-            this.ntfBox1.Size = new System.Drawing.Size(274, 52);
+            this.ntfBox1.Size = new System.Drawing.Size(274, 44);
             this.ntfBox1.TabIndex = 5;
-            this.ntfBox1.Text = "Username or Password were incorrect!";
+            this.ntfBox1.Text = "Username or Password were incorrect";
             this.ntfBox1.Visible = false;
             // 
             // txtLPass
@@ -310,7 +310,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnLogin.Image = global::TestME.Properties.Resources.arrow_28_24;
-            this.btnLogin.Location = new System.Drawing.Point(221, 194);
+            this.btnLogin.Location = new System.Drawing.Point(221, 200);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.RoundedCorners = true;
             this.btnLogin.Size = new System.Drawing.Size(105, 35);
@@ -408,7 +408,7 @@
             this.ntfBox2.NotificationType = NotificationBox.Type.Warning;
             this.ntfBox2.RoundCorners = true;
             this.ntfBox2.ShowCloseButton = true;
-            this.ntfBox2.Size = new System.Drawing.Size(217, 61);
+            this.ntfBox2.Size = new System.Drawing.Size(217, 55);
             this.ntfBox2.TabIndex = 8;
             this.ntfBox2.Text = "All fields are necessary";
             this.ntfBox2.Visible = false;
@@ -556,7 +556,7 @@
             this.checkBoxAutoConnect.EnabledCalc = true;
             this.checkBoxAutoConnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxAutoConnect.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxAutoConnect.Location = new System.Drawing.Point(268, 203);
+            this.checkBoxAutoConnect.Location = new System.Drawing.Point(268, 207);
             this.checkBoxAutoConnect.Name = "checkBoxAutoConnect";
             this.checkBoxAutoConnect.Size = new System.Drawing.Size(112, 18);
             this.checkBoxAutoConnect.TabIndex = 13;
@@ -569,7 +569,7 @@
             this.checkBoxRemember.EnabledCalc = true;
             this.checkBoxRemember.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxRemember.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxRemember.Location = new System.Drawing.Point(149, 203);
+            this.checkBoxRemember.Location = new System.Drawing.Point(149, 207);
             this.checkBoxRemember.Name = "checkBoxRemember";
             this.checkBoxRemember.Size = new System.Drawing.Size(113, 18);
             this.checkBoxRemember.TabIndex = 12;
@@ -580,7 +580,7 @@
             this.ntfBox3.BorderCurve = 15;
             this.ntfBox3.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ntfBox3.Image = null;
-            this.ntfBox3.Location = new System.Drawing.Point(36, 240);
+            this.ntfBox3.Location = new System.Drawing.Point(36, 249);
             this.ntfBox3.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfBox3.Name = "ntfBox3";
             this.ntfBox3.NotificationType = NotificationBox.Type.Error;
@@ -588,7 +588,7 @@
             this.ntfBox3.ShowCloseButton = true;
             this.ntfBox3.Size = new System.Drawing.Size(226, 43);
             this.ntfBox3.TabIndex = 10;
-            this.ntfBox3.Text = "Connection Successful";
+            this.ntfBox3.Text = "Could not connect to the Database";
             this.ntfBox3.Visible = false;
             // 
             // txtSDatabase
@@ -718,7 +718,7 @@
             this.btnconnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnconnect.ForeColor = System.Drawing.Color.White;
             this.btnconnect.Image = global::TestME.Properties.Resources.data_configuration_24;
-            this.btnconnect.Location = new System.Drawing.Point(278, 244);
+            this.btnconnect.Location = new System.Drawing.Point(278, 253);
             this.btnconnect.Name = "btnconnect";
             this.btnconnect.RoundedCorners = true;
             this.btnconnect.Size = new System.Drawing.Size(102, 35);
@@ -831,15 +831,15 @@
             this.ntfForgot.BorderCurve = 8;
             this.ntfForgot.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ntfForgot.Image = null;
-            this.ntfForgot.Location = new System.Drawing.Point(54, 226);
+            this.ntfForgot.Location = new System.Drawing.Point(54, 242);
             this.ntfForgot.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfForgot.Name = "ntfForgot";
             this.ntfForgot.NotificationType = NotificationBox.Type.Other;
             this.ntfForgot.RoundCorners = true;
             this.ntfForgot.ShowCloseButton = true;
-            this.ntfForgot.Size = new System.Drawing.Size(172, 59);
+            this.ntfForgot.Size = new System.Drawing.Size(182, 47);
             this.ntfForgot.TabIndex = 14;
-            this.ntfForgot.Text = "Login with new Password!";
+            this.ntfForgot.Text = "Wrong combination,try again";
             this.ntfForgot.Visible = false;
             // 
             // bonfireLabel2
@@ -860,7 +860,7 @@
             this.btnPassGenerate.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnPassGenerate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPassGenerate.Image = global::TestME.Properties.Resources.undo_5_24;
-            this.btnPassGenerate.Location = new System.Drawing.Point(253, 235);
+            this.btnPassGenerate.Location = new System.Drawing.Point(253, 247);
             this.btnPassGenerate.Name = "btnPassGenerate";
             this.btnPassGenerate.RoundedCorners = true;
             this.btnPassGenerate.Size = new System.Drawing.Size(93, 38);
@@ -872,7 +872,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label7.Location = new System.Drawing.Point(51, 172);
+            this.label7.Location = new System.Drawing.Point(51, 179);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 18);
             this.label7.TabIndex = 5;
@@ -884,9 +884,9 @@
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label6.Location = new System.Drawing.Point(51, 120);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 18);
+            this.label6.Size = new System.Drawing.Size(102, 18);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Security Code:";
+            this.label6.Text = "Security Code: *";
             // 
             // label5
             // 
@@ -894,16 +894,16 @@
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label5.Location = new System.Drawing.Point(51, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 18);
+            this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Username:";
+            this.label5.Text = "Username: *";
             // 
             // txtPassPassword
             // 
             this.txtPassPassword.EnabledCalc = true;
             this.txtPassPassword.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.txtPassPassword.ForeColor = System.Drawing.Color.Maroon;
-            this.txtPassPassword.Location = new System.Drawing.Point(171, 168);
+            this.txtPassPassword.Location = new System.Drawing.Point(171, 175);
             this.txtPassPassword.MaxLength = 32767;
             this.txtPassPassword.MultiLine = false;
             this.txtPassPassword.Name = "txtPassPassword";
