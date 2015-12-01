@@ -157,31 +157,37 @@ namespace TestME
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (Globals.Connected)
+            Utilities.runInThread(() =>
             {
-                if (txtRUser.Text == "" || txtRPass.Text == "" || txtRrepeatPass.Text == "" || txtREmail.Text == "")
+                if (Globals.Connected)
                 {
-                    Utilities.notifyThem(ntfBox2, "All fields are necessary.", NotificationBox.Type.Warning);
-                }
-                else if (txtRPass.Text != txtRrepeatPass.Text)
-                {
-                    Utilities.notifyThem(ntfBox2, "Passwords don't match.", NotificationBox.Type.Warning);
-                }
-                else if (!Validation.IsValidEmail(txtREmail.Text))
-                {
-                    Utilities.notifyThem(ntfBox2, "Email is not valid.", NotificationBox.Type.Warning);
-                }
-                else if (txtRSecurityCode.Text.Length < 4)
-                {
-                    Utilities.notifyThem(ntfBox2, "Security code must be at least 4 characters.", NotificationBox.Type.Warning);
-                }
-                else if (Validation.IsValidSecurityCode(txtRSecurityCode.Text))
-                {
-                    Utilities.notifyThem(ntfBox2, "Security code must be number and character only.", NotificationBox.Type.Warning);
-                }else
-                {
-                    Utilities.runInThread(() =>
+                    if (txtRUser.Text == "" || txtRPass.Text == "" || txtRrepeatPass.Text == "" || txtREmail.Text == "")
                     {
+                        Utilities.notifyThem(ntfBox2, "All fields are necessary.", NotificationBox.Type.Warning);
+                    }
+                    else if (txtRPass.Text != txtRrepeatPass.Text)
+                    {
+                        Utilities.notifyThem(ntfBox2, "Passwords don't match.", NotificationBox.Type.Warning);
+                    }
+                    else if (!Validation.IsValidEmail(txtREmail.Text))
+                    {
+                        Utilities.notifyThem(ntfBox2, "Email is not valid.", NotificationBox.Type.Warning);
+                    }
+                    else if (txtRSecurityCode.Text.Length < 4)
+                    {
+                        Utilities.notifyThem(ntfBox2, "Security code must be at least 4 characters.", NotificationBox.Type.Warning);
+                    }
+                    else if (Validation.IsValidSecurityCode(txtRSecurityCode.Text))
+                    {
+                        Utilities.notifyThem(ntfBox2, "Security code must be number and character only.", NotificationBox.Type.Warning);
+                    }
+                    else if (!Validation.UsernameAvailibility(txtRUser.Text))
+                    {
+                        Utilities.notifyThem(ntfBox2, "Username is not available.", NotificationBox.Type.Warning);
+                    }
+                    else
+                    {
+                    
                         String HashPass = Utilities.MD5Hash(txtRPass.Text);
                         String HashSecur = Utilities.MD5Hash(txtRSecurityCode.Text);
 
@@ -196,14 +202,15 @@ namespace TestME
                             Utilities.notifyThem(ntfBox2, "Successfull Registration.", NotificationBox.Type.Success);
                         }
 
-                    }).Start();
+                    }
+
+                }
+                else
+                {
+                    Utilities.notifyThem(ntfBox2, "Not connected to DB!", NotificationBox.Type.Warning);
                 }
 
-            }
-            else
-            {
-                Utilities.notifyThem(ntfBox2, "Not connected to DB!", NotificationBox.Type.Warning);
-            }
+            }).Start();
         }
 
         private void linkForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
