@@ -32,14 +32,17 @@ namespace TestME
         {
             if (change == true)
             {
-                var msgbResult = MessageBox.Show("Do you want save changes ?", "Save Question", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var msgbResult = MessageBox.Show("You don't save the change\nAre you sure to leave ?", "Close EditForm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (msgbResult == DialogResult.Yes)
                 {
-                    btnSaveChanges_Click(null,null);
+                    this.Close();
                 }
             }
+            else
+            {
                 this.Close();
+            }
         }
 
         private void txtAddQ_TextChanged(object sender, EventArgs e)
