@@ -64,6 +64,26 @@ namespace TestME
             return invalid;
         }
 
+        public static bool EmailAvailibility(String str)
+        {
+
+            DB tDB = Utilities.AsyncDB();
+            tDB.bind(new string[] { "Email", str });
+
+            int result = tDB.nQuery("SELECT COUNT(*) FROM users WHERE  email = @Email");
+
+            if (result >= 1)
+            {
+                invalid = true;
+            }
+            else
+            {
+                invalid = false;
+            }
+
+            return invalid;
+        }
+
         private static string DomainMapper(Match match)
         {
             // IdnMapping class with default property values.

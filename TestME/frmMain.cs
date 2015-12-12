@@ -407,6 +407,10 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfE, "Email is not valid.", NotificationBox.Type.Warning);
             }
+            else if (!Validation.EmailAvailibility(txtnemail.Text))
+            {
+                Utilities.notifyThem(ntfE, "Email is already exists.", NotificationBox.Type.Warning);
+            }
             else
             {
                 Utilities.runInThread(() =>

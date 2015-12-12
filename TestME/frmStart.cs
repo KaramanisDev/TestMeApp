@@ -172,6 +172,10 @@ namespace TestME
                     {
                         Utilities.notifyThem(ntfBox2, "Email is not valid.", NotificationBox.Type.Warning);
                     }
+                    else if (!Validation.EmailAvailibility(txtREmail.Text))
+                    {
+                        Utilities.notifyThem(ntfBox2, "Email is already exists.", NotificationBox.Type.Warning);
+                    }
                     else if (txtRSecurityCode.Text.Length < 4)
                     {
                         Utilities.notifyThem(ntfBox2, "Security code must be at least 4 characters.", NotificationBox.Type.Warning);
