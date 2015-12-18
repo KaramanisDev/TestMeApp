@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            AutocompleteMenuNS.Colors colors1 = new AutocompleteMenuNS.Colors();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdit));
             this.rcmAnswer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnMin = new CustomButton();
             this.btnClose = new CustomButton();
+            this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.rcmAnswer.SuspendLayout();
             this.customForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswerlist)).BeginInit();
@@ -103,7 +105,7 @@
             this.customForm1.Name = "customForm1";
             this.customForm1.Padding = new System.Windows.Forms.Padding(13, 38, 13, 13);
             this.customForm1.Sizable = false;
-            this.customForm1.Size = new System.Drawing.Size(664, 372);
+            this.customForm1.Size = new System.Drawing.Size(664, 389);
             this.customForm1.TabIndex = 0;
             this.customForm1.Text = "TestME";
             this.customForm1.TitleAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -152,7 +154,7 @@
             this.dgvAnswerlist.ShowCellToolTips = false;
             this.dgvAnswerlist.ShowEditingIcon = false;
             this.dgvAnswerlist.ShowRowErrors = false;
-            this.dgvAnswerlist.Size = new System.Drawing.Size(360, 150);
+            this.dgvAnswerlist.Size = new System.Drawing.Size(360, 174);
             this.dgvAnswerlist.TabIndex = 49;
             this.dgvAnswerlist.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAnswerlist_CellBeginEdit);
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
@@ -183,7 +185,7 @@
             this.ntfEdit.NotificationType = NotificationBox.Type.Notice;
             this.ntfEdit.RoundCorners = true;
             this.ntfEdit.ShowCloseButton = true;
-            this.ntfEdit.Size = new System.Drawing.Size(235, 40);
+            this.ntfEdit.Size = new System.Drawing.Size(235, 64);
             this.ntfEdit.TabIndex = 48;
             this.ntfEdit.Text = "!";
             this.ntfEdit.Visible = false;
@@ -217,6 +219,7 @@
             // 
             // txtAddQ
             // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAddQ, null);
             this.txtAddQ.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddQ.ForeColor = System.Drawing.Color.DimGray;
             this.txtAddQ.Location = new System.Drawing.Point(30, 92);
@@ -230,6 +233,7 @@
             // 
             // txtAddTags
             // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAddTags, this.autocompleteMenu1);
             this.txtAddTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddTags.ForeColor = System.Drawing.Color.DimGray;
             this.txtAddTags.Location = new System.Drawing.Point(403, 92);
@@ -368,11 +372,28 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // autocompleteMenu1
+            // 
+            this.autocompleteMenu1.AppearInterval = 100;
+            colors1.BackColor = System.Drawing.Color.White;
+            colors1.ForeColor = System.Drawing.Color.Black;
+            colors1.HighlightingColor = System.Drawing.Color.YellowGreen;
+            colors1.SelectedBackColor = System.Drawing.Color.YellowGreen;
+            colors1.SelectedBackColor2 = System.Drawing.Color.White;
+            colors1.SelectedForeColor = System.Drawing.Color.Black;
+            this.autocompleteMenu1.Colors = colors1;
+            this.autocompleteMenu1.Font = new System.Drawing.Font("Trebuchet MS", 9.5F);
+            this.autocompleteMenu1.ImageList = null;
+            this.autocompleteMenu1.Items = new string[0];
+            this.autocompleteMenu1.LeftPadding = 0;
+            this.autocompleteMenu1.MinFragmentLength = 1;
+            this.autocompleteMenu1.TargetControlWrapper = null;
+            // 
             // frmEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 372);
+            this.ClientSize = new System.Drawing.Size(664, 389);
             this.Controls.Add(this.customForm1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -413,5 +434,6 @@
         private System.Windows.Forms.DataGridView dgvAnswerlist;
         private System.Windows.Forms.DataGridViewTextBoxColumn answer;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
+        private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
     }
 }

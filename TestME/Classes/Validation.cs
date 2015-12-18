@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -70,7 +67,7 @@ namespace TestME
             DB tDB = Utilities.AsyncDB();
             tDB.bind(new string[] { "Email", str });
 
-            int result = tDB.nQuery("SELECT COUNT(*) FROM users WHERE  email = @Email");
+            int result = tDB.nQuery("SELECT COUNT(*) FROM users WHERE email = @Email");
 
             if (result >= 1)
             {

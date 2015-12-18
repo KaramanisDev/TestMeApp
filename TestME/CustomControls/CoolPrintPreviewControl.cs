@@ -1,14 +1,9 @@
 using System;
-using System.Data;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Drawing.Printing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 
 namespace CoolPrintPreview
 {

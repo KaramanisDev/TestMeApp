@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-
-namespace AutocompleteMenuNS
+﻿namespace AutocompleteMenuNS
 {
     public class Range
     {

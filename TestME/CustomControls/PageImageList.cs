@@ -1,9 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Drawing;
-using System.Drawing.Imaging;
+﻿using System.Drawing;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CoolPrintPreview
 {

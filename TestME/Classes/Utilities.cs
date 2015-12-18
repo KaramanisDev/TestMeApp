@@ -206,7 +206,11 @@ namespace TestME
 
         public static void InvokeMe(Control ctrl, MethodInvoker mInvoke)
         {
-            ctrl.Invoke((MethodInvoker)(mInvoke));
+            try
+            {
+                ctrl.Invoke((MethodInvoker) (mInvoke));
+            }
+            catch (Exception){}
         }
 
         public static Control FindControl(Form form, string name)

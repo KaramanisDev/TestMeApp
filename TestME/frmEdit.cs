@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -123,6 +120,9 @@ namespace TestME
 
         private void frmEdit_Load(object sender, EventArgs e)
         {
+
+            autocompleteMenu1.Items = Globals.colTags.ToArray();
+
             string questtags = "";
             txtAddQ.Text = _quest.question;
             Utilities.runInThread(() => { 

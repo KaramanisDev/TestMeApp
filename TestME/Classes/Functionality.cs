@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Data;
 using System.Windows.Forms;
 
 namespace TestME
@@ -29,7 +25,23 @@ namespace TestME
                 });
                 Utilities.InvokeMe(dgvMyQ, () =>
                 {
+                    dgvMyQ.DataSource = dt;
                     dgvMyQ.Columns[0].Visible = true;
+                    dgvMyQ.Columns[0].HeaderText = "Select";
+                    dgvMyQ.Columns[0].Width = 50;
+                    dgvMyQ.Columns[1].Visible = false;
+                    dgvMyQ.Columns[2].HeaderText = "Questions";
+                    dgvMyQ.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    dgvMyQ.Columns[2].Width = 420;
+                    dgvMyQ.Columns[3].Visible = false;
+                    dgvMyQ.Columns[4].Visible = false;
+                    dgvMyQ.Columns[5].HeaderText = "Private";
+                    dgvMyQ.Columns[5].Width = 80;
+                    dgvMyQ.Columns[6].Visible = false;
+                    for (int i = 0; i < dgvMyQ.Rows.Count; i++)
+                    {
+                        dgvMyQ.Rows[i].Cells[0].Value = "False";
+                    }
                 });
             }
             else
@@ -44,26 +56,6 @@ namespace TestME
                     dgvMyQ.Columns[0].Visible = false;
                 });
             }
-
-            Utilities.InvokeMe(dgvMyQ, () =>
-            {
-                dgvMyQ.DataSource = dt;
-                dgvMyQ.Columns[0].HeaderText = "Select";
-                dgvMyQ.Columns[0].Width = 50;
-                dgvMyQ.Columns[1].Visible = false;
-                dgvMyQ.Columns[2].HeaderText = "Questions";
-                dgvMyQ.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-                dgvMyQ.Columns[2].Width = 420;
-                dgvMyQ.Columns[3].Visible = false;
-                dgvMyQ.Columns[4].Visible = false;
-                dgvMyQ.Columns[5].HeaderText = "Private";
-                dgvMyQ.Columns[5].Width = 80;
-                dgvMyQ.Columns[6].Visible = false;
-                for (int i = 0; i < dgvMyQ.Rows.Count; i++)
-                {
-                    dgvMyQ.Rows[i].Cells[0].Value = "False";
-                }
-            });
         }
 
         public static void LoadTags(AutocompleteMenuNS.AutocompleteMenu autoCMenu = null)

@@ -164,7 +164,7 @@
             this.tabdashboard.Location = new System.Drawing.Point(184, 4);
             this.tabdashboard.Name = "tabdashboard";
             this.tabdashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabdashboard.Size = new System.Drawing.Size(409, 290);
+            this.tabdashboard.Size = new System.Drawing.Size(409, 316);
             this.tabdashboard.TabIndex = 4;
             this.tabdashboard.Tag = "header";
             this.tabdashboard.Text = "Dashboard";
@@ -734,7 +734,7 @@
             this.tabinfo.Location = new System.Drawing.Point(184, 4);
             this.tabinfo.Name = "tabinfo";
             this.tabinfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabinfo.Size = new System.Drawing.Size(409, 290);
+            this.tabinfo.Size = new System.Drawing.Size(409, 316);
             this.tabinfo.TabIndex = 2;
             this.tabinfo.Tag = "header";
             this.tabinfo.Text = "Information";
