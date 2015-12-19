@@ -168,7 +168,7 @@ namespace TestME
                     {
                         Utilities.notifyThem(ntfBox2, "Email is not valid.", NotificationBox.Type.Warning);
                     }
-                    else if (!Validation.EmailAvailibility(txtREmail.Text))
+                    else if (Validation.EmailAvailibility(txtREmail.Text))
                     {
                         Utilities.notifyThem(ntfBox2, "Email is already exists.", NotificationBox.Type.Warning);
                     }
@@ -180,7 +180,7 @@ namespace TestME
                     {
                         Utilities.notifyThem(ntfBox2, "Security code must be number and character only.", NotificationBox.Type.Warning);
                     }
-                    else if (!Validation.UsernameAvailibility(txtRUser.Text))
+                    else if (Validation.UsernameAvailibility(txtRUser.Text))
                     {
                         Utilities.notifyThem(ntfBox2, "Username is not available.", NotificationBox.Type.Warning);
                     }

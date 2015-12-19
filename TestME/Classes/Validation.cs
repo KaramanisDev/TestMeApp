@@ -47,8 +47,9 @@ namespace TestME
                 DB tDB = Utilities.AsyncDB();
                 tDB.bind(new string[] { "Username", str });
 
-                int result = tDB.nQuery("SELECT COUNT(*) FROM users WHERE  user = @Username");
-                
+                String Q = tDB.single("SELECT COUNT(*) FROM users WHERE  user = @Username");
+                int result = Int32.Parse(Q);
+
                 if (result >= 1)
                 {
                     invalid = true;
@@ -67,7 +68,8 @@ namespace TestME
             DB tDB = Utilities.AsyncDB();
             tDB.bind(new string[] { "Email", str });
 
-            int result = tDB.nQuery("SELECT COUNT(*) FROM users WHERE email = @Email");
+            String Q = tDB.single("SELECT COUNT(*) FROM users WHERE email = @Email");
+            int result = Int32.Parse(Q);
 
             if (result >= 1)
             {
