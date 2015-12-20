@@ -8,9 +8,11 @@ namespace TestME
         public static void RefreshMyQuestions()
         {
             Label lblRegQ = (Label)Utilities.FindControl(Globals.formMain, "lblRegQ");
+            Label pnumQ = (Label)Utilities.FindControl(Globals.formMain, "pnumQ");
             DataGridView dgvMyQ = (DataGridView)Utilities.FindControl(Globals.formMain, "dgvMyQ");
 
             DataTable dt = Utilities.AsyncDB().query("SELECT * FROM questions WHERE uid=" + Globals.logUser.id);
+            
             //set all columns to readonly
             for (int i = 0; i < dt.Columns.Count; i++)
             {
@@ -56,6 +58,10 @@ namespace TestME
                     dgvMyQ.Columns[0].Visible = false;
                 });
             }
+            Utilities.InvokeMe(pnumQ, () =>
+            {
+                pnumQ.Text = dgvMyQ.Rows.Count.ToString();
+            });
         }
 
         public static void LoadTags(AutocompleteMenuNS.AutocompleteMenu autoCMenu = null)

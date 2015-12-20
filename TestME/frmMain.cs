@@ -37,22 +37,7 @@ namespace TestME
 
             pusername.Text = Globals.logUser.user;
             pemail.Text = Globals.logUser.email;
-
-            Utilities.runInThread(() => 
-            {
-                Utilities.InvokeMe(pdatabase, () =>
-                {
-                    pdatabase.Text = Utilities.FindControl(Globals.formStart, "txtSDatabase").Text;
-                });
-
-                string tmp = Utilities.AsyncDB().single("SELECT COUNT(*) FROM questions WHERE uid=" + Globals.logUser.id);
-
-                Utilities.InvokeMe(pnumQ, () => 
-                    {
-                        pnumQ.Text = tmp;
-                    });
-            }).Start();
-            
+            pdatabase.Text = Utilities.FindControl(Globals.formStart, "txtSDatabase").Text;
         }
 
         private void dgvMyQ_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
@@ -435,7 +420,7 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfC, "Security code must be at least 4 characters", NotificationBox.Type.Warning);
             }
-            else if (Validation.IsValidSecurityCode(txtspassword.Text))
+            else if (Validation.IsValidSecurityCode(txtncode.Text))
             {
                 Utilities.notifyThem(ntfC, "Security code must be only numbers-letters ", NotificationBox.Type.Warning);
             }
@@ -443,7 +428,7 @@ namespace TestME
             {
                 Utilities.runInThread(() =>
                 {
-                    String HashSecur = Utilities.MD5Hash(txtspassword.Text.Trim());
+                    String HashSecur = Utilities.MD5Hash(txtncode.Text.Trim());
 
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Code", HashSecur });

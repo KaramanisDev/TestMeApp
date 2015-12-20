@@ -110,6 +110,7 @@
             this.dgvAnswerList.Location = new System.Drawing.Point(87, 186);
             this.dgvAnswerList.MultiSelect = false;
             this.dgvAnswerList.Name = "dgvAnswerList";
+            this.dgvAnswerList.ReadOnly = true;
             this.dgvAnswerList.RowHeadersVisible = false;
             this.dgvAnswerList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAnswerList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -127,6 +128,7 @@
             this.answer.DefaultCellStyle = dataGridViewCellStyle2;
             this.answer.HeaderText = "Answer";
             this.answer.Name = "answer";
+            this.answer.ReadOnly = true;
             this.answer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.answer.Width = 320;
             // 
@@ -134,6 +136,7 @@
             // 
             this.Correct.HeaderText = "Correct";
             this.Correct.Name = "Correct";
+            this.Correct.ReadOnly = true;
             this.Correct.Width = 80;
             // 
             // lblDifficultylvl
