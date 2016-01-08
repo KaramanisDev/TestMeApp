@@ -288,6 +288,7 @@
             this.imageList1.Images.SetKeyName(2, "plus-4-16.png");
             this.imageList1.Images.SetKeyName(3, "search-16.png");
             this.imageList1.Images.SetKeyName(4, "edit-user-16.png");
+            this.imageList1.Images.SetKeyName(5, "logout-16.png");
             // 
             // toolTipUser
             // 
@@ -1945,6 +1946,7 @@
             this.TabLogout.BackColor = System.Drawing.Color.White;
             this.TabLogout.Font = new System.Drawing.Font("Trebuchet MS", 9F);
             this.TabLogout.ForeColor = System.Drawing.Color.DimGray;
+            this.TabLogout.ImageIndex = 5;
             this.TabLogout.Location = new System.Drawing.Point(184, 4);
             this.TabLogout.Name = "TabLogout";
             this.TabLogout.Padding = new System.Windows.Forms.Padding(3);

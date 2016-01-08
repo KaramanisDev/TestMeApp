@@ -1,6 +1,6 @@
 # TestME Application
 
-<img src="https://github.com/Hli4S/TestMeApp/blob/master/TestME/document.ico" alt="TestME Icon" align="right" />
+<img src="https://raw.githubusercontent.com/Hli4S/TestMeApp/master/TestME/Resources/document1.png" alt="TestME Icon" align="right" />
 :computer: TestME is a Multiple Choice Test Generator.
 
 It is a user friendly app that aims to help teachers to create tests quickly.

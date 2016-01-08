@@ -366,7 +366,7 @@ namespace TestME
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Pass", HashPass });
                     TempDB.nQuery("UPDATE users SET pass=@Pass WHERE id=" + Globals.logUser.id);
-                    Globals.logUser.pass = txtnpassword.Text;
+                    Globals.logUser.pass = HashPass;
                     Utilities.clearText(txtopassword, txtnpassword, txtrnpassword);
                 }).Start();
                 Utilities.notifyThem(ntfP, "Password Changed", NotificationBox.Type.Success);
@@ -386,11 +386,11 @@ namespace TestME
             }
             else if (!Validation.IsValidEmail(txtnemail.Text))
             {
-                Utilities.notifyThem(ntfE, "Email is not valid.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfE, "Email is not valid", NotificationBox.Type.Error);
             }
             else if (!Validation.EmailAvailibility(txtnemail.Text))
             {
-                Utilities.notifyThem(ntfE, "Email is already exists.", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfE, "Email already exists", NotificationBox.Type.Warning);
             }
             else
             {
@@ -416,7 +416,7 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfC, "Wrong Password", NotificationBox.Type.Error);
             }
-            else if (txtspassword.Text.Length < 4)
+            else if (txtncode.Text.Length < 4)
             {
                 Utilities.notifyThem(ntfC, "Security code must be at least 4 characters", NotificationBox.Type.Warning);
             }
@@ -433,7 +433,7 @@ namespace TestME
                     DB TempDB = Utilities.AsyncDB();
                     TempDB.bind(new string[] { "Code", HashSecur });
                     TempDB.nQuery("UPDATE users SET securitycode=@Code WHERE id=" + Globals.logUser.id);
-                    Globals.logUser.scode = txtncode.Text;
+                    Globals.logUser.scode = HashSecur;
                     Utilities.clearText(txtspassword, txtncode); 
                 }).Start();
                 Utilities.notifyThem(ntfC, "Security Code Changed", NotificationBox.Type.Success);
