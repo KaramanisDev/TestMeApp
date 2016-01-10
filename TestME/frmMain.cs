@@ -312,7 +312,7 @@ namespace TestME
             }
             else
             {
-                Utilities.notifyThem(ntbfindQ, AddedQ + "Questions Added to your Test", NotificationBox.Type.Success);
+                Utilities.notifyThem(ntbfindQ, AddedQ + " Questions Added to your Test", NotificationBox.Type.Success);
             }
         }
 
@@ -675,10 +675,17 @@ namespace TestME
         {
             if (tabUser.SelectedIndex == 7)
             {
+                Globals.MyTestQids.Clear();
                 Globals.formStart.Show();
                 Globals.formMain.Close();
-
                 Globals.formMain = new frmMain();
+            }
+            if (tabUser.SelectedIndex == 2 || tabUser.SelectedIndex == 3)
+            {
+                Utilities.runInThread(() =>
+                {
+                    Functionality.LoadTags(autocompleteMenu1);
+                }).Start();
             }
         }
     }
