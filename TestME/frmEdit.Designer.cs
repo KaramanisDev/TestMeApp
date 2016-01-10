@@ -66,14 +66,14 @@
             this.rcmAnswer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeToolStripMenuItem});
             this.rcmAnswer.Name = "rcmAnswer";
-            this.rcmAnswer.Size = new System.Drawing.Size(153, 48);
+            this.rcmAnswer.Size = new System.Drawing.Size(118, 26);
             this.rcmAnswer.Opening += new System.ComponentModel.CancelEventHandler(this.rcmAnswer_Opening);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Image = global::TestME.Properties.Resources.delete;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -157,7 +157,9 @@
             this.dgvAnswerlist.Size = new System.Drawing.Size(360, 174);
             this.dgvAnswerlist.TabIndex = 49;
             this.dgvAnswerlist.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAnswerlist_CellBeginEdit);
+            this.dgvAnswerlist.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAnswerlist_CellMouseUp);
             this.dgvAnswerlist.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvAnswerlist_EditingControlShowing);
+            this.dgvAnswerlist.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnswerlist_RowValidated);
             // 
             // answer
             // 
@@ -290,6 +292,7 @@
             this.switchPrivate.Name = "switchPrivate";
             this.switchPrivate.Size = new System.Drawing.Size(50, 20);
             this.switchPrivate.TabIndex = 38;
+            this.switchPrivate.MouseUp += new System.Windows.Forms.MouseEventHandler(this.switchPrivate_MouseUp);
             // 
             // difficultyLvl
             // 
@@ -316,6 +319,7 @@
             0,
             0,
             0});
+            this.difficultyLvl.ValueChanged += new System.EventHandler(this.difficultyLvl_ValueChanged);
             // 
             // label9
             // 

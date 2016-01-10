@@ -99,9 +99,10 @@ namespace TestME
                             string scode = dt.Rows[0][4].ToString();
                             Globals.logUser = new User(id, user, pass, mail, scode);
 
-                            Utilities.InvokeMe(Globals.formStart, ()=>
+                            Utilities.InvokeMe(this, ()=>
                             {
-                                Globals.formStart.Hide();
+                                ntfBox1.Visible = false;
+                                this.Hide();
                                 Globals.formMain.Show();
                             });
                         }
@@ -125,7 +126,11 @@ namespace TestME
                 Globals.ConnectionStr(txtSHost.Text, txtSUser.Text, txtSPass.Text, txtSDatabase.Text);
                 if (Utilities.AsyncDB().Connected())
                 {
-                    Globals.Connected = true;                   
+                    Globals.Connected = true;
+                }
+                else
+                {
+                    Globals.Connected = false;
                 }
                 if (Globals.Connected)
                 {
@@ -156,7 +161,7 @@ namespace TestME
             {
                 if (Globals.Connected)
                 {
-                    if (txtRUser.Text == "" || txtRPass.Text == "" || txtRrepeatPass.Text == "" || txtREmail.Text == "")
+                    if (String.IsNullOrEmpty(txtRUser.Text.Trim()) || String.IsNullOrEmpty(txtRPass.Text) || String.IsNullOrEmpty(txtRrepeatPass.Text) || String.IsNullOrEmpty(txtREmail.Text.Trim()) || String.IsNullOrEmpty(txtRSecurityCode.Text.Trim()))
                     {
                         Utilities.notifyThem(ntfBox2, "All fields are necessary.", NotificationBox.Type.Warning);
                     }
@@ -178,7 +183,7 @@ namespace TestME
                     }
                     else if (Validation.IsValidSecurityCode(txtRSecurityCode.Text))
                     {
-                        Utilities.notifyThem(ntfBox2, "Security code must be number and character only.", NotificationBox.Type.Warning);
+                        Utilities.notifyThem(ntfBox2, "Security code must contain\na-z, A-Z, 0-9 characters", NotificationBox.Type.Warning);
                     }
                     else if (Validation.UsernameAvailibility(txtRUser.Text))
                     {
@@ -268,7 +273,7 @@ namespace TestME
                 return;
             }
             String username = txtPassUser.Text;
-            String securityCodeCompare = txtPassCode.Text;
+            String securityCodeCompare = Utilities.MD5Hash(txtPassCode.Text);
             String password = txtPassPassword.Text;
 
             if (securityCodeCheck(username, securityCodeCompare))
@@ -323,7 +328,7 @@ namespace TestME
                 Utilities.runInThread(() =>
                     {
                         DB changePassDB = Utilities.AsyncDB();
-                        changePassDB.bind(new string[] { "usern", user, "pass1", password});
+                        changePassDB.bind(new string[] { "usern", user, "pass1", Utilities.MD5Hash(password) });
 
                         int qreg = changePassDB.nQuery("UPDATE users SET pass=@pass1 where user=@usern");
 

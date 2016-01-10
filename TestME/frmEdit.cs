@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -29,7 +30,7 @@ namespace TestME
         {
             if (change == true)
             {
-                var msgbResult = MessageBox.Show("You don't save the change\nAre you sure to leave ?", "Close EditForm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var msgbResult = MessageBox.Show("You have unsaved changes!\nDo you want to exit anyway?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (msgbResult == DialogResult.Yes)
                 {
@@ -63,9 +64,9 @@ namespace TestME
             bool tagsdel = false;
             Utilities.runInThread(() =>
             {
-                if (string.IsNullOrEmpty(txtAddQ.Text.Trim()) == true || string.IsNullOrEmpty(txtAddTags.Text.Trim()) == true || (dgvAnswerlist.Rows.Count < 1))
+                if (string.IsNullOrEmpty(txtAddQ.Text.Trim()) == true || string.IsNullOrEmpty(txtAddTags.Text.Trim()) == true || (dgvAnswerlist.Rows.Count < 2))
                 {
-                    Utilities.notifyThem(ntfEdit, "You must fill some info about your edit first.", NotificationBox.Type.Error);
+                    Utilities.notifyThem(ntfEdit, "You must fill some info about your question first.", NotificationBox.Type.Error);
                 }
                 else
                 {
@@ -164,7 +165,10 @@ namespace TestME
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dgvAnswerlist.Rows.Remove(dgvAnswerlist.SelectedRows[0]);
+            if (dgvAnswerlist.Rows.GetLastRow(DataGridViewElementStates.Displayed) != dgvAnswerlist.SelectedRows[0].Index)
+            {
+                dgvAnswerlist.Rows.Remove(dgvAnswerlist.SelectedRows[0]);
+            }
         }
 
         private void dgvAnswerlist_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -175,6 +179,26 @@ namespace TestME
         private void rcmAnswer_Opening(object sender, CancelEventArgs e)
         {
             Utilities.contextMenuEnable(dgvAnswerlist, removeToolStripMenuItem);
+        }
+
+        private void dgvAnswerlist_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Utilities.rightClickSelect(dgvAnswerlist, e);
+        }
+
+        private void switchPrivate_MouseUp(object sender, MouseEventArgs e)
+        {
+            change = true;
+        }
+
+        private void dgvAnswerlist_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            change = true;
+        }
+
+        private void difficultyLvl_ValueChanged(object sender, EventArgs e)
+        {
+            change = true;
         }
     }
 }

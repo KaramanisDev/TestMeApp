@@ -58,7 +58,7 @@ namespace TestME
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var msgbResult = MessageBox.Show("Are you sure that you want to\nPermanatly delete the selected Question ?", "Delete Question",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            var msgbResult = MessageBox.Show("Are you sure that you want to\nPermanatly delete the highlighted Question ?", "Delete Question",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             if (msgbResult == DialogResult.Yes)
             {
                 int sid = int.Parse(dgvMyQ.SelectedRows[0].Cells[1].Value.ToString());
@@ -68,6 +68,7 @@ namespace TestME
                     Utilities.AsyncDB().nQuery("DELETE FROM tags WHERE qid = " + sid);
                 }).Start();
                 dgvMyQ.Rows.Remove(dgvMyQ.SelectedRows[0]);
+                pnumQ.Text = dgvMyQ.Rows.Count.ToString();
                 Utilities.notifyThem(ntfMyQ, "Successfully Deleted !", NotificationBox.Type.Success);
             }
         }
@@ -121,6 +122,7 @@ namespace TestME
                         Utilities.AsyncDB().nQuery("DELETE FROM tags WHERE qid IN (" + idsForDelete + ")");
                         Utilities.notifyThem(ntfMyQ, "Successfully Deleted " + cids.Count + " Questions !", NotificationBox.Type.Success);
                     }).Start();
+                    pnumQ.Text = dgvMyQ.Rows.Count.ToString();
                 }
             }
             else
@@ -388,7 +390,7 @@ namespace TestME
             {
                 Utilities.notifyThem(ntfE, "Email is not valid", NotificationBox.Type.Error);
             }
-            else if (!Validation.EmailAvailibility(txtnemail.Text))
+            else if (Validation.EmailAvailibility(txtnemail.Text))
             {
                 Utilities.notifyThem(ntfE, "Email already exists", NotificationBox.Type.Warning);
             }
@@ -422,7 +424,7 @@ namespace TestME
             }
             else if (Validation.IsValidSecurityCode(txtncode.Text))
             {
-                Utilities.notifyThem(ntfC, "Security code must be only numbers-letters ", NotificationBox.Type.Warning);
+                Utilities.notifyThem(ntfC, "Security code must contain\na-z, A-Z, 0-9 characters", NotificationBox.Type.Warning);
             }
             else
             {
@@ -490,7 +492,7 @@ namespace TestME
 
         private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0]));
+            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvFoundQ.SelectedRows[0])).Show();
         }
 
         private void txtnemail_TextChanged(object sender, EventArgs e)
@@ -523,7 +525,7 @@ namespace TestME
             }
             else
             {
-                Utilities.notifyThem(ntfMyQ, AddedQ + "Questions Added to your Test", NotificationBox.Type.Success);
+                Utilities.notifyThem(ntfMyQ, AddedQ + " Questions Added to your Test", NotificationBox.Type.Success);
             }
         }
 
@@ -586,7 +588,7 @@ namespace TestME
 
         private void viewToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyQ.SelectedRows[0])).Show();
+            new frmAnswers(Utilities.dgvRowIntoQuestion(dgvMyTest.SelectedRows[0])).Show();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

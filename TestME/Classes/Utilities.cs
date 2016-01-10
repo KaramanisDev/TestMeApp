@@ -74,7 +74,7 @@ namespace TestME
 
                 if (moveDown)
                 {
-                    if (index == (rowCount - 1)) // include the header row
+                    if (index == (rowCount - 1))
                     {
                         return;
                     }

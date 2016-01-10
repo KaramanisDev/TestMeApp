@@ -87,8 +87,6 @@
             this.txtTestTitle = new XylosTextBox();
             this.btnSave = new BonfireButton();
             this.btnPrint = new BonfireButton();
-            this.txtAnswer = new System.Windows.Forms.TextBox();
-            this.txtTags = new System.Windows.Forms.TextBox();
             this.frmskin = new CustomForm();
             this.tabUser = new XylosTabControl();
             this.testpanel = new System.Windows.Forms.TabPage();
@@ -106,6 +104,7 @@
             this.ntfAdd = new NotificationBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.txtAnswer = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -117,6 +116,7 @@
             this.tabfind = new System.Windows.Forms.TabPage();
             this.ntbfindQ = new NotificationBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.txtTags = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -804,32 +804,6 @@
             this.toolTipUser.SetToolTip(this.btnPrint, "Preview and Print your test");
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // txtAnswer
-            // 
-            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAnswer, null);
-            this.txtAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAnswer.Location = new System.Drawing.Point(398, 177);
-            this.txtAnswer.Multiline = true;
-            this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAnswer.Size = new System.Drawing.Size(200, 47);
-            this.txtAnswer.TabIndex = 29;
-            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
-            // 
-            // txtTags
-            // 
-            this.autocompleteMenu1.SetAutocompleteMenu(this.txtTags, this.autocompleteMenu1);
-            this.txtTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTags.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTags.Location = new System.Drawing.Point(93, 24);
-            this.txtTags.Multiline = true;
-            this.txtTags.Name = "txtTags";
-            this.txtTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTags.Size = new System.Drawing.Size(241, 61);
-            this.txtTags.TabIndex = 18;
-            this.txtTags.TextChanged += new System.EventHandler(this.txtTags_TextChanged);
-            // 
             // frmskin
             // 
             this.frmskin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(23)))), ((int)(((byte)(25)))));
@@ -1123,6 +1097,19 @@
             this.label14.TabIndex = 30;
             this.label14.Text = "Write Answer:";
             // 
+            // txtAnswer
+            // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtAnswer, null);
+            this.txtAnswer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAnswer.Location = new System.Drawing.Point(398, 177);
+            this.txtAnswer.Multiline = true;
+            this.txtAnswer.Name = "txtAnswer";
+            this.txtAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAnswer.Size = new System.Drawing.Size(200, 47);
+            this.txtAnswer.TabIndex = 29;
+            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1283,6 +1270,19 @@
             this.label16.Size = new System.Drawing.Size(48, 18);
             this.label16.TabIndex = 19;
             this.label16.Text = "Result:";
+            // 
+            // txtTags
+            // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.txtTags, this.autocompleteMenu1);
+            this.txtTags.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTags.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTags.Location = new System.Drawing.Point(93, 24);
+            this.txtTags.Multiline = true;
+            this.txtTags.Name = "txtTags";
+            this.txtTags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtTags.Size = new System.Drawing.Size(241, 61);
+            this.txtTags.TabIndex = 18;
+            this.txtTags.TextChanged += new System.EventHandler(this.txtTags_TextChanged);
             // 
             // label13
             // 
@@ -1515,13 +1515,13 @@
             this.ntfC.BorderCurve = 15;
             this.ntfC.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.ntfC.Image = null;
-            this.ntfC.Location = new System.Drawing.Point(16, 131);
+            this.ntfC.Location = new System.Drawing.Point(16, 122);
             this.ntfC.MinimumSize = new System.Drawing.Size(100, 40);
             this.ntfC.Name = "ntfC";
             this.ntfC.NotificationType = NotificationBox.Type.Success;
             this.ntfC.RoundCorners = true;
             this.ntfC.ShowCloseButton = true;
-            this.ntfC.Size = new System.Drawing.Size(194, 48);
+            this.ntfC.Size = new System.Drawing.Size(194, 57);
             this.ntfC.TabIndex = 10;
             this.ntfC.Text = "Security code changed";
             this.ntfC.Visible = false;
@@ -1812,7 +1812,7 @@
             this.txtopassword.Size = new System.Drawing.Size(151, 29);
             this.txtopassword.TabIndex = 0;
             this.txtopassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtopassword.UseSystemPasswordChar = false;
+            this.txtopassword.UseSystemPasswordChar = true;
             // 
             // gbProfile
             // 
@@ -1864,9 +1864,9 @@
             this.pnumQ.ForeColor = System.Drawing.Color.MidnightBlue;
             this.pnumQ.Location = new System.Drawing.Point(177, 167);
             this.pnumQ.Name = "pnumQ";
-            this.pnumQ.Size = new System.Drawing.Size(24, 18);
+            this.pnumQ.Size = new System.Drawing.Size(16, 18);
             this.pnumQ.TabIndex = 9;
-            this.pnumQ.Text = "30";
+            this.pnumQ.Text = "0";
             // 
             // pdatabase
             // 
