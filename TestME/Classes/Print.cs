@@ -79,6 +79,7 @@ namespace TestME
 
             if (noPage == 1)
             {
+                //draw these only in first page
                 G.DrawStringML(title, titleFont, Brushes.Black, x, ref y, width - right);
                 y += (titleFont.GetHeight(G) + 20);
                 G.DrawString("Date: " + date, fontQ, Brushes.Black, width - right - 150, y);
@@ -158,7 +159,6 @@ namespace TestME
 
             string watermark = "TestME";
 
-
             // Get the size of watermark
             SizeF size = G.MeasureString(watermark, fontW);
 
@@ -210,8 +210,11 @@ namespace TestME
             float tempWordWidth = 0;
             foreach (string word in words)
             {
+                //measure word width (based in font size)
                 tempWordWidth = G.MeasureString(word + " ", font).Width;
                 measureWord.Width += tempWordWidth;
+                //check if the word fits in free line space
+                //if not then change line
                 if (measureWord.Width > totalSpace)
                 {
                     y += font.GetHeight();

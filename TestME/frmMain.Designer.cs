@@ -125,6 +125,7 @@
             this.btnClear = new BonfireButton();
             this.btnMakeTest = new BonfireButton();
             this.tabtest = new System.Windows.Forms.TabPage();
+            this.testQ = new System.Windows.Forms.Label();
             this.btnClearTest = new BonfireButton();
             this.ntfTest = new NotificationBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -644,6 +645,7 @@
             this.toolTipUser.SetToolTip(this.dgvMyTest, "Final Test Ready For Save Or Print");
             this.dgvMyTest.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyTest_CellDoubleClick);
             this.dgvMyTest.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMyTest_CellMouseUp);
+            this.dgvMyTest.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvMyTest_Paint);
             // 
             // nothing
             // 
@@ -1381,6 +1383,7 @@
             // tabtest
             // 
             this.tabtest.BackColor = System.Drawing.Color.White;
+            this.tabtest.Controls.Add(this.testQ);
             this.tabtest.Controls.Add(this.btnClearTest);
             this.tabtest.Controls.Add(this.checkBoxAnsweredTest);
             this.tabtest.Controls.Add(this.ntfTest);
@@ -1401,6 +1404,17 @@
             this.tabtest.Size = new System.Drawing.Size(619, 415);
             this.tabtest.TabIndex = 3;
             this.tabtest.Text = "My Test";
+            // 
+            // testQ
+            // 
+            this.testQ.AutoSize = true;
+            this.testQ.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.testQ.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.testQ.Location = new System.Drawing.Point(335, 17);
+            this.testQ.Name = "testQ";
+            this.testQ.Size = new System.Drawing.Size(73, 18);
+            this.testQ.TabIndex = 11;
+            this.testQ.Text = "0 Questions";
             // 
             // btnClearTest
             // 
@@ -1459,11 +1473,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(272, 13);
+            this.label1.Location = new System.Drawing.Point(251, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 22);
+            this.label1.Size = new System.Drawing.Size(86, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Your Test";
+            this.label1.Text = "Your Test:";
             // 
             // userpanel
             // 
@@ -2181,5 +2195,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Correct;
         private System.Windows.Forms.TabPage TabLogout;
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
+        private System.Windows.Forms.Label testQ;
     }
 }

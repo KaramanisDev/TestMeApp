@@ -688,5 +688,10 @@ namespace TestME
                 }).Start();
             }
         }
+
+        private void dgvMyTest_Paint(object sender, PaintEventArgs e)
+        {
+            testQ.Text = dgvMyTest.Rows.Count + " Questions";
+        }
     }
 }
