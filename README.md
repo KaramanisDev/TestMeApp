@@ -1,6 +1,6 @@
 # TestME Application
 
-<img src="https://raw.githubusercontent.com/Hli4S/TestMeApp/master/TestME/Resources/document1.png" alt="TestME Icon" align="right" />
+<img src="https://raw.githubusercontent.com/KaramanisWeb/TestMeApp/master/TestME/Resources/document1.png" alt="TestME Icon" align="right" />
 :computer: TestME is a Multiple Choice Test Generator.
 
 It is a user friendly app that aims to help teachers to create tests quickly.
@@ -29,7 +29,7 @@ _Some of the **features** of TestME are:_
 
 #### Core Team:
 
-* [Ilias Karamanis](https://github.com/Hli4S)
+* [Ilias Karamanis](https://github.com/KaramanisWeb)
 * [Evi Fasouli](https://github.com/EviSketo)
 * [John Kounatidis](https://github.com/JohnKoun)
 * [Nestoras Karamitsios](https://github.com/nestoras1)
